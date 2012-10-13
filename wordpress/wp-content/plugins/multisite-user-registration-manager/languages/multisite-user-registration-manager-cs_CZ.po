@@ -1,0 +1,745 @@
+# Copyright (C) 2012 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Multisite User Registration Manager\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/multisite-user-registration-manager\n"
+"POT-Creation-Date: 2012-03-05 16:08:32+00:00\n"
+"PO-Revision-Date: 2012-03-05 17:39+0100\n"
+"Last-Translator: Zaantar <zaantar@zaantar.eu>\n"
+"Language-Team: Zaantar <zaantar@zaantar.eu>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: includes/blog-options.php:46
+#: murm.php:51
+msgid "Multisite User Registration Manager Settings"
+msgstr "Nastavení MURM"
+
+#: includes/blog-options.php:47
+msgid "Here you can activate the system for registration request processing on your blog. After that, insert a shortcode %s into your page or post in order to display a registration form. If your blog is closed for example with Members Only plugin, it is suitable to place this shortcode on a 'welcome' page for non-registered visitors."
+msgstr "Zde můžete aktivovat systém pro zasílání a vyřizování žádostí o registraci na vašem blogu. Do článku nebo stránky můžete následně vložit shortcode %s, místo kterého se pak zobrazí formulář pro zasílání žádostí. Máte-li blog uzamčen například pluginem Members Only, je velmi vhodné, aby se tento shortcode nacházel na uvítací stránce, na kterou jsou přesměrovávání uživatelé bez povoleného přístupu."
+
+#: includes/blog-options.php:49
+msgid "In case of any questions, problems or feature requests kindly contact the %splugin developer%s."
+msgstr "V případě otázek, problémů nebo požadavků na další funkcionalitu se neváhejte obrátit na %svývojáře%s."
+
+#: includes/blog-options.php:54
+msgid "Activate on this blog"
+msgstr "Aktivovat na tomto blogu"
+
+#: includes/blog-options.php:60
+msgid "Show information nag if there are requests waiting for your moderation"
+msgstr "Zobrazit upozornění v administraci při nevyřízených registracích"
+
+#: includes/blog-options.php:66
+msgid "Send me an e-mail on incoming registration request"
+msgstr "Zaslat e-mail při nové žádosti o registraci"
+
+#: includes/blog-options.php:72
+msgid "Antispam"
+msgstr "Antispam"
+
+#: includes/blog-options.php:78
+msgid "Akismet API key for antispam functionality"
+msgstr "Akismet API key pro provoz antispamové kontroly"
+
+#: includes/blog-options.php:85
+#: includes/site-options.php:239
+msgid "Save"
+msgstr "Uložit"
+
+#: includes/blog-options.php:88
+msgid "Removal from this blog"
+msgstr "Odstranění z tohoto blogu"
+
+#: includes/blog-options.php:89
+msgid "Clicking the button below will deactivate MURM and delete all requests waiting for moderation. It doesn't affect requests already passed on to superadmin in any way."
+msgstr "Kliknutím na následující tlačítko deaktivujete MURM a odstraníte všechny žádosti o registrace, které čekají na vaše schválení. Nijak to neovlivní žádosti, které již byly předány správci sítě."
+
+#: includes/blog-options.php:93
+msgid "Remove MURM from this blog"
+msgstr "Odstranit MURM z tohoto blogu"
+
+#: includes/blog-options.php:108
+msgid "Error while removing MURM from your blog."
+msgstr "Chyba při odstraňování MURM z vašeho blogu."
+
+#: includes/blog-options.php:116
+msgid "MURM has been successfully removed from your blog."
+msgstr "MURM byl úspěšně odstraněn z vašeho blogu."
+
+#: includes/blog-options.php:144
+msgid "Settings saved."
+msgstr "Nastavení uložena."
+
+#: includes/blog-options.php:201
+msgid "MURM has been successfully installed on your blog."
+msgstr "MURM byl úspěšně instalován na vašem blogu."
+
+#: includes/blog-options.php:204
+msgid "Error while installing MURM on your blog."
+msgstr "Chyba při instalaci MURM na váš blog."
+
+#: includes/moderation.php:63
+#: includes/moderation.php:243
+#: murm.php:54
+msgid "Registration requests on this blog"
+msgstr "Žádosti o registraci na tomto blogu"
+
+#: includes/moderation.php:67
+#: includes/moderation.php:78
+#: includes/moderation.php:338
+#: includes/moderation.php:351
+msgid "id"
+msgstr "id"
+
+#: includes/moderation.php:68
+#: includes/moderation.php:79
+#: includes/moderation.php:340
+#: includes/moderation.php:353
+msgid "User name"
+msgstr "Uživatelské jméno"
+
+#: includes/moderation.php:69
+#: includes/moderation.php:80
+#: includes/moderation.php:341
+#: includes/moderation.php:354
+msgid "E-mail"
+msgstr "E-mail"
+
+#: includes/moderation.php:70
+#: includes/moderation.php:81
+#: includes/moderation.php:342
+#: includes/moderation.php:355
+msgid "Displayed name"
+msgstr "Zobrazované jméno"
+
+#: includes/moderation.php:71
+#: includes/moderation.php:82
+#: includes/moderation.php:343
+#: includes/moderation.php:356
+msgid "Web page"
+msgstr "Web"
+
+#: includes/moderation.php:72
+#: includes/moderation.php:83
+#: includes/moderation.php:344
+#: includes/moderation.php:357
+msgid "Message for blog owner"
+msgstr "Zpráva pro vlastníka blogu"
+
+#: includes/moderation.php:73
+#: includes/moderation.php:84
+#: includes/moderation.php:346
+#: includes/moderation.php:359
+msgid "Action"
+msgstr "Akce"
+
+#: includes/moderation.php:93
+#: includes/moderation.php:369
+msgid "Registration request"
+msgstr "Žádosti o registraci"
+
+#: includes/moderation.php:99
+#: includes/moderation.php:375
+msgid "Approve"
+msgstr "Schválit"
+
+#: includes/moderation.php:100
+#: includes/moderation.php:376
+msgid "Deny"
+msgstr "Zamítnout"
+
+#: includes/moderation.php:107
+#: includes/moderation.php:377
+msgid "Delete"
+msgstr "Odstranit"
+
+#: includes/moderation.php:143
+#: includes/moderation.php:398
+msgid "Request no.%d was not found in the database, so it cannot be approved. If you think this is an error, please contact the plugin developer."
+msgstr "Žádost č.%d nebyla nalezena v databázi, takže nemůže být zpracována. Pokud si myslíte, že jde o chybu, kontaktujte, prosím, vývojáře pluginu."
+
+#: includes/moderation.php:162
+msgid "Database error, request no.%d could not be processed. Please contact the plugin developer."
+msgstr "Došlo k chybě s databází, žádost č.%d nemohla být vyřízena. Kontaktujte, prosím, vývojáře."
+
+#: includes/moderation.php:192
+msgid "Request no.%d has been approved on the single blog level. Now please continue with the approval process as the network administrator via %sthis link%s."
+msgstr "Žádost o registraci č.%d byla potvrzena na úrovni blogu. Nyní prosím pokračujte %ssem%s pro potvrzení na úrovni sítě blogů."
+
+#: includes/moderation.php:194
+msgid "Request no.%d has been approved and forwarded to superadmin for moderation. Now please be patient, we will inform you about further development via e-mail."
+msgstr "Žádost č.%d byla potvrzena a předána k vyřízení správci sítě. O dalším vývoji budete informováni e-mailem. Prosíme o trpělivost."
+
+#: includes/moderation.php:198
+#: includes/moderation.php:232
+#: includes/moderation.php:272
+#: includes/moderation.php:473
+#: includes/moderation.php:519
+#: includes/moderation.php:559
+msgid "Database error, request no.%d could not be fully processed. Please contact the plugin developer."
+msgstr "Došlo k chybě s databází, žádost č.%d nemohla být vyřízena. Kontaktujte, prosím, vývojáře."
+
+#: includes/moderation.php:212
+#: includes/moderation.php:487
+msgid "Request no.%d was not found in the database, so it cannot be denied. If you think this is an error, please contact the plugin developer."
+msgstr "Žádost č.%d nebyla nalezena v databázi, takže nemůže být zpracována. Pokud si myslíte, že jde o chybu, kontaktujte, prosím, vývojáře pluginu."
+
+#: includes/moderation.php:229
+msgid "Request no.%d has been denied and an information e-mail has been sent to the request author."
+msgstr "Žádost o registraci č.%d byla úspěšně zamítnuta. Žádajícímu byl odeslán e-mail s oznámením."
+
+#: includes/moderation.php:244
+#: includes/moderation.php:531
+msgid "You are about to delete reqistration request no.%d (user %s with e-mail %s). Do you really want to proceed?"
+msgstr "Chystáte se odstranit žádost o registraci číslo %d (uživatel %s, e-mail %s). Skutečně toto chcete provést?"
+
+#: includes/moderation.php:245
+#: includes/moderation.php:532
+msgid "When deleting a request, the requesting person is not informed about it (on the contrary to denying the request). You should use this function only to delete spam or otherwise processed requests."
+msgstr "Při odstranění žádosti (narozdíl od jejího zamítnutí) není žádající nijak informován, tato funkce tedy slouží pouze jako stornování již jinak vyřešených žádostí anebo k odstranění spamu. Jinak byste ji využívat neměli."
+
+#: includes/moderation.php:250
+#: includes/moderation.php:537
+msgid "Delete request"
+msgstr "Odstranit žádost"
+
+#: includes/moderation.php:254
+msgid "Back to request overview"
+msgstr "Zpět na přehled žádostí"
+
+#: includes/moderation.php:269
+msgid "Request no.%d has been deleted and an information e-mail has <strong>not</strong> been sent to the request author."
+msgstr "Žádost č.%d byla úspěšně odstraněna z databáze. Žádajícímu <b>nebyl</b> odeslán e-mail s oznámením."
+
+#: includes/moderation.php:334
+#: includes/moderation.php:530
+msgid "MURM Network Registration Request"
+msgstr "Žádosti o registraci "
+
+#: includes/moderation.php:339
+#: includes/moderation.php:352
+msgid "Blog"
+msgstr "Blog"
+
+#: includes/moderation.php:345
+#: includes/moderation.php:358
+msgid "Approved by"
+msgstr "Schváleno"
+
+#: includes/moderation.php:405
+msgid "Cannot create the user account - combination of username and e-mail (%s, %s) is already taken."
+msgstr "Nelze vytvořit uživatele! Kombinace jména a hesla (%s, %s) není použitelná."
+
+#: includes/moderation.php:418
+msgid "User %s is already registered on this blog. Cannot continue."
+msgstr "Uživatel %s je již na příslušném blogu zaregistrován. V registraci nelze pokračovat."
+
+#: includes/moderation.php:470
+msgid "Request no.%d has been approved."
+msgstr "Žádost o registraci č.%d byla potvrzena."
+
+#: includes/moderation.php:516
+msgid "Request no.%d has been denied and an information e-mail has been sent to the request author and blog owner."
+msgstr "Žádost o registraci č.%d byla úspěšně zamítnuta. Žádajícímu a vlastníkovi patřičného blogu byl odeslán e-mail s oznámením."
+
+#: includes/moderation.php:541
+msgid "Back to reguest overview"
+msgstr "Zpět na přehled žádostí"
+
+#: includes/moderation.php:556
+msgid "Request no.%d has been deleted and no information e-mail has <strong>not</strong> been sent to the request author."
+msgstr "Žádost č.%d byla úspěšně odstraněna z databáze. Žádajícímu <b>nebyl</b> odeslán e-mail s oznámením."
+
+#: includes/shortcode.php:68
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+#: includes/shortcode.php:74
+msgid "Mandatory entry. Can contain only small letters without diacritics and numbers, must be at least four characters long."
+msgstr "Povinný údaj. Smí obsahovat pouze malá písmena bez diakritiky a číslice, musí být alespoň čtyři znaky dlouhý."
+
+#: includes/shortcode.php:77
+msgid "E-mail address"
+msgstr "E-mailová adresa"
+
+#: includes/shortcode.php:83
+msgid "Mandatory entry"
+msgstr "Povinný údaj"
+
+#: includes/shortcode.php:86
+msgid "User name to be displayed publicly"
+msgstr "Vaše jméno"
+
+#: includes/shortcode.php:92
+msgid "Your web URL"
+msgstr "Web"
+
+#: includes/shortcode.php:98
+#: includes/shortcode.php:130
+msgid "Message for the blog owner"
+msgstr "Zpráva pro vlastníka blogu"
+
+#: includes/shortcode.php:104
+#: includes/shortcode.php:136
+msgid "If you and blog owner don't know each other, it may help if you write something about yourself. Information about how you found this blog may be also useful."
+msgstr "Pokud se s vlastníkem tohoto blogu neznáte, možná pomůže, když o sobě něco napíšete. Užitečná také bývá informace, jak jste na tento blog narazili."
+
+#: includes/shortcode.php:108
+#: includes/shortcode.php:140
+msgid "Submit"
+msgstr "Odeslat žádost"
+
+#: includes/shortcode.php:121
+msgid "You are currently logged in as user %s. If you intend to request registration on this blog with this user account, just click the submit button below. In the other case you have to %slog out%s first."
+msgstr "Momentálně jste přihlášeni jako uživatel %s. Chcete-li pod tímto jménem požádat o registraci na tomto blogu, stačí kliknout tlačíto pro odeslání žádosti. V opačném případě je nutno se nejdříve %sodhlásit%s."
+
+#: includes/shortcode.php:160
+msgid "Error! Your request has been evaluated as spam by Akismet. If this is a mistake, please contact blog owner or site network administrator."
+msgstr "Chyba! Vaše žádost byla vyhodnocena jako spam systémem Akismet. Pokud spam není, kontaktujte vlastníka blogu nebo správce sítě."
+
+#: includes/shortcode.php:167
+msgid "Error! User login name must be at least four characters long and can contain only small letters without diacritics or numbers."
+msgstr "Chyba! Uživatelské jméno musí být dlouhé alespoň čtyři znaky a smí obsahovat pouze malá písmena bez diakritiky a číslice."
+
+#: includes/shortcode.php:172
+msgid "Error! Your e-mail address seems to be invalid."
+msgstr "Chyba! Musí být zadána platná e-mailová adresa."
+
+#: includes/shortcode.php:177
+msgid "Error! The combination of username and e-mail address is not valid (at least one of them has already been used in this site network."
+msgstr "Chyba! Kombinace uživatelského jména a e-mailu není platná (alespoň jeden z údajů je již v síti již použit v jiné kombinaci)."
+
+#: includes/shortcode.php:182
+msgid "Error! Another request with this username or e-mail address has already been submitted."
+msgstr "Chyba! Žádost s tímto uživatelským jménem anebo e-mailem již byla zaznamenána."
+
+#: includes/shortcode.php:206
+msgid "Database error when submitting your request. Please contact the %splugin developer%s."
+msgstr "Omlouváme se, při odesílání vaší žádosti došlo k interní chybě. Kontaktujte, prosím %svývojáře%s."
+
+#: includes/shortcode.php:219
+msgid "Your request has been submitted. Now please be patient, we will inform you about any further development via e-mail."
+msgstr "Vaše žádost byla odeslána. Nyní buďte, prosím, trpěliví. O dalším vývoji budete informováni e-mailem."
+
+#: includes/site-options.php:12
+msgid "MURM"
+msgstr "MURM"
+
+#: includes/site-options.php:32
+msgid "Multisite User Registration Manager events."
+msgstr "Události v pluginu Multisite User Registration Manager"
+
+#: includes/site-options.php:52
+msgid "Nastavení Multisite User Registration Manager"
+msgstr "Nastavení Multisite User Registration Manager"
+
+#: includes/site-options.php:56
+msgid "Please consider a donation"
+msgstr "Zvažte, prosím, finanční příspěvek"
+
+#: includes/site-options.php:58
+msgid "I spend quite a lot of my precious time working on opensource WordPress plugins. If you find this one useful, please consider helping me develop it further. Even the smallest amount of money you are willing to spend will be welcome."
+msgstr "Trávím nezanedbatelné množství svého vzácného času vývojem opensource pluginů pro WordPress. Pokud tento plugin považujete za užitečný, pomozte mi prosím vyvíjet jej i nadále. Sebemenší částka bude vřele vítána."
+
+#: includes/site-options.php:68
+msgid "Basic settings"
+msgstr "Základní nastavení"
+
+#: includes/site-options.php:74
+msgid "Auto-approve requests on Network admin level"
+msgstr "Automaticky potvrdit žádosti na úrovni sítě blogů"
+
+#: includes/site-options.php:82
+msgid "If checked, only blog admins decide about request processing and network admin doesn't have to do anything (is is as if he/she actually immediately approved the request). It is recommended to edit e-mail templates (below) accordingly."
+msgstr "Pokud je toto zaškrtnuto, o zpracování žádosti budou rozhodovat pouze administrátoři jednotlivých blogů a administrátor sítě nemusí dělat nic (plugin se chová, jako kdyby okamžitě vše odsouhlasil). Tomuto nastavení přizpůsobte nastavení šablon e-mailů níže."
+
+#: includes/site-options.php:87
+msgid "Allow blog owners to delete requests"
+msgstr "Povolit vlastníkovi blogu odstraňovat žádosti"
+
+#: includes/site-options.php:95
+msgid "If checked, they can delete a request without the request author being notified."
+msgstr "Pokud je toto zaškrtnuto, administrátoři blogů mohou odstranit žádost, aniž by byl žádající informován."
+
+#: includes/site-options.php:100
+msgid "Extended debug mode"
+msgstr "Rozšířený ladící režim"
+
+#: includes/site-options.php:108
+msgid "After checking create a WLS log category named %s. All extra information will be logged here."
+msgstr "Po zaškrtnutí vytvořte ve WLS kategorii logů jménem %s. Všechny doplňující informace budou zaznamenány v ní."
+
+#: includes/site-options.php:113
+msgid "Hide donation button"
+msgstr "Skrýt sekci o finančním příspěvku"
+
+#: includes/site-options.php:122
+msgid "E-mail templates"
+msgstr "Šablony pro e-maily"
+
+#: includes/site-options.php:126
+msgid "For request author on denial by blog owner"
+msgstr "Pro žádajícího při zamítnutí vlastníkem blogu"
+
+#: includes/site-options.php:127
+msgid "Within e-mail templates you can use following keywords:"
+msgstr "V šablonách e-mailů můžete používat následující klíčová slova"
+
+#: includes/site-options.php:129
+msgid "Name of the blog network"
+msgstr "Název sítě blogů"
+
+#: includes/site-options.php:130
+msgid "Network base URL (usually same as network main blog URL)"
+msgstr "Základní URL sítě blogů (většinou stejné jako URL hlavního blogu)"
+
+#: includes/site-options.php:131
+msgid "E-mail address of the network administrator"
+msgstr "E-mailová adresa administrátora sítě blogů"
+
+#: includes/site-options.php:132
+msgid "Name of current blog"
+msgstr "Jméno aktuálního blogu"
+
+#: includes/site-options.php:133
+msgid "URL of current blog"
+msgstr "URL aktuálního blogu"
+
+#: includes/site-options.php:138
+#: includes/site-options.php:157
+#: includes/site-options.php:169
+#: includes/site-options.php:181
+#: includes/site-options.php:193
+#: includes/site-options.php:205
+#: includes/site-options.php:217
+#: includes/site-options.php:229
+msgid "Enabled"
+msgstr "Povoleno"
+
+#: includes/site-options.php:139
+#: includes/site-options.php:158
+#: includes/site-options.php:170
+#: includes/site-options.php:182
+#: includes/site-options.php:194
+#: includes/site-options.php:206
+#: includes/site-options.php:218
+#: includes/site-options.php:230
+msgid "Subject:"
+msgstr "Předmět:"
+
+#: includes/site-options.php:147
+msgid "For blog owner on incoming request"
+msgstr "Pro vlastníka blogu při nové žádosti"
+
+#: includes/site-options.php:149
+msgid "E-mail address of current blog administrator"
+msgstr "E-mailová adresa administrátora aktuálního blogu"
+
+#: includes/site-options.php:150
+msgid "Login page URL on current blog"
+msgstr "URL přihlašovací stránky aktuálního blogu"
+
+#: includes/site-options.php:151
+msgid "User's name (only when logged in)"
+msgstr "Uživatelské jméno (jen pokud je návštěvník přihlášen)"
+
+#: includes/site-options.php:152
+msgid "User's e-mail address (only when logged in)"
+msgstr "Uživatelova e-mailová adresa (jen pokud je návštěvník přihlášen)"
+
+#: includes/site-options.php:153
+msgid "New user's password (only when creating a new user account)"
+msgstr "Heslo pro přihlášení (pokud se vytváří nový uživatelskú účet)"
+
+#: includes/site-options.php:166
+msgid "For superadmin on incoming request"
+msgstr "Pro správce sítě při nové žádosti"
+
+#: includes/site-options.php:178
+msgid "For request author on denial by superadmin"
+msgstr "Pro žádajícího při zamítnutí správcem sítě"
+
+#: includes/site-options.php:190
+msgid "For blog owner on denial by superadmin"
+msgstr "Pro vlastníka blogu při zamítnutí správcem sítě"
+
+#: includes/site-options.php:202
+msgid "For blog owner on approval by superadmin"
+msgstr "Pro vlastníka blogu při schválení správcem sítě"
+
+#: includes/site-options.php:214
+msgid "For request author on approval (when creating new user account)"
+msgstr "Pro žádajícího při schválení (pokud se vytváří nový uživatelskú účet)"
+
+#: includes/site-options.php:217
+msgid "(why would you ever uncheck that?)"
+msgstr "(proč byste toto kdy odškrtávali?)"
+
+#: includes/site-options.php:226
+msgid "For request author on approval (when registering an existing user account)"
+msgstr "Pro žádajícího při schválení (pokud se registruje existující uživatelskú účet)"
+
+#: includes/site-options.php:245
+msgid "Registration with WLS"
+msgstr "Registrace k WLS"
+
+#: includes/site-options.php:246
+msgid "WordPress Logging Service has been detected."
+msgstr "Byl detekován aktivní WordPress Logging Service."
+
+#: includes/site-options.php:253
+msgid "Register MURM with WLS"
+msgstr "Registrovat MURM k WLS"
+
+#: includes/site-options.php:262
+msgid "Unregister MURM and delete all log entries"
+msgstr "Odregistrovat MURM a odstranit všechny záznamy logu"
+
+#: murm.php:51
+msgid "MURM Settings"
+msgstr "Nastavení MURM"
+
+#: murm.php:54
+msgid "Registration requests"
+msgstr "Žádosti o registraci"
+
+#: murm.php:61
+msgid "MURM registration requests"
+msgstr "Žádosti o registraci"
+
+#: murm.php:150
+msgid "You have new registration requests for this blog. Please moderate them %shere%s."
+msgstr "Máte nevyřízené žádosti o registraci na tomto blogu. Pro jejich vyřízení pokračujte %szde%s."
+
+#~ msgid ""
+#~ "Request no.%d has been approved. Blog owner and requesting user have been "
+#~ "informed via e-mail."
+#~ msgstr ""
+#~ "Žádost o registraci č.%d byla úspěšně potvrzena. Vlastníkovi patřičného "
+#~ "blogu byl odeslán e-mail s oznámením, žádajícímu pak e-mail s "
+#~ "přihlašovacími údaji."
+
+#~ msgid "Send the request"
+#~ msgstr "Odeslat žádost"
+
+#~ msgid "[%BLOG_NAME%] Registration request denial"
+#~ msgstr "[%BLOG_NAME%] Zamítnutí žádosti o registraci"
+
+#~ msgid ""
+#~ "We are sorry, but your request for registration on blog %BLOG_NAME% with "
+#~ "user name %USER_NAME% was denied by this blog's owner. For more "
+#~ "information you can contact them via %ADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+#~ msgstr ""
+#~ "Litujeme, ale vaše žádost o registraci na blog %BLOG_NAME% pod "
+#~ "uživatelským jménem %USER_NAME% byla zamítnuta vlastníkem tohoto blogu. "
+#~ "Pro vysvětlení jej můžete kontaktovat na adrese %ADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+
+#~ msgid "[%BLOG_NAME%] New registration request"
+#~ msgstr "[%BLOG_NAME%] Nová žádost o registraci"
+
+#~ msgid ""
+#~ "There is a new registration request from %USER_NAME% (%USER_EMAIL%) on "
+#~ "your blog. For processing it please go to %BLOG_URL%/wp-admin/users.php?"
+#~ "page=murm-moderation.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+#~ msgstr ""
+#~ "Na vašem blogu je nová žádost o registraci uživatele %USER_NAME% "
+#~ "(%USER_EMAIL%). Pro zodpovězení žádosti pokračujte, prosím, na %BLOG_URL%/"
+#~ "wp-admin/users.php?page=murm-moderation.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+
+#~ msgid ""
+#~ "The admin of %BLOG_NAME% requests registration of user %USER_NAME% "
+#~ "(%USER_EMAIL%) on it's blog. For processing it please go to %SITE_URL%/wp-"
+#~ "admin/network/users.php?page=murm-superadmin.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+#~ msgstr ""
+#~ "Vlastník blogu %BLOG_NAME% žádá o potvrzení registrace uživatele "
+#~ "%USER_NAME% (%USER_EMAIL%) na svém blogu. Pro zodpovězení žádosti "
+#~ "pokračujte, prosím, na %SITE_URL%/wp-admin/network/users.php?page=murm-"
+#~ "superadmin.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+
+#~ msgid ""
+#~ "We are sorry, but your request for registration on blog %BLOG_NAME% with "
+#~ "user name %USER_NAME% was denied by network administrator. For more "
+#~ "information you can contact them via %SUPERADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+#~ msgstr ""
+#~ "'Litujeme, ale vaše žádost o registraci na blog %BLOG_NAME% pod "
+#~ "uživatelským jménem %USER_NAME% byla zamítnuta správcem sítě. Pro "
+#~ "vysvětlení jej můžete kontaktovat na adrese %SUPERADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+
+#~ msgid "[%BLOG_NAME%] Registration request from user %USER_NAME% denied"
+#~ msgstr "[%BLOG_NAME%] Zamítnutí žádosti o registraci uživatele %USER_NAME%"
+
+#~ msgid ""
+#~ "We are sorry, but your registration request for user %USER_NAME% on your "
+#~ "blog %BLOG_NAME% was denied by network administrator. The requesting user "
+#~ "has been notified via e-mail. For more information you can the network "
+#~ "admin via %SUPERADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+#~ msgstr ""
+#~ "Litujeme, ale vaše žádost o registraci uživatele %USER_NAME% na váš blog "
+#~ "%BLOG_NAME% byla zamítnuta správcem sítě. Pro vysvětlení jej můžete "
+#~ "kontaktovat na adrese %SUPERADMIN_EMAIL%. Žádajícímu byl odeslán e-mail s "
+#~ "oznámením.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+
+#~ msgid "[%BLOG_NAME%] Registration request from user %USER_NAME% approved"
+#~ msgstr "[%BLOG_NAME%] Povolení žádosti o registraci uživatele %USER_NAME%"
+
+#~ msgid ""
+#~ "Network administrator has approved your registration request for user "
+#~ "%USER_NAME% on your blog %BLOG_NAME%. The requesting user has been "
+#~ "notified via e-mail. In case of any problems please contact the network "
+#~ "admin via %SUPERADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+#~ msgstr ""
+#~ "Správce sítě potvrdil vaši žádost o registraci uživatele %USER_NAME% na "
+#~ "vašen blogu %BLOG_NAME%. Uživateli byl poslán e-mail s přihlašovacími "
+#~ "údaji. Pokud se vyskytnou problémy, kontaktujte správce na "
+#~ "%SUPERADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+
+#~ msgid "[%BLOG_NAME%] New user account: %USER_NAME%"
+#~ msgstr "[%BLOG_NAME%] Registrace uživatelského účtu %USER_NAME%"
+
+#~ msgid ""
+#~ "Your registration on the blog %BLOG_NAME% has been approved. Below you "
+#~ "can find your login data.\n"
+#~ "\n"
+#~ "Important information\n"
+#~ "\n"
+#~ "(1) This data is assigned to you and to you only. Do no share it with "
+#~ "anyone!\n"
+#~ "(2) If you request registration on another blog on site %SITE_NAME% in "
+#~ "the future, use exactly the same combination of user name and e-mail "
+#~ "(%USER_NAME%, %USER_EMAIL%).\n"
+#~ "\n"
+#~ "In case of any problems or questions please contact the network "
+#~ "administrator via  %SUPERADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "User name: %USER_NAME%\n"
+#~ "E-mail: %USER_EMAIL%\n"
+#~ "Password: %PASSWORD%\n"
+#~ "\n"
+#~ "You can log in here: %LOGIN_URL%.\n"
+#~ "\n"
+#~ "Welcome!\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+#~ msgstr ""
+#~ "Vaše registrace na blogu %BLOG_NAME% byla potvrzena. Níže naleznete údaje "
+#~ "potřebné pro přihlášení.\n"
+#~ "\n"
+#~ "Důležité informace\n"
+#~ "(1) Tyto údaje jsou určeny výhradně vám osobně, s nikým je nesdílejte!\n"
+#~ "(2) Budete-li v budoucnu žádat o registraci na jiném blogu v síti "
+#~ "%SITE_NAME%, použijte přesně stejnou kombinaci uživatelského jména a e-"
+#~ "mailu (%USER_NAME%, %USER_EMAIL%).\n"
+#~ "\n"
+#~ "Pokud se vyskytnou nějaké problémy nebo nejasnosti, bez obav kontaktujte "
+#~ "správce sítě na adrese %SUPERADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "Uživatelské jméno: %USER_NAME%\n"
+#~ "E-mail: %USER_EMAIL%\n"
+#~ "Heslo: %PASSWORD%\n"
+#~ "\n"
+#~ "Přihlásit se můžete na adrese %LOGIN_URL%.\n"
+#~ "\n"
+#~ "Vítejte!\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+
+#~ msgid "[%BLOG_NAME%] Registration of user account %USER_NAME% approved"
+#~ msgstr "[%BLOG_NAME%] Registrace uživatelského účtu %USER_NAME%"
+
+#~ msgid ""
+#~ "Your registration on the blog %BLOG_NAME% has been approved. For logging "
+#~ "in use data sent to you earlier during creation of this user account.\n"
+#~ "\n"
+#~ "Important information: If you request registration on another blog on "
+#~ "site %SITE_NAME% in the future, use exactly the same combination of user "
+#~ "name and e-mail (%USER_NAME%, %USER_EMAIL%).\n"
+#~ "\n"
+#~ "In case of any problems or questions please contact the network "
+#~ "administrator via  %SUPERADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "You can log in here: %LOGIN_URL%.\n"
+#~ "\n"
+#~ "Welcome!\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"
+#~ msgstr ""
+#~ "Vaše registrace na blogu %BLOG_NAME% byla potvrzena. Pro přihlášení "
+#~ "použijte údaje, které vám k tomuto uživatelskému jménu v síti %SITE_NAME% "
+#~ "byly zaslány dříve.\n"
+#~ "\n"
+#~ "Důležité: budete-li v budoucnu žádat o registraci na jiném blogu v síti "
+#~ "%SITE_NAME%, použijte přesně stejnou kombinaci uživatelského jména a e-"
+#~ "mailu (%USER_NAME%, %USER_EMAIL%).\n"
+#~ "\n"
+#~ "Pokud se vyskytnou nějaké problémy nebo nejasnosti, bez obav kontaktujte "
+#~ "správce sítě na adrese %SUPERADMIN_EMAIL%.\n"
+#~ "\n"
+#~ "Přihlásit se můžete na adrese %LOGIN_URL%.\n"
+#~ "\n"
+#~ "Vítejte!\n"
+#~ "\n"
+#~ "--\n"
+#~ "%SITE_NAME%\n"
+#~ "Multisite User Registration Manager"

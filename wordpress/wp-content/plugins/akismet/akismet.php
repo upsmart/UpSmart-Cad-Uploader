@@ -35,7 +35,7 @@ define('AKISMET_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 if ( defined('WPCOM_API_KEY') )
 	$wpcom_api_key = constant('WPCOM_API_KEY');
 else
-	$wpcom_api_key = '';
+	$wpcom_api_key = '505a3cde4eec';
 
 // Make sure we don't expose any info if called directly
 if ( !function_exists( 'add_action' ) ) {
