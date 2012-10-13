@@ -1,0 +1,2 @@
+[31-Aug-2012 16:42:01 UTC] PHP Fatal error:  Call to a member function get_results() on a non-object in /home/goupsmar/public_html/cp-profiles/development/upSmartHome.php on line 9
+[01-Sep-2012 19:09:28 UTC] PHP Fatal error:  Call to a member function get_results() on a non-object in /home/goupsmar/public_html/cp-profiles/development/upSmartHome.php on line 9

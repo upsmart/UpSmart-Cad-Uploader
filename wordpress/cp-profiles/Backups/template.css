@@ -1,0 +1,435 @@
+.cpwhat .upSmartGradient{
+background: white;
+background: rgb(125,126,125); /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: 
+url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdkN2U3ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZTBlMGUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, rgba(125,126,125,1) 0%, rgba(14,14,14,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,126,125,1)), color-stop(100%,rgba(14,14,14,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* IE10+ */
+background: linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-8 */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6d6d6',GradientType=0 );
+}
+
+.cpwhat *{
+margin: 0px;
+padding: 0px;
+}
+
+.cpwhat .shadowFull{
+box-shadow: 5px 5px 5px rgb(136, 136, 136);
+}
+
+.cpwhat .shadowTop{
+box-shadow: 5px 5px 5px rgb(136, 136, 136);
+}
+.cpwhat .shadowBottom{
+box-shadow: 5px 5px 5px rgb(136, 136, 136);
+}
+.cpwhat .shadowLeft{
+box-shadow: 5px 5px 5px rgb(136, 136, 136);
+}
+.cpwhat .shadowRight{
+box-shadow: 5px 5px 5px rgb(136, 136, 136);
+}
+
+.cpwhat .horizGradient{
+background: rgb(214,214,214); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(214,214,214,1) 43%, rgba(237,237,237,1) 74%, rgba(255,255,255,1) 98%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(43%,rgba(214,214,214,1)), color-stop(74%,rgba(237,237,237,1)), color-stop(98%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(214,214,214,1) 43%,rgba(237,237,237,1) 74%,rgba(255,255,255,1) 98%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(214,214,214,1) 43%,rgba(237,237,237,1) 74%,rgba(255,255,255,1) 98%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(214,214,214,1) 43%,rgba(237,237,237,1) 74%,rgba(255,255,255,1) 98%); /* IE10+ */
+background: linear-gradient(left,  rgba(214,214,214,1) 43%,rgba(237,237,237,1) 74%,rgba(255,255,255,1) 98%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.linkGradient{
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(255,255,255,1) 16%, rgba(237,237,237,1) 63%, rgba(214,214,214,1) 88%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(16%,rgba(255,255,255,1)), color-stop(63%,rgba(237,237,237,1)), color-stop(88%,rgba(214,214,214,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 16%,rgba(237,237,237,1) 63%,rgba(214,214,214,1) 88%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(255,255,255,1) 16%,rgba(237,237,237,1) 63%,rgba(214,214,214,1) 88%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(255,255,255,1) 16%,rgba(237,237,237,1) 63%,rgba(214,214,214,1) 88%); /* IE10+ */
+background: linear-gradient(left,  rgba(255,255,255,1) 16%,rgba(237,237,237,1) 63%,rgba(214,214,214,1) 88%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6d6d6',GradientType=1 ); /* IE6-9 */
+}
+
+/*** OVERWRITE CCM ***/
+div#content.cpwhat .padder{
+margin-left: 14px;
+margin-right: 0px;
+padding-right: 6px;
+padding-bottom: 6px;
+}
+
+div#container{
+background: none;
+box-shadow: none;
+}
+
+/*** END OVERWRITE ***/
+.cpwhat .radius{
+border-radius: 6px;
+}
+
+.cpwhat .whiteShell{
+background:none repeat scroll 0 0 #f2f2f2;
+border-radius: 6px;
+padding: 10px;
+}
+
+.cpwhat .left{
+float: left;
+}
+
+.cpwhat .right{
+float: right;
+}
+
+.clear{
+clear: both;
+}
+.textCenter{
+text-align: center;
+}
+.cpwhat .pagetitle{
+	padding: 8px;
+}
+
+.cpwhat .subHead{
+margin-top: 30px;
+margin-left: 35px;
+margin-bottom: 30px;
+padding: 4px;
+}
+
+.cpwhat .linktitle{
+padding: 8px;
+height: 22px;
+font-weight: bold;
+}
+
+.cpwhat #header{
+background-color: grey;
+width: 100%;
+height: 400px;
+text-align: center;
+line-height: 400px;
+}
+
+
+.cpwhat h3{
+font-size: 25px;
+line-height: 40px;
+color: #888;
+margin-bottom: 20px;
+}
+
+.cpwhat h3 a{
+display: block;
+width: 100%
+height: 100%;
+}
+
+.cpwhat h4{
+font-size: 15px;
+color: #888;
+width: 40%;
+}
+
+.cpwhat ul{
+   list-style-type: none;
+   text-align: center;
+   display: block;
+   padding: 0px;
+}
+
+.cpwhat li{
+ margin-bottom: 10px;
+ max-width: 100%;
+}
+
+.cpwhat li a{
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+}
+.cpwhat #linkSidebar{
+width: 230px;
+max-width: 230px;
+padding: 8px;
+margin-top: 30px;
+height: 1000px;
+max-height: 100%;
+margin-bottom: 50px;
+}
+	.cpwhat #guestLogo{
+		margin: 0px auto;
+		margin-bottom: 20px;
+	}
+	.cpwhat span.icon{
+			background-repeat:no-repeat;
+			background-size: contain;
+			background-position: left center;
+			width: 20px;
+			height: 20px;
+	}
+	
+	.cpwhat span.bubble{
+			background-image:url(/cp-profiles/images/brainBubble.png);
+	}
+	.cpwhat span.bulb{
+			background-image:url(/cp-profiles/images/lightBulb.png);
+	}
+	.cpwhat span.beaker{
+			background-image:url(/cp-profiles/images/beaker.png);
+	}
+	
+	.cpwhat span.invest{
+			background-image:url(/cp-profiles/images/invest.png);
+	}
+	.cpwhat #sidebar a{
+	padding-right: 10px;
+	}
+
+/*************** New Side Bar *********************/
+
+.button-wrapper{
+	width: 320px;
+	margin: 0 auto;
+    padding: 20px 0;
+}
+
+.a-btn{
+    background:#80a9da;
+    background:-webkit-gradient(linear,left top,left bottom,color-stop(#80a9da,0),color-stop(#6f97c5,1));
+    background:-webkit-linear-gradient(top, #80a9da 0%, #6f97c5 100%);
+    background:-moz-linear-gradient(top, #80a9da 0%, #6f97c5 100%);
+    background:-o-linear-gradient(top, #80a9da 0%, #6f97c5 100%);
+    background:linear-gradient(top, #80a9da 0%, #6f97c5 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#80a9da', endColorstr='#6f97c5',GradientType=0 );
+    padding-left:20px;
+    padding-right:80px;
+    height:38px;
+    display:inline-block;
+    position:relative;
+    border:1px solid #5d81ab;
+    -webkit-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5);
+    -moz-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5);
+    box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5);
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+    float:left;
+    clear:both;
+    margin:10px 0px;
+    overflow:hidden;
+    -webkit-transition:all 0.3s linear;
+    -moz-transition:all 0.3s linear;
+    -o-transition:all 0.3s linear;
+    transition:all 0.3s linear;
+}
+.a-btn-text{
+    padding-top:5px;
+    display:block;
+    font-size:18px;
+    white-space:nowrap;
+    text-shadow:0px 1px 1px rgba(255,255,255,0.3);
+    color:#446388;
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
+    transition:all 0.2s linear;
+}
+.a-btn-slide-text{
+    position:absolute;
+    height:100%;
+    top:0px;
+    right:52px;
+    width:0px;
+    background:#63707e;
+    text-shadow:0px -1px 1px #363f49;
+    color:#fff;
+    font-size:18px;
+    white-space:nowrap;
+    text-transform:uppercase;
+    text-align:left;
+    text-indent:10px;
+    overflow:hidden;
+    line-height:38px;
+    -webkit-box-shadow:-1px 0px 1px rgba(255,255,255,0.4), 1px 1px 2px rgba(0,0,0,0.2) inset;
+    -moz-box-shadow:-1px 0px 1px rgba(255,255,255,0.4), 1px 1px 2px rgba(0,0,0,0.2) inset;
+    box-shadow:-1px 0px 1px rgba(255,255,255,0.4), 1px 1px 2px rgba(0,0,0,0.2) inset;
+    -webkit-transition:width 0.3s linear;
+    -moz-transition:width 0.3s linear;
+    -o-transition:width 0.3s linear;
+    transition:width 0.3s linear;
+}
+.a-btn-icon-right{
+    position:absolute;
+    right:0px;
+    top:0px;
+    height:100%;
+    width:52px;
+    border-left:1px solid #5d81ab;
+    -webkit-box-shadow:1px 0px 1px rgba(255,255,255,0.4) inset;
+    -moz-box-shadow:1px 0px 1px rgba(255,255,255,0.4) inset;
+    box-shadow:1px 0px 1px rgba(255,255,255,0.4) inset;
+}
+.a-btn-icon-right span{
+    width:38px;
+    height:38px;
+    opacity:0.7;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-20px 0px 0px -20px;
+    background:transparent url(../images/arrow_right.png) no-repeat 50% 55%;
+    -webkit-transition:all 0.3s linear;
+    -moz-transition:all 0.3s linear;
+    -o-transition:all 0.3s linear;
+    transition:all 0.3s linear;
+}
+.a-btn:hover{
+    padding-right:180px;
+    -webkit-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+    -moz-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+    box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+}
+.a-btn:hover .a-btn-text{
+    text-shadow:0px 1px 1px #5d81ab;
+    color:#fff;
+}
+.a-btn:hover .a-btn-slide-text{
+    width:100px;
+}
+.a-btn:hover .a-btn-icon-right span{
+    opacity:1;
+}
+.a-btn:active{
+    position:relative;
+    top:1px;
+    background:#5d81ab;
+    -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
+    -moz-box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
+    box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
+    border-color:#80a9da;
+}
+
+
+
+
+
+
+/*******************************/	
+	
+	
+.cpwhat #information{
+width: 710px;
+margin-bottom: 14px;
+}   
+.cpwhat #contentMid{
+	width: 530px;
+	margin-bottom: 50px;
+}
+
+/*********** Who Page BEGIN ****************/
+	.personBlock{
+		width: inherit;
+		height: 200px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.personBlock img{
+		display: inline;
+	}
+	
+	.personBlock .bio{
+	    width: 350px;
+	    font-size: 12px;
+	    line-height: 30px;
+            text-align: justify;
+		
+	}
+	.personBlock span{
+	  display: block;
+	}
+/*********** Who Page END ****************/
+
+/*********** Home Page BEGIN ****************/
+       .cpwhat #mediaFrame{
+        background-image:url(/cp-profiles/images/HD_Television.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    	width: 510px;
+    	min-height: 400px;
+        margin: 0px 0px 20px 0px;
+	padding: 10px;
+	background-size: cover;
+	}	
+
+	.cpwhat #mediaLayer{
+	position: absolute;
+	}
+
+	.cpwhat #mediaFrame embed{
+		margin-left: 65px;
+		margin-top: 80px;
+	}
+	
+	.cpwhat #contentMid ul{
+		display: block;
+		width: inherit;
+	}
+	.cpwhat #contentMid li{
+		width: 48%;
+		display: block;
+	}
+	.cpwhat #contentMid li:first-child{
+		margin-right: 4%;
+	}
+	.cpwhat #contentMid li a{
+		height: 40px;
+		line-height: 40px;
+		display: block;
+		width: 100%;
+	}
+/*********** Home Page END ****************/
+	
+	#socialLinks{
+	width: 130px;
+	margin-top: 75px;
+	margin-left: 20px;
+	}
+	.slink{
+		padding: 10px;
+		margin: 0px auto;
+	}
+	.rss{
+		background-repeat:no-repeat;
+		width: 35px;
+		height: 35px;
+		margin: 0px 0px 0px 0px;
+	}
+	
+.cpwhat #contentMid p{
+font-size: 14px;
+line-height: 28px;
+text-indent: 40px;
+text-align: justify;
+}
+
+div#sidebar.widgetarea{
+position: absolute; 
+margin: 0px;
+margin-top: 20px;
+max-width: inherit;
+}
+
+.cpwhat #blog{
+max-width: 710px;
+}
