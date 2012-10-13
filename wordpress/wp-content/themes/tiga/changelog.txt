@@ -1,0 +1,71 @@
+0.2.1 - 02 Sept 2012
+- Support shortcode for widget
+- Allowed to put 'type' and 'src' in the textarea on the theme options
+- Add html5 caption function
+
+0.2 - 10 Aug 2012
+- Change license to GPLv2
+- Add typography option
+- Add buddypress compatibility
+- Add custom subscribe widget
+- Add tooltips to the social buttons widget
+- Add meta box to disable social share option on post and page
+- Move hook comment-reply.js to comment_form_before
+- Remove ID from linkedin url
+- A little css issue in the slider
+- Remove some deprecated code
+- Remove some unnecessary functions
+- Fix css cross platform issue
+- Update language
+
+0.1 - 22 July 2012
+- Fix incompatible title tag with all in one seo pack & platinum seo pack plugin
+- Remove unnecessary white space
+- Add home page layouts option
+- Remove break post title feature on home page
+- Update modernizr
+- Remove ephemera widget since tiga not supported post format
+- Add SASS folder for front-end/developer to customize the CSS
+- Update selectivizr
+
+0.0.9 - 13 July 2012
+- Update ugly theme options between content and sidebar
+- Inconsistent HTML tag
+- Update language
+
+0.0.8 - 07 July 2012
+- Wrong instagram icon url
+
+0.0.7 - 06 July 2012
+- Add tumblr & intagram social button
+- Remove Facebook open-graph
+- Add 10 background pattern
+- Remove shortcodes
+- Change pinterest button with linkedin button
+
+0.0.6 - 28 June 2012
+- Update options theme
+- Update form style
+- Get back grey sidebar
+- Update language
+
+0.0.5 - 13 June 2012
+- Fix pinterest get image
+- Remove breadcrumbs function
+- If featured post false, sticky post still display in recent posts
+
+0.0.4 - 12 June 2012
+- Move translation code support to functions.php
+
+0.0.3 - 12 June 2012
+- Update options theme framework
+- Remove post-format support
+- Remove blog template
+
+0.0.2 - 27 May 2012
+- Sanitize all theme options output
+- Update grids
+- Remove CSS for IE
+
+0.0.1 - 9 May 2012
+- Initial released

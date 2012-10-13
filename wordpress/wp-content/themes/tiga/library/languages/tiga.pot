@@ -1,0 +1,919 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiga 0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-10 20:48+0700\n"
+"PO-Revision-Date: 2012-08-10 20:49+0700\n"
+"Last-Translator: Satrya <satryabima24@gmail.com>\n"
+"Language-Team: satrya <satryabima24@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:27
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:31
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:38
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:46
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:30
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: archive.php:33
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: archive.php:40
+#: author.php:35
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: archive.php:48
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:51
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:54
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:57
+msgid "Archives"
+msgstr ""
+
+#: author.php:56
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: comments.php:19
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr ""
+
+#: content-featured.php:40
+#: content-single.php:17
+#: content.php:19
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: content-page.php:21
+#: content-single.php:31
+#: image.php:93
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:22
+#: content-single.php:56
+#: image.php:41
+#: image.php:107
+msgid "Edit"
+msgstr ""
+
+#: content-single.php:50
+#, php-format
+msgid "<span class=\"%1$s\">%2$s</span>"
+msgstr ""
+
+#: content-single.php:53
+#, php-format
+msgid "<span class=\"%1$s category\">%2$s</span>"
+msgstr ""
+
+#: footer.php:35
+#, php-format
+msgid "Powered by <a href=\"http://wordpress.org/\" title=\"%1$s\" rel=\"generator\">%2$s</a> &middot; Theme by <a href=\"http://satrya.me/\" title=\"%3$s\" rel=\"designer\">%4$s</a>"
+msgstr ""
+
+#: header.php:56
+msgid "Menu"
+msgstr ""
+
+#: header.php:57
+msgid "Skip to content"
+msgstr ""
+
+#: image.php:31
+#, php-format
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: image.php:45
+msgid "&larr; Previous"
+msgstr ""
+
+#: image.php:46
+msgid "Next &rarr;"
+msgstr ""
+
+#: image.php:99
+#, php-format
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:101
+#, php-format
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:103
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: image.php:105
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: index.php:29
+msgid "Featured Posts"
+msgstr ""
+
+#: no-results.php:17
+msgid "Nothing Found"
+msgstr ""
+
+#: no-results.php:23
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:27
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: no-results.php:32
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: search.php:25
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:15
+#: searchform.php:17
+msgid "Search"
+msgstr ""
+
+#: searchform.php:16
+msgid "Search &hellip;"
+msgstr ""
+
+#: template-archives.php:35
+msgid "By Category"
+msgstr ""
+
+#: template-archives.php:38
+msgid "By Monthly"
+msgstr ""
+
+#: template-archives.php:41
+msgid "By Yearly"
+msgstr ""
+
+#: template-archives.php:46
+msgid "Latest Posts"
+msgstr ""
+
+#: options-framework.php:170
+msgid "Tiga Theme Options"
+msgstr ""
+
+#: options-framework.php:237
+msgid "Save Options"
+msgstr ""
+
+#: options-framework.php:238
+msgid "Restore Defaults"
+msgstr ""
+
+#: options-framework.php:238
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: options-framework.php:270
+msgid "Default options restored."
+msgstr ""
+
+#: options-framework.php:313
+msgid "Options saved."
+msgstr ""
+
+#: options-framework.php:364
+msgid "Theme Options"
+msgstr ""
+
+#: options-medialibrary-uploader.php:26
+msgid "Theme Options Media"
+msgstr ""
+
+#: options-medialibrary-uploader.php:129
+msgid "Upload"
+msgstr ""
+
+#: options-medialibrary-uploader.php:152
+msgid "View File"
+msgstr ""
+
+#: options-medialibrary-uploader.php:289
+msgid "Gallery"
+msgstr ""
+
+#: options-medialibrary-uploader.php:289
+msgid "Previously Uploaded"
+msgstr ""
+
+#: options-sanitize.php:232
+msgid "No Repeat"
+msgstr ""
+
+#: options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr ""
+
+#: options-sanitize.php:235
+msgid "Repeat All"
+msgstr ""
+
+#: options-sanitize.php:248
+msgid "Top Left"
+msgstr ""
+
+#: options-sanitize.php:249
+msgid "Top Center"
+msgstr ""
+
+#: options-sanitize.php:250
+msgid "Top Right"
+msgstr ""
+
+#: options-sanitize.php:251
+msgid "Middle Left"
+msgstr ""
+
+#: options-sanitize.php:252
+msgid "Middle Center"
+msgstr ""
+
+#: options-sanitize.php:253
+msgid "Middle Right"
+msgstr ""
+
+#: options-sanitize.php:254
+msgid "Bottom Left"
+msgstr ""
+
+#: options-sanitize.php:255
+msgid "Bottom Center"
+msgstr ""
+
+#: options-sanitize.php:256
+msgid "Bottom Right"
+msgstr ""
+
+#: options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr ""
+
+#: options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr ""
+
+#: options-sanitize.php:344
+msgid "Normal"
+msgstr ""
+
+#: options-sanitize.php:345
+msgid "Italic"
+msgstr ""
+
+#: options-sanitize.php:346
+msgid "Bold"
+msgstr ""
+
+#: options-sanitize.php:347
+msgid "Bold Italic"
+msgstr ""
+
+#: filters.php:39
+msgid "Search Results for:"
+msgstr ""
+
+#: filters.php:43
+msgid "Category Archives:"
+msgstr ""
+
+#: filters.php:47
+msgid "Tag Archives:"
+msgstr ""
+
+#: filters.php:51
+msgid "Not Found"
+msgstr ""
+
+#: filters.php:159
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: metabox.php:14
+#: metabox.php:15
+msgid "Tiga social share"
+msgstr ""
+
+#: metabox.php:25
+msgid "Disable social share button on this post?"
+msgstr ""
+
+#: options.php:40
+msgid "Two"
+msgstr ""
+
+#: options.php:41
+msgid "Three"
+msgstr ""
+
+#: options.php:42
+msgid "Four"
+msgstr ""
+
+#: options.php:43
+msgid "Five"
+msgstr ""
+
+#: options.php:44
+msgid "Six"
+msgstr ""
+
+#: options.php:45
+msgid "Seven"
+msgstr ""
+
+#: options.php:46
+msgid "Eight"
+msgstr ""
+
+#: options.php:47
+msgid "Nine"
+msgstr ""
+
+#: options.php:48
+msgid "Ten"
+msgstr ""
+
+#: options.php:52
+msgid "Enable"
+msgstr ""
+
+#: options.php:53
+msgid "Disable"
+msgstr ""
+
+#: options.php:57
+msgid "Single post"
+msgstr ""
+
+#: options.php:58
+msgid "Page"
+msgstr ""
+
+#: options.php:59
+msgid "Both"
+msgstr ""
+
+#: options.php:60
+msgid "None"
+msgstr ""
+
+#: options.php:69
+#: widgets.php:22
+msgid "General"
+msgstr ""
+
+#: options.php:74
+msgid "Custom Logo"
+msgstr ""
+
+#: options.php:75
+msgid "Upload a logo for your website, or specify the image address of your online logo. (http://example.com/logo.png)"
+msgstr ""
+
+#: options.php:81
+msgid "Custom Favicon"
+msgstr ""
+
+#: options.php:82
+msgid "Upload a favicon for your website, or specify the image address of your online favicon. (http://example.com/favicon.png)"
+msgstr ""
+
+#: options.php:88
+msgid "Custom CSS"
+msgstr ""
+
+#: options.php:89
+msgid "Quickly add some CSS to your theme by adding it to this block."
+msgstr ""
+
+#: options.php:96
+msgid "Analytic Code"
+msgstr ""
+
+#: options.php:97
+msgid "Paste your Google Analytics (or other) tracking code here. It will be inserted before the closing body tag of your theme."
+msgstr ""
+
+#: options.php:103
+msgid "Iframe Blocker"
+msgstr ""
+
+#: options.php:104
+msgid "Iframe blocker is for block iframe to your site such as google image."
+msgstr ""
+
+#: options.php:114
+msgid "Theme"
+msgstr ""
+
+#: options.php:119
+msgid "Global Layouts"
+msgstr ""
+
+#: options.php:120
+msgid "Left content, right content or one column"
+msgstr ""
+
+#: options.php:132
+msgid "Home Page Layouts"
+msgstr ""
+
+#: options.php:133
+msgid "Two columns or one column"
+msgstr ""
+
+#: options.php:144
+msgid "Background Pattern"
+msgstr ""
+
+#: options.php:145
+msgid "Available background pattern to customize your site"
+msgstr ""
+
+#: options.php:165
+msgid "Custom background"
+msgstr ""
+
+#: options.php:166
+msgid "Customize your background"
+msgstr ""
+
+#: options.php:173
+msgid "Show featured posts"
+msgstr ""
+
+#: options.php:174
+msgid "Check this option to show featured posts on home page. Featured posts is based on sticky post. To show the featured posts, you only need create a post then check the sticky post option."
+msgstr ""
+
+#: options.php:180
+msgid "Select a number of featured posts"
+msgstr ""
+
+#: options.php:181
+msgid "How many featured posts you want to show ?"
+msgstr ""
+
+#: options.php:190
+msgid "Use footer widgets"
+msgstr ""
+
+#: options.php:191
+msgid "Check this option if you want to use the footer widgets"
+msgstr ""
+
+#: options.php:197
+msgid "Display social share button"
+msgstr ""
+
+#: options.php:198
+msgid "Display social share on single post and page"
+msgstr ""
+
+#: options.php:206
+msgid "Display author box"
+msgstr ""
+
+#: options.php:207
+msgid "Check this option if you want display the author box on single posts"
+msgstr ""
+
+#: options.php:215
+msgid "Typography"
+msgstr ""
+
+#: options.php:220
+msgid "Disable custom typography"
+msgstr ""
+
+#: options.php:221
+msgid "Disable custom typography and use theme defaults."
+msgstr ""
+
+#: options.php:228
+msgid "Content typography"
+msgstr ""
+
+#: options.php:229
+msgid "This font is used for content text."
+msgstr ""
+
+#: options.php:252
+msgid "Content heading typography"
+msgstr ""
+
+#: options.php:253
+msgid "Select the headline font (h1,h2,h3 etc)"
+msgstr ""
+
+#: options.php:278
+msgid "Social"
+msgstr ""
+
+#: options.php:283
+msgid "Social settings"
+msgstr ""
+
+#: options.php:284
+msgid "If you want to display the social button, first you should fill the form below, put only the <strong>username</strong>. After that, go to Appearance > Widgets then drag the widget &raquo; tiga social buttons."
+msgstr ""
+
+#: options.php:289
+msgid "Email"
+msgstr ""
+
+#: options.php:290
+msgid "Your email"
+msgstr ""
+
+#: options.php:296
+msgid "Twitter Username"
+msgstr ""
+
+#: options.php:297
+msgid "Your twitter username"
+msgstr ""
+
+#: options.php:303
+msgid "Facebook Username"
+msgstr ""
+
+#: options.php:304
+msgid "Your facebook username"
+msgstr ""
+
+#: options.php:310
+msgid "Google Plus Username"
+msgstr ""
+
+#: options.php:311
+msgid "https://plus.google.com/u/<strong>109253446701726260861</strong>"
+msgstr ""
+
+#: options.php:317
+msgid "Youtube Username"
+msgstr ""
+
+#: options.php:318
+msgid "Your youtube username"
+msgstr ""
+
+#: options.php:324
+msgid "Flickr Username"
+msgstr ""
+
+#: options.php:325
+msgid "Your flickr username"
+msgstr ""
+
+#: options.php:331
+msgid "Linkedin Username"
+msgstr ""
+
+#: options.php:332
+msgid "http://linkedin.com/in/<strong>username</strong>"
+msgstr ""
+
+#: options.php:338
+msgid "Pinterest Username"
+msgstr ""
+
+#: options.php:339
+msgid "Your pinterest username"
+msgstr ""
+
+#: options.php:345
+msgid "Dribbble Username"
+msgstr ""
+
+#: options.php:346
+msgid "Your dribbble username"
+msgstr ""
+
+#: options.php:352
+msgid "Github Username"
+msgstr ""
+
+#: options.php:353
+msgid "Your github username"
+msgstr ""
+
+#: options.php:359
+msgid "LastFM Username"
+msgstr ""
+
+#: options.php:360
+msgid "Your lastfm username"
+msgstr ""
+
+#: options.php:366
+msgid "Vimeo Username"
+msgstr ""
+
+#: options.php:367
+msgid "Your vimeo username"
+msgstr ""
+
+#: options.php:373
+msgid "Tumblr Username"
+msgstr ""
+
+#: options.php:374
+msgid "Your tumblr username"
+msgstr ""
+
+#: options.php:380
+msgid "Instagram Username"
+msgstr ""
+
+#: options.php:381
+msgid "Your instagram username"
+msgstr ""
+
+#: options.php:389
+msgid "Meta Verification"
+msgstr ""
+
+#: options.php:394
+msgid "Webmaster Tools Setting"
+msgstr ""
+
+#: options.php:395
+msgid "You can use the boxes below to verify with the different Webmaster Tools. Only enter the meta values/content. <br />ex: <i><meta name=\"google-site-verification\" content=\"<b>2141241512</b>\" /></i>"
+msgstr ""
+
+#: options.php:400
+msgid "Google Webmaster Tools"
+msgstr ""
+
+#: options.php:401
+msgid "<a href=\"http://www.google.com/webmasters/\">Google webmaster tools &raquo;</a>"
+msgstr ""
+
+#: options.php:408
+msgid "Bing Webmaster"
+msgstr ""
+
+#: options.php:409
+msgid "<a href=\"http://www.bing.com/webmaster/\">Bing webmaster &raquo;</a>"
+msgstr ""
+
+#: options.php:416
+msgid "Alexa"
+msgstr ""
+
+#: options.php:417
+msgid "<a href=\"http://www.alexa.com/\">Alexa &raquo;</a>"
+msgstr ""
+
+#: options.php:426
+msgid "Ads Setting"
+msgstr ""
+
+#: options.php:431
+msgid "Ads 1"
+msgstr ""
+
+#: options.php:432
+msgid "Ads after post title on single post"
+msgstr ""
+
+#: options.php:439
+msgid "Ads 2"
+msgstr ""
+
+#: options.php:440
+msgid "Ads after post content on single post"
+msgstr ""
+
+#: setup.php:34
+msgid "Primary Navigation"
+msgstr ""
+
+#: setup.php:35
+msgid "Secondary Navigation"
+msgstr ""
+
+#: templates.php:29
+msgid "Post navigation"
+msgstr ""
+
+#: templates.php:33
+msgid "&larr;"
+msgstr ""
+
+#: templates.php:34
+msgid "&rarr;"
+msgstr ""
+
+#: templates.php:40
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: templates.php:44
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: templates.php:63
+#, php-format
+msgid "Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+
+#: templates.php:69
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: templates.php:73
+msgid "Leave a comment"
+msgstr ""
+
+#: templates.php:73
+msgid "1 Comment"
+msgstr ""
+
+#: templates.php:73
+msgid "% Comments"
+msgstr ""
+
+#: templates.php:135
+#, php-format
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: templates.php:159
+msgid "Pingback:"
+msgstr ""
+
+#: templates.php:176
+#, php-format
+msgid "%1$s on %2$s <span class=\"says\">said:</span>"
+msgstr ""
+
+#: templates.php:182
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: templates.php:191
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: templates.php:199
+msgid "Reply <span>&darr;</span>"
+msgstr ""
+
+#: templates.php:219
+msgid "Comment navigation"
+msgstr ""
+
+#: templates.php:220
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: templates.php:221
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: templates.php:238
+msgid "Share This:"
+msgstr ""
+
+#: widgets.php:23
+msgid "This sidebar appears on the right side of your site"
+msgstr ""
+
+#: widgets.php:31
+msgid "Footer Sidebar 1"
+msgstr ""
+
+#: widgets.php:32
+#: widgets.php:41
+#: widgets.php:50
+#: widgets.php:61
+msgid "This sidebar appears on the footer side of your site"
+msgstr ""
+
+#: widgets.php:40
+msgid "Footer Sidebar 2"
+msgstr ""
+
+#: widgets.php:49
+msgid "Footer Sidebar 3"
+msgstr ""
+
+#: widgets.php:60
+msgid "Footer Sidebar 4"
+msgstr ""
+
+#: widget-social.php:20
+msgid "Social buttons widget."
+msgstr ""
+
+#: widget-social.php:29
+msgid "&raquo; Tiga social buttons"
+msgstr ""
+
+#: widget-social.php:101
+#: widget-subscribe.php:81
+#: widget-twitter.php:31
+msgid "Title:"
+msgstr ""
+
+#: widget-subscribe.php:20
+msgid "Feedburner subscription widget."
+msgstr ""
+
+#: widget-subscribe.php:29
+msgid "&raquo; Tiga subscribe"
+msgstr ""
+
+#: widget-subscribe.php:49
+msgid "Email address &hellip;"
+msgstr ""
+
+#: widget-subscribe.php:52
+msgid "Subscribe"
+msgstr ""
+
+#: widget-subscribe.php:85
+msgid "Feedburner ID(http://feeds.feedburner.com/<b>satrya</b>):"
+msgstr ""
+
+#: widget-twitter.php:18
+msgid "Display your recent tweets to your readers."
+msgstr ""
+
+#: widget-twitter.php:19
+msgid "&raquo; Tiga twitter"
+msgstr ""
+
+#: widget-twitter.php:36
+msgid "Twitter Username:"
+msgstr ""
+
+#: widget-twitter.php:42
+msgid "Number of Tweets to Retrieve:"
+msgstr ""
+
