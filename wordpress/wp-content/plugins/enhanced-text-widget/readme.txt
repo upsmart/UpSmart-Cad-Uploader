@@ -4,7 +4,7 @@ Donate link: http://pomelodesign.com/donate/
 Tags: widget, clickable, linkable, linked title, text, php, javascript, flash, linked title text, linked, text widget, PHP Widget, link widget title, bare widget
 Requires at least: 2.8
 Tested up to: 3.4
-Stable tag: 1.2.2
+Stable tag: 1.3.2
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ An enhanced version of the default text widget where you may have Text, HTML, CS
 
 == Description ==
 
-An enhanced version of the default text widget where you may have Text, HTML,, CSS JavaScript, Flash and/or PHP as content with linkable widget title. 
+An enhanced version of the default text widget where you may have Text, HTML, CSS, JavaScript, Flash and/or PHP as content with linkable widget title. 
 
 Options:
 
@@ -20,7 +20,7 @@ Options:
 * Title URL
 * Open URL in new window
 * Widget CSS class
-* Content which supports Text, HTML, CSS, JavaScript, Flash and/or PHP.
+* Content which support HTML, JavaScript, Flash, PHP, CSS.
 * Automatically add paragraphs
 * Bare widget (do not output before/after_widget/title)
 
@@ -53,6 +53,13 @@ This adds a CSS class parameter to each widget.
 This is the initial release.
 
 == Changelog ==
+
+= 1.3.2 =
+* Bug fixes
+
+= 1.3 =
+* Fixed debug warnings
+* Fixed code merge issue
 
 = 1.2 =
 * This adds option to display bare text (no before/after widget/title elements are shown).

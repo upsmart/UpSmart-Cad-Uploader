@@ -2,9 +2,9 @@
 Contributors: zaantar
 Tags: user, users, registration, manager, multisite, moderation, moderating
 Donate link: http://zaantar.eu/index.php?page=Donate
-Requires at least: 3.2
-Tested up to: 3.4.1
-Stable tag: 2.1.5
+Requires at least: 3.4
+Tested up to: 3.4.2
+Stable tag: 3.0.1
 
 Provides a system for registration requests and their processing in multisite. Two-level moderation. 
 
@@ -60,6 +60,13 @@ If you experience any problems:
 4. Send me the logs (from WLS or from log.txt file, which is created within plugin directory) with description of the problem.
 
 == Changelog ==
+
+= 3.0.1 =
+* quick bugfix: using non-existing function in extended logging mode
+* sorry guys, i know the plugin is a mess now, but i currently have no free time at all - in case of further trouble (a) seek answers in support forum (b) use older version (below 3.0) (c) please be patient
+
+= 3.0 =
+* massive code restructuralization - getting ready for adding more features
 
 = 2.1.5 =
 * akismet settings on network level
@@ -133,3 +140,8 @@ If you experience any problems:
 
 = 1.0 =
 * first version
+
+== Upgrade Notice ==
+
+= 3.0 =
+Massive code restructuralization. MAY contain some bugs. I need feedback - will spped up the release of next version.

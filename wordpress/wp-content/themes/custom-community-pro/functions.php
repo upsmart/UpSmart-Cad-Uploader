@@ -4,12 +4,34 @@ define('is_pro', 1);
 require_once( dirname(__FILE__) . '/admin/cheezcap.php');
 require_once( dirname(__FILE__) . '/core/loader.php');
 
-/*added function for company profiles blog*/
+/*added function for company profiles blog - Tobias*/
 function get_category_id($cat_name){
 	$term = get_term_by('name', $cat_name, 'category');
 	return $term->term_id;
 }
+\
+/*added stl extension for CAD uploads - Tobias
 
+NOTE: This doesn't work ... Wordpress is blocking this
+function upsmart_myme_types($mime_types){
+    $mime_types['stl'] = 'application/sla'; 
+    
+		//unset($mime_types['pdf']); //Removing the pdf extension
+		
+		
+		 $mime_types = array(
+        'jpg|jpeg|jpe' => 'image/jpeg',
+        'gif' => 'image/gif',
+        'png' => 'image/png',
+        'bmp' => 'image/bmp',
+        'tif|tiff' => 'image/tiff'
+    );
+		
+		
+    return $mime_types;
+}
+add_filter('upload_mimes', 'upsmart_myme_types', 1, 1);
+*/
 
 add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { 
 	if ( file_exists(TEMPLATEPATH . "/single-{$cat->term_id}.php") ) 
