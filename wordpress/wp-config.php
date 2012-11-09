@@ -22,7 +22,7 @@ define('DB_NAME', 'goupsmar_wrdp1');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'G<>thewise');
+define('DB_PASSWORD', 't/>/wise');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
