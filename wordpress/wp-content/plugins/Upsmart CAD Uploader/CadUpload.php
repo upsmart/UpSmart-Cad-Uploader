@@ -4,45 +4,121 @@ DEFINE( 'UPSMART_CAD_SCRIPTS_URL', trailingslashit( WP_PLUGIN_URL ) . basename( 
 
 Class CadUpload{
 	
+	private $STL_Uploads_Dir = "/home/aaron/Project-UpSmart/wordpress/wp-content/cad/";
+	private $Conversion_Script = "/home/aaron/Project-UpSmart/wordpress/wp-content/plugins/Upsmart CAD Uploader/conversion.script/";
+	
 	public function _construct(){}
 	
-	public function saveUpload($field_name = null, $user_id=null){
+	public function saveUpload($field_name = null, $user_id=null){	
 		
+		// The default error handler.
+		if ( ! function_exists( 'wp_handle_upload_error' ) ) {
+			function wp_handle_upload_error( &$file, $message ) {
+				return array( 'error'=>$message );
+			}
+		}
+	
+		$upload_error_handler = 'wp_handle_upload_error';
+			
+		//From PHP.net
+		$upload_error_strings = array( false,
+		__( "The uploaded file exceeds the <code>upload_max_filesize</code> directive in <code>php.ini</code>." ),
+		__( "The uploaded file exceeds the <em>MAX_FILE_SIZE</em> directive that was specified in the HTML form." ),
+		__( "The uploaded file was only partially uploaded." ),
+		__( "No file was uploaded." ),
+		'',
+		__( "Missing a temporary folder." ),
+		__( "Failed to write file to disk." ),
+		__( "File upload stopped by extension." ));
+			
 		if(is_null($field_name))
 			die("Need CAD field name");
+			
+		$file = $_FILES[$field_name];
+			
+		// A successful upload will pass this test. It makes no sense to override this one.
+		if ( ! empty( $file['error'] ) )
+			return $upload_error_handler( $file, $upload_error_strings[$file['error']] );
+
+		// A non-empty file will pass this test.
+		if (!(filesize($file['tmp_name']) > 0 ) )
+			return $upload_error_handler( $file, __( 'File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini.' ));
+
+		// A properly uploaded file will pass this test. There should be no reason to override this one.
+		if (! @ is_file( $file['tmp_name'] ) )
+			return $upload_error_handler( $file, __( 'Specified file does not exist.' ));
+
+		$fullFileName =$file['name'];
+		print_r($file);
+        echo "<br/>";
 		
+		// A proper stl file is submitted by validating mime type extension
+		if(!preg_match("/^.*\.(stl)$/i", $fullFileName)){	
+			return $upload_error_handler( $file, __( 'Specified file does not exist.' ));
+		}
+			
+		echo "Script is a valid stl file...<br/>";
+
 		//blender -b -P cad.import.py -- 'KAPPA'
-		
+		// /home/aaron/www/wp-content/plugins/KAPPA.stl
 		//convert file to X3Dom
 		//aopt -i KAPPA.x3d -N KAPPA.html
-		
-		//$output = shell_exec('ls -l ./conversion.script');
-		if(!preg_match("/^.*\.(stl)$/i", $_FILES[$field_name]['name'])){
-			echo "Script is a invalid stl file...";
-			echo "Terminating...";
-			return false;
-		}
-		
-		echo "Script is a valid stl file...<br/>";
 		//Current pwd ==> /home/aaron/Project-UpSmart/wordpress/wp-admin
-		$fileName = strstr($_FILES[$field_name]['name'], '.', true);
-		//$output = shell_exec('cd ../wp-content/plugins/Upsmart\ CAD\ Uploader/conversion.script/');
 		
-		print_r($output);
-		$output = shell_exec('pwd');
-		//$output = shell_exec('blender -b -P ../wp-content/plugins/Upsmart\ CAD\ Uploader/conversion.scripts/cad.import.py -- ' .$fileName);
-        print_r($output);
+		// A writable uploads dir will pass this test. Again, there's no point overriding this one.
+		if ( ! ( ( $uploads = wp_upload_dir() ) && false === $uploads['error'] ) )
+			return $upload_error_handler( $file, $uploads['error'] );
+		
+	    $filename = wp_unique_filename( $this->STL_Uploads_Dir, $fullFileName, null );
+        $new_file = $this->STL_Uploads_Dir. "/$filename";
+
+		if ( false === @ move_uploaded_file( $file['tmp_name'], $new_file ) )
+			return $upload_error_handler( $file, sprintf( __('The uploaded file could not be moved to %s.' ), $this->STL_Uploads_Dir) );
+
+        print_r(strstr($filename, '.', true));
         echo "<br/>";
-		print_r($_FILES[$field_name]);		
-		//$FILES[ $field_name]['type']
+        print_r($this->STL_Uploads_Dir);
+        echo "<br/>";
+
+        // Create x3d file from stl file
+        $nameOfFile = strstr($filename, '.', true);
+        /*
+		$output = shell_exec('blender -b -P ' . $this->Conversion_Script . 'cad.import.py -- ' .  . ' ' . $this->STL_Uploads_Dir);
+        print_r($output);
+        echo "<br/>";	
+        * */
+        
+        $x3dFile = "KAPPA.x3d";
+        $htmlFile = $nameOfFile . ".html";
+		
+		// Create x3d file from stl file
+		$output = shell_exec('aopt -i ' . $this->STL_Uploads_Dir . $x3dFile  . ' -N ' . $this->STL_Uploads_Dir . $htmlFile);
+        print_r($output);
+        echo "<br/>";	
+		
+		$htmlFilePath = $this->STL_Uploads_Dir . $htmlFile;
+	    // Set correct file permissions
+		$stat = stat( dirname($htmlFilePath));
+		$perms = $stat['mode'] & 0000666;
+		@ chmod( $htmlFilePath, $perms );
+	
+		// Replace stl file with html file
+		$file['name'] =  $htmlFile;
+		$file['tmp_name'] = $htmlFilePath;
+		$file['type'] = 'text/html';
+		$file['error'] = 0;
+		$file['size'] = filesize($htmlFilePath);
+		
+		print_r($file);
 		
 		//Move the file to the uploads directory, returns an array
-		//$uploaded_file = $this->handleUpload($_FILES[$field_name] );
+		$uploaded_file = $this->handleUpload($file);
 			
-	    //print_r($uploaded_file);		
+	    print_r($uploaded_file);
+	    		
 		if(!isset($uploaded_file['error']) && isset($uploaded_file['file'])) {
             $filetype   = wp_check_filetype(basename($uploaded_file['file']), null);
-            $title      = $_FILES[ $field_name]['name'];
+            $title      = $file['name'];
             $ext        = strrchr($title, '.');
             $title      = ($ext !== false) ? substr($title, 0, -strlen($ext)) : $title;
 		}
@@ -60,7 +136,7 @@ Class CadUpload{
 		
 		//Build our array of data to be inserted as a post
 		$attachment = array(
-			'post_mime_type' => $_FILES[ $field_name]['type'],
+			'post_mime_type' => $file['type'],
 			'guid' => $guid,
 			'post_title' => addslashes($title),
 			'post_content' => '',
@@ -83,7 +159,7 @@ Class CadUpload{
 	
 	public function handleUpload( $file=array() ){
 		require_once( ABSPATH . 'wp-admin' . '/includes/file.php' );
-		return wp_handle_upload($file, array( 'test_form' => false), date('Y/m') );
+		return wp_handle_upload($file, array( 'test_form' => false , 'test_upload' => false), date('Y/m') );
 	}
 	
 	public function buildGuid( $file=null ){

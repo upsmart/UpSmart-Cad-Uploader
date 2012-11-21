@@ -16,7 +16,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'goupsmar_wrdp1');
+define('DB_NAME', 'development');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'qAM -7E@$GQR90#h9;?x*W2~#smuKF5x-QPxkI:hT[!q2xr{@5-uLx9~z:PEw7_;');
-define('SECURE_AUTH_KEY',  'Ba>EYDPW:+>6#7CudBx(2^O/C>tXJ)SB2~&jrBxy(6+,!d<roXITetu!--zQ V(U');
-define('LOGGED_IN_KEY',    'ej}mHy_c0y]{kim3,@F3Jf^g[#(h0/}a*[{Lo#MLYZ<L]P~W+zu7^< CX?deW/8k');
-define('NONCE_KEY',        'HjZ[qtXf`u4T zX+VMXoxB`ND-JSZJAI)?<&~F-,c)R2-DN,;cEN!!$y[%wlp2!z');
-define('AUTH_SALT',        'V?/6Ey8TYT5uj</YGih^cq5e-pyhtgWl+FC5~UeH+8wjZ]QKnYtA#KF;V)::r#Pb');
-define('SECURE_AUTH_SALT', 'hJ#ljvI8>G-DpYc6u~}fD0*RJ!ew}CtlqSA?]s>bIz$5oC]4eCO<sMK|pAzor?0T');
-define('LOGGED_IN_SALT',   '$(~@Nb<v/As&[;zCG8DBWGD(I{bOEGvGSY>$SI Ck>xEtt*-/+adk4+vt:f@-oOR');
-define('NONCE_SALT',       'l~0r@+gkG`|TP{RS/QpIf?s /|jAoaH`-j:hB@wH+IaV=.qHR@B^q?dl#R|#]T/;');
+define('AUTH_KEY',         '+>4rl#+WfyG[un1gDo.H3fv)4n>,t=]FsPo^kjzW!|2kJ9Ot-d9in}+fR_~wYh:a');
+define('SECURE_AUTH_KEY',  'UeR>NY70y#x>+vfbUw$_y?`Z8TWl>J]<93]$;$A+Db!D+6nV-kok+]2~^e)XpKEq');
+define('LOGGED_IN_KEY',    '~o__jO?^+X3B.+bMLR7&/M.A<{bq<mO1aHS]Ta)<.+0MJFr-:_4(z6,;!-v,[4aq');
+define('NONCE_KEY',        'KA3t3}=aoG8@:#ZIBRFr2; NLqBa1FJ2@Ln;_i~W-?f<?)hM^kn(|Q$[y{[^{enP');
+define('AUTH_SALT',        '-5`NtIkyEq-|i/wp}^_bCWd?F.)7|@;8-dR>KQ|Q2_92G|v?4SN|qYM=Ci+4-QZ-');
+define('SECURE_AUTH_SALT', 'gZ1s3#&{V`t+BONPBS{D$-)gH=}Y#r-oAJpdmaper5Zc;#4@uBB+whC2>&w<p4-]');
+define('LOGGED_IN_SALT',   '{:N!Wrh/{;q^:5-OJ[MZe4t?S?o^;p|J>K-2fv077Ss,@M|;7H=y-i38|NBbA+SN');
+define('NONCE_SALT',       'abkdw32om4A4Aqy-?2Ym6_m[VJY)]#6K~8bSw3^I$oD<ZPY4T*^D]|EsZraI?U2S');
 
 /**#@-*/
 
@@ -59,7 +59,7 @@ define('NONCE_SALT',       'l~0r@+gkG`|TP{RS/QpIf?s /|jAoaH`-j:hB@wH+IaV=.qHR@B^
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'vcm_';
+$table_prefix  = 'wp_';
 
 /**
  * WordPress Localized Language, defaults to English.
@@ -78,7 +78,15 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
+
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', false);
+$base = '/';
+define('DOMAIN_CURRENT_SITE', 'localhost');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
 
 /* That's all, stop editing! Happy blogging. */
 
@@ -88,3 +96,6 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+/* Enable multisite */
+define('WP_ALLOW_MULTISITE', true);

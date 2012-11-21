@@ -5,6 +5,8 @@ import bpy
 import sys
 
 orgFile = sys.argv[5]
+#uPath = sys.argv[6] + '/'
+uPath = "/home/aaron/Project-UpSmart/wordpress/wp-content/cad/"
 stlFile = orgFile + '.stl'
 x3dFile = orgFile + '.x3d'
 	
@@ -12,8 +14,8 @@ x3dFile = orgFile + '.x3d'
 bpy.ops.object.delete(use_global=False)
 
 #Import stl file
-bpy.ops.import_mesh.stl(filepath=stlFile, filter_glob="*.stl", files=[{"name":stlFile, "name":stlFile}], directory="./")
-
+bpy.ops.import_mesh.stl(filepath= uPath + stlFile)
+#files=[{"name":"KAPPA.stl"}], directory="/home/sam/Downloads"
 #Evaluates dimensions
 
 k=15/bpy.data.objects[orgFile].dimensions[1]
@@ -37,4 +39,4 @@ bpy.data.objects[orgFile].dimensions = (x,15,z)
 #bpy.ops.object.camera_add(view_align=True, enter_editmode=False, location=(29.924, -26.032, 21.336), rotation=(63.559, 0.62, 46.692))
 
 #Export to x3d
-bpy.ops.export_scene.x3d(filepath=x3dFile, check_existing=True, filter_glob="*.x3d", use_selection=False, use_apply_modifiers=True, use_triangulate=False, use_normals=False, use_compress=False, use_hierarchy=True, name_decorations=True, use_h3d=False, axis_forward='Z', axis_up='Y', path_mode='AUTO')
+bpy.ops.export_scene.x3d(filepath= uPath + x3dFile, check_existing=True, use_selection=False, use_apply_modifiers=True, use_triangulate=False, use_normals=False, use_compress=False, use_hierarchy=True, name_decorations=True, use_h3d=False, axis_forward='Z', axis_up='Y', path_mode='AUTO')
