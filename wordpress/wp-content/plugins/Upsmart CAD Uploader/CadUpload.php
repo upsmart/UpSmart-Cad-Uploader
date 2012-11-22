@@ -5,7 +5,7 @@ DEFINE( 'UPSMART_CAD_SCRIPTS_URL', trailingslashit( WP_PLUGIN_URL ) . basename( 
 Class CadUpload{
 	
 	private $STL_Uploads_Dir = "/home/aaron/Project-UpSmart/wordpress/wp-content/cad/";
-	private $Conversion_Script = "/home/aaron/Project-UpSmart/wordpress/wp-content/plugins/Upsmart CAD Uploader/conversion.script/";
+	private $Conversion_Script = "/home/aaron/Project-UpSmart/wordpress/wp-content/plugins/Upsmart\ CAD\ Uploader/conversion.script/";
 	
 	public function _construct(){}
 	
@@ -80,11 +80,13 @@ Class CadUpload{
         $nameOfFile = strstr($filename, '.', true);
         
         echo "Executing stl to xdom conversion script...<br/>";
-		$output = shell_exec('blender -b -P ' . $this->Conversion_Script . 'cad.import.py -- ' . $nameOfFile);
+        echo "using >> " . 'blender -b -P ' . $this->Conversion_Script . 'cad.import.py -- ' . $nameOfFile;
+		echo "<br/><br/>";
+		$output = shell_exec('blender -b -P ' . $this->Conversion_Script . 'cad.import.py -- ' . $nameOfFile . ' ' . $this->STL_Uploads_Dir);
         print_r($output);
         echo "<br/><br/>";	
                
-        $x3dFile = "KAPPA.x3d";
+        $x3dFile = $nameOfFile . ".x3d";
         $htmlFile = $nameOfFile . ".html";
 		
 		echo "Executing xdom to html conversion script...<br/>";
@@ -97,7 +99,7 @@ Class CadUpload{
 	    // Set correct file permissions
 		$stat = stat( dirname($htmlFilePath));
 		$perms = $stat['mode'] & 0000666;
-		@ chmod( $htmlFilePath, $perms );
+		@chmod( $htmlFilePath, $perms );
 	
 		// Replace stl file with html file
 		$file['name'] =  $htmlFile;
@@ -106,7 +108,7 @@ Class CadUpload{
 		$file['error'] = 0;
 		$file['size'] = filesize($htmlFilePath);
 		
-		print_r($file);
+		print_r($htmlFilePath);
 		 echo "<br/>";	
 		//Move the file to the uploads directory, returns an array
 		$uploaded_file = $this->handleUpload($file);

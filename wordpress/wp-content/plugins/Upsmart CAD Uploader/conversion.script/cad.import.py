@@ -5,8 +5,7 @@ import bpy
 import sys
 
 orgFile = sys.argv[5]
-#uPath = sys.argv[6] + '/'
-uPath = "/home/aaron/Project-UpSmart/wordpress/wp-content/cad/"
+uPath = sys.argv[6]
 stlFile = orgFile + '.stl'
 x3dFile = orgFile + '.x3d'
 	
