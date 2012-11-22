@@ -49,8 +49,6 @@ Class CadUpload{
 			return $upload_error_handler( $file, __( 'Specified file does not exist.' ));
 
 		$fullFileName =$file['name'];
-		print_r($file);
-        echo "<br/>";
 		
 		// A proper stl file is submitted by validating mime type extension
 		if(!preg_match("/^.*\.(stl)$/i", $fullFileName)){	
@@ -70,31 +68,30 @@ Class CadUpload{
 			return $upload_error_handler( $file, $uploads['error'] );
 		
 	    $filename = wp_unique_filename( $this->STL_Uploads_Dir, $fullFileName, null );
-        $new_file = $this->STL_Uploads_Dir. "/$filename";
+        $new_file = $this->STL_Uploads_Dir. "$filename";
 
-		if ( false === @ move_uploaded_file( $file['tmp_name'], $new_file ) )
+		if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) )
 			return $upload_error_handler( $file, sprintf( __('The uploaded file could not be moved to %s.' ), $this->STL_Uploads_Dir) );
 
-        print_r(strstr($filename, '.', true));
-        echo "<br/>";
-        print_r($this->STL_Uploads_Dir);
-        echo "<br/>";
-
+        echo "Stl file moved to...<br/>$this->STL_Uploads_Dir";
+        echo "<br/><br/>";
+ 
         // Create x3d file from stl file
         $nameOfFile = strstr($filename, '.', true);
-        /*
-		$output = shell_exec('blender -b -P ' . $this->Conversion_Script . 'cad.import.py -- ' .  . ' ' . $this->STL_Uploads_Dir);
-        print_r($output);
-        echo "<br/>";	
-        * */
         
+        echo "Executing stl to xdom conversion script...<br/>";
+		$output = shell_exec('blender -b -P ' . $this->Conversion_Script . 'cad.import.py -- ' . $nameOfFile);
+        print_r($output);
+        echo "<br/><br/>";	
+               
         $x3dFile = "KAPPA.x3d";
         $htmlFile = $nameOfFile . ".html";
 		
+		echo "Executing xdom to html conversion script...<br/>";
 		// Create x3d file from stl file
 		$output = shell_exec('aopt -i ' . $this->STL_Uploads_Dir . $x3dFile  . ' -N ' . $this->STL_Uploads_Dir . $htmlFile);
         print_r($output);
-        echo "<br/>";	
+        echo "No errors...<br/><br/>";	
 		
 		$htmlFilePath = $this->STL_Uploads_Dir . $htmlFile;
 	    // Set correct file permissions
@@ -110,7 +107,7 @@ Class CadUpload{
 		$file['size'] = filesize($htmlFilePath);
 		
 		print_r($file);
-		
+		 echo "<br/>";	
 		//Move the file to the uploads directory, returns an array
 		$uploaded_file = $this->handleUpload($file);
 			
