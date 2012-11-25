@@ -1,0 +1,8 @@
+
+***  2012-10-05 20:55:45, sam @ 2 (http://projectupsmart.org):: murm_options_page_update() begin
+
+***  2012-10-05 20:55:45, sam @ 2 (http://projectupsmart.org):: installing MURM on this blog
+
+***  2012-10-05 20:55:45, sam @ 2 (http://projectupsmart.org):: installed successfully
+
+***  2012-10-05 20:55:45, sam @ 2 (http://projectupsmart.org):: murm_options_page_update() end

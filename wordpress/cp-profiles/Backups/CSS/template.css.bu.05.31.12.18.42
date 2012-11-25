@@ -1,0 +1,295 @@
+.cpwhat .upSmartGradient{
+background: white;
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2VkZWRlZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2Q2ZDZkNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(top, white 1%, #EDEDED 50%, #D6D6D6 99%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,white), color-stop(50%,#EDEDED), color-stop(99%,#D6D6D6));
+background: -webkit-linear-gradient(top, white 1%,#EDEDED 50%,#D6D6D6 99%);
+background: -o-linear-gradient(top, white 1%,#EDEDED 50%,#D6D6D6 99%);
+background: -ms-linear-gradient(top, white 1%,#EDEDED 50%,#D6D6D6 99%);
+background: linear-gradient(top, white 1%,#EDEDED 50%,#D6D6D6 99%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6d6d6',GradientType=0 );
+}
+
+.cpwhat *{
+margin: 0px;
+padding: 0px;
+}
+
+.cpwhat .shadowFull{
+box-shadow: 5px 5px 5px rgb(136, 136, 136);
+}
+
+.cpwhat .shadowTop{
+box-shadow: 5px 5px 5px rgb(136, 136, 136);
+}
+.cpwhat .shadowBottom{
+box-shadow: 5px 5px 5px rgb(136, 136, 136);
+}
+.cpwhat .shadowLeft{
+box-shadow: 5px 5px 5px rgb(136, 136, 136);
+}
+.cpwhat .shadowRight{
+box-shadow: 5px 5px 5px rgb(136, 136, 136);
+}
+
+.cpwhat .horizGradient{
+background: rgb(214,214,214); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(214,214,214,1) 43%, rgba(237,237,237,1) 74%, rgba(255,255,255,1) 98%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(43%,rgba(214,214,214,1)), color-stop(74%,rgba(237,237,237,1)), color-stop(98%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(214,214,214,1) 43%,rgba(237,237,237,1) 74%,rgba(255,255,255,1) 98%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(214,214,214,1) 43%,rgba(237,237,237,1) 74%,rgba(255,255,255,1) 98%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(214,214,214,1) 43%,rgba(237,237,237,1) 74%,rgba(255,255,255,1) 98%); /* IE10+ */
+background: linear-gradient(left,  rgba(214,214,214,1) 43%,rgba(237,237,237,1) 74%,rgba(255,255,255,1) 98%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.linkGradient{
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(255,255,255,1) 16%, rgba(237,237,237,1) 63%, rgba(214,214,214,1) 88%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(16%,rgba(255,255,255,1)), color-stop(63%,rgba(237,237,237,1)), color-stop(88%,rgba(214,214,214,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 16%,rgba(237,237,237,1) 63%,rgba(214,214,214,1) 88%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(255,255,255,1) 16%,rgba(237,237,237,1) 63%,rgba(214,214,214,1) 88%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(255,255,255,1) 16%,rgba(237,237,237,1) 63%,rgba(214,214,214,1) 88%); /* IE10+ */
+background: linear-gradient(left,  rgba(255,255,255,1) 16%,rgba(237,237,237,1) 63%,rgba(214,214,214,1) 88%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6d6d6',GradientType=1 ); /* IE6-9 */
+}
+
+/*** OVERWRITE CCM ***/
+div#content.cpwhat .padder{
+margin-left: 14px;
+margin-right: 0px;
+padding-right: 6px;
+padding-bottom: 6px;
+}
+
+div#container{
+background: none;
+box-shadow: none;
+}
+
+/*** END OVERWRITE ***/
+.cpwhat .radius{
+border-radius: 6px;
+}
+
+.cpwhat .whiteShell{
+background:none repeat scroll 0 0 #FFFFFF;
+border-radius: 6px;
+padding: 10px;
+}
+
+.cpwhat .left{
+float: left;
+}
+
+.cpwhat .right{
+float: right;
+}
+
+.clear{
+clear: both;
+}
+.textCenter{
+text-align: center;
+}
+.cpwhat .pagetitle{
+	padding: 8px;
+}
+
+.cpwhat .subHead{
+margin-top: 30px;
+margin-left: 35px;
+margin-bottom: 30px;
+padding: 4px;
+}
+
+.cpwhat .linktitle{
+padding: 8px;
+height: 22px;
+font-weight: bold;
+}
+
+.cpwhat #header{
+background-color: grey;
+width: 100%;
+height: 400px;
+text-align: center;
+line-height: 400px;
+}
+
+
+.cpwhat h3{
+font-size: 25px;
+line-height: 40px;
+color: #888;
+margin-bottom: 20px;
+}
+
+.cpwhat h3 a{
+display: block;
+width: 100%
+height: 100%;
+}
+
+.cpwhat h4{
+font-size: 15px;
+color: #888;
+width: 40%;
+}
+
+.cpwhat ul{
+   list-style-type: none;
+   text-align: center;
+   display: block;
+   padding: 0px;
+}
+
+.cpwhat li{
+ margin-bottom: 10px;
+ max-width: 100%;
+}
+
+.cpwhat li a{
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+}
+.cpwhat #linkSidebar{
+width: 230px;
+max-width: 230px;
+padding: 8px;
+margin-top: 30px;
+height: 900px;
+max-height: 100%;
+margin-bottom: 50px;
+}
+	.cpwhat #guestLogo{
+		margin: 0px auto;
+		margin-bottom: 20px;
+	}
+	.cpwhat span.icon{
+			background-repeat:no-repeat;
+			background-size: contain;
+			background-position: left center;
+			width: 20px;
+			height: 20px;
+	}
+	
+	.cpwhat span.bubble{
+			background-image:url(/cp-profiles/images/brainBubble.png);
+	}
+	.cpwhat span.bulb{
+			background-image:url(/cp-profiles/images/lightBulb.png);
+	}
+	.cpwhat span.beaker{
+			background-image:url(/cp-profiles/images/beaker.png);
+	}
+	
+	.cpwhat span.invest{
+			background-image:url(/cp-profiles/images/invest.png);
+	}
+	.cpwhat #sidebar a{
+	padding-right: 10px;
+	}
+	
+.cpwhat #information{
+width: 710px;
+margin-bottom: 14px;
+}   
+.cpwhat #contentMid{
+	width: 530px;
+	margin-bottom: 50px;
+}
+
+/*********** Who Page BEGIN ****************/
+	.personBlock{
+		width: inherit;
+		height: 200px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.personBlock img{
+		display: inline;
+	}
+	
+	.personBlock .bio{
+	    width: 350px;
+	    font-size: 12px;
+	    line-height: 30px;
+            text-align: justify;
+		
+	}
+	.personBlock span{
+	  display: block;
+	}
+/*********** Who Page END ****************/
+
+/*********** Home Page BEGIN ****************/
+       .cpwhat #mediaFrame{
+    	width: 510px;
+    	min-height: 400px;
+	padding: 10px;
+	background-image:url(/cp-profiles/images/HD_Television.svg);
+	background-size: 1000px 500px;
+	background-position: -230px -50px;
+	margin-bottom: 20px;
+	}	
+
+	.cpwhat #mediaFrame embed{
+		margin-left: 65px;
+		margin-top: 50px;
+	}
+	
+	.cpwhat #contentMid ul{
+		display: block;
+		width: inherit;
+	}
+	.cpwhat #contentMid li{
+		width: 48%;
+		display: block;
+	}
+	.cpwhat #contentMid li:first-child{
+		margin-right: 4%;
+	}
+	.cpwhat #contentMid li a{
+		height: 40px;
+		line-height: 40px;
+		display: block;
+		width: 100%;
+	}
+/*********** Home Page END ****************/
+	
+	#socialLinks{
+	width: 130px;
+	margin-top: 75px;
+	margin-left: 20px;
+	}
+	.slink{
+		padding: 10px;
+		margin: 0px auto;
+	}
+	.rss{
+		background-image:url(/cp-profiles/images/icon-rss.png);
+		background-repeat:no-repeat;
+		width: 35px;
+		height: 35px;
+		margin: 0px 0px 0px 10px;
+	}
+	
+.cpwhat #contentMid p{
+font-size: 14px;
+line-height: 28px;
+text-indent: 40px;
+text-align: justify;
+}
+
+div#sidebar.widgetarea{
+position: absolute; 
+margin: 0px;
+margin-top: 20px;
+max-width: inherit;
+}
+
+.cpwhat #blog{
+max-width: 710px;
+}

@@ -1,0 +1,78 @@
+/*
+File: Company Profiles Administration Stylesheet
+Author: Aaron Tobias
+*/
+.wrap h2{
+margin-bottom: 40px;
+}
+
+.wrap label, h3{
+display: block;
+font-size: 1.2em;
+font-weight: bold;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+input[type="radio"], input[type="file"]{
+display: inline;
+}
+input[type="submit"]{
+	color: #d9eef7;
+	border: solid 1px #0076a3;
+	background: #0095cd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+	display: block;
+	margin-top: 20px;
+	font-size: 1.4em;
+	padding: 10px;
+}
+input[type="submit"]:hover{
+	color: #d9eef7;
+	background: #007ead;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+	background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+}
+input[type="submit"]:active{
+	color: #80bed6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+	background: -moz-linear-gradient(top,  #0078a5,  #00adee);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+}
+
+#addMember{
+	color: #faddde;
+	border: solid 1px #980c10;
+	background: #d81b21;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#aa1317));
+	background: -moz-linear-gradient(top,  #ed1c24,  #aa1317);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+	padding: 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: block;
+	padding-right: 10px;
+	font-size: 1.2em;
+	border-radius: 5px;
+}
+#addMember span{
+	background: #0095cd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+	padding: 5px;
+}
+#addMember:hover {
+	color: white;
+}
+
+#addMember:active {
+	color: #de898c;
+	background: -webkit-gradient(linear, left top, left bottom, from(#aa1317), to(#ed1c24));
+	background: -moz-linear-gradient(top,  #aa1317,  #ed1c24);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');
+}
+

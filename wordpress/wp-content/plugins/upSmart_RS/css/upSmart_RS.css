@@ -1,0 +1,110 @@
+#upSmart_RS{
+ margin-left: -240px;
+ width: 210px;
+ float: right;
+}
+
+.approve{
+background: white;
+height: 500px;
+padding: 10px;
+z-index: 1000;
+padding-left: 10px;
+padding-top: 10px;
+text-align: left;
+border: 1px solid #888;
+border-right: none;
+}
+.approve a{
+display: inline-block;
+padding: 0px;
+}
+.approve ul{
+margin-bottom: 10px;
+}
+.approve ul li{
+list-style: circle;
+margin-left: 50px;
+}
+.approve p{
+font-weight: bold;
+margin: 0px;
+padding: 0px;
+}
+#appPreLoad{
+background-image: url("http://go-upsmart.com/wp-content/plugins/upSmart_RS/images/Approve_Mouseover.png"); 
+background-repeat: no-repeat; 
+background-position: -1000px -1000px;
+}
+a.rs_img{
+background-image: url('http://go-upsmart.com/wp-content/plugins/upSmart_RS/images/Approve_.png');
+background-size: 120px 120px;
+background-repeat:no-repeat;
+background-position:center; 
+cursor: pointer;
+width: 188px;
+height: 111px;
+margin-bottom: 10px;
+margin-top: 10px;
+margin-left: 12px;
+}
+
+a.rs_img:hover{
+background-image: url('http://go-upsmart.com/wp-content/plugins/upSmart_RS/images/Approve_Mouseover.png');
+background-size: 120px 120px;
+border: 1px solid #888;
+border: none;
+box-shadow: none;
+margin-top: 10px;
+margin-bottom: 10px;
+margin-left: 12px;
+}
+
+.rs_approved{
+background-image: url('http://go-upsmart.com/wp-content/plugins/upSmart_RS/images/Approved!_red.png');
+background-size: 120px 120px;
+background-repeat:no-repeat;
+background-position:center; 
+cursor: default;
+width: 188px;
+height: 111px;
+margin-bottom: 10px;
+margin-top: 10px;
+margin-left: 12px;
+}
+
+.rs_loading{
+background-image: url('http://go-upsmart.com/wp-content/plugins/upSmart_RS/images/load.gif');
+background-size: 110px 110px;
+background-repeat:no-repeat;
+background-position:center; 
+width: 188px;
+height: 111px;
+display: inline-block;
+margin-bottom: 10px;
+margin-top: 10px;
+margin-left: 12px;
+}
+
+span.rs_rank{
+width: 100px;
+height: 50px;
+line-height: 50px;
+text-align: center;
+font-size: 30px;
+font-weight: bold;
+display: inline-block;
+border: 2px solid #888;
+border-radius: 25px;
+background-color: #F0F0F0;
+box-shadow: 3px 3px 1px #F5F5F5;
+margin-left: 60px;
+}
+
+#ratePrompt{
+margin: 0px;
+padding: 0px;
+margin-top: 10px;
+font-weight: bold;
+text-align: center;
+}

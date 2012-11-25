@@ -1,0 +1,80 @@
+/*
+File Name: 		One Column
+Description: 	Responsive one column layout
+Version: 		0.1
+Author: 		Satrya
+Since:			Tiga 0.1
+License: 		GNU General Public License v3
+License URI: 	http://www.gnu.org/licenses/gpl-3.0.html
+*/
+#page {
+  *zoom: 1;
+  max-width: 43.75em;
+  _width: 43.75em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+#page:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#primary {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -1.25em;
+  display: inline;
+}
+
+@media screen and (max-width: 767px) {
+  .entry-thumbnail a,
+  .entry-thumbnail img {
+    height: 100%;
+  }
+}
+
+#colophon {
+  *zoom: 1;
+  max-width: 43.75em;
+  _width: 43.75em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+#colophon:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#colophon .footer-widget {
+  width: 31.42857%;
+  float: left;
+  margin-right: 2.85714%;
+  display: inline;
+}
+#colophon .footer-3 {
+  float: right;
+  margin-right: 0;
+  #margin-left: -1.25em;
+  display: inline;
+}
+
+#site-credit {
+  *zoom: 1;
+  max-width: 43.75em;
+  _width: 43.75em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+#site-credit:after {
+  content: "";
+  display: table;
+  clear: both;
+}
