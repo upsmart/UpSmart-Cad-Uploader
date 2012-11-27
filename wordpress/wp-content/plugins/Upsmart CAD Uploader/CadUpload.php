@@ -49,7 +49,7 @@ Class CadUpload{
 			return $upload_error_handler( $file, __( 'Specified file does not exist.' ));
 
 		$fullFileName =$file['name'];
-		
+		/**/
 		// A proper stl file is submitted by validating mime type extension
 		if(!preg_match("/^.*\.(stl)$/i", $fullFileName)){	
 			return $upload_error_handler( $file, __( 'Specified file does not exist.' ));
@@ -96,10 +96,6 @@ Class CadUpload{
         echo "No errors...<br/><br/>";	
 		
 		$htmlFilePath = $this->STL_Uploads_Dir . $htmlFile;
-	    // Set correct file permissions
-		$stat = stat( dirname($htmlFilePath));
-		$perms = $stat['mode'] & 0000666;
-		@chmod( $htmlFilePath, $perms );
 	
 		// Replace stl file with html file
 		$file['name'] =  $htmlFile;
@@ -108,10 +104,11 @@ Class CadUpload{
 		$file['error'] = 0;
 		$file['size'] = filesize($htmlFilePath);
 		
-		print_r($htmlFilePath);
+		print_r($file);
 		 echo "<br/>";	
+		 /**/
 		//Move the file to the uploads directory, returns an array
-		$uploaded_file = $this->handleUpload($file);
+		$uploaded_file = $this->handleUpload($file, $uploads);
 			
 	    print_r($uploaded_file);
 	    		
@@ -156,9 +153,37 @@ Class CadUpload{
 		
 	}
 	
-	public function handleUpload( $file=array() ){
+	public function handleUpload( $file=array(), $uploads = array() ){
+		/*
 		require_once( ABSPATH . 'wp-admin' . '/includes/file.php' );
 		return wp_handle_upload($file, array( 'test_form' => false , 'test_upload' => false), date('Y/m') );
+		*/
+
+		// Move the file to the uploads dir
+		$filename = $file['name'];
+		$type = $file['type'];
+		$new_file = $uploads['path'] . "/$filename";
+		
+		echo $new_file . "  vs  " . $file['tmp_name'];
+		if ( false === @copy( $file['tmp_name'], $new_file ) )
+			return $upload_error_handler( $file, sprintf( __('The uploaded file could not be moved to %s.' ), $uploads['path'] ) );
+
+		unlink($file['tmp_name']);
+		
+		// Set correct file permissions
+		$stat = stat( dirname( $new_file ));
+		$perms = $stat['mode'] & 0000666;
+		@ chmod( $new_file, $perms );
+
+		// Compute the URL
+		$url = $uploads['url'] . "/$filename";
+
+		if ( is_multisite() )
+			delete_transient( 'dirsize_cache' );
+
+		return apply_filters( 'wp_handle_upload', array( 'file' => $new_file, 'url' => $url, 'type' => $type ), 'upload' );
+			
+	
 	}
 	
 	public function buildGuid( $file=null ){
