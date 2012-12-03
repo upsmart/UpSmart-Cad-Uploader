@@ -22,6 +22,10 @@ function  upsmart_cad_upload_110n_init(){
 
 add_action( 'init','upsmart_cad_upload_110n_init' );
 
+function enqueue_cad_script() { //loads plugin-related javascripts
+    wp_enqueue_script( 'cad_uploader_script', plugins_url('/uploader.js', __FILE__) );
+}
+add_action('admin_enqueue_scripts', 'enqueue_cad_script');
 
 function cad_upload_media_menu($tabs) {
 	$newtab = array('cadfile' => __('CAD Upload', 'cadupload'));
@@ -59,6 +63,43 @@ function cad_upload_media_menu_handle() {
 }
 
 add_action('media_upload_cadfile', 'cad_upload_media_menu_handle');
+
+
+
+function my_attachment_fields_to_edit( $form_fields, $post ) {
+    $supported_exts = get_allowed_mime_types(); // array of mime types to show checkbox for
+
+    if ( in_array( $post->post_mime_type, $supported_exts ) ) {
+        // file is supported, show fields
+        $use_sc = true; // check box by default (false not to, or use other criteria)
+
+        $checked = ( $use_sc ) ? 'checked' : '';
+
+        $form_fields['use_sc'] = array(
+            'label' =>  'Use SC',
+            'input' =>  'html',
+            'html'  =>  "<input type='checkbox' {$checked} name='attachments[{$post->ID}][use_sc]' id='attachments[{$post->ID}][use_sc]' /> " . __("Insert shortcode instead of link", "txtdomain"),
+            'value' =>  $use_sc
+        );
+    }
+
+    return $form_fields;
+}
+
+function my_media_insert( $html, $id, $attachment ) {
+    if ( isset( $attachment['use_sc'] ) && $attachment['use_sc'] == "on" ) {
+        $output = '[cadshortcodeblahTest url="'.$attachment['url'].'"]';
+        return $output;
+    } else {
+        return $html;
+    }
+}
+
+// add checkbox to attachment fields
+add_filter( 'attachment_fields_to_edit', 'my_attachment_fields_to_edit', null, 2 );
+
+// insert shortcode if checkbox checked, otherwise default (link to file)
+add_filter( 'media_send_to_editor', 'my_media_insert', 20, 3 );
 
 
 function modify_post_mime_types($post_mime_types) {
