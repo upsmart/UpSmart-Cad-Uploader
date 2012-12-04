@@ -22,11 +22,6 @@ function  upsmart_cad_upload_110n_init(){
 
 add_action( 'init','upsmart_cad_upload_110n_init' );
 
-function enqueue_cad_script() { //loads plugin-related javascripts
-    wp_enqueue_script( 'cad_uploader_script', plugins_url('/uploader.js', __FILE__) );
-}
-add_action('admin_enqueue_scripts', 'enqueue_cad_script');
-
 function cad_upload_media_menu($tabs) {
 	$newtab = array('cadfile' => __('CAD Upload', 'cadupload'));
 	return array_merge($tabs, $newtab);
@@ -118,18 +113,21 @@ function _upsmart_cad_upload_get_userID()
   return $current_userID;
 }
 
-function upsmart_cad_upload_createXdom($fileUrl) {
+function upsmart_cad_upload_createXdom($attr = array()) {
 	global $post;
 	global $current_user;
+	
+	if(count($attr) == 0 )
+		wp_die( __( 'Shortcode was formulated incorrectly ') );
+	
+	$fileUrl = $attr['url'];
+	
 
-	$current_userID = _upsmart_cad_upload_get_userID();
+	//$current_userID = _upsmart_cad_upload_get_userID();
 	if(!$fileUrl){
 		wp_die( __( 'CAD upload file url is invalid: ' . $fileUrl ) );
 	}
-	
-	if(!file_exists($fileUrl)){
-		wp_die( __( 'CAD upload file cannot be found with specified url: ' . $fileUrl ) );
-	}
+
 	
 	$xDom = file_get_contents($fileUrl, FILE_USE_INCLUDE_PATH);
 	return $xDom;
