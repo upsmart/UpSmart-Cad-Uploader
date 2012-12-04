@@ -28,18 +28,21 @@ class Murm_Options {
 	
 	
 	function __get( $key ) {
-		if( in_array( $key, $this->network_cache ) ) {
-			//$this->p->ds( "getting key $key from network cache" );
-			return $this->network_cache[$key];
-		} else if( in_array( $key, $this->blog_cache ) ) {
-			//$this->p->ds( "getting key $key from blog cache: ".print_r( $this->blog_cache, true ) );
-			return $this->blog_cache[$key];
+		if( array_key_exists( $key, $this->network_cache ) ) {
+			$val = $this->network_cache[$key];
+			//$this->p->extended_log( "Getting option $key from network cache: $val." );
+		} else if( array_key_exists( $key, $this->blog_cache ) ) {
+			$val = $this->blog_cache[$key];
+			//$this->p->extended_log( "Getting option $key from blog cache: $val. Blog cache contains ".print_r( $this->blog_cache, true ) );
 		} else if( $this->load_option( $key ) ) {
-			return $this->blog_cache[$key];
+			$val = $this->blog_cache[$key];
+			//$this->p->extended_log( "Loaded option $key from blog options: $val." );
 		} else {
 			$this->load_network_options();
-			return $this->network_cache[$key];
+			$val = $this->network_cache[$key];
+			//$this->p->extended_log( "Loaded option $key from network options: $val." );
 		}
+		return $val;
 	}
 	
 	

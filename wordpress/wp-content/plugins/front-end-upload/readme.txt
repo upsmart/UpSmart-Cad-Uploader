@@ -3,8 +3,8 @@ Contributors: jchristopher
 Donate link: http://mondaybynoon.com/donate/
 Tags: upload, front end, front, end, media, picture, pictures
 Requires at least: 3.2
-Tested up to: 3.4.1
-Stable tag: 0.5.4.6
+Tested up to: 3.4.2
+Stable tag: 0.6
 
 Provides the most basic implementation allowing site visitors to upload files to the Media library and notify admin
 
@@ -14,8 +14,18 @@ Provides the most basic implementation allowing site visitors to upload files to
 
 This plugin will facilitate uploading files to your server, which by nature **should be considered risky**.
 
+**MAKE SURE** you have taken the proper precautions in protecting your uploads folder from prying eyes and malicious
+intent. At the very least make sure you've uploaded an empty index.html or index.php to prevent directory listing.
+Front End Upload takes a number of precautions to hopefully prevent unwanted file uploads but please be mindful that
+server configuration can help prevent unwanted outcomes.
+
 == Installation ==
 
+1. Prevent directory listing of your uploads directory (e.g. add index.html or index.php to wp-content/uploads)
+1. Ensure proper security measures are taken to prevent code execution (e.g. add `php_flag engine off` to .htaccess
+within wp-content/uploads)
+1. Implement other security measures you feel necessary to protect your wp-content/uploads directory from prying eyes
+ or malicous intent
 1. Upload the `front-end-upload` folder to your `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Edit your options under **Settings > Front End Upload**
@@ -27,6 +37,11 @@ This plugin will facilitate uploading files to your server, which by nature **sh
 1. The Front End Upload Options screen
 
 == Changelog ==
+
+= 0.6 =
+* Refactored the way file storage happens. Uploaded files are now obscured and
+  downloads are routed through the plugin so as to help prevent unwanted execution of uploaded files
+* Elaborated installation instructions
 
 = 0.5.4.6 =
 * Fixed a JavaScript issue that submitted the form too soon preventing accurate file

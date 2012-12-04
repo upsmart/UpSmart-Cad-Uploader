@@ -195,13 +195,35 @@ if (strpos($contentType, "multipart") !== false) {
 		die('{"jsonrpc" : "2.0", "error" : {"code": 102, "message": "Failed to open output stream."}, "id" : "id"}');
 }
 
+$feuidhash = 0;
+
 // Check if file has been uploaded
 if (!$chunks || $chunk == $chunks - 1) {
-    // Strip the temp .part suffix off
-    rename("{$filePath}.part", $filePath);
+
+    // obscure the file within the filesystem
+    $fileFlag           = uniqid( 'FEU' . md5( $fileName ) );
+    $filePathObscured   = $targetDir . DIRECTORY_SEPARATOR . $fileFlag;
+
+    // store the original file name for reference later
+    $file_record = array(
+        'post_title'    => $fileFlag,
+        'post_type'     => 'feu_file',
+        'post_status'   => 'private',
+    );
+    $cpt_id = wp_insert_post( $file_record );
+
+    // add our post meta
+    add_post_meta( $cpt_id, 'feu_fileflag', $fileFlag );
+    add_post_meta( $cpt_id, 'feu_filename', $fileName );
+    add_post_meta( $cpt_id, 'feu_filepath', $filePathObscured );
+
+    // tack on our hash
+    $feuidhash = uniqid( md5( $filePathObscured . time() ) );
+    add_post_meta( $cpt_id, 'feu_idhash',   $feuidhash );
+
+    // rename it to obscurity
+    rename( "{$filePath}.part", $filePathObscured );
 }
 
-// we're going to hash the location and send only that
-$final_hash = $front_end_upload->hash_location( $fileName, $hash );
-
+$final_hash = $feuidhash;
 die( $final_hash );

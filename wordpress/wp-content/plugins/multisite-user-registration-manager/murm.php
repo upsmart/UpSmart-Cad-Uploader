@@ -3,7 +3,8 @@
 Plugin Name: Multisite user registration manager
 Plugin URI: http://wordpress.org/extend/plugins/multisite-user-registration-manager
 Description: Provides a system for registration requests and their processing in multisite. Two-level moderation.
-Version: 3.0
+Version: 3.0.4
+Network: true
 Author: Zaantar
 Author URI: http://zaantar.eu
 License: GPL2
@@ -36,10 +37,6 @@ require_once(ABSPATH . WPINC . '/registration.php');
 
 require_once plugin_dir_path( __FILE__ ).'includes/Akismet.class.php';
 require_once plugin_dir_path( __FILE__ ).'includes/options.php';
-/*require_once plugin_dir_path( __FILE__ ).'includes/site-options.php';
-require_once plugin_dir_path( __FILE__ ).'includes/shortcode.php';
-require_once plugin_dir_path( __FILE__ ).'includes/moderation.php';
-require_once plugin_dir_path( __FILE__ ).'includes/mailing.php';*/
 require_once plugin_dir_path( __FILE__ ).'includes/database.php';
 
 
@@ -933,9 +930,14 @@ class Murm {
 	
 	
 	function is_spam_registration( $username, $email, $url, $content ) {
-		if( $this->o->is_antispam_active || $this->o->activate_akismet ) {
+		if( $this->o->is_antispam_active ) {
 			$key = $this->o->akismet_key;
+			$this->extended_log( "Antispam activated for this blog - checking RR. Akismet key is $key." );
+		} else if( $this->o->activate_akismet ) {
+			$key = $this->o->akismet_key;
+			$this->extended_log( "Antispam activated for whole network - checking RR. Akismet key is $key." );
 		} else {
+			$this->extended_log( "Antispam is not activated." );
 			return false;
 		}
 	
@@ -1109,7 +1111,7 @@ class Murm {
 	
 	function blog_moderation_page_confirm_delete() {
 		$rid = $_REQUEST['id'];
-		$request = $this->d->get_admin_request( $rid );
+		$request = $this->d->get_blog_request( $rid );
 		?>
 		<div class="wrap">
 			<h2><?php _e( 'Registration requests on this blog' , self::txd ); ?></h2>

@@ -2,8 +2,8 @@
 Contributors: brianfreytag
 Tags: social media, twitter, facebook, google+, googleplus, myspace, digg, email, rss, reddit, linkedin, orkut, youtube, buzz, social, icons, links, subscribe, follow, follow me, friendfeed, flickr, stumbleupon, vimeo, delicious, meetup, lastfm, foursquare, skype, blogger, wordpress, yelp, soundcloud, digital tunes, tumblr, hyves, etsy, tungle, plancast, slideshare, deviantart, better business bureau, merchant circle, asmallworld, live365, ping, itunes, picasa, steam, google talk, pandora, hulu, ebay, flixster, imdb, bandcamp, ustream, pinterest
 Requires at least: 2.9.2
-Tested up to: 3.3.2
-Stable tag: 2.9.4
+Tested up to: 3.4.2
+Stable tag: 2.9.5
 
 Adds links to all of your social media and sharing site profiles. Tons of icons come in 3 sizes, 4 icon styles, and 4 animations.
 
@@ -169,6 +169,13 @@ First - calm down. I'm happy to help you, and, if you ask those I've helped alre
 Please e-mail me at info at precisionwebdev dot com for help. My web server died in my move and I have no intention of putting it back up, so I will be 100% e-mail based from now on.
 
 == Changelog ==
+
+= 2.9.5 =
+
+* Fixed incorrect comment for Google Plus (previously the comment said Facebook)
+* Removed an errant extra quotation mark in the FriendFeed image tag
+* Added inline image sizes to each of the icons for better validation support
+* Changed the margin direction based on the alignment of the icons. Left margin for right aligned, right margin for left-aligned and centered.
 
 = 2.9.4 =
 
