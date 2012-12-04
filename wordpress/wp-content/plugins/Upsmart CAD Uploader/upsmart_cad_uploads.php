@@ -88,7 +88,7 @@ function my_attachment_fields_to_edit( $form_fields, $post ) {
 
 function my_media_insert( $html, $id, $attachment ) {
     if ( isset( $attachment['use_sc'] ) && $attachment['use_sc'] == "on" ) {
-        $output = '[cadshortcodeblahTest url="'.$attachment['url'].'"]';
+        $output = '[upsmart_load_cad_file url="'.$attachment['url'].'"]';
         return $output;
     } else {
         return $html;
@@ -108,6 +108,33 @@ function modify_post_mime_types($post_mime_types) {
 }
 
 add_filter('post_mime_types', 'modify_post_mime_types');
+
+
+function _upsmart_cad_upload_get_userID()
+{
+  global $current_user;
+  $current_userIP = dechex( sanitize_key( $_SERVER['HTTP_X_FORWARDED_FOR'] ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'] ) );
+  $current_userID = ( is_user_logged_in() && get_option( 'upSmart_RS_logbyip' ) == '' ) ? $current_user->ID : $current_userIP;
+  return $current_userID;
+}
+
+function upsmart_cad_upload_createXdom($fileUrl) {
+	global $post;
+	global $current_user;
+
+	$current_userID = _upsmart_cad_upload_get_userID();
+	if(!$fileUrl){
+		wp_die( __( 'CAD upload file url is invalid: ' . $fileUrl ) );
+	}
+	
+	if(!file_exists($fileUrl)){
+		wp_die( __( 'CAD upload file cannot be found with specified url: ' . $fileUrl ) );
+	}
+	
+	$xDom = file_get_contents($fileUrl, FILE_USE_INCLUDE_PATH);
+	return $xDom;
+}
+add_shortcode( 'upsmart_load_cad_file', 'upsmart_cad_upload_createXdom' );
 
 /*
 function edit_cad_attachment($post, $attachment) {
@@ -146,27 +173,6 @@ add_filter('wp_handle_upload', 'cad_upload_handler', 1 , 3);
 
 
 /*media_handle_upload( $file_id, $post_id, $post_data, $overrides );*/
-
-
-
-
-
-function _upsmart_cad_upload_get_userID()
-{
-  global $current_user;
-  $current_userIP = dechex( sanitize_key( $_SERVER['HTTP_X_FORWARDED_FOR'] ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'] ) );
-  $current_userID = ( is_user_logged_in() && get_option( 'upSmart_RS_logbyip' ) == '' ) ? $current_user->ID : $current_userIP;
-  return $current_userID;
-}
-
-function upsmart_cad_upload_createXdom() {
-global $post;
-global $current_user;
-
-$current_userID = _upsmart_cad_upload_get_userID();
-return $xDom;
-}
-add_shortcode( 'upsmart_load_cad_file', 'upsmart_cad_upload_createXdom' );
 
 
 function upsmart_cad_upload_default_values()
