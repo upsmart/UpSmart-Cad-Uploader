@@ -5,12 +5,12 @@
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
  * handled by a callback to tiga_comment() which is
- * located in the library/includes/templates.php file.
+ * located in the includes/templates.php file.
  *
  * @package 	Tiga
  * @author		Satrya
  * @license		license.txt
- * @since 		Tiga 0.0.1
+ * @since 		0.0.1
  *
  */
 ?>
@@ -62,6 +62,14 @@
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'tiga' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php
+		$args = array(
+			'title_reply' => __( 'Leave a Comment', 'tiga' ),
+			'label_submit' => __( 'Send your comment', 'tiga' ),
+			'comment_notes_after' => ''
+		);
+			
+		comment_form($args); 
+	?>
 
 </div><!-- #comments .comments-area -->

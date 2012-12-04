@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying 404 pages (Not Found).
+ * The template for displaying 404 page (Not Found).
  * 
  * This file is the Error 404 Page template file, which is output whenever
  * the server encounters a "404 - file not found" error.
@@ -8,7 +8,7 @@
  * @package 	Tiga
  * @author		Satrya
  * @license		license.txt
- * @since 		Tiga 0.0.1
+ * @since 		0.0.1
  *
  */
 

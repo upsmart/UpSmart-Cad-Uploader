@@ -1,4 +1,4 @@
-/*! Responsive JS Library v1.1.0 */
+/*! Responsive JS Library v1.2.0 */
 
 /*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license */
 /*! NOTE: If you're already including a window.matchMedia polyfill via Modernizr or otherwise, you don't need this part */
@@ -455,6 +455,7 @@ jQuery(document).ready(function ($) {
     }
 })(jQuery);
 /*global jQuery */
+/*jshint multistr:true browser:true */
 /*!
 * FitVids 1.0
 *
@@ -467,10 +468,12 @@ jQuery(document).ready(function ($) {
 
 (function( $ ){
 
+  "use strict";
+
   $.fn.fitVids = function( options ) {
     var settings = {
       customSelector: null
-    }
+    };
 
     var div = document.createElement('div'),
         ref = document.getElementsByTagName('base')[0] || document.getElementsByTagName('script')[0];
@@ -504,6 +507,7 @@ jQuery(document).ready(function ($) {
       var selectors = [
         "iframe[src*='player.vimeo.com']",
         "iframe[src*='www.youtube.com']",
+        "iframe[src*='www.youtube-nocookie.com']",
         "iframe[src*='www.kickstarter.com']",
 		"iframe[src*='fast.wistia.com']",
         "object",
@@ -518,9 +522,9 @@ jQuery(document).ready(function ($) {
 
       $allVideos.each(function(){
         var $this = $(this);
-        if (this.tagName.toLowerCase() == 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
-        var height = ( this.tagName.toLowerCase() == 'object' || $this.attr('height') ) ? $this.attr('height') : $this.height(),
-            width = $this.attr('width') ? $this.attr('width') : $this.width(),
+        if (this.tagName.toLowerCase() === 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
+        var height = ( this.tagName.toLowerCase() === 'object' || ($this.attr('height') && !isNaN(parseInt($this.attr('height'), 10))) ) ? parseInt($this.attr('height'), 10) : $this.height(),
+            width = !isNaN(parseInt($this.attr('width'), 10)) ? parseInt($this.attr('width'), 10) : $this.width(),
             aspectRatio = height / width;
         if(!$this.attr('id')){
           var videoID = 'fitvid' + Math.floor(Math.random()*999999);
@@ -530,19 +534,19 @@ jQuery(document).ready(function ($) {
         $this.removeAttr('height').removeAttr('width');
       });
     });
-  }
+  };
 })( jQuery );
-
 /*! Responsive Menu */
 
-/*! http://tinynav.viljamis.com v1.03 by @viljamis */
+/*! http://tinynav.viljamis.com v1.1 by @viljamis */
 (function ($, window, i) {
   $.fn.tinyNav = function (options) {
 
     // Default settings
     var settings = $.extend({
       'active' : 'selected', // String: Set the "active" class
-      'header' : false // Boolean: Show header instead of the active item
+      'header' : '', // String: Specify text for "header" and show header instead of the active item
+      'label'  : '' // String: sets the <label> text for the <select> (if not set, no label will be added)
     }, options);
 
     return this.each(function () {
@@ -555,26 +559,30 @@ jQuery(document).ready(function ($) {
         namespace = 'tinynav',
         namespace_i = namespace + i,
         l_namespace_i = '.l_' + namespace_i,
-        $select = $('<select/>').addClass(namespace + ' ' + namespace_i);
+        $select = $('<select/>').attr("id", namespace_i).addClass(namespace + ' ' + namespace_i);
 
       if ($nav.is('ul,ol')) {
 
-        if (settings.header) {
+        if (settings.header !== '') {
           $select.append(
-            $('<option/>').text('Navigation')
+            $('<option/>').text(settings.header)
           );
         }
 
         // Build options
         var options = '';
 
-        $nav.addClass('l_' + namespace_i).find('a').each(function () {
+        $nav
+          .addClass('l_' + namespace_i)
+          .find('a')
+          .each(function () {
             options += '<option value="' + $(this).attr('href') + '">';
+            var j;
             for (j = 0; j < $(this).parents('ul, ol').length - 1; j++) {
-                options += '- ';
+              options += '- ';
             }
             options += $(this).text() + '</option>';
-        });
+          });
 
         // Append options into a select
         $select.append(options);
@@ -594,6 +602,16 @@ jQuery(document).ready(function ($) {
 
         // Inject select
         $(l_namespace_i).after($select);
+
+        // Inject label
+        if (settings.label) {
+          $select.before(
+            $("<label/>")
+              .attr("for", namespace_i)
+              .addClass(namespace + '_label ' + namespace_i + '_label')
+              .append(settings.label)
+          );
+        }
 
       }
 

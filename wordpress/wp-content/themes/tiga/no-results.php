@@ -7,12 +7,13 @@
  * @package 	Tiga
  * @author		Satrya
  * @license		license.txt
- * @since 		Tiga 0.0.1
+ * @since 		0.0.1
  *
  */
 ?>
 
 	<article id="post-0" class="post no-results not-found">
+
 		<header class="entry-header">
 			<h1 class="entry-title"><?php _e( 'Nothing Found', 'tiga' ); ?></h1>
 		</header><!-- .entry-header -->
@@ -34,4 +35,5 @@
 
 			<?php } ?>
 		</div><!-- .entry-content -->
+		
 	</article><!-- #post-0 -->

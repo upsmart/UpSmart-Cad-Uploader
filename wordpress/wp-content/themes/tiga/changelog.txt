@@ -1,3 +1,17 @@
+1.0 - 17 Nov 2012
+- FB Like box widget
+- Social settings in theme options moved to the widget itself
+- Page template to display Home page with slider
+- Sidebar on single page(above and below content)
+- Header code in theme options
+- Custom background now using WordPress core
+- Remove all @font-face, now using google webfonts
+- Dynamic footer widget
+- Twentytwelve like custom home page template
+- Remove tooltip
+- Update twitter widget
+- Update language
+
 0.2.1 - 02 Sept 2012
 - Support shortcode for widget
 - Allowed to put 'type' and 'src' in the textarea on the theme options

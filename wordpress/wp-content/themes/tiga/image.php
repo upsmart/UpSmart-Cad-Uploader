@@ -5,7 +5,7 @@
  * @package 	Tiga
  * @author		Satrya
  * @license		license.txt
- * @since 		Tiga 0.0.1
+ * @since 		0.0.1
  *
  */
 
@@ -23,7 +23,7 @@ get_header(); ?>
 				
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<h1 class="entry-title"><?php esc_attr( the_title() ); ?></h1>
 
 						<div class="entry-meta">
 							<?php
@@ -42,8 +42,8 @@ get_header(); ?>
 						</div><!-- .entry-meta -->
 
 						<nav id="image-navigation">
-							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'tiga' ) ); ?></span>
-							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'tiga' ) ); ?></span>
+							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous Image', 'tiga' ) ); ?></span>
+							<span class="next-image"><?php next_image_link( false, __( 'Next Image &rarr;', 'tiga' ) ); ?></span>
 						</nav><!-- #image-navigation -->
 					</header><!-- .entry-header -->
 
