@@ -4,8 +4,8 @@ DEFINE( 'UPSMART_CAD_SCRIPTS_URL', trailingslashit( WP_PLUGIN_URL ) . basename( 
 
 Class CadUpload{
 	
-	private $STL_Uploads_Dir = "/home/aaron/Project-UpSmart/wordpress/wp-content/cad/";
-	private $Conversion_Script = "/home/aaron/Project-UpSmart/wordpress/wp-content/plugins/Upsmart\ CAD\ Uploader/conversion.script/";
+	private $STL_Uploads_Dir = "/home/sam/Development/Project-UpSmart/wordpress/wp-content/cad/";
+	private $Conversion_Script = "/home/sam/Developmet/Project-UpSmart/wordpress/wp-content/plugins/Upsmart\ CAD\ Uploader/conversion.script/";
 	
 	public function _construct(){}
 	
@@ -58,10 +58,10 @@ Class CadUpload{
 		echo "Script is a valid stl file...<br/>";
 
 		//blender -b -P cad.import.py -- 'KAPPA'
-		// /home/aaron/www/wp-content/plugins/KAPPA.stl
+		// /home/sam/www/wp-content/plugins/KAPPA.stl
 		//convert file to X3Dom
 		//aopt -i KAPPA.x3d -N KAPPA.html
-		//Current pwd ==> /home/aaron/Project-UpSmart/wordpress/wp-admin
+		//Current pwd ==> /home/sam/Development/Project-UpSmart/wordpress/wp-admin
 		
 		// A writable uploads dir will pass this test. Again, there's no point overriding this one.
 		if ( ! ( ( $uploads = wp_upload_dir() ) && false === $uploads['error'] ) )
