@@ -89,5 +89,5 @@ if ( !defined('ABSPATH')) exit;
       
         </div><!-- end of #content-blog -->
 
-<?php get_sidebar('right'); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

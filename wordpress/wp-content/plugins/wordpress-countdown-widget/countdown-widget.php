@@ -3,7 +3,7 @@
 Plugin Name: Countdown Widget
 Plugin URI: http://shailan.com/wordpress/plugins/countdown
 Description: A beautiful jquery countdown widget. Allows Multiple instances, Shortcode usage, and Customizations. Powered by: <a href="http://shailan.com" title="Wordpress, Web design, Freelancing">shailan.com</a>.
-Version: 2.5.1
+Version: 2.5.3
 Author: Matt Say
 Author URI: http://shailan.com
 */
@@ -24,11 +24,11 @@ class shailan_CountdownWidget extends WP_Widget {
 		$lang = substr( get_bloginfo('language'), 0, 2 );
 
 		wp_enqueue_script('jquery');
-		wp_enqueue_script('countdown', get_plugin_path(__FILE__) . 'js/jquery.countdown.min.js', 'jquery', '1.0', false);
-		if($lang!='en' && file_exists(plugin_dir_path(__FILE__) . 'js/jquery.countdown-' . $lang . '.js')){ 
-			wp_enqueue_script('countdown-l10n', get_plugin_path(__FILE__) . 'js/jquery.countdown-' . $lang . '.js', 'countdown', '1.0', false);
+		wp_enqueue_script('countdown', plugins_url('js/jquery.countdown.min.js', __FILE__), 'jquery', '1.0', false);
+		if($lang!='en' && file_exists( plugins_url('js/jquery.countdown-' . $lang . '.js', __FILE__)) ){ 
+			wp_enqueue_script('countdown-l10n', plugins_url('js/jquery.countdown-' . $lang . '.js',__FILE__), 'countdown', '1.0', false);
 		}
-		wp_enqueue_style('countdown-style', get_plugin_path(__FILE__) . 'css/jquery.countdown.css', '', '1.1', false);
+		wp_enqueue_style('countdown-style', plugins_url('css/jquery.countdown.css', __FILE__), '', '1.1', false);
 		
 		add_action( 'wp_head', array(&$this, 'header'), 10, 1 );	
 		//add_action( 'wp_footer', array(&$this, 'footer'), 10, 1 );	
@@ -143,9 +143,7 @@ class shailan_CountdownWidget extends WP_Widget {
 				<div id="shailan-countdown-<?php echo $this->number . "_" . $countdown_shortcode_ids; ?>" class="shailan-countdown-<?php echo $this->number ?> countdown" <?php echo $style; ?>></div>
 				
 				<?php				
-				if(!$link){echo '<div '.$style.'><small><a 
-href="http://www.go-upsmart.com/homepage/homepage/countdown-to-investment/" title="Click to read more!" 
-style="float:right;">&uarr; What is this?</a></small></div>';};
+				if(!$link){echo '<div '.$style.'><small><a href="http://shailan.com/wordpress/plugins/countdown" title="Get your own counter widget!" style="float:right;">&uarr; Get this</a></small></div>';};
 				?>
 				
 <script type="text/javascript"> 
@@ -226,7 +224,7 @@ style="float:right;">&uarr; What is this?</a></small></div>';};
 			
 		<p><label for="<?php echo $this->get_field_id('event'); ?>"><?php _e('Event Title:'); ?> <small><a href="http://shailan.com/wordpress/plugins/countdown/help/#event-title" target="_blank" rel="external">(?)</a></small> <input class="widefat" id="<?php echo $this->get_field_id('event'); ?>" name="<?php echo $this->get_field_name('event'); ?>" type="text" value="<?php echo $event; ?>" /></label></p>
 		
-		<p><label for="<?php echo $this->get_field_id('direction'); ?>"><?php _e('Count Down/Up :'); ?>
+		<p><label for="<?php echo $this->get_field_id('direction'); ?>"> <?php _e('Count Down/Up :'); ?></label>
 			<select name="<?php echo $this->get_field_name('direction'); ?>" id="<?php echo $this->get_field_id('direction'); ?>" >
 				<option value="down" <?php if($direction == "down") { ?> selected="selected" <?php } ?>>Down</option>
 				<option value="up" <?php if($direction == "up") { ?> selected="selected" <?php } ?>>Up</option>
@@ -264,8 +262,7 @@ style="float:right;">&uarr; What is this?</a></small></div>';};
 		<label for="<?php echo $this->get_field_id('link'); ?>"><?php _e( 'Remove link' ); ?></label> <small><a href="http://shailan.com/wordpress/plugins/countdown/help/#remove-link" target="_blank" rel="external">(?)</a></small></p>
 		
 		<div class="widget-control-actions">
-			<p><small>Powered by <a href="http://www.go-upsmart.com/homepage/homepage/countdown-to-investment/" title="Wordpress Tips and tricks, Freelancing, Web Design">Shailan.com</a> | <a 
-href="http://shailan.com/wordpress/" title="Get more wordpress widgets and themes">Get more..</a></small></p>
+			<p><small>Powered by <a href="http://shailan.com/wordpress/plugins/countdown" title="Wordpress Tips and tricks, Freelancing, Web Design">Shailan.com</a> | <a href="http://shailan.com/wordpress/" title="Get more wordpress widgets and themes">Get more..</a></small></p>
 		</div>
 			
 <div class="clear"></div>

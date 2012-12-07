@@ -1,9 +1,9 @@
 === Error Log Dashboard Widget ===
 Contributors: Rarst
-Tags: dashboard,widget,admin,error
+Tags: dashboard,widget,admin,error,log
 Requires at least: 3.2.1
-Tested up to: 3.2.1
-Stable tag: 1.0.1
+Tested up to: 3.4.2
+Stable tag: trunk
 
 Error Log Dashboard Widget is robust zero-configuration and low-memory way to keep an eye on error log.
 
@@ -15,11 +15,6 @@ The widget brings latest entries from error log right to WordPress dashboard:
 
  - log file is detected automatically from configuration;
  - only end of file is read - no memory overflow issues, safe for large logs.
-
-== Installation ==
-
-1. Upload `error-log-dashboard-widget` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the `Plugins` menu in WordPress
 
 == Frequently Asked Questions ==
 
@@ -40,6 +35,9 @@ Only users with `manage_options` capability (Administrators) will see the widget
 1. Widget in dashboard.
 
 == Changelog ==
+
+= 1.0.2 =
+* _(bugfix)_ fixed errors on invalid and empty log files
 
 = 1.0.1 =
 * _(bugfix)_ fixed memory leak in last_lines() function

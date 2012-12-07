@@ -1,11 +1,11 @@
 <?php
 /**
- * The template for displaying search forms
+ * The template for displaying search forms.
  *
  * @package 	Tiga
  * @author		Satrya
  * @license		license.txt
- * @since 		Tiga 0.0.1
+ * @since 		0.0.1
  *
  */
 ?>

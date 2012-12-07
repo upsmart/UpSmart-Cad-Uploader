@@ -1,11 +1,11 @@
 <?php
 /**
- * The template for displaying Author Archive pages
+ * The template for displaying Author Archive page
  *
  * @package 	Tiga
  * @author		Satrya
  * @license		license.txt
- * @since 		Tiga 0.0.1
+ * @since 		0.0.1
  *
  */
 
@@ -59,7 +59,6 @@ get_header(); ?>
 				</div><!-- #entry-author-info -->
 				<?php endif; ?>
 
-				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php

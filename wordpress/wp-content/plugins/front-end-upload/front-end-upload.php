@@ -3,12 +3,12 @@
  Plugin Name: Front End Upload
  Plugin URI: http://mondaybynoon.com/wordpress/front-end-upload/
  Description: Allow your visitors to upload files. Insert the upload form with the shortcode <code>[front-end-upload]</code>.
- Version: 0.5.4.6
+ Version: 0.6
  Author: Jonathan Christopher
  Author URI: http://mondaybynoon.com/
 */
 
-/*  Copyright 2012 Jonathan Christopher (email : jonathan@irontoiron.com)
+/*  Copyright 2012 Jonathan Christopher (email : jonathan@mondaybynoon.com)
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -34,10 +34,10 @@ global $front_end_upload;
 if( !defined( 'IS_ADMIN' ) )
     define( 'IS_ADMIN', is_admin() );
 
-define( 'FEU_VERSION', '0.5.4.6' );
-define( 'FEU_PREFIX', '_iti_feu_' );
-define( 'FEU_DIR', WP_PLUGIN_DIR . '/' . basename( dirname( __FILE__ ) ) );
-define( 'FEU_URL', rtrim( plugin_dir_url( __FILE__ ), '/' ) );
+define( 'FEU_VERSION',  '0.6' );
+define( 'FEU_PREFIX',   '_iti_feu_' );
+define( 'FEU_DIR',      WP_PLUGIN_DIR . '/' . basename( dirname( __FILE__ ) ) );
+define( 'FEU_URL',      rtrim( plugin_dir_url( __FILE__ ), '/' ) );
 
 // randomize the destination for security
 if( !$salt = get_option( '_feufilesalt' ) )
@@ -77,6 +77,11 @@ else
     add_action( 'init',                 array( 'FrontEndUpload', 'assets_public' ) );
     add_action( 'get_footer',           array( 'FrontEndUpload', 'init_plupload' ) );
 }
+
+// we also need to do some maintenance
+add_action( 'wp_scheduled_delete',      array( 'FrontEndUpload', 'cleanup_transients' ) );
+add_action( 'init',                     array( 'FrontEndUpload', 'register_storage' ) );
+add_action( 'parse_request',            array( 'FrontEndUpload', 'process_download' ) );
 
 
 /**
@@ -124,7 +129,7 @@ class FrontEndUpload
     }
 
 
-    function hash_location($filename,$hash)
+    function hash_location( $filename, $hash )
     {
         $salt = get_option( '_feufilesalt' );
 
@@ -141,15 +146,14 @@ class FrontEndUpload
 
     function mkdir_recursive( $path )
     {
-        if ( empty( $path ) ) { // prevent infinite loop on bad path
+        if ( empty( $path ) )
             return;
-        }
+
         is_dir( dirname( $path ) ) || self::mkdir_recursive( dirname( $path ) );
-        if ( is_dir( $path ) === true )
-        {
-            return true;
-        } else
-        {
+
+        if ( is_dir( $path ) === TRUE ) {
+            return TRUE;
+        } else {
             return @mkdir( $path );
         }
     }
@@ -182,7 +186,7 @@ class FrontEndUpload
             // PHP and WP versions check out, let's try to set up our upload destination
             if( !file_exists( FEU_DESTINATION_DIR ) )
             {
-                if ( self::mkdir_recursive( FEU_DESTINATION_DIR ) === false )
+                if ( self::mkdir_recursive( FEU_DESTINATION_DIR ) === FALSE )
                 {
                     wp_die( __('Error: Unable to create upload storage directory. Please verify write permissions to the designated WordPress uploads directory. Front End Upload has been deactivated.') );
                 }
@@ -209,9 +213,8 @@ class FrontEndUpload
      * @return void
      * @author Jonathan Christopher
      */
-    function l10n()
-    {
-        load_plugin_textdomain( 'frontendupload', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+    function l10n() {
+        load_plugin_textdomain( 'frontendupload', FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
     }
 
 
@@ -221,8 +224,7 @@ class FrontEndUpload
      * @return void
      * @author Jonathan Christopher
      */
-    function init_shortcodes()
-    {
+    function init_shortcodes() {
         add_shortcode( 'front-end-upload', array( 'FrontEndUpload', 'shortcode' ) );
     }
 
@@ -233,8 +235,7 @@ class FrontEndUpload
      * @return string $output Formatted HTML to be used in the theme
      * @author Jonathan Christopher
      */
-    function shortcode( $atts )
-    {
+    function shortcode( $atts ) {
         // grab FEU's settings
         $settings   = get_option( FEU_PREFIX . 'settings' );
 
@@ -252,10 +253,9 @@ class FrontEndUpload
 
             $file_list  = '';
             if( is_array( $files ) )
-                foreach( $files as $filename )
-                    $file_list .= FEU_DESTINATION_URL . '/' . get_option( $filename ) . "\n";
+                foreach( $files as $filehash )
+                    $file_list .= get_bloginfo( 'url' ) . '?feu=1&feuid=' . $filehash . "\n";
 
-            // grab our sender
             $email      = isset( $_POST['feu_email'] ) ? mysql_real_escape_string( $_POST['feu_email'] ) : '';
 
             // grab the submitted message
@@ -278,6 +278,7 @@ class FrontEndUpload
             $subject        = !empty( $settings['email_subject'] ) ? $settings['email_subject'] : '[' . get_bloginfo( 'name' ) . '] New files uploaded';
 
             $headers = 'From: ' . get_bloginfo( 'name' ) . ' <' . get_option( 'admin_email' ) . '>' . "\r\n";
+
             wp_mail( $recipients, $subject, $parsed, $headers );
 
             // lastly we'll output our success message
@@ -636,16 +637,16 @@ class FrontEndUpload
         wp_enqueue_script(
             'browserplus'
             ,'http://bp.yahooapis.com/2.4.21/browserplus-min.js'
-            ,null
+            ,NULL
             ,FEU_VERSION
-            ,false
+            ,FALSE
         );
         wp_enqueue_script(
             'feu-plupload'
             ,FEU_URL . '/lib/plupload/js/plupload.full.js'
             ,'jquery'
             ,FEU_VERSION
-            ,false
+            ,FALSE
         );
 
         // plupload localization
@@ -661,7 +662,7 @@ class FrontEndUpload
                     ,FEU_URL . '/lib/plupload/js/i18n/' . $locale . '.js'
                     ,'jquery'
                     ,FEU_VERSION
-                    ,false
+                    ,FALSE
                 );
             }
         }
@@ -671,7 +672,7 @@ class FrontEndUpload
             ,FEU_URL . '/lib/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js'
             ,'jquery'
             ,FEU_VERSION
-            ,false
+            ,FALSE
         );
 
         wp_enqueue_style(
@@ -740,7 +741,7 @@ class FrontEndUpload
             ,FEU_URL . '/feu.js'
             ,'jquery'
             ,FEU_VERSION
-            ,true
+            ,TRUE
         );
     }
 
@@ -751,9 +752,112 @@ class FrontEndUpload
      * @return void
      * @author Jonathan Christopher
      */
-    function admin_screen_options()
-    {
+    function admin_screen_options() {
         include 'front-end-upload-options.php';
+    }
+
+
+    /**
+     * Transients are used quite heavily to generate hashes, this function will essentially garbage collect them
+     */
+    function cleanup_transients() {
+        global $wpdb, $_wp_using_ext_object_cache;
+
+        if( $_wp_using_ext_object_cache )
+            return;
+
+        $time = isset ( $_SERVER['REQUEST_TIME'] ) ? (int) $_SERVER['REQUEST_TIME'] : time();
+        $sql = "SELECT option_name FROM {$wpdb->options} WHERE ( option_name LIKE '_transient_timeout_feu_referer_%' AND option_value < {$time} ) OR ( option_name LIKE '_transient_timeout_feuhash_%' AND option_value < {$time} ) OR ( option_name LIKE '_transient_timeout_feuupload_feuupload_%' AND option_value < {$time} );";
+        $expired = $wpdb->get_col( $sql );
+
+        foreach( $expired as $transient ) {
+            $key = str_replace( '_transient_timeout_', '', $transient );
+            delete_transient( $key );
+        }
+    }
+
+
+    /**
+     * File uploads are obscured on disk, so we'll use a CPT to maintain proper file names
+     */
+    function register_storage() {
+        $args = array(
+            'public'    => FALSE,
+            'supports'  => array( 'custom-fields' )
+        );
+        register_post_type( 'feu_file', $args );
+    }
+
+
+    /**
+     * All downloads are (should be) routed through this function
+     */
+    function process_download() {
+
+        global $post;
+
+        $tmp_post = $post;
+
+        $post = false;
+
+        if( ( isset( $_GET['feu'] ) && (int) $_GET['feu'] === 1 ) && isset( $_GET['feuid'] ) ) {
+
+            // our flag is the basis for this entire operation
+            $feuid = sanitize_text_field( $_GET['feuid'] );
+
+            // let's grab our corresponding post if we can
+            $args = array(
+                'numberposts'   => 1,
+                'meta_key'      => 'feu_idhash',
+                'meta_value'    => $feuid,
+                'post_type'     => 'feu_file',
+                'post_status'   => 'private',
+                'cache_results' => FALSE,
+                'no_found_rows' => TRUE,
+            );
+
+            $uploads = get_posts( $args );
+
+            foreach ( $uploads as $post ) {
+
+                setup_postdata( $post );
+
+                $filepath = get_post_meta( $post->ID, 'feu_filepath', true );
+                $filename = get_post_meta( $post->ID, 'feu_filename', true );
+
+                if( $filepath && $filename ) {
+
+                    // force the download
+
+                    // required for IE
+                    if ( ini_get( 'zlib.output_compression' ) ) { ini_set( 'zlib.output_compression', 'Off' ); }
+
+                    // get the file mime type using the file extension
+                    switch ( strtolower ( substr ( strrchr ( $filename, '.' ), 1 ) ) ) {
+                        case 'pdf': $mime = 'application/pdf'; break;
+                        case 'zip': $mime = 'application/zip'; break;
+                        case 'jpeg':
+                        case 'jpg': $mime = 'image/jpg'; break;
+                        default: $mime = 'application/force-download';
+                    }
+                    header ( 'Pragma: public' );
+                    header ( 'Expires: 0' );
+                    header ( 'Cache-Control: must-revalidate, post-check=0, pre-check=0' );
+                    header ( 'Last-Modified: ' . gmdate ( 'D, d M Y H:i:s', filemtime ( $filename ) ).' GMT' );
+                    header ( 'Cache-Control: private', false );
+                    header ( 'Content-Type: ' . $mime );
+                    header ( 'Content-Disposition: attachment; filename="' . basename ( $filename ) . '"' );
+                    header ( 'Content-Transfer-Encoding: binary' );
+                    header ( 'Content-Length: ' . filesize ( $filepath ) );
+                    header ( 'Connection: close' );
+                    readfile ( $filepath );
+                }
+
+                exit();
+            }
+        }
+
+        $post = $tmp_post;
     }
 
 }

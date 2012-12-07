@@ -4,7 +4,8 @@ Tags: user, users, registration, manager, multisite, moderation, moderating
 Donate link: http://zaantar.eu/index.php?page=Donate
 Requires at least: 3.4
 Tested up to: 3.4.2
-Stable tag: 3.0.1
+Stable tag: 3.0.4
+Network: true
 
 Provides a system for registration requests and their processing in multisite. Two-level moderation. 
 
@@ -60,6 +61,17 @@ If you experience any problems:
 4. Send me the logs (from WLS or from log.txt file, which is created within plugin directory) with description of the problem.
 
 == Changelog ==
+
+= 3.0.4 =
+* wishlist created (see Other notes)
+* "Network: true" added to the plugin header
+* minor bug fixes
+
+= 3.0.3 =
+* fixed: bug while deleting registration request on blog level
+
+= 3.0.2 =
+* fixed: problem with loading network options
 
 = 3.0.1 =
 * quick bugfix: using non-existing function in extended logging mode
@@ -145,3 +157,16 @@ If you experience any problems:
 
 = 3.0 =
 Massive code restructuralization. MAY contain some bugs. I need feedback - will spped up the release of next version.
+
+== Wishlist ==
+
+Below are listed requests I know about and I'm going to process... eventually. Please be VERY patient.
+
+* "I have a request of asking for password on registration form.  That way the user can pick out a password and have it automatically populated in the site user data."
+* sidebar registration widget
+* attach custom admin message to user on request approval/denial
+* correct i18n, custom blog admin messages
+* custom shortcode css (error/ok) + information
+* save all settings as a single wp option
+* combine with pure-murm?
+* "I would like to add more fields like "country" in the Registration Page."

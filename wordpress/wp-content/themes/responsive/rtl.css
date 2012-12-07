@@ -138,6 +138,12 @@ ol, ul {
     float: left;
 }
 
+.top-widget {
+    clear: left;
+    float: left;
+    text-align: left;
+}
+
 /* =Titles
 -------------------------------------------------------------- */
 .widget-title, .widget-title-home h3 {
@@ -188,10 +194,11 @@ ol, ul {
     border-right: medium none;
 }
 
-.sub-header-menu a{
+.sub-header-menu a {
     border-right: 1px solid #E2E2E2;
     border-left: medium none;
 }
+
 /* =Footer Menu
 -------------------------------------------------------------- */
 .footer-menu {

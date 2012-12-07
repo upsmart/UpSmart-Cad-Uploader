@@ -21,11 +21,22 @@ li.Social_Widget a {
 	margin: 0 !important;
 	background: none !important;
 }
-	
-.socialmedia-buttons img {
+
+.smw_center img,
+.smw_left img {
 	border: 0;
 	border: 0 !important;
 	margin-right: 10px !important;
+	display: inline;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease;
+}
+
+.smw_right img {
+	border: 0;
+	border: 0 !important;
+	margin-left: 10px !important;
 	display: inline;
 	-webkit-transition: all 0.2s ease-in;
 	-moz-transition: all 0.2s ease-in;

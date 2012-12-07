@@ -1,0 +1,15 @@
+/* Core Stylesheet
+----------------------------------------------- */
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+/* ie only */
+/* fix for ie 8 and less nav dropdown menu not showing*/
+.lte9 .nav-collapse.collapse {
+  overflow: visible;
+}

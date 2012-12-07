@@ -5,22 +5,21 @@
  * @package 	Tiga
  * @author		Satrya
  * @license		license.txt
- * @since 		Tiga 0.0.1
+ * @since 		0.0.1
  *
  */
 ?>
 
 	<?php
-		$layout = of_get_option('tiga_layouts');
+		$layout = of_get_option( 'tiga_layouts' );
 		if( 'onecolumn' != $layout ) :
 	?>
 
-		<aside id="secondary" class="widget-area" role="complementary">
+		<aside id="secondary" class="sidebar-primary widget-area" role="complementary">
 			<?php tiga_sidebar_before(); ?>
 
-			<?php if ( ! dynamic_sidebar( 'General' ) ) : ?>
-			<?php endif; // end sidebar widget area ?>
+			<?php dynamic_sidebar( 'primary' ); ?>
 
-		</aside><!-- #secondary .widget-area -->
+		</aside><!-- #secondary .sidebar-primary .widget-area -->
 
 	<?php endif; ?>
