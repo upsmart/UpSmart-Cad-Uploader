@@ -326,7 +326,6 @@ function wp_handle_upload( &$file, $overrides = false, $time = null ) {
 	// Move the file to the uploads dir
 	$new_file = $uploads['path'] . "/$filename";
 	
-	echo $new_file . "  vs  " . $file['tmp_name'];
 	if ( false === @ move_uploaded_file( $file['tmp_name'], $new_file ) )
 		return $upload_error_handler( $file, sprintf( __('The uploaded file could not be moved to %s.' ), $uploads['path'] ) );
 
