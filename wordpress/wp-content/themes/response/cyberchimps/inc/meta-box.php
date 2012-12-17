@@ -102,9 +102,10 @@ function cyberchimps_init_meta_boxes() {
 	$mb
 		->tab("Slider Options")
 			->single_image('cyberchimps_slider_image', __('Slider Image', 'cyberchimps'), '')
-			->text('cyberchimps_slider_text', __('Slider Text', 'cyberchimps'), __('Enter your slider text here', 'cyberchimps'))			
-			->checkbox('slider_hidetitle', __('Title Bar', 'cyberchimps'), '', array('std' => '1'))
-			->single_image('slider_custom_thumb', __('Custom Thumbnail', 'cyberchimps'), __('Use the image uploader to upload a custom navigation thumbnail', 'cyberchimps'))
+			->text('cyberchimps_slider_caption', __('Slider Caption', 'cyberchimps'), '')			
+			->text('cyberchimps_slider_url', __( 'Custom Slide Link', 'cyberchimps' ), '')
+			->checkbox('cyberchimps_slider_hidetitle', __('Title', 'cyberchimps'), '', array('std' => '1'))
+			->checkbox('cyberchimps_slider_hidecaption', __('Caption', 'cyberchimps'), '', array('std' => '1'))
 			->sliderhelp('', __('Need Help?', 'cyberchimps'), '')
 		->end();
 
@@ -112,13 +113,10 @@ function cyberchimps_init_meta_boxes() {
 	$mb
 		->tab("Page Options")
 			->image_select('cyberchimps_page_sidebar', __( 'Select Page Layout', 'cyberchimps' ), '',
-				array('options' => array(
-					'right_sidebar'		 => $image_path . 'right.png',
-					'left_right_sidebar' => $image_path . 'tworight.png',
-					'content_middle'	 => $image_path . 'rightleft.png',
-					'full_width'		 => $image_path . 'none.png',
-					'left_sidebar'		 => $image_path . 'left.png'
-					), 'std' => 'right_sidebar') )
+				array('options' => apply_filters( 'sidebar_layout_options', array(
+					'full_width'		 => $image_path . '1col.png',
+					'right_sidebar'		 => $image_path . '2cr.png'
+					) ), 'std' => 'right_sidebar') )
 			->checkbox('cyberchimps_page_title_toggle', __('Page Title', 'cyberchimps'), '', array('std' => '1'))
 			->section_order('cyberchimps_page_section_order', __( 'Page Elements', 'cyberchimps' ), '', array(					
 				'options' => apply_filters( 'cyberchimps_elements_draganddrop_page_options', array(
@@ -154,11 +152,12 @@ function cyberchimps_init_meta_boxes() {
 			->select('cyberchimps_slider_type', __( 'Slider Type', 'cyberchimps' ), '', array( 'options' => array( 'custom_slides' => __( 'Custom', 'cyberchimps' ), 'post' => __( 'Posts', 'cyberchimps' ) ) ) )
 			->select('cyberchimps_slider_post_categories', __( 'Post Categories', 'cyberchimps' ), '', array( 'options' => $blog_id_options, __( 'All', 'cyberchimps' ) ) )
 			->select('cyberchimps_slider_custom_categories', __( 'Custom Categories', 'cyberchimps' ), '', array( 'options' => ( $slider_options ? $slider_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
-			->text('cyberchimps_number_featured_posts', __( 'Number of Featured Posts', 'cyberchimps' ), '', array('default' => 5) )
+			->text('cyberchimps_number_featured_posts', __( 'Number of Featured Posts', 'cyberchimps' ), '', array('std' => 5) )
 			->text('cyberchimps_slider_height', __( 'Slider Height', 'cyberchimps' ), '' )
+			->text('cyberchimps_slider_speed', __( 'Slider Speed', 'cyberchimps' ), '', array( 'std' => 3000 ) )
 			->checkbox('cyberchimps_slider_arrows', __( 'Slider Arrows', 'cyberchimps' ), '', array('std' => "1") )
 			->sliderhelp('', __( 'Need Help?', 'cyberchimps' ), '')
-		->tab("Product Options")
+		/*->tab("Product Options")
 			->select('cyberchimps_product_text_align', __( 'Text Align', 'cyberchimps' ), '', array('options' => array('Left', 'Right' ) ) )
 			->text('cyberchimps_product_title', __( 'Product Title', 'cyberchimps' ), '', array('std' => __( 'Product', 'cyberchimps' ) ) )
 			->textarea('cyberchimps_product_text', __( 'Product Text', 'cyberchimps' ), '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
@@ -167,7 +166,7 @@ function cyberchimps_init_meta_boxes() {
 			->textarea('cyberchimps_product_video', __( 'Video Embed', 'cyberchimps' ), '')
 			->checkbox('cyberchimps_product_link_toggle', __( 'Product Link', 'cyberchimps' ), '', array('std' => '1'))
 			->text('cyberchimps_product_link_url', __( 'Link URL', 'cyberchimps' ), '', array('std' => home_url()))
-			->text('cyberchimps_product_link_text', __( 'Link Text', 'cyberchimps' ), '', array('std' => 'Buy Now'))
+			->text('cyberchimps_product_link_text', __( 'Link Text', 'cyberchimps' ), '', array('std' => 'Buy Now'))*/
 		->tab("Callout Options")
 			->text('callout_title', __( 'Callout Title', 'cyberchimps' ), '',
 				array('std' => sprintf( __( '%1$s\'s Call Out Element', 'cyberchimps' ),

@@ -21,7 +21,26 @@ function cyberchimps_option( $name = false, $subname = false ){
 		return $value;
 	}
 }
+if ( ! function_exists( 'cyberchimps_get_option' ) ) {
 
+	/**
+	 * Get Option.
+	 *
+	 * Helper function to return the theme option value.
+	 * If no value has been saved, it returns $default.
+	 * Needed because options are saved as serialized strings.
+	 */
+	 
+	function cyberchimps_get_option( $name, $default = false ) {
+		$options = get_option( 'cyberchimps_options' );
+		
+		if ( isset( $options[$name] ) ) {
+			return $options[$name];
+		}
+
+		return $default;
+	}
+}
 // Enqueue core scripts and core styles
 function cyberchimps_core_scripts() {
 	global $post;
@@ -40,10 +59,10 @@ function cyberchimps_core_scripts() {
 	// Load Custom JS
 	wp_enqueue_script( 'custom', $js_path . 'custom.js', array( 'jquery' ), true );
 	
-	// Load JS for swipe functionality in slider
-	wp_enqueue_script( 'event-swipe-move', $js_path . 'jquery.event.move.js', array('jquery') );
-	wp_enqueue_script( 'event-swipe', $js_path . 'jquery.event.swipe.js', array('jquery') );
-	wp_enqueue_script( 'swipe', $js_path . 'swipe.js', array('jquery') );
+	//touch swipe gestures
+	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.min.js', array('jquery') );
+	wp_enqueue_script( 'slider-call', $js_path . 'swipe-call.js', array('jquery', 'jquery-mobile-touch') );
+	
 	
 	// Load Bootstrap Library Items
 	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '2.0.4' );
@@ -64,9 +83,13 @@ function cyberchimps_core_scripts() {
 	
 	// add javascript for comments
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+	
+	if (cyberchimps_get_option( 'responsive_videos' ) == '1' ) {
+		wp_register_script( 'video' , $js_path . 'video.js');
+		wp_enqueue_script ('video');	
+	}
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_core_scripts', 20 );
-
 function cyberchimps_create_layout() {
 	global $post;
 	
@@ -268,17 +291,20 @@ function cyberchimps_posted_on() {
 	if( is_single() ) {
 		$show_date = ( cyberchimps_option( 'single_post_byline_date' ) ) ? cyberchimps_option( 'single_post_byline_date' ) : false;
 		$show_author = ( cyberchimps_option( 'single_post_byline_author' ) ) ? cyberchimps_option( 'single_post_byline_author' ) : false; 
+		$show_categories = ( cyberchimps_option( 'single_post_byline_categories' ) ) ? cyberchimps_option( 'single_post_byline_categories' ) : false; 
 	}
 	elseif( is_archive() ) {
 		$show_date = ( cyberchimps_option( 'archive_post_byline_date' ) ) ? cyberchimps_option( 'archive_post_byline_date' ) : false;  
 		$show_author = ( cyberchimps_option( 'archive_post_byline_author' ) ) ? cyberchimps_option( 'archive_post_byline_author' ) : false;
+		$show_categories = ( cyberchimps_option( 'archive_post_byline_categories' ) ) ? cyberchimps_option( 'archive_post_byline_categories' ) : false; 
 	}
 	else {
 		$show_date = ( cyberchimps_option( 'post_byline_date' ) ) ? cyberchimps_option( 'post_byline_date' ) : false; 
 		$show_author = ( cyberchimps_option( 'post_byline_author' ) ) ? cyberchimps_option( 'post_byline_author' ) : false; 
+		$show_categories = ( cyberchimps_option( 'post_byline_categories' ) ) ? cyberchimps_option( 'post_byline_categories' ) : false; 
 	}
 	
-	$posted_on = sprintf( __( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline">%9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'cyberchimps' ),
+	$posted_on = sprintf( __( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>%10$s %9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span>%11$s', 'cyberchimps' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -287,7 +313,9 @@ function cyberchimps_posted_on() {
 		esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps' ), get_the_author() ) ),
 		( $show_author ) ? esc_html( get_the_author() ) : '',
 		( $show_date ) ? 'Posted on ' : '',
-		( $show_author ) ? ' by ' : ''
+		( $show_author ) ? ' by ' : '',
+		( $show_author || $show_categories ) ? '<span class="byline">' : '',
+		( $show_author || $show_categories ) ? '</span>' : ''
 	);
 	apply_filters( 'cyberchimps_posted_on', $posted_on );
 	echo $posted_on;
@@ -637,6 +665,22 @@ function cyberchimps_search_excerpt_length( $length ){
 	}
 }
 
+//For archive posts
+function cyberchimps_archive_excerpt_more( $more ){
+	global $post;
+	if( cyberchimps_option( 'blog_read_more_text' ) != '' ){
+		$more = '<p><a href="'. get_permalink($post->ID) . '">'.cyberchimps_option( 'blog_read_more_text' ).'</a></p>';
+		return $more;
+	}
+	else {
+		$more = '<p><a href="'. get_permalink($post->ID) . '">Read More...</a></p>';
+		return $more;
+	}
+}
+if( cyberchimps_get_option( 'archive_post_excerpts', 0 ) != 0 ){
+	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
+}
+
 //For blog posts
 function cyberchimps_blog_excerpt_more( $more ){
 	global $post;
@@ -649,7 +693,7 @@ function cyberchimps_blog_excerpt_more( $more ){
 		return $more;
 	}
 }
-if( cyberchimps_option( 'post_excerpts' ) ){
+if( cyberchimps_get_option( 'post_excerpts', 0 ) != 0 ){
 	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
 }
 
@@ -664,7 +708,7 @@ function cyberchimps_blog_excerpt_length( $length ) {
 		return $length;
 	}
 }
-if( cyberchimps_option( 'post_excerpts' ) ){
+if( cyberchimps_get_option( 'post_excerpts', 0 ) != 0 ){
 	add_filter( 'excerpt_length', 'cyberchimps_blog_excerpt_length', 999 );
 }
 
@@ -730,7 +774,6 @@ function cyberchimps_modal_welcome_note() {
 	if( cyberchimps_option( 'modal_welcome_note_display' ) == 1 ): ?>
   <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
       <h3 id="myModalLabel">Welcome</h3>
     </div>
     <div class="modal-body">
@@ -751,7 +794,7 @@ function cyberchimps_modal_welcome_note() {
 		?>
     </div>
     <div class="modal-footer">
-      <input type="submit" id="welcomeModalSave" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Close', 'cyberchimps' ); ?>" />
+      <input type="submit" id="welcomeModalSave" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Complete Installation', 'cyberchimps' ); ?>" />
     </div>
   </div>
 <?php
@@ -782,12 +825,14 @@ function cyberchimps_options_help_text() {
 	if( cyberchimps_theme_check() == 'free' ) {
 	$text .= 	'<div class="row-fluid">
 						<div class="span6">
+						<a href="'. apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ). '" title="'. apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ). '">
 						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to %1$s', 'cyberchimps' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
+						</a>
 						</div>
 						</div>
 						</div>
 						<div class="clear"></div>';
-		$text .= sprintf( __( '<p>If you want even more amazing new features <a href="%1$s" title="%2$s">%2$s</a> which includes a Custom Features Slider, Product Element, Image Carousel, Widgetized Boxes, Callout Section, expanded typography and many more powerful new features. Please visit <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> to learn more!</p>', 'cyberchimps' ),
+		$text .= sprintf( __( '<p>If you want even more amazing new features upgrade to <a href="%1$s" title="%2$s">%2$s</a> which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> to learn more!</p>', 'cyberchimps' ),
 		apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
 		apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
 		);
@@ -854,7 +899,7 @@ function cyberchimps_admin_link() {
 
 	$wp_admin_bar->add_menu( array( 
 								'id'	 => 'cyberchimps',
-								'title'	 => 'CyberChimps Options',
+								'title'	 => apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps '. __( 'Options', 'cyberchimps' ) ) . __( ' Options', 'cyberchimps' ),
 								'href'	 => admin_url('themes.php?page=cyberchimps-theme-options')  
 								  ) ); 
 }

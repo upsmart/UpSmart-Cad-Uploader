@@ -3,7 +3,7 @@ Theme Name: Responsive
 Theme URI: http://themeid.com/responsive-theme/ 
 Description: Adding support for language written in a Right To Left (RTL) direction.
 
-Version: 0.6
+Version: 0.7
 Author: Hesaam Farhang and Ulrich Pogson
 Author URI: http://themeid.com/forum/topic/915/translation-responsive-theme/
 
@@ -215,7 +215,7 @@ ol, ul {
 }
 
 .footer-menu li a {
-    border-right: 1px solid #CCCCCC;
+    border-right: 1px solid #ccc;
     border-left: medium none;
 }
 
@@ -295,7 +295,32 @@ ol, ul {
 	.grid-right {
 	    float:none;
     }
-	
+
+    .page-template-content-sidebar-page-php .col-60,
+    .page-template-content-sidebar-page-php .col-140,
+    .page-template-content-sidebar-page-php .col-220,
+    .page-template-content-sidebar-page-php .col-300,
+    .page-template-content-sidebar-page-php .col-380,
+    .page-template-content-sidebar-page-php .col-460,
+    .page-template-content-sidebar-page-php .col-540,
+    .page-template-content-sidebar-page-php .col-620,
+    .page-template-content-sidebar-page-php .col-700,
+    .page-template-content-sidebar-page-php .col-780,
+    .page-template-content-sidebar-page-php .col-860,
+    .page-template-content-sidebar-half-page-php .col-60,
+    .page-template-content-sidebar-half-page-php .col-140,
+    .page-template-content-sidebar-half-page-php .col-220,
+    .page-template-content-sidebar-half-page-php .col-300,
+    .page-template-content-sidebar-half-page-php .col-380,
+    .page-template-content-sidebar-half-page-php .col-460,
+    .page-template-content-sidebar-half-page-php .col-540,
+    .page-template-content-sidebar-half-page-php .col-620,
+    .page-template-content-sidebar-half-page-php .col-700,
+    .page-template-content-sidebar-half-page-php .col-780,
+    .page-template-content-sidebar-half-page-php .col-860 {
+	    float: none;
+    }
+
 	#featured-image .fluid-width-video-wrapper {
 	    margin:20px 0 0 0;
     }
@@ -314,6 +339,31 @@ ol, ul {
     .grid, 
 	.grid-right {
 	    float:none;
+    }
+
+    .page-template-content-sidebar-page-php .col-60,
+    .page-template-content-sidebar-page-php .col-140,
+    .page-template-content-sidebar-page-php .col-220,
+    .page-template-content-sidebar-page-php .col-300,
+    .page-template-content-sidebar-page-php .col-380,
+    .page-template-content-sidebar-page-php .col-460,
+    .page-template-content-sidebar-page-php .col-540,
+    .page-template-content-sidebar-page-php .col-620,
+    .page-template-content-sidebar-page-php .col-700,
+    .page-template-content-sidebar-page-php .col-780,
+    .page-template-content-sidebar-page-php .col-860,
+    .page-template-content-sidebar-half-page-php .col-60,
+    .page-template-content-sidebar-half-page-php .col-140,
+    .page-template-content-sidebar-half-page-php .col-220,
+    .page-template-content-sidebar-half-page-php .col-300,
+    .page-template-content-sidebar-half-page-php .col-380,
+    .page-template-content-sidebar-half-page-php .col-460,
+    .page-template-content-sidebar-half-page-php .col-540,
+    .page-template-content-sidebar-half-page-php .col-620,
+    .page-template-content-sidebar-half-page-php .col-700,
+    .page-template-content-sidebar-half-page-php .col-780,
+    .page-template-content-sidebar-half-page-php .col-860 {
+	    float: none;
     }
 
 	#featured-image .fluid-width-video-wrapper {
@@ -379,6 +429,31 @@ ol, ul {
     .grid, 
 	.grid-right {
 	    float:none;
+    }
+
+    .page-template-content-sidebar-page-php .col-60,
+    .page-template-content-sidebar-page-php .col-140,
+    .page-template-content-sidebar-page-php .col-220,
+    .page-template-content-sidebar-page-php .col-300,
+    .page-template-content-sidebar-page-php .col-380,
+    .page-template-content-sidebar-page-php .col-460,
+    .page-template-content-sidebar-page-php .col-540,
+    .page-template-content-sidebar-page-php .col-620,
+    .page-template-content-sidebar-page-php .col-700,
+    .page-template-content-sidebar-page-php .col-780,
+    .page-template-content-sidebar-page-php .col-860,
+    .page-template-content-sidebar-half-page-php .col-60,
+    .page-template-content-sidebar-half-page-php .col-140,
+    .page-template-content-sidebar-half-page-php .col-220,
+    .page-template-content-sidebar-half-page-php .col-300,
+    .page-template-content-sidebar-half-page-php .col-380,
+    .page-template-content-sidebar-half-page-php .col-460,
+    .page-template-content-sidebar-half-page-php .col-540,
+    .page-template-content-sidebar-half-page-php .col-620,
+    .page-template-content-sidebar-half-page-php .col-700,
+    .page-template-content-sidebar-half-page-php .col-780,
+    .page-template-content-sidebar-half-page-php .col-860 {
+	    float: none;
     }
 	
 	#featured-image .fluid-width-video-wrapper {

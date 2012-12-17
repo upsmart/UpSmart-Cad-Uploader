@@ -46,6 +46,11 @@ function cyberchimps_core_setup_theme() {
 	
 	// Load core hooks file
 	require_once( $directory . '/cyberchimps/inc/cc-custom-background.php' );
+	
+	//Load pro features if a pro theme
+	if( cyberchimps_theme_check() == 'pro' ){
+		require_once( $directory . '/elements/setup/features.php' );
+	}
 
 	// Core Translations can be filed in the /inc/languages/ directory
 	load_theme_textdomain( 'cyberchimps', $directory . '/lib/languages' );
@@ -61,7 +66,8 @@ function cyberchimps_core_setup_theme() {
 	
 	// add theme support for backgrounds
 	$defaults = array(
-	'wp-head-callback'       => 'cyberchimps_custom_background_cb'
+	'default-color'		=> apply_filters( 'default_background_color', '' ),
+	'wp-head-callback'  => 'cyberchimps_custom_background_cb'
 );
 	add_theme_support( 'custom-background', $defaults );
 	
@@ -69,6 +75,18 @@ function cyberchimps_core_setup_theme() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'cyberchimps' ),
 	) );
+	
+	//set up defaults
+	$option_defaults['modal_welcome_note_display'] = true;
+	if( ! get_option( 'cyberchimps_options' ) ) {
+		update_option( 'cyberchimps_options', $option_defaults );
+	}
+	//if not then theme switch reset modal to true so that new values can be saved in the database
+	elseif( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
+		$options = get_option( 'cyberchimps_options' );
+		$options['modal_welcome_note_display'] = true;
+		update_option( 'cyberchimps_options', $options );
+	}
 }
 endif; // cyberchimps_core_setup_theme
 add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
@@ -109,7 +127,6 @@ function cyberchimps_custom_background_cb() {
 
 		$style .= $image . $repeat . $position . $attachment;
 	}
-	
 	if ( ! $background && ! $color && $cc_background != 'none' ) {
 		$img_url = get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.$cc_background.'.jpg';
 		$image = "background-image: url( '$img_url' );";
@@ -122,7 +139,7 @@ function cyberchimps_custom_background_cb() {
 	else {
 ?>
 <style type="text/css" id="custom-background-css">
-body.custom-background { <?php echo trim( $style ); ?> }
+	body.custom-background { <?php echo trim( $style ); ?> }
 </style>
 <?php
 	}
@@ -171,15 +188,6 @@ function cyberchimps_load_hooks() {
 	require_once( $hooks_path . 'footer-hooks.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_hooks');
-
-//Clear blog drag and drop elements so that when upgrading from free you don't get errors of the lite elements that do not exist
-function cyberchimps_remove_lite_elements(){
-	$option_new = get_option( 'cyberchimps_options' );
-	$option_new['blog_section_order'] = array( 0 => 'blog_post_page' );
-	update_option( 'cyberchimps_options', $option_new );
-}
-add_action('after_switch_theme', 'cyberchimps_remove_lite_elements');
-
 
 //after install redirect user to options page
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {

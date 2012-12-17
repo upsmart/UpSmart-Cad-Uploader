@@ -22,7 +22,7 @@ define('DB_NAME', 'development');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 't/>/wise');
+define('DB_PASSWORD', '319154');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '+>4rl#+WfyG[un1gDo.H3fv)4n>,t=]FsPo^kjzW!|2kJ9Ot-d9in}+fR_~wYh:a');
-define('SECURE_AUTH_KEY',  'UeR>NY70y#x>+vfbUw$_y?`Z8TWl>J]<93]$;$A+Db!D+6nV-kok+]2~^e)XpKEq');
-define('LOGGED_IN_KEY',    '~o__jO?^+X3B.+bMLR7&/M.A<{bq<mO1aHS]Ta)<.+0MJFr-:_4(z6,;!-v,[4aq');
-define('NONCE_KEY',        'KA3t3}=aoG8@:#ZIBRFr2; NLqBa1FJ2@Ln;_i~W-?f<?)hM^kn(|Q$[y{[^{enP');
-define('AUTH_SALT',        '-5`NtIkyEq-|i/wp}^_bCWd?F.)7|@;8-dR>KQ|Q2_92G|v?4SN|qYM=Ci+4-QZ-');
-define('SECURE_AUTH_SALT', 'gZ1s3#&{V`t+BONPBS{D$-)gH=}Y#r-oAJpdmaper5Zc;#4@uBB+whC2>&w<p4-]');
-define('LOGGED_IN_SALT',   '{:N!Wrh/{;q^:5-OJ[MZe4t?S?o^;p|J>K-2fv077Ss,@M|;7H=y-i38|NBbA+SN');
-define('NONCE_SALT',       'abkdw32om4A4Aqy-?2Ym6_m[VJY)]#6K~8bSw3^I$oD<ZPY4T*^D]|EsZraI?U2S');
+define('AUTH_KEY',         '7|+rUfgtCu4+-gMeJKwva&_t)jv}=ZEkH]_-Xw#&|tdcH`*x)mBy?KQ-R#KFKknx');
+define('SECURE_AUTH_KEY',  'akM-?|+hXRV0*;F^_.SBJ)mgB)*LlQ[jTa1` I9SzC*z`P@Qr @E],w)_~+,#1Xj');
+define('LOGGED_IN_KEY',    '0/52XghI)[j!&<Oz}_B4[Z(4|8_C+B+LtYc-sX|z$_}5>YCewDo5}90e,VOV= l:');
+define('NONCE_KEY',        'rw-{8a>=fjm3<bqc4rnaa |tbt@u9O/>?V=|;QcEKwO2p&78(qr@z~d/RW57+eNg');
+define('AUTH_SALT',        '%]1n`<bF2u7B$5wQ-*fY;Orq)nIW}BLO&nkQ<vm*CDcQBA2aIaMDpa]JPxH6M86:');
+define('SECURE_AUTH_SALT', ' LR*]*zjqhock-w;EAJ+) ji(/XWOQ cp-p^[ ps)Aa]V@: #pUe|szNRz2o.$&3');
+define('LOGGED_IN_SALT',   '07*Z+ _BXa)kljWIO&D|{qt2kpO5U0]frP[GpG$4dBxFhuK5;.h%94&K)lE,Tqfg');
+define('NONCE_SALT',       'd*ZU+ILZ#VXP|jq7DSf{r]F-6biJr_8/-iK?1Y4#1=zVpO!$:#?E>{vhYC))AL=!');
 
 /**#@-*/
 
@@ -78,15 +78,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
-
-define('MULTISITE', true);
-define('SUBDOMAIN_INSTALL', false);
-$base = '/';
-define('DOMAIN_CURRENT_SITE', 'localhost');
-define('PATH_CURRENT_SITE', '/');
-define('SITE_ID_CURRENT_SITE', 1);
-define('BLOG_ID_CURRENT_SITE', 1);
+define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
@@ -96,6 +88,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
-/* Enable multisite */
-define('WP_ALLOW_MULTISITE', true);

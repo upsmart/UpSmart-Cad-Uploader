@@ -146,7 +146,6 @@ function cyberchimps_header_logo() {
 function cyberchimps_header_site_title() { ?>	
 	<hgroup>
 		<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 	</hgroup>
 <?php }
 
@@ -289,10 +288,10 @@ add_action( 'cyberchimps_banner', 'cyberchimps_banner_content' );
 
 //contact info
 function cyberchimps_contact_info() {
-	$contact = cyberchimps_get_option('contact_details'); ?>
+	$contact = apply_filters( 'cyberchimps_header_contact', cyberchimps_get_option( 'contact_details' ) ); ?>
   
   <div class="contact_details">
-		<p><?php echo $contact; ?></p>
+		<?php echo $contact; ?>
   </div>
 <?php } 
 

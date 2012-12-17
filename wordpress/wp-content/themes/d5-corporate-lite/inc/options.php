@@ -77,7 +77,7 @@ function optionsframework_options() {
 	
 	$options[] = array(
 		'name' => 'Featured Image', 
-		'desc' => 'Upload an image for the Featured Box. 220px X 100px image is recommended.', 
+		'desc' => 'Upload an image for the Featured Box. 215px X 100px image is recommended.', 
 		'id' => 'featured-image' . $fbsinumber,
 		'std' => get_template_directory_uri() . '/images/featured-image' . $fbsinumber . '.jpg',
 		'type' => 'upload');	
