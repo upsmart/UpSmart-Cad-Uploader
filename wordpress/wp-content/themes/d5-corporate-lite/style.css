@@ -7,7 +7,7 @@ Author URI: http://d5creation.com/
 
 Description: D5 CORPORATE LITE is a theme for Business. Customizable Background and other options will give the WordPress Driven Site an attractive look.  D5 CORPORATE is super elegant and Professional Theme which will create the business widely expressed.  Right and Footer Sidebar will be usable for showing the widgets and PlunIns items. Full Wide page can be used for showing showcase or other pages. D5 CORPORATE, the Premium Version of this Theme has come with 7 different Color Schemes. D5 Creation's Support will be with you, Always! 
 
-Version: 1.5.02
+Version: 1.5.03
 
 Tags: green, two-columns, right-sidebar, fixed-width, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, front-page-post-form, full-width-template, theme-options 
 
@@ -847,7 +847,7 @@ input#s {
 
 #featured-boxs img {
 	height: 100px;
-    width: 220px;
+    width: 215px;
 	display: block;
 }
 
@@ -874,7 +874,7 @@ input#s {
 }
 
 .featured-box {
-	margin-left: 63.33px;
+	margin-left: 63px;
 	float:left;
 }
 
@@ -912,7 +912,7 @@ blockquote p {
 	display:inline;
 }
 
-#content .attachment-thumbnail {
+#container .attachment-thumbnail {
     border: 1px solid #EEEEEE;
     border-radius: 3px 3px 3px 3px;
     float: left;
@@ -920,7 +920,7 @@ blockquote p {
     padding: 3px;
 }
 
-#content .gallery .attachment-thumbnail {
+#container .gallery .attachment-thumbnail {
     float:none;
 	margin: 5px auto;
 }
@@ -1395,7 +1395,7 @@ input[type="submit"]:hover {
     text-shadow: -1px -1px 3px #FFFFFF;
 }
 
-#content .attachment-thumbnail {
+#container .attachment-thumbnail {
     border: 1px solid #EEEEEE;
 }
 

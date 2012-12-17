@@ -428,12 +428,21 @@ class PageLines_ShortCodes {
 		comments_number( $atts['zero'], $atts['one'], $atts['more'] );
 		$comments = ob_get_clean();
 
-		$comments = sprintf( '<a href="%s">%s</a>', get_comments_link(), $comments );
+		$comments = sprintf( '<a href="%s">%s</a>', $this->get_comment_link(), $comments );
 
 		$output = sprintf( '<span class="post-comments sc">%2$s%1$s%3$s</span>', $comments, $atts['before'], $atts['after'] );
 
 		return apply_filters( 'pagelines_post_comments_shortcode', $output, $atts );
-
+	}
+	
+	function get_comment_link() {
+		
+		$comment = '#wp-comments';
+		
+		if( function_exists( 'livefyre_show_comments' ) )
+			$comment = '#lf_comment_stream';
+		
+		return sprintf( '%s%s', get_permalink(), $comment );
 	}
 	
 	/**
@@ -1067,15 +1076,20 @@ class PageLines_ShortCodes {
 	function pl_accordion_shortcode( $atts, $content = null ) {
 
 		$defaults = array(
-			'name' => '',
-	    );
-         
-        $atts = shortcode_atts( $defaults, $atts );
 
-	    $out = sprintf( '<div id="%s" class="accordion">'.do_shortcode( $content ).'</div>',$atts['name'] );
-	        
-	    return $out;
+			'name' => '',
+
+		);
+
+		$atts = shortcode_atts( $defaults, $atts );
+
+		$out = sprintf( '<div id="%s" class="accordion">%s</div>',
+		$atts['name'],
+		do_shortcode( $content )
+		);
+	return $out;
 	}
+
 	//Accordion Content
 	function pl_accordioncontent_shortcode( $atts, $content = null, $open = null ) {
 	    
@@ -1153,7 +1167,7 @@ class PageLines_ShortCodes {
 	    extract( shortcode_atts( array(
 		    'first' => '',
 		    'title' => '',
-		    'imageurl' => sprintf( '%s/screenshot.png', PARENT_URL ), // fallback "reminder" image
+		    'imageurl' => sprintf( '%s/screenshot.png', PL_PARENT_URL ), // fallback "reminder" image
 		    'caption' => '',
 	    ), $atts ) );
 
@@ -1389,25 +1403,26 @@ class PageLines_ShortCodes {
     	extract( shortcode_atts( array(
     		'type' =>'',
 	    	'id' =>'',
-	    	'width' => '',
-	    	'height' => '',
+	    	'width' => '100%',
+	    	'height' => '100%',
 	    	'related' => '',
 	    	), $atts ) );
 
         if ($atts['type'] == 'youtube') {
 	    
-	    	$out = sprintf('<div class="pl-video"><iframe src="http://www.youtube.com/embed/%s" width="%s" height="%s" frameborder="0" allowfullscreen wmode="transparent"></iframe></div>',$id,$width,$height);
+	    	$out = sprintf('<div class="pl-video youtube"><iframe src="http://www.youtube.com/embed/%s" width="%s" height="%s" frameborder="0" allowfullscreen wmode="transparent"></iframe></div>',$id,$width,$height);
+
 	    	return $out;
 
 	    	if ($att['related'] == 'on') {
 
-	    		$out = sprintf('<div class="pl-video"><iframe src="http://www.youtube.com/embed/%s?rel=0" width="%s" height="%s" frameborder="0" allowfullscreen wmode="transparent"></iframe></div>',$id,$width,$height);
+	    		$out = sprintf('<div class="pl-video youtube"><iframe src="http://www.youtube.com/embed/%s?rel=0" width="%s" height="%s" frameborder="0" allowfullscreen wmode="transparent"></iframe></div>',$id,$width,$height);
 		    	return $out;
 	    	}
 
 	    } elseif ($atts['type'] == 'vimeo') {
 
-	    $out = sprintf('<div class="pl-video"><iframe src="http://player.vimeo.com/video/%s" width="%s" height="%s"  frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe></div>',$id,$width,$height);
+	    $out = sprintf('<div class="pl-video vimeo"><iframe src="http://player.vimeo.com/video/%s" width="%s" height="%s"  frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe></div>',$id,$width,$height);
 	    	return $out;
 	    }
     }

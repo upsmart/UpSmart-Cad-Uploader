@@ -38,5 +38,8 @@ jQuery(document).ready(function($) {
 			window.location = url;
 		})
 	});
+	
+	//starts carousel cycle
+	$('.carousel').carousel('cycle');
 
 });

@@ -29,7 +29,7 @@ function cyberchimps_add_elements_style() {
 	wp_enqueue_script( 'elements_js', array( 'jquery' ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style' );
+add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style', 30 );
 
 // Load elements
 	// Set directory path
@@ -64,3 +64,15 @@ function cyberchimps_selected_page_elements() {
 	return $options;
 }
 add_filter( 'cyberchimps_elements_draganddrop_page_options', 'cyberchimps_selected_page_elements' );
+
+// drop breadcrumb fields
+function cyberchimps_element_drop_fields( $fields ) {
+// drop unwanted fields
+	foreach( $fields as $key => $value ) {
+		if( $value['id'] == 'single_post_breadcrumbs' || $value['id'] == 'archive_breadcrumbs' ) {
+			unset( $fields[$key] );
+		}
+	}
+	return $fields;
+}
+add_filter( 'cyberchimps_field_filter', 'cyberchimps_element_drop_fields', 2 );

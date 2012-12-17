@@ -1,7 +1,7 @@
 ----------------------------------
 D5 CORPORATE LITE
 ----------------------------------
-Version: 	1.5.02
+Version: 	1.5.03
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 

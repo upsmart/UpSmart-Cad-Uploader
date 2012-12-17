@@ -8,6 +8,10 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(12/09/2012) - Maintenance and Improvements - Version 1.8.4.1
+[!] Sidebar Half Page - rtl.css
+
+
 (11/25/2012) - Maintenance and Improvements - Version 1.8.4
 [*] blog-excerpt.php Template now uses a default sidebar
 [*] content-sidebar-page.php Template is now the only 

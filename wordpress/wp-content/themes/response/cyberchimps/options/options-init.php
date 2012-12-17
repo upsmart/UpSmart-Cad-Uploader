@@ -84,7 +84,7 @@ function cyberchimps_load_sanitization() {
 }
 
 // Load options customizer file
-//add_action('init', 'cyberchimps_load_customizer' );
+add_action('init', 'cyberchimps_load_customizer' );
 function cyberchimps_load_customizer() {
 	require_once dirname( __FILE__ ) . '/options-customizer.php';
 }
@@ -407,17 +407,8 @@ function cyberchimps_drag_drop_field( $value ) {
 	$settings = get_option($option_name);
 
 	$val = '';
-	$output = '';
+	$output = '';	
 	
-	// Set default value to $val
-	if ( isset( $value['std'] ) ) {
-		if (is_array($value['std'])) {
-			$val[] = implode(',', array_keys($value['std']));
-		} else {
-			$val[] = $value['std'];	
-		}
-	}
-
 	// If the option is already saved, ovveride $val
 	if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info') ) {
 		if ( isset( $settings[($value['id'])]) ) {
@@ -427,12 +418,21 @@ function cyberchimps_drag_drop_field( $value ) {
 				$val = $settings[($value['id'])];
 			}
 			else {
-				$val = array("");
+				$val = NULL;
 			}
-			
 			// Striping slashes of non-array options
 			if ( !is_array($val) ) {
 				$val = stripslashes( $val );
+			}
+		}
+	}
+	// Set default value to $val
+	if( empty( $val ) ){
+		if ( isset( $value['std'] ) ) {
+			if (is_array($value['std'])) {
+				$val = array_keys( $value['std'] );
+			} else {
+				$val = array_keys( explode( $value['std'] ) );	
 			}
 		}
 	}
@@ -459,7 +459,7 @@ function cyberchimps_drag_drop_field( $value ) {
 	$output .=  "<div class='list_items'>";
 	if ( is_array( $val ) ) {
 		foreach ($val as $key) {
-			if(!$key) continue;
+			if( !array_key_exists( $key, $value['options'] ) ) continue;
 			$output .=  "<div class='list_item'>";
 			$output .=  '<img src="'. $directory_uri . '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
 			$output .=  "<span data-key='{$key}'>{$value['options'][$key]}</span>";
@@ -605,7 +605,22 @@ function cyberchimps_fields_callback( $value ) {
 			$val = stripslashes( $val );
 			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '">' . esc_textarea( $val ) . '</textarea>';
 			break;
+		
+		// css Textarea
+		case 'csstextarea':
+			$rows = '8';
 
+			if ( isset( $value['settings']['rows'] ) ) {
+				$custom_rows = $value['settings']['rows'];
+				if ( is_numeric( $custom_rows ) ) {
+					$rows = $custom_rows;
+				}
+			}
+
+			$val = stripslashes( $val );
+			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '">' . strip_tags( $val ) . '</textarea>';
+			break;
+		
 		// Select Box
 		case 'select':
 			$output .= '<select class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '">';
@@ -679,7 +694,7 @@ function cyberchimps_fields_callback( $value ) {
 			$checked = "";
 			if( $val ) 
 				$checked = 'checked="checked"';
-			$output .= '<div class="toggle-container"><label for="' . esc_attr( $value['id'] ) . '">'. $value['name'] . '</label><input id="' . esc_attr( $value['id'] ) . '"' . $checked . 'class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /></div>';
+			$output .= '<div class="toggle-container" id="' . esc_attr( $value['id'] ) . '_container"><label for="' . esc_attr( $value['id'] ) . '">'. $value['name'] . '</label><input id="' . esc_attr( $value['id'] ) . '"' . $checked . 'class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /></div>';
 			break;
 			
 		// Color picker
@@ -905,19 +920,17 @@ function cyberchimps_fields_callback( $value ) {
  * Validate theme options before updating to database.
  */
 function cyberchimps_options_validate( $input ) {
-
 	// Theme option import functionality
 	if( isset( $_POST['import' ] ) ) {
 		if( trim( $_POST['import' ] ) ) {
 			$string = stripslashes( trim( $_POST['import'] ) );
 			
 			$try = unserialize( $string );
-			
 			if($try) {
-				add_settings_error( 'import', __( 'Options Imported', 'optionsframework' ), 'updated fade' );
+				add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps' ), 'updated fade' );
 				return $try;
 			} else {
-				add_settings_error( 'import', __( 'Invalid Data for Import', 'optionsframework' ), 'updated fade' );
+				add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps' ), 'error fade' );
 			}
 		}
 	}
@@ -932,14 +945,15 @@ function cyberchimps_options_validate( $input ) {
 	if ( isset( $_POST['reset'] ) ) {
 		add_settings_error( 'cyberchimps_options', 'restore_defaults', __( 'Default options restored.', 'cyberchimps' ), 'updated fade' );
 		return cyberchimps_get_default_values();
-		
+	}
+	
 	/*
 	 * Update Settings
 	 *
 	 * This used to check for $_POST['update'], but has been updated
 	 * to be compatible with the theme customizer introduced in WordPress 3.4
 	 */
-	} else {
+	 else {
 		$clean = array();
 		$options = cyberchimps_get_fields();
 		foreach ( $options as $option ) {
@@ -995,7 +1009,6 @@ function cyberchimps_options_validate( $input ) {
 		return $clean;
 	}
 }
-
 /**
  * Format Configuration Array.
  *
@@ -1041,25 +1054,4 @@ function cyberchimps_admin_bar() {
 		'title' => __( 'Theme Options', 'cyberchimps' ),
 		'href' => admin_url( 'themes.php?page=cyberchimps-theme-options' )
 	));
-}
-
-if ( ! function_exists( 'cyberchimps_get_option' ) ) {
-
-	/**
-	 * Get Option.
-	 *
-	 * Helper function to return the theme option value.
-	 * If no value has been saved, it returns $default.
-	 * Needed because options are saved as serialized strings.
-	 */
-	 
-	function cyberchimps_get_option( $name, $default = false ) {
-		$options = get_option( 'cyberchimps_options' );
-		
-		if ( isset( $options[$name] ) ) {
-			return $options[$name];
-		}
-
-		return $default;
-	}
 }

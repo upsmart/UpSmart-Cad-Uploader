@@ -23,7 +23,7 @@ function cyberchimps_admin_add_customizer_page() {
 }
 
 add_action('customize_register', 'cyberchimps_customize');
-function cyberchimps_customize($wp_customize) {
+function cyberchimps_customize( $wp_customize ) {
 	class Cyberchimps_Typography_Size extends WP_Customize_Control {
 		public $type = 'select';
 
@@ -46,8 +46,9 @@ function cyberchimps_customize($wp_customize) {
     public function render_content() {?>
     	<style>
       	.images-radio-subcontainer img {
+					margin-top: 5px;
+					padding: 2px;
           border: 5px solid #eee;
-          padding: 2px;
         }
         .images-radio-subcontainer img.of-radio-img-selected {
           border: 5px solid #5DA7F2;
@@ -57,15 +58,26 @@ function cyberchimps_customize($wp_customize) {
           border: 5px solid #5DA7F2;
         }
       </style>
+      <script>jQuery( function($) {							
+							$('.of-radio-img-img').click(function(){
+							$(this).parent().parent().parent().find('.of-radio-img-img').removeClass('of-radio-img-selected');
+							$(this).addClass('of-radio-img-selected');
+							});
+			});
+			</script>
         <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-        <?php
+        <em><small><?php _e( 'make sure you have removed the image above before selecting one of these', 'cyberchimps' ); ?></small></em>
+				<?php
 				foreach( $this->choices as $value => $label ) : 
-				$selected = ( $this->value() == $value ) ? 'of-radio-img-selected' : '';
+				//if get theme mod background image has a value then we need to set cyberchimps bg to none
+				$test_bg = $this->value();
+				$test_bg = ( get_theme_mod( 'background_image' ) ) ? 'none' : $test_bg;
 				$name = '_customize-radio-' . $this->id;
+				$selected = ( $test_bg == $value ) ? 'of-radio-img-selected' : '';
 				?>
         <div class="images-radio-subcontainer">
         <label>
-						<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> style="display:none;" />
+						<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $test_bg, $value ); ?> style="display:none;" />
 						<img src="<?php echo esc_html( $label ); ?>" class="of-radio-img-img <?php echo esc_attr( $selected ); ?>" /><br>
 				</label> 
         </div>
@@ -75,7 +87,6 @@ function cyberchimps_customize($wp_customize) {
 
 		
 	}
-
 
 	$wp_customize->add_section( 'cyberchimps_design_section', array(
 		'title'          => 'Design',
@@ -192,34 +203,16 @@ function cyberchimps_customize($wp_customize) {
     'choices'    => apply_filters( 'cyberchimps_typography_styles', '' )
   ) );
 	
-	// new background section
-	$wp_customize->add_section( 'cyberchimps_background_section', array(
-		'title'          => 'Background',
-		'priority'       => 45,
-	) );
-	
-	// background color
-	$wp_customize->add_setting( 'cyberchimps_options[background_colorpicker]', array(
-			'default'        => '',
-			'type'           => 'option',
-		) );
-	
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_colorpicker', array(
-    'label'   => __( 'Background Color', 'cyberchimps' ),
-    'section' => 'cyberchimps_background_section',
-    'settings'   => 'cyberchimps_options[background_colorpicker]',
-	) ) );
-	
 	// background image
-	$wp_customize->add_setting( 'cyberchimps_options[select_background]', array(
+	$wp_customize->add_setting( 'cyberchimps_background', array(
 			'default'        => 'none',
-			'type'           => 'option',
+			'type'           => 'theme_mod',
 		) );
 	
-	$wp_customize->add_control( new Cyberchimps_Background_Image( $wp_customize, 'select_background', array(
-    'label'   => __( 'Background Image', 'cyberchimps' ),
-    'section' => 'cyberchimps_background_section',
-    'settings'   => 'cyberchimps_options[select_background]',
+	$wp_customize->add_control( new Cyberchimps_Background_Image( $wp_customize, 'cyberchimps_background', array(
+    'label'   => 'CyberChimps '. __( 'Background Image', 'cyberchimps' ),
+    'section' => 'background_image',
+    'settings'   => 'cyberchimps_background',
 		'choices' => apply_filters( 'cyberchimps_background_image', '' ),
 	) ) );
 }

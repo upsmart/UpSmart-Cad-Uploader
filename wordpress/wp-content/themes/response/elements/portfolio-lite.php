@@ -108,7 +108,7 @@ function cyberchimps_portfolio_lite_content() {
 	}
 	else {
 		$portfolio_link1 = $img1;
-		$portfolio_rel1 = "lightbox-portfolio";
+		$portfolio_rel1 = 'rel=cyberchimps-lightbox';
 	}
 	
 	if( $url_toggle2 == 1 ) {
@@ -117,7 +117,7 @@ function cyberchimps_portfolio_lite_content() {
 	}	
 	else {
 		$portfolio_link2 = $img2;
-		$portfolio_rel2 = "lightbox-portfolio";
+		$portfolio_rel2 = 'rel=cyberchimps-lightbox';
 	}
 	
 	if( $url_toggle3 == 1 ) {
@@ -126,7 +126,7 @@ function cyberchimps_portfolio_lite_content() {
 	}
 	else {
 		$portfolio_link3 = $img3;
-		$portfolio_rel3 = "lightbox-portfolio";
+		$portfolio_rel3 = 'rel=cyberchimps-lightbox';
 	}
 	
 	if( $url_toggle4 == 1 ) {
@@ -135,7 +135,7 @@ function cyberchimps_portfolio_lite_content() {
 	}	
 	else {
 		$portfolio_link4 = $img4;
-		$portfolio_rel4 = "lightbox-portfolio";
+		$portfolio_rel4 = 'rel=cyberchimps-lightbox';
 	}	
 ?>
 
@@ -144,35 +144,35 @@ function cyberchimps_portfolio_lite_content() {
      <div id="gallery" class="span12">
 			
 			<!-- Display the title -->
-			<h2 class="entry-title"><?php esc_html_e( $title_output ); ?></h2>
+			<h2 class="entry-title"><?php echo esc_html( $title_output ); ?></h2>
 			
 			<ul class="row-fluid">
 			
 				<!-- Portfolio 1 -->
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo esc_url( $portfolio_link1 ); ?>' rel='<?php esc_attr_e( $portfolio_rel1 ); ?>' title='<?php esc_attr_e( $caption1 ); ?>'><img src='<?php echo esc_url( $img1 ); ?>'  alt='Image 1'/>
-						<div class='portfolio_caption'><?php esc_html_e( $caption1 ); ?></div>
+					<a href='<?php echo esc_url( $portfolio_link1 ); ?>' <?php echo esc_attr( $portfolio_rel1 ); ?> title='<?php echo esc_attr( $caption1 ); ?>'><img src='<?php echo esc_url( $img1 ); ?>'  alt='Image 1'/>
+						<div class='portfolio_caption'><?php echo esc_html( $caption1 ); ?></div>
 					</a>
 				</li>
 		
 				<!-- Portfolio 2 -->
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo esc_url( $portfolio_link2 ); ?>' rel='<?php esc_attr_e( $portfolio_rel2 ); ?>' title='<?php esc_attr_e( $caption2 ); ?>'><img src='<?php echo esc_url( $img2 ); ?>'  alt='Image 1'/>
-						<div class='portfolio_caption'><?php esc_html_e( $caption2 ); ?></div>
+					<a href='<?php echo esc_url( $portfolio_link2 ); ?>' <?php echo esc_attr( $portfolio_rel2 ); ?> title='<?php echo esc_attr( $caption2 ); ?>'><img src='<?php echo esc_url( $img2 ); ?>'  alt='Image 1'/>
+						<div class='portfolio_caption'><?php echo esc_html( $caption2 ); ?></div>
 					</a>
 				</li>
 		
 				<!-- Portfolio 3 -->
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo esc_url( $portfolio_link3 );?>' rel='<?php esc_attr_e( $portfolio_rel3 ); ?>' title='<?php esc_attr_e( $caption3 ); ?>'><img src='<?php echo esc_url( $img3 ); ?>'  alt='Image 1'/>
-						<div class='portfolio_caption'><?php esc_html_e( $caption3 ); ?></div>
+					<a href='<?php echo esc_url( $portfolio_link3 );?>' <?php echo esc_attr( $portfolio_rel3 ); ?> title='<?php echo esc_attr( $caption3 ); ?>'><img src='<?php echo esc_url( $img3 ); ?>'  alt='Image 1'/>
+						<div class='portfolio_caption'><?php echo esc_html( $caption3 ); ?></div>
 					</a>
 				</li>
 			
 				<!-- Portfolio 4 -->
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo esc_url( $portfolio_link4 ); ?>' rel='<?php esc_attr_e( $portfolio_rel4 ); ?>' title='<?php esc_attr_e( $caption4 ); ?>'><img src='<?php echo esc_url( $img4 ); ?>'  alt='Image 1'/>
-						<div class='portfolio_caption'><?php esc_html_e( $caption4 ); ?></div>
+					<a href='<?php echo esc_url( $portfolio_link4 ); ?>' <?php echo esc_attr( $portfolio_rel4 ); ?> title='<?php echo esc_attr( $caption4 ); ?>'><img src='<?php echo esc_url( $img4 ); ?>'  alt='Image 1'/>
+						<div class='portfolio_caption'><?php echo esc_html( $caption4 ); ?></div>
 					</a>
 				</li>
 			</ul>

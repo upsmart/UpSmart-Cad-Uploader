@@ -189,7 +189,7 @@ class PageLinesOptionsArray {
 				'layout'		=> 'interface',
 				'selectvalues'	=> array(
 					'pixels'		=> array( 'name' => __( 'Responsive with Pixel Width', 'pagelines' ), 'offset' => '0px 0px' ), 
-					'percent'		=> array( 'name' => __( 'Responsive with Percent Width', 'pagelines' ), 'offset' => '0px -88px', 'version'	=> 'pro' ), 
+					'percent'		=> array( 'name' => __( 'Responsive with % Width', 'pagelines' ), 'offset' => '0px -88px', 'version'	=> 'pro' ), 
 					'static'		=> array( 'name' => __( 'Static with Pixel Width', 'pagelines' ), 'offset' => '0px -176px' )
 				),
 				'title'		=> __( 'Layout Handling', 'pagelines' ),						
@@ -527,7 +527,7 @@ class PageLinesOptionsArray {
 					'inputlabel'=> __( 'Use Cufon font replacement?', 'pagelines' ),
 					'title'		=> __( 'Use Cufon Font Replacement', 'pagelines' ),
 					'shortexp'	=> __( 'Use a special font replacement technique for certain text', 'pagelines' ),
-					'exp'		=> sprintf( __( "Cufon is a special technique for allowing you to use fonts outside of the 10 or so <strong>web-safe</strong> fonts. <br/><br/>%s is equipped to use it.  Select this option to enable it. Visit the <a href='http://cufon.shoqolate.com/generate/'>Cufon site</a>.", 'pagelines' ), NICETHEMENAME )
+					'exp'		=> sprintf( __( "Cufon is a special technique for allowing you to use fonts outside of the 10 or so <strong>web-safe</strong> fonts. <br/><br/>%s is equipped to use it.  Select this option to enable it. Visit the <a href='http://cufon.shoqolate.com/generate/'>Cufon site</a>.", 'pagelines' ), PL_NICETHEMENAME )
 			),
 			'font_file'	=> array(
 					'version'	=> 'pro',
