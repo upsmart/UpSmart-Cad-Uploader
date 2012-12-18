@@ -1,0 +1,413 @@
+/*
+Theme Name: UpSmart
+Theme URI: http://upsmart.com
+Author: T.J. Lipscomb
+Author URI: http://tjl.co/
+Description: Default theme designed for UpSmart, LLC.
+Version: 1.1
+License: TBD
+License URI: TBD
+Tags: 
+Text Domain: upsmart
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic,800,800italic);
+
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+:focus {/* remember to define focus styles! */
+	outline: 0;
+}
+body {
+	background: #fff !important;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+table {/* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a img {
+	border: 0;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+
+/* Page layout */
+body {
+	font-family: 'Open Sans','Helvetica Neue','Helvetica','Arial',sans-serif;
+	font-size: 10pt;
+	line-height: 14pt;
+	background: #FFF;
+	padding-top: 25px;
+}
+
+/* Element formatting */
+h1,h2,h3,h4,h5 {
+	font-weight: bold;
+	font-family: 'Helvetica Neue','Helvetica','Arial',sans-serif;
+}
+h1 {
+	font-size: 28pt;
+	line-height: 32pt;
+}
+h2 {
+	font-size: 24pt;
+	line-height: 28pt;
+}
+h3 {
+	font-size: 16pt;
+	line-height: 20pt;
+}
+a {
+	color: #5BF;
+	text-decoration: none;
+}
+a:visited {
+	color: #4AA4E0;
+}
+a:hover {
+	color: #408DC0;
+}
+
+/*Forms*/
+input[type=submit],button {
+	display: block;
+	margin: 0 auto;
+	padding: 0.2em 1em;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Open Sans','Helvetica Neue','Helvetica','Arial',sans-serif;
+	color: #FFF;
+	text-shadow: 0 -1px 0 #408dc0;
+	box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.25);
+	background: -moz-linear-gradient(top, #5BF, #408dc0);
+	background: -webkit-linear-gradient(top, #5BF, #408dc0);
+	background: linear-gradient(top, #5BF, #408dc0);
+	border-radius: 6px;
+	border: 1px solid #408dc0;
+}
+input[type=submit]:hover,button:hover {
+	background: -moz-linear-gradient(top, #5BF, #4AA4E0);
+	background: -webkit-linear-gradient(top, #5BF, #4AA4E0);
+	background: linear-gradient(top, #5BF, #4AA4E0);
+}
+input[type=submit]:active,button:active {
+	background: -moz-linear-gradient(top, #408dc0, #5BF);
+	background: -webkit-linear-gradient(top, #408dc0, #5BF);
+	background: linear-gradient(top, #408dc0, #5BF);
+}
+
+/*Assistive things */
+.assistive-text,.skip-link {
+	display: none;
+}
+
+/* Navigation */
+body>#mainnav {
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 25px;
+	background: #444;
+	background-image: -moz-linear-gradient(top, #444, #3B3B3B);
+	background-image: -webkit-linear-gradient(top, #444, #3B3B3B);
+	background-image: linear-gradient(top, #444, #3B3B3B);
+	border-bottom: 1px solid #000;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+body>#mainnav .menu-item {
+	position: relative;
+	float: left;
+}
+body>#mainnav .menu-item>a, #userbar>div,#userbar .menu>a {
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	color: #CCC;
+	text-decoration: none;
+	text-shadow: 0 -1px 0px rgba(0,0,0,1);
+	padding: 0 8px;
+	border-left: 1px solid #3B3B3B;
+	border-right: 1px solid #444;
+}
+
+body>#mainnav .sub-menu {
+	display: none;
+	position: absolute;
+	float: none;
+	top: 25px;
+	left: 0;
+	min-width: 200px;
+	
+	background: #444;
+	background-image: -moz-linear-gradient(top, #444, #3B3B3B);
+	background-image: -webkit-linear-gradient(top, #444, #3B3B3B);
+	background-image: linear-gradient(top, #444, #3B3B3B);
+}
+body>#mainnav .menu-item:hover > .sub-menu,
+body>#mainnav .sub-menu:hover {
+	display: block;
+}
+body>#mainnav .sub-menu li {
+	display: block;
+	min-width: 100%;
+	float: none;
+}
+body>#mainnav .sub-menu a {
+	min-width: 172px;
+	min-width: -moz-calc(100% - 18px);
+	min-width: -webkit-calc(100% - 18px);
+	min-width: calc(100% - 18px);
+}
+body>#mainnav .menu a:link:hover {
+	color: #EEE;
+	border-right: 1px solid #4B4B4B;
+	background: #555;
+	background-image: -moz-linear-gradient(top, #555, #444);
+	background-image: -webkit-linear-gradient(top, #555, #444);
+	background-image: linear-gradient(top, #555, #444);
+}
+#userbar .menu {
+	margin-left: 2px;
+	float: right;
+}
+#userbar>div {
+	float: none;
+	border-left: 1px solid #444;
+	border-right: 0;
+}
+#userbar {
+	border-left: 1px solid #3B3B3B;
+	
+	float: right;
+}
+	
+/*Header*/
+body>header {
+	width: 100%;
+	height: 46px;
+	padding: 9px 0 0 9px;
+	border-bottom: 1px solid #DDD;
+	background: #F8F8F8;
+}
+/*#site-title {
+	padding: 2px 0;
+	font-size: 33px;
+	line-height: 40px;
+	color: #444;
+}*/
+#site-description {
+	display: none;
+}
+body>header img {
+	height: 37px;
+	padding-left: 4px;
+	vertical-align: top;
+}
+
+/*Footer*/
+footer {
+	font-size: 0.9em;
+	color: #444;
+	clear: both;
+	text-align: center;
+}
+
+/*Document body/content*/
+#primary {
+	border-right: 1px solid #DDD;
+	width: 80%;
+	width: -moz-calc(100% - 250px);
+	width: -webkit-calc(100% - 250px);
+	width: calc(100% - 250px);
+}
+#content {
+	padding: 1em;
+}
+#secondary {
+	position: absolute;
+	right: 0;
+	top: calc(80px + 1em);
+	width: 20%;
+	width: -moz-calc(248px);
+	width: -webkit-calc(248px);
+	width: calc(248px);
+}
+#secondary>aside {
+	padding: 0.5em 0;
+	margin: 0 1em;
+	background: #FFF;
+	border-bottom: 1px solid #CCC;
+}
+#secondary>aside h3 {
+	font-size: 10pt;
+	line-height: 14pt;
+}
+#secondary>aside:last-child {
+	border-bottom: 0;
+}
+/*Page Structure*/
+#wrapper {
+	padding-top: 1em;
+}
+
+/*Post formatting*/
+.entry-title,.entry-title a {
+	color: #666;
+	text-decoration: none;
+}
+.entry-title a:hover {
+	color: #444;
+}
+p {
+	text-align: justify;
+	text-indent: 1em;
+	margin-bottom: 0.5em;
+}
+
+/*Github stuff*/
+.github_commits {
+	width: 100%;
+	margin: 1em 0;
+}
+
+.github_commits td,.github_commits th {
+	padding: 0.1em;
+}
+.github_commits th {
+	font-size: 1.2em;
+}
+.github_commits tr:nth-child(4n+3),
+.github_commits tr:nth-child(4n+4){
+	background: #F8F8F8;
+}
+
+.github_commits img {
+	height: 2em;
+	vertical-align: top;
+}
+
+/*Hosting signup styles*/
+#twocol {
+	width: 80%;
+	margin: 0 auto;
+}
+#twocol>div {
+	width: 49%;
+	text-align: center;
+	display: inline-block;
+	float: left;
+}
+		
+.steps {
+	margin-top: 1em;
+}
+.steps li:first-child {
+	border-left: 1px solid #DDD;
+	padding-left: 10px;
+}
+.steps li {
+	height: 50px;
+	display: block;
+	float: left;
+	z-index: 1;
+	line-height: 45px;
+	color: #888;
+	background: #FFF;
+	border: 1px solid #DDD;
+	border-width: 1px 0;
+	padding-left: 30px;
+}
+.steps li:after {
+	content: " ";
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 50px;
+	position: absolute;
+	z-index: 100;
+	background: url('arrow-white.png') no-repeat;
+}
+
+.steps li.active {
+	color: #000;
+	background: #FBFBFB;
+}
+.steps li.active:after {
+	border: 0 none;
+	background-color: #FFF;
+	background-image: url('arrow-gray.png');
+}
+
+.substeps {
+	margin-top: 0;
+	font-size: 0.9em;
+}
+.substeps li {
+	height: 30px;
+	line-height: 28px;
+	padding-left: 15px;
+}
+.substeps li:after {
+	width: 12px;
+	height: 30px;
+	background-position: center right;
+}
+
+/*th {
+	text-align: left;
+}
+
+input {
+	width: 100%;
+}
+input[type=radio] {
+	width: auto;
+}
+.twoinput input {
+	width: 48%;
+}
+.twoinput input:last-child {
+	float: right;
+}
+.normalinput input {
+	width: auto;
+}*/
