@@ -194,5 +194,5 @@ table.result-table{
     content : url(../img/check1.png);
 }
 .result-table tbody span.error::before{
-    /*content : url(../img/error-btn.png); */
+    content : url(../img/error-btn.png);
 }

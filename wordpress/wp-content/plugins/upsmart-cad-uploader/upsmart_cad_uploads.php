@@ -11,13 +11,13 @@ Author: Aaron Tobias
 Author URI: aarontobias.com
 License: GNU GENERAL PUBLIC LICENSE
 */
- 
 DEFINE( 'UPSMART_RS_PLUGIN_URL', trailingslashit( WP_PLUGIN_URL ) . basename( dirname( __FILE__ ) ) );
 
 
 function  upsmart_cad_upload_110n_init(){
   load_plugin_textdomain( 'Upsmart Cad Uploader', '', dirname( plugin_basename( __FILE__ ) ) . '/lang' );
-  /* Need to add CAD directory */
+  wp_register_style( 'cadPluginStylesheet', plugins_url('css/main.css', __FILE__) );
+  wp_register_script( 'cadPluginScript', plugins_url('js/main.js', __FILE__), array('jquery'), '1.0.0', true);
 }
 
 add_action( 'init','upsmart_cad_upload_110n_init' );
@@ -29,11 +29,15 @@ function cad_upload_media_menu($tabs) {
 }
 add_filter('media_upload_tabs', 'cad_upload_media_menu');
 
+function cad_load_styles_and_scripts(){
+	wp_enqueue_style('cadPluginStylesheet');
+	wp_enqueue_script('cadPluginScript');	
+}
+
+add_action( 'admin_enqueue_scripts', 'cad_load_styles_and_scripts' );
 
 /* Note this function must start with media so styling is triggered*/
 function media_cad_upload_menu_process() {
-	wp_enqueue_style('cadPluginStylesheet', UPSMART_RS_PLUGIN_URL . '/css/main.css');
-	wp_enqueue_script('cadPluginScript', UPSMART_RS_PLUGIN_URL . '/js/main.js');
 	media_upload_header();
 	
 	error_reporting( -1 );
@@ -47,33 +51,9 @@ function media_cad_upload_menu_process() {
 	';
 	
 	if($_POST){
-		echo '	
-		<table class="result-table">
-			<thead>
-				<tr>
-					<th></th>
-					<th scope="col" abbr="Details">Description</th>
-					<th scope="col" abbr="Success">Success</th>
-				</tr>
-			</thead>
-			<tbody>
-        ';
         
 		$uploader = new CadUpload();
 		$a = $uploader->saveUpload($field_name='cad_file');
-
-        echo '
-		<tr>
-			<th scope="row">Transaction Completed!</th>
-			<td>Done!</td>
-			<td><span class="check"></span></td>
-		</tr>
-        ';
-		echo '</tbody></table>';
-		/*
-		echo '<a href="/wp-admin/media-upload.php?post_id=346&tab=library">To Media Library</a>';
-		echo '<a href="/wp-admin/media-upload.php?post_id=346&tab=cadfile">Upload More</a>';
-	    */
 	}
 	else{
 	echo '
@@ -96,7 +76,12 @@ function media_cad_upload_menu_process() {
 	';
 	}
 	echo '</section>';
-    
+	
+			/*
+		echo '<a href="/wp-admin/media-upload.php?post_id=346&tab=library">To Media Library</a>';
+		echo '<a href="/wp-admin/media-upload.php?post_id=346&tab=cadfile">Upload More</a>';
+	    */
+	
 }
 
 
@@ -111,14 +96,14 @@ add_action('media_upload_cadfile', 'cad_upload_media_menu_handle');
 function my_attachment_fields_to_edit( $form_fields, $post ) {
     $supported_exts = get_allowed_mime_types(); // array of mime types to show checkbox for
 
-    if ( in_array( $post->post_mime_type, $supported_exts ) ) {
+    if ( in_array( $post->post_mime_type, $supported_exts ) && $post->post_mime_type == "text/html") {
         // file is supported, show fields
         $use_sc = true; // check box by default (false not to, or use other criteria)
 
         $checked = ( $use_sc ) ? 'checked' : '';
 
         $form_fields['use_sc'] = array(
-            'label' =>  'Use SC',
+            'label' =>  'Use Shortcode',
             'input' =>  'html',
             'html'  =>  "<input type='checkbox' {$checked} name='attachments[{$post->ID}][use_sc]' id='attachments[{$post->ID}][use_sc]' /> " . __("Insert shortcode instead of link", "txtdomain"),
             'value' =>  $use_sc
@@ -144,11 +129,15 @@ add_filter( 'attachment_fields_to_edit', 'my_attachment_fields_to_edit', null, 2
 add_filter( 'media_send_to_editor', 'my_media_insert', 20, 3 );
 
 
-function modify_post_mime_types($post_mime_types) {
-    $post_mime_types['text/html'] = array('HTML', 'Manage HTML', 'HTML (%s)');
-    return $post_mime_types;
-}
 
+function modify_post_mime_types( $post_mime_types ) {  
+	// select the mime type, here: 'application/pdf'  
+	// then we define an array with the label values  
+	$post_mime_types['text/html'] = array( __( 'CAD' ), __( 'Manage CADs' ), _n_noop( 'CAD <span class="count">(%s)</span>', 'CAD <span class="count">(%s)</span>' ) );  
+	// then we return the $post_mime_types variable  
+	return $post_mime_types;  
+}  
+// Add Filter Hook  
 add_filter('post_mime_types', 'modify_post_mime_types');
 
 

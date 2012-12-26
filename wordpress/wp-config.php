@@ -22,7 +22,7 @@ define('DB_NAME', 'development');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '319154');
+define('DB_PASSWORD', 't/>/wise');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -81,6 +81,15 @@ define('WPLANG', '');
 define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
+
+//Allow multisite
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', false);
+$base = '/';
+define('DOMAIN_CURRENT_SITE', 'localhost');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )

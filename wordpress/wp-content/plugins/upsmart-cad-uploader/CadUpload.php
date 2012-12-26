@@ -1,16 +1,18 @@
 <?PHP
-
-DEFINE( 'UPSMART_CAD_SCRIPTS_URL', trailingslashit( WP_PLUGIN_URL ) . basename( dirname( __FILE__ ) ) . '/conversion.scripts' );
-
+		
 Class CadUpload{
+
+	private $plugin_url;
+	private $STL_Uploads_Dir;
+	private $Conversion_Script;
+	private $upload_error_handler;
 	
-	/* Need to change these to use wordpress base links */
-	private $STL_Uploads_Dir = "/home/aaron/Project-UpSmart/wordpress/wp-content/cad/";
-	private $Conversion_Script = "/home/aaron/Project-UpSmart/wordpress/wp-content/plugins/upsmart-cad-uploader/conversion.script/";
-	
-	public function _construct(){}
-	
-	public function saveUpload($field_name = null, $user_id=null){	
+	private $upload_error_strings;
+		
+	public function __construct(){
+		$this->plugin_url = trailingslashit( plugin_dir_path(__FILE__) ); 
+		$this->STL_Uploads_Dir = $this->plugin_url . 'scratch/';
+		$this->Conversion_Script = $this->plugin_url. '/conversion.script/';
 		
 		// The default error handler.
 		if ( ! function_exists( 'wp_handle_upload_error' ) ) {
@@ -18,9 +20,9 @@ Class CadUpload{
 				return array( 'error'=>$message );
 			}
 		}
-	
-		$upload_error_handler = 'wp_handle_upload_error';
-			
+
+		$this->upload_error_handler = 'wp_handle_upload_error';
+		
 		//From PHP.net
 		$upload_error_strings = array( false,
 		__( "The uploaded file exceeds the <code>upload_max_filesize</code> directive in <code>php.ini</code>." ),
@@ -31,12 +33,91 @@ Class CadUpload{
 		__( "Missing a temporary folder." ),
 		__( "Failed to write file to disk." ),
 		__( "File upload stopped by extension." ));
+	}
+	
+	private function startResponseTable(){
+		echo '	
+		<table class="result-table">
+			<thead>
+				<tr>
+					<th></th>
+					<th scope="col" abbr="Details">Description</th>
+					<th scope="col" abbr="Success">Success</th>
+				</tr>
+			</thead>
+			<tbody>
+        ';
+	}
+	
+	private function addResponseRow($title, $desc, $success=false){
+		
+		$row = '<tr>';
+		$row.= '<th scope="row">' . $title .'</th>';
+		$row.= '<td>'. $desc . '</td>';
+		$row.= '<td><span class="' . ($success ? 'check' : 'error') . '"></span></td>';
+		$row.= '</tr>';
+		
+		echo $row;
+		
+		if(!$success){
+			$this->endResponseTable(false);
+		}
+       
+	}
+	
+	private function endResponseTable($done=true){
+	
+		if(!$done)
+			$this->addResponseRow("Error Occured!", "Please Try Again", true);
+			
+		echo '</tbody></table>';	
+	}
+
+	private function handleUpload( $file=array(), $uploads = array() ){
+
+		// Move the file to the uploads dir
+		$filename = $file['name'];
+		$type = $file['type'];
+		$new_file = $uploads['path'] . "/$filename";
+		
+		if ( false === @copy( $file['tmp_name'], $new_file ) )
+			return $this->addResponseRow(__('File Transfer'), sprintf( __('The uploaded file could not be moved to %s.' ), $uploads['path']));
+		
+		// Set correct file permissions
+		$stat = stat( dirname( $new_file ));
+		$perms = $stat['mode'] & 0000666;
+		@chmod( $new_file, $perms );
+
+		// Compute the URL
+		$url = $uploads['url'] . "/$filename";
+
+		if ( is_multisite() )
+			delete_transient( 'dirsize_cache' );
+
+		return apply_filters( 'wp_handle_upload', array( 'file' => $new_file, 'url' => $url, 'type' => $type ), 'upload' );
+			
+	
+	}
+	
+	public function buildGuid( $file=null ){
+		$wp_upload_dir = wp_upload_dir();
+		return $wp_upload_dir['baseurl'] . '/' . _wp_relative_upload_path( $file );
+	}
+	
+	function cleanCAD_ScratchSpace_Directory(){		
+		$output = shell_exec("rm -rf " . $this->STL_Uploads_Dir . "*");
+	}
+	
+	public function saveUpload($field_name = null, $user_id=null){	
+		
+		$this->startResponseTable();
+		$this->cleanCAD_ScratchSpace_Directory();
 			
 		if(is_null($field_name))
 			die("Need CAD field name");
 			
 		$file = $_FILES[$field_name];
-			
+
 		// A successful upload will pass this test. It makes no sense to override this one.
 		if ( ! empty( $file['error'] ) )
 			return $upload_error_handler( $file, $upload_error_strings[$file['error']] );
@@ -50,56 +131,44 @@ Class CadUpload{
 			return $upload_error_handler( $file, __( 'Specified file does not exist.' ));
 
 		$fullFileName =$file['name'];
-		/**/
+		
+		
 		// A proper stl file is submitted by validating mime type extension
 		if(!preg_match("/^.*\.(stl)$/i", $fullFileName)){	
 			return $upload_error_handler( $file, __( 'Specified file does not exist.' ));
-		}
-			
-        echo'
-		<tr>
-			<th scope="row">File Validation</th>
-			<td>Is uploaded file a valid stl file</td>
-			<td><span class="check"></span></td>
-		</tr>
-        ';	
+		}	
+		$this->addResponseRow(__('File Validation'), __('Is uploaded file a valid stl file'), true);
 
-		//blender -b -P cad.import.py -- 'KAPPA'
-		// /home/aaron/www/wp-content/plugins/KAPPA.stl
-		//convert file to X3Dom
-		//aopt -i KAPPA.x3d -N KAPPA.html
-		//Current pwd ==> /home/aaron/Project-UpSmart/wordpress/wp-admin
 		
 		// A writable uploads dir will pass this test. Again, there's no point overriding this one.
 		if ( ! ( ( $uploads = wp_upload_dir() ) && false === $uploads['error'] ) )
-			return $upload_error_handler( $file, $uploads['error'] );
+			return $this->upload_error_handler( $file, $uploads['error'] );
+			
 		
-	    $filename = wp_unique_filename( $this->STL_Uploads_Dir, $fullFileName, null );
-        $new_file = $this->STL_Uploads_Dir. "$filename";
+		$nameOfFile = strstr($fullFileName, '.', true);
+		$htmlEquivelant = $nameOfFile . '.html';
+	    $filename = wp_unique_filename( $uploads['path'], $htmlEquivelant, null );
+	    
+        $new_file = $this->STL_Uploads_Dir. strstr($filename, '.', true) . '.stl';
 
-		if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) )
-			return $upload_error_handler( $file, sprintf( __('The uploaded file could not be moved to %s.' ), $this->STL_Uploads_Dir) );
+		if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) ){
+			return $this->addResponseRow(__('File Transfer'), sprintf( __('The uploaded file could not be moved to %s.' ), $this->STL_Uploads_Dir));
+		}
 
-        echo '
-		<tr>
-			<th scope="row">File Transfer</th>
-			<td>Stl file is being moved to temp directory</td>
-			<td><span class="check"></span></td>
-		</tr>
-        ';
+		$this->addResponseRow(__('File Transfer'), __('Stl file is being moved to temp directory'), true);
+
  
         // Create x3d file from stl file
         $nameOfFile = strstr($filename, '.', true);
         
 		$output = shell_exec('blender -b -P ' . $this->Conversion_Script . 'cad.import.py -- ' . $nameOfFile . ' ' . $this->STL_Uploads_Dir);
+		
+		
+		if(stripos($output, "finished X3D export") === false){
+			return $this->addResponseRow(__('STL Conversion'), __('Stl file is being converted to xdom format'));
+		}
+		$this->addResponseRow(__('STL Conversion'), __('Stl file is being converted to xdom format'), true);
 
-        echo '
-		<tr>
-			<th scope="row">STL Conversion</th>
-			<td>Stl file is being converted to xdom format</td>
-			<td><span class="check"></span></td>
-		</tr>
-        ';
                
         $x3dFile = $nameOfFile . ".x3d";
         $htmlFile = $nameOfFile . ".html";
@@ -107,14 +176,12 @@ Class CadUpload{
 		// Create x3d file from stl file
 		$output = shell_exec('aopt -i ' . $this->STL_Uploads_Dir . $x3dFile  . ' -N ' . $this->STL_Uploads_Dir . $htmlFile);
 
-        echo '
-		<tr>
-			<th scope="row">X3D Conversion</th>
-			<td>X3Dom file is being converted to embeddable WebGL</td>
-			<td><span class="check"></span></td>
-		</tr>
-        ';	
+		if(!file_exists($this->STL_Uploads_Dir . $htmlFile)){
+			return $this->addResponseRow(__('X3D Conversion'), __('X3Dom file is being converted to embeddable WebGL'));	
+		}
 		
+		$this->addResponseRow(__('X3D Conversion'), __('X3Dom file is being converted to embeddable WebGL'), true);
+
 		$htmlFilePath = $this->STL_Uploads_Dir . $htmlFile;
 	
 		// Replace stl file with html file
@@ -122,19 +189,21 @@ Class CadUpload{
 		$file['tmp_name'] = $htmlFilePath;
 		$file['type'] = 'text/html';
 		$file['error'] = 0;
-		$file['size'] = filesize($htmlFilePath);
+		$file['size'] = @filesize($htmlFilePath);
 		
-		 /**/
+		// Set correct file permissions
+		$stat = stat( dirname( $htmlFilePath ));
+		$perms = $stat['mode'] & 0000666;
+		@chmod( $htmlFilePath, $perms );
+		
+		if($file['size']  == 0){
+			return $this->addResponseRow(__('File Stats'), __('File exists to attain file information'));
+		}
+		
 		//Move the file to the uploads directory, returns an array
 		$uploaded_file = $this->handleUpload($file, $uploads);
 			
-        echo '
-		<tr>
-			<th scope="row">File Transfer</th>
-			<td>WebGL is being moved to wordpress uploads directory</td>
-			<td><span class="check"></span></td>
-		</tr>
-        ';
+		$this->addResponseRow(__('File Transfer'), __('WebGL moved to wordpress uploads directory'), true);
 	    		
 		if(!isset($uploaded_file['error']) && isset($uploaded_file['file'])) {
             $filetype   = wp_check_filetype(basename($uploaded_file['file']), null);
@@ -169,58 +238,18 @@ Class CadUpload{
 		
 		//Add the file to the media library
 		$attach_id = wp_insert_attachment( $attachment, $uploaded_file['file'] );
+		
 		$meta = wp_generate_attachment_metadata($attach_id, $uploaded_file['file']  );
-
         $upload_feedback = false;
         
-        echo '
-		<tr>
-			<th scope="row">Media Library</th>
-			<td>WebGL file is registered with wordpress media library</td>
-			<td><span class="check"></span></td>
-		</tr>
-        ';
+        $this->addResponseRow(__('Media Library'), __('WebGL file is registered with wordpress media library'), true);
+        $this->addResponseRow(__('Transaction Complete'), __('CAD file is now embeddable through media library'), true);
+        $this->endResponseTable();
+        
+        $this->cleanCAD_ScratchSpace_Directory();
         
         return $attach_id;
 		
-	}
-	
-	public function handleUpload( $file=array(), $uploads = array() ){
-		/*
-		require_once( ABSPATH . 'wp-admin' . '/includes/file.php' );
-		return wp_handle_upload($file, array( 'test_form' => false , 'test_upload' => false), date('Y/m') );
-		*/
-
-		// Move the file to the uploads dir
-		$filename = $file['name'];
-		$type = $file['type'];
-		$new_file = $uploads['path'] . "/$filename";
-		
-		echo $new_file . "  vs  " . $file['tmp_name'];
-		if ( false === @copy( $file['tmp_name'], $new_file ) )
-			return $upload_error_handler( $file, sprintf( __('The uploaded file could not be moved to %s.' ), $uploads['path'] ) );
-
-		unlink($file['tmp_name']);
-		
-		// Set correct file permissions
-		$stat = stat( dirname( $new_file ));
-		$perms = $stat['mode'] & 0000666;
-		@ chmod( $new_file, $perms );
-
-		// Compute the URL
-		$url = $uploads['url'] . "/$filename";
-
-		if ( is_multisite() )
-			delete_transient( 'dirsize_cache' );
-
-		return apply_filters( 'wp_handle_upload', array( 'file' => $new_file, 'url' => $url, 'type' => $type ), 'upload' );
-			
-	
-	}
-	
-	public function buildGuid( $file=null ){
-		$wp_upload_dir = wp_upload_dir();
-		return $wp_upload_dir['baseurl'] . '/' . _wp_relative_upload_path( $file );
 	}
 	
 }
