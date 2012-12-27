@@ -12,7 +12,7 @@ Class CadUpload{
 	public function __construct(){
 		$this->plugin_url = trailingslashit( plugin_dir_path(__FILE__) ); 
 		$this->STL_Uploads_Dir = $this->plugin_url . 'scratch/';
-		$this->Conversion_Script = $this->plugin_url. '/conversion.script/';
+		$this->Conversion_Script = $this->plugin_url. 'conversion.script/';
 		
 		// The default error handler.
 		if ( ! function_exists( 'wp_handle_upload_error' ) ) {
@@ -41,8 +41,8 @@ Class CadUpload{
 			<thead>
 				<tr>
 					<th></th>
-					<th scope="col" abbr="Details">Description</th>
-					<th scope="col" abbr="Success">Success</th>
+					<th scope="col" abbr="Details">Message</th>
+					<th scope="col" abbr="Status">Status</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -114,7 +114,7 @@ Class CadUpload{
 		$this->cleanCAD_ScratchSpace_Directory();
 			
 		if(is_null($field_name))
-			die("Need CAD field name");
+			return $this->addResponseRow(__('Form Error'), __('upload form field name was not recognized'));
 			
 		$file = $_FILES[$field_name];
 
@@ -124,18 +124,17 @@ Class CadUpload{
 
 		// A non-empty file will pass this test.
 		if (!(filesize($file['tmp_name']) > 0 ) )
-			return $upload_error_handler( $file, __( 'File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini.' ));
-
+			return $this->addResponseRow(__('File Empty'), 'Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini.');
 		// A properly uploaded file will pass this test. There should be no reason to override this one.
 		if (! @ is_file( $file['tmp_name'] ) )
-			return $upload_error_handler( $file, __( 'Specified file does not exist.' ));
+			return $this->addResponseRow(__('File Validation'), __('specified file does not exist'));
 
 		$fullFileName =$file['name'];
 		
 		
 		// A proper stl file is submitted by validating mime type extension
 		if(!preg_match("/^.*\.(stl)$/i", $fullFileName)){	
-			return $upload_error_handler( $file, __( 'Specified file does not exist.' ));
+			return $this->addResponseRow(__('File Validation'), __('file uploaded is not a valid stl file'));
 		}	
 		$this->addResponseRow(__('File Validation'), __('Is uploaded file a valid stl file'), true);
 
@@ -152,7 +151,7 @@ Class CadUpload{
         $new_file = $this->STL_Uploads_Dir. strstr($filename, '.', true) . '.stl';
 
 		if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) ){
-			return $this->addResponseRow(__('File Transfer'), sprintf( __('The uploaded file could not be moved to %s.' ), $this->STL_Uploads_Dir));
+			return $this->addResponseRow(__('File Transfer'), sprintf( __('The uploaded file could not be moved to %s' ), $this->STL_Uploads_Dir));
 		}
 
 		$this->addResponseRow(__('File Transfer'), __('Stl file is being moved to temp directory'), true);
@@ -165,9 +164,9 @@ Class CadUpload{
 		
 		
 		if(stripos($output, "finished X3D export") === false){
-			return $this->addResponseRow(__('STL Conversion'), __('Stl file is being converted to xdom format'));
+			return $this->addResponseRow(__('STL Conversion'), sprintf( __('%s.' ), $output));
 		}
-		$this->addResponseRow(__('STL Conversion'), __('Stl file is being converted to xdom format'), true);
+		$this->addResponseRow(__('STL Conversion'), __('Stl file conversion to xdom format'), true);
 
                
         $x3dFile = $nameOfFile . ".x3d";
