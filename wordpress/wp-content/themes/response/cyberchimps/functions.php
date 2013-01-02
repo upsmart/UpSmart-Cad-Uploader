@@ -62,18 +62,25 @@ function cyberchimps_core_scripts() {
 	//touch swipe gestures
 	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.min.js', array('jquery') );
 	wp_enqueue_script( 'slider-call', $js_path . 'swipe-call.js', array('jquery', 'jquery-mobile-touch') );
-	
-	
+		
 	// Load Bootstrap Library Items
 	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '2.0.4' );
 	wp_enqueue_style( 'bootstrap-responsive-style', $bootstrap_path . 'css/bootstrap-responsive.min.css', array('bootstrap-style'), '2.0.4' );
 	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
 	
+	//responsive design
+	if( cyberchimps_get_option( 'responsive_design' ) ){
+		wp_enqueue_style( 'cyberchimps_responsive', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	}
+	else {
+		wp_dequeue_style( 'cyberchimps_responsive' );
+	}
+	
 	// Load Core Stylesheet
-	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
 	
 	// Load Theme Stylesheet
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array('core-style', 'bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array( 'core-style' ), '1.0' );
 	
 	// Add thumbnail size
 	if ( function_exists( 'add_image_size' ) ) { 
@@ -304,16 +311,16 @@ function cyberchimps_posted_on() {
 		$show_categories = ( cyberchimps_option( 'post_byline_categories' ) ) ? cyberchimps_option( 'post_byline_categories' ) : false; 
 	}
 	
-	$posted_on = sprintf( __( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>%10$s %9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span>%11$s', 'cyberchimps' ),
+	$posted_on = sprintf( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>%10$s %9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span>%11$s',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		( $show_date ) ? esc_html( get_the_date() ) : '',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by', 'cyberchimps' ) . ' %s', get_the_author() ) ),
 		( $show_author ) ? esc_html( get_the_author() ) : '',
-		( $show_date ) ? 'Posted on ' : '',
-		( $show_author ) ? ' by ' : '',
+		( $show_date ) ? __( 'Posted on ', 'cyberchimps' ) : '',
+		( $show_author ) ? __( ' by ', 'cyberchimps' ) : '',
 		( $show_author || $show_categories ) ? '<span class="byline">' : '',
 		( $show_author || $show_categories ) ? '</span>' : ''
 	);
@@ -336,9 +343,9 @@ function cyberchimps_posted_in() {
 		$show = ( cyberchimps_option( 'post_byline_categories' ) ) ? cyberchimps_option( 'post_byline_categories' ) : false;  
 	}
 	if( $show ):
-				$categories_list = get_the_category_list( __( ', ', 'cyberchimps' ) );
+				$categories_list = get_the_category_list( ', ' );
 				if ( $categories_list ) :
-				$cats = sprintf( __( 'Posted in %1$s', 'cyberchimps' ), $categories_list );
+				$cats = sprintf( __( 'Posted in', 'cyberchimps' ) . ' %1$s', $categories_list );
 			?>
 			<span class="cat-links">
 				<?php echo apply_filters( 'cyberchimps_post_categories', $cats ); ?>
@@ -362,9 +369,9 @@ function cyberchimps_post_tags() {
 		$show = ( cyberchimps_option( 'post_byline_tags' ) ) ? cyberchimps_option( 'post_byline_tags' ) : false;  
 	}
 	if( $show ):
-	$tags_list = get_the_tag_list( '', __( ', ', 'cyberchimps' ) );
+	$tags_list = get_the_tag_list( '', ', ' );
 				if ( $tags_list ) :
-				$tags = sprintf( __( 'Tags: %1$s', 'cyberchimps' ), $tags_list );
+				$tags = sprintf( __( 'Tags:', 'cyberchimps' ) . ' %1$s', $tags_list );
 			?>
 			<span class="tag-links">
 				<?php echo apply_filters( 'cyberchimps_post_tags', $tags ); ?>
@@ -390,7 +397,7 @@ function cyberchimps_post_comments() {
 	$leave_comment = ( is_single() || is_page() ) ? '' : __( 'Leave a comment', 'cyberchimps' );
 	if( $show ):
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			<span class="comments-link"><?php comments_popup_link( $leave_comment, __( '1 Comment', 'cyberchimps' ), __( '% Comments', 'cyberchimps' ) ); ?></span>
+			<span class="comments-link"><?php comments_popup_link( $leave_comment, __( '1 Comment', 'cyberchimps' ), '% ' . __( 'Comments', 'cyberchimps' ) ); ?></span>
       <span class="sep"> <?php echo ( $leave_comment != '' ) ? apply_filters( 'cyberchimps_entry_meta_sep', '|' ) : ''; ?> </span>
     <?php endif;
 	endif;
@@ -418,28 +425,14 @@ function cyberchimps_featured_image() {
 	}
 	if( $show ):
 		if( has_post_thumbnail() ): ?>
-    <div class="featured-image">
-      <?php the_post_thumbnail( apply_filters( 'cyberchimps_post_thumbnail_size', 'thumbnail' ) ); ?>
-    </div>
-<?php endif;
-		endif;
-}
-
-// add breadcrumbs to single posts and archive pages if set in options
-function cyberchimps_breadcrumbs() {
-	global $post;
-	
-	if( is_single() ) {
-		$show = ( cyberchimps_option( 'single_post_breadcrumbs' ) ) ? cyberchimps_option( 'single_post_breadcrumbs' ) : false; 
-	}
-	elseif( is_archive() ) {
-		$show = ( cyberchimps_option( 'archive_breadcrumbs' ) ) ? cyberchimps_option( 'archive_breadcrumbs' ) : false;  
-	}
-	if( isset( $show ) ):
-		do_action( 'breadcrumbs' );
+			<div class="featured-image">
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cyberchimps' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+					<?php the_post_thumbnail( apply_filters( 'cyberchimps_post_thumbnail_size', 'thumbnail' ) ); ?>
+				</a>
+			</div>
+<?php 	endif;
 	endif;
 }
-add_action( 'cyberchimps_before_container', 'cyberchimps_breadcrumbs' );
 
 function cyberchimps_post_format_icon() {
 	global $post;
@@ -513,7 +506,7 @@ function cyberchimps_default_site_title() {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'cyberchimps' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page', 'cyberchimps' ) . ' %s', max( $paged, $page ) );
 }
 add_filter('wp_title', 'cyberchimps_default_site_title');
 
@@ -613,7 +606,7 @@ function cyberchimps_recent_post_excerpt_more($more) {
 	global $custom_excerpt, $post;
     
    		if ($custom_excerpt == 'recent') {
-    		$linktext = 'Continue Reading';
+    		$linktext = __( 'Continue Reading', 'cyberchimps' );
     	}
     	
 	return '&hellip;
@@ -626,7 +619,7 @@ function cyberchimps_recent_post_excerpt_more($more) {
 // Set read more link for featured post element
 function cyberchimps_featured_post_excerpt_more($more) {
 	global $post;
-	return '&hellip;</p></span><a href="'. get_permalink($post->ID) . '">Read More...</a>';
+	return '&hellip;</p></span><a class="excerpt-more featured-post-excerpt" href="'. get_permalink($post->ID) . '">Read More...</a>';
 }
 
 // Set length of the excerpt
@@ -634,9 +627,22 @@ function cyberchimps_featured_post_length( $length ) {
 	return 70;
 }
 
+// Set read more link for magazine featured post element
+function cyberchimps_magazine_featured_post_excerpt_more($more) {
+	global $post;
+	return '&hellip;</p></span><a class="excerpt-more magazine-featured-post-excerpt" href="'. get_permalink($post->ID) . '">Read More...</a>';
+}
+
+// Set length of the magazine featured post excerpt
+function cyberchimps_magazine_featured_post_length( $length ) {
+	$new_length = cyberchimps_get_option( 'blog_magazine_excerpt_length', 70 );
+	return $new_length;
+}
+
 // For magazine wide post
 function cyberchimps_magazine_post_wide( $length ) {
-	return 130;
+	$new_length = cyberchimps_get_option( 'blog_magazine_wide_excerpt_length', 130 );
+	return $new_length;
 }
 
 // more text for search results excerpt
@@ -647,7 +653,7 @@ function cyberchimps_search_excerpt_more( $more ){
 		return $more;
 	}
 	else {
-		$more = '<p><a href="'. get_permalink($post->ID) . '">Read More...</a></p>';
+		$more = '<p><a class="excerpt-more search-excerpt" href="'. get_permalink($post->ID) . '">Read More...</a></p>';
 		return $more;
 	}
 }
@@ -669,11 +675,11 @@ function cyberchimps_search_excerpt_length( $length ){
 function cyberchimps_archive_excerpt_more( $more ){
 	global $post;
 	if( cyberchimps_option( 'blog_read_more_text' ) != '' ){
-		$more = '<p><a href="'. get_permalink($post->ID) . '">'.cyberchimps_option( 'blog_read_more_text' ).'</a></p>';
+		$more = '<p><a class="excerpt-more archive-excerpt" href="'. get_permalink($post->ID) . '">'.cyberchimps_option( 'blog_read_more_text' ).'</a></p>';
 		return $more;
 	}
 	else {
-		$more = '<p><a href="'. get_permalink($post->ID) . '">Read More...</a></p>';
+		$more = '<p><a class="excerpt-more archive-excerpt" href="'. get_permalink($post->ID) . '">Read More...</a></p>';
 		return $more;
 	}
 }
@@ -685,11 +691,11 @@ if( cyberchimps_get_option( 'archive_post_excerpts', 0 ) != 0 ){
 function cyberchimps_blog_excerpt_more( $more ){
 	global $post;
 	if( cyberchimps_option( 'blog_read_more_text' ) != '' ){
-		$more = '<p><a href="'. get_permalink($post->ID) . '">'.cyberchimps_option( 'blog_read_more_text' ).'</a></p>';
+		$more = '<p><a class="excerpt-more blog-excerpt" href="'. get_permalink($post->ID) . '">'.cyberchimps_option( 'blog_read_more_text' ).'</a></p>';
 		return $more;
 	}
 	else {
-		$more = '<p><a href="'. get_permalink($post->ID) . '">Read More...</a></p>';
+		$more = '<p><a class="excerpt-more blog-excerpt" href="'. get_permalink($post->ID) . '">Read More...</a></p>';
 		return $more;
 	}
 }
@@ -771,20 +777,20 @@ add_action( 'cyberchimps_before_content', 'cyberchimps_half_slider' );
 
 // Modal welcome note
 function cyberchimps_modal_welcome_note() { 
-	if( cyberchimps_option( 'modal_welcome_note_display' ) == 1 ): ?>
+	if( cyberchimps_get_option( 'modal_welcome_note_display', 0 ) == 1 ): ?>
   <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <h3 id="myModalLabel">Welcome</h3>
+      <h3 id="myModalLabel"><?php _e( 'Welcome', 'cyberchimps' ); ?></h3>
     </div>
     <div class="modal-body">
-      	<?php printf( __( '
-					<p>Congratulations you have successfully installed %1$s!</p>
+      	<?php printf( '
+					<p>' . __( 'Congratulations you have successfully installed', 'cyberchimps' ) . ' %1$s!</p>
 										
-					<p>Your website is important to us, so please read the <a href="%3$s" target="_blank">instructions</a> to learn how to use %1$s.</p>
+					<p>' . __( 'Your website is important to us, so please read the', 'cyberchimps' ) . ' <a href="%3$s" target="_blank">' . __( 'instructions', 'cyberchimps' ) . '</a> ' . __( 'to learn how to use', 'cyberchimps' ) . ' %1$s.</p>
 					
-					<p>If you have any questions please post in our <a href="%4$s" target="_blank">support forum</a>, and we will get back to you as soon as we can.</p>
+					<p>' . __( 'If you have any questions please post in our', 'cyberchimps' ) . ' <a href="%4$s" target="_blank">' . __( 'support forum', 'cyberchimps' ) . '</a>, ' . __( 'and we will get back to you as soon as we can', 'cyberchimps' ) . '.</p>
 										
-					<p>Thank you for choosing CyberChimps Professional WordPress Themes!</p>', 'cyberchimps' ),
+					<p>' . __( 'Thank you for choosing CyberChimps Professional WordPress Themes', 'cyberchimps' ) . '!</p>',
 					apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ),
 					apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com/store/' ),
 					apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps' ) ),
@@ -826,13 +832,13 @@ function cyberchimps_options_help_text() {
 	$text .= 	'<div class="row-fluid">
 						<div class="span6">
 						<a href="'. apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ). '" title="'. apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ). '">
-						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to %1$s', 'cyberchimps' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
+						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to', 'cyberchimps' ) . ' %1$s', apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
 						</a>
 						</div>
 						</div>
 						</div>
 						<div class="clear"></div>';
-		$text .= sprintf( __( '<p>If you want even more amazing new features upgrade to <a href="%1$s" title="%2$s">%2$s</a> which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> to learn more!</p>', 'cyberchimps' ),
+		$text .= sprintf( '<p>' . __( 'If you want even more amazing new features upgrade to', 'cyberchimps' ) . ' <a href="%1$s" title="%2$s">%2$s</a> ' . __( 'which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit', 'cyberchimps' ) . ' <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> ' . __( 'to learn more!', 'cyberchimps' ) . '</p>',
 		apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
 		apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
 		);
@@ -849,7 +855,7 @@ add_filter( 'cyberchimps_help_description', 'cyberchimps_options_help_text' );
 function cyberchimps_upgrade_bar() { ?>
 	<div class="upgrade-callout">
 		<p><img src="<?php echo get_template_directory_uri() ;?>/cyberchimps/options/lib/images/chimp.png" alt="CyberChimps" />
-    <?php printf( __( 'Welcome to %1$s! Learn more now about upgrading to <a href="%2$s" target="_blank" title="%3$s">%3$s</a> today.', 'cyberchimps' ),
+    <?php printf( __( 'Welcome to %1$s! Learn more now about upgrading to', 'cyberchimps' ) . ' <a href="%2$s" target="_blank" title="%3$s">%3$s</a> ' . __( 'today.', 'cyberchimps' ),
 		apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ),
 		apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
 		apply_filters( 'cyberchimps_upgrade_pro_title', 'Pro' )
@@ -880,17 +886,6 @@ function cyberchimps_posttype_admin_css() {
 }
 add_action('admin_head', 'cyberchimps_posttype_admin_css');
 
-// funationality for responsive toggle
-function cyberchimps_responsive_stylesheet() {
-	if( cyberchimps_get_option( 'responsive_design' ) ){
-		wp_enqueue_style( 'cyberchimps_responsive', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
-	}
-	else {
-		wp_dequeue_style( 'cyberchimps_responsive' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'cyberchimps_responsive_stylesheet', 25 );
-
 /**
 * Add link to theme options in Admin bar.
 */ 
@@ -912,4 +907,70 @@ function cyberchimps_google_analytics() {
 	}
 }
 add_action( 'cyberchimps_after_wrapper', 'cyberchimps_google_analytics' );
-?>
+
+// Add an array to an existing array in a certain position, used by options
+function cyberchimps_heading_filter( $orig, $new ) {	
+	foreach( $new as $key => $value ){
+		array_splice( $orig, $key, 0, $value );
+	}
+	return $orig;
+}
+
+// the following 2 functions help retrieve the starting key number of the whole array of sections. There by allowing you to select the position of the custom section within that heading. 2 array's are passed to cyberchimps_array_section_organizer(). The initial array and the array of new sections. The array of new sections should have the format: $new_section[][10]	= array( field-data ). 10 being the position within that heading. 
+
+//this function finds the initial key number where the heading name exists in the original array. If it does not yet exist then this must be a new heading and it returns the last key number of the array.	
+function cyberchimps_section_start_no( $heading, $orig ) {
+	foreach( $orig as $key => $value ) {
+			if( $value['heading'] == $heading ) {
+				$first_key_value = $key;
+				break;
+			}
+			else {
+				end( $orig );
+				$first_key_value = key( $orig ) + 1; //this counter acts the minus 1 from the organizer so the last element doesn't get built in front of
+		}
+	}
+	return $first_key_value;
+}
+//this function takes the new and old array and combines them adding the new array elements in the position indicated by their key
+function cyberchimps_array_section_organizer( $orig, $new ) {
+	foreach( $new as $value ) {
+		foreach( $value as $key => $val ) {
+			$section_start_no = cyberchimps_section_start_no( $val['heading'], $orig );
+			$position = $section_start_no + ( $key - 1 );
+			$position = intval( $position );
+			array_splice( $orig, $position, 0, $value );
+		}
+	}
+	return $orig;
+}
+
+// the following 2 functions help retrieve the starting key number of the whole array of fields. There by allowing you to select the position of the custom field within that section. 2 array's are passed to cyberchimps_array_field_organizer(). The initial array and the array of new fields. The array of new fields should have the format: $new_field[][10]	= array( field-data ). 10 being the position within that section. 
+
+//this function finds the initial key number wherethe section name exists in the original array. If it does not yet exist then this must be a new section and it returns the last key number of the array.																	
+function cyberchimps_field_start_no( $section, $orig ) {
+	foreach( $orig as $key => $value ) {
+			if( $value['section'] == $section ) {
+				$first_key_value = $key;
+				break;
+			}
+			else {
+				end( $orig );
+				$first_key_value = key( $orig ) + 1;
+		}
+	}
+	return $first_key_value;
+}
+
+//this function takes the new and old array and combines them adding the new array elements in the position indicated by their key
+function cyberchimps_array_field_organizer( $orig, $new ) {
+	foreach( $new as $value ) {
+		foreach( $value as $key => $val ) {
+			$section_start_no = cyberchimps_field_start_no( $val['section'], $orig );
+			$position = $section_start_no + ( $key - 1 );
+			$position = intval( $position );
+			array_splice( $orig, $position, 0, $value );
+		}
+	}
+	return $orig;
+}

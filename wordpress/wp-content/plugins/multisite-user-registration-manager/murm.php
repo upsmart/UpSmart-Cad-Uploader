@@ -3,7 +3,7 @@
 Plugin Name: Multisite user registration manager
 Plugin URI: http://wordpress.org/extend/plugins/multisite-user-registration-manager
 Description: Provides a system for registration requests and their processing in multisite. Two-level moderation.
-Version: 3.0.4
+Version: 3.1
 Network: true
 Author: Zaantar
 Author URI: http://zaantar.eu
@@ -60,7 +60,7 @@ class Murm {
 		$this->o = new Murm_Options( $this );
 		$this->d = new Murm_Database( $this );
 		
-		add_action( 'init', array( &$this, 'load_textdomain' ) );
+		add_action( 'init', array( &$this, 'load_plugin_textdomain' ) );
 		add_action( 'admin_menu', array( &$this, "admin_menu" ) );
 		add_action( 'network_admin_menu', array( &$this, "network_admin_menu" ) );
 		add_action( 'admin_notices', array( &$this, 'admin_notices' ) );
@@ -74,7 +74,7 @@ class Murm {
 	
 	const txd = 'multisite-user-registration-manager';
 	
-	function load_textdomain() {
+	function load_plugin_textdomain() {
 		$plugin_dir = basename( dirname( __FILE__ ) );
 		load_plugin_textdomain( self::txd, false, $plugin_dir.'/languages' );
 	}
@@ -330,6 +330,15 @@ class Murm {
 		            	<td>
 		            		<input type="text" name="murm_akismet_key" value="<?php echo $this->o->akismet_key; ?>" />
 		            	</td>
+		            	<td>
+		            		<small>
+		            			<?php printf(
+		            				__( "If you encounter a problem with Akismet being used in MURM, please do not contact Akismet support - they probably cannot help you. Instead use the %splugin support forum%s.", self::txd ),
+		            				"<a href=\"http://wordpress.org/support/plugin/multisite-user-registration-manager\">",
+		            				"</a>"
+		            			); ?>
+		            		</small>
+		            	</td>
 		            </tr>
 				</table>
 				<p class="submit">
@@ -495,6 +504,15 @@ class Murm {
 			        	<td>
 			        		<input type="text" name="settings[akismet_key]" value="<?php echo esc_attr( $this->o->akismet_key ); ?>" />
 			        	</td>
+			        	<td>
+		            		<small>
+		            			<?php printf(
+		            				__( "If you encounter a problem with Akismet being used in MURM, please do not contact Akismet support - they probably cannot help you. Instead use the %splugin support forum%s.", self::txd ),
+		            				"<a href=\"http://wordpress.org/support/plugin/multisite-user-registration-manager\">",
+		            				"</a>"
+		            			); ?>
+		            		</small>
+		            	</td>
 			        </tr>
 			        <tr valign="top">
 		            	<th>
@@ -908,12 +926,15 @@ class Murm {
 		} 
 	
 		if( $this->o->notify_by_mail ) {
-			$this->log( 'sending information about new request to blog admin' );
+			$this->log( 'Sending notification about new request to blog admin' );
 			$request = $this->d->get_blog_request( $rid );
-			//echo 'rid:'.$rid.';'.$request->email;
-			$subject = $this->parse_mail( $to_admin_new_request['subject'], $blog_id, $request );
-			$message = $this->parse_mail( $to_admin_new_request['message'], $blog_id, $request );	
-			wp_mail( get_bloginfo( 'admin_email' ) , $subject, $message );
+			$subject = $this->parse_mail( $this->o->to_admin_new_request['subject'], $blog_id, $request );
+			$message = $this->parse_mail( $this->o->to_admin_new_request['message'], $blog_id, $request );
+			$mail = get_bloginfo( 'admin_email' );
+			$sent = wp_mail( $mail , $subject, $message );
+			$this->extended_log( "Message to '$mail' with subject '$subject': $message; wp_mail(...) = $sent" );
+		} else {
+			$this->extended_log( "o->notify_by_mail == '{$this->o->notify_by_mail}', not sending notification to blog admin." );
 		}
 	
 		$this->log( 'RR successfully commited to database with id=='.$rid );

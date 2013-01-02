@@ -164,12 +164,12 @@ jQuery(document).ready(function($) {
 		custom_html_element	: "subsection-Custom-HTML",
 		product_element		: "subsection-Product-Options",
 		twitterbar_section	: "subsection-Twitter-Options",
-		magazine			: "subsection-Magazine-Layout-Options",
+		//magazine			: "subsection-Magazine-Layout-Options",
 		slider_lite			: "subsection-Slider-Lite-Options",
 		portfolio_lite		: "subsection-Portfolio-Lite-Options",
 		recent_posts		: "subsection-Recent-Posts-Options",
 		featured_posts		: "subsection-Featured-Posts-Options",
-		boxes				: "subsection-Boxes-Options"
+		boxes				: "subsection-Boxes-Options",
 	};
 	$(".section-order-tracker").change(function(){
 		var array = $(this).val().split(",");

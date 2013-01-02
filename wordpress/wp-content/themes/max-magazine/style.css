@@ -4,7 +4,7 @@ Theme URI: http://gazpo.com/2012/07/max/
 Author: Sami Ch.
 Author URI: http://gazpo.com/
 Description: Max Magazine is a super-awesome responsive wordpress theme best suited for newspaper or magazine websites. The theme is packed with an easy-to-use options panel which makes it very easy to customize the layout. It also holds a beautiful jQuery slider, carousel posts, and up to 4 featured categories on homepage. There are two widgetized sections in siderbar and footer of the theme where you can use default or custom widgets included in the theme. The responsive layout makes it look great on iPad and rest of the tablets and mobile devices. 
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, black, gray, light, one-column, two-columns, right-sidebar, fixed-width, custom-background, editor-style, featured-images, full-width-template, sticky-post, theme-options
@@ -918,11 +918,6 @@ body{
 #content  .post .post-entry{
 	overflow:hidden;
 }
-
-#content  .post .post-entry p{
-	overflow:hidden;
-}
-
 
 #content .post-meta .sep{
 	margin:0 5px;
