@@ -111,7 +111,7 @@ class Murm_Database {
 	function get_blog_requests() {
 		global $wpdb;	
 		$query = "SELECT id, username, email, displayname, url, message FROM {$wpdb->prefix}murm_requests";
-		return $wpdb->get_results( $wpdb->prepare( $query ) );
+		return $wpdb->get_results( $query );
 	}
 
 
@@ -148,26 +148,24 @@ class Murm_Database {
 	function is_duplicate_request( $username, $email ) {
 		global $wpdb, $blog_id;
 	
-		$blog_query = '
+		$blog_query = "
 			SELECT COUNT(*)
-			FROM '.$wpdb->prefix.'murm_requests
+			FROM {$wpdb->prefix}murm_requests
 			WHERE (
-				username=\''.$username.'\' 
-				OR email=\''.$email.'\'
-				)';
+				username = %s 
+				OR email = %s
+			)";
 	
-		$blog_duplicates = $wpdb->get_var( $wpdb->prepare( $blog_query ) );
+		$blog_duplicates = $wpdb->get_var( $wpdb->prepare( $blog_query, $username, $email ) );
 			
-		$net_query = '
+		$net_query = "
 			SELECT COUNT(*)
-			FROM '.$wpdb->base_prefix.'murm_requests
-			WHERE (
-				username=\''.$username.'\'
-				OR email=\''.$email.'\'
-				)
-				AND blog_id = '.$blog_id;
+			FROM {$wpdb->base_prefix}murm_requests
+			WHERE 
+				( username = %s	OR email = %s ) 
+				AND blog_id = %d";
 	
-		$net_duplicates = $wpdb->get_var( $wpdb->prepare( $net_query ) );
+		$net_duplicates = $wpdb->get_var( $wpdb->prepare( $net_query, $username, $email, $blog_id ) );
 	
 		return ( ( $blog_duplicates != 0 ) or ( $net_duplicates != 0 ) );
 	}

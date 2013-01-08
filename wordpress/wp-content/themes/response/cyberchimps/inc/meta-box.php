@@ -51,23 +51,23 @@ function cyberchimps_init_meta_boxes() {
 	// Call taxonomies for select options
 	$portfolio_terms = get_terms('portfolio_cats', 'hide_empty=0');
 	if( ! is_wp_error( $portfolio_terms ) ):
-	foreach($portfolio_terms as $term) {
-		$portfolio_options[$term->slug] = $term->name;
-	}
+		foreach($portfolio_terms as $term) {
+			$portfolio_options[$term->slug] = $term->name;
+		}
 	endif;
 	
 	$carousel_terms = get_terms('carousel_categories', 'hide_empty=0');
 	if( ! is_wp_error( $carousel_terms ) ): 
-	foreach($carousel_terms as $term) {
-		$carousel_options[$term->slug] = $term->name;
-	}
+		foreach($carousel_terms as $term) {
+			$carousel_options[$term->slug] = $term->name;
+		}
 	endif;
 	
 	$slide_terms = get_terms('slide_categories', 'hide_empty=0');
 	if( ! is_wp_error( $slide_terms ) ):
-	foreach($slide_terms as $term) {
-		$slider_options[$term->slug] = $term->name;
-	}
+		foreach($slide_terms as $term) {
+			$slider_options[$term->slug] = $term->name;
+		}
 	endif;
 	
 	// Get custom categories of boxes element
@@ -77,23 +77,32 @@ function cyberchimps_init_meta_boxes() {
 			$boxes_options[$term->slug] = $term->name;
 		}
 	endif;
+	
 	$category_terms = get_terms('category', 'hide_empty=0');
 	if( ! is_wp_error( $category_terms ) ):
-	$blog_options['all'] = "All";
-	foreach($category_terms as $term) {
-		$blog_options[$term->slug] = $term->name;
-	}
+		$blog_options['all'] = "All";
+		foreach($category_terms as $term) {
+			$blog_options[$term->slug] = $term->name;
+		}
 	endif;
 	
 	// get cat ids for portfolio
 	$cat_terms = get_terms('category', 'hide_empty=0');
 	if( ! is_wp_error( $cat_terms ) ):
-	$blog_id_options['all'] = "All";
-	foreach($cat_terms as $term) {
-		$blog_id_options[$term->term_id] = $term->name;
-	}
+		$blog_id_options['all'] = "All";
+		foreach($cat_terms as $term) {
+			$blog_id_options[$term->term_id] = $term->name;
+		}
 	endif;
 	
+	// Get all post categories
+	$all_cats = array();
+	$all_categories = get_terms( 'category');
+	if( ! is_wp_error( $all_categories ) ) {
+		foreach( $all_categories as $all_cat ) {
+			$all_cats[$all_cat->term_id] = $all_cat->name;
+		}
+	}
 	// End taxonomy call
 	
 	$meta_boxes = array();
@@ -131,12 +140,11 @@ function cyberchimps_init_meta_boxes() {
 			->pagehelp('', __( 'Need Help?', 'cyberchimps' ), '')
 		->tab("Magazine Layout Options")
 			->checkbox('cyberchimps_magazine_meta_data_toggle', __( 'Meta Data', 'cyberchimps' ), '', array('std' => '1'))
-			->select('cyberchimps_magazine_no_of_columns', __( 'Number of Columns', 'cyberchimps' ), '', array('options' => array('2', '3')) )
-			->select('cyberchimps_magazine_no_of_rows', __( 'Number of Rows', 'cyberchimps' ), '', array('options' => array('1', '2', '3', '4')) )
+			->select('cyberchimps_magazine_no_of_columns', __( 'Number of Columns', 'cyberchimps' ), '', array('options' => array( 2 => '2', 3 => '3')) )
+			->select('cyberchimps_magazine_no_of_posts', __( 'Number of Posts', 'cyberchimps' ), '', array('options' => array( 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20')) )
 			->checkbox('cyberchimps_magazine_wide_post_toggle', __( 'Wide Posts Below Magazine', 'cyberchimps' ), '', array('std' => '1'))
 			->select('cyberchimps_magazine_no_of_wide_posts', __( 'Number of Wide Posts ', 'cyberchimps' ), '',
-						array('options' => array('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14',
-												 '15', '16', '17', '18', '19', '20')))
+						array('options' => array(1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20')))
 		/*->tab("Featured Posts Options")
 			->select('cyberchimps_featured_post_category_toggle', __( 'Select post source', 'cyberchimps' ), '', array('options' => array( __( 'Latest posts', 'cyberchimps' ), __( 'From category', 'cyberchimps' ))) )
 			->text('cyberchimps_featured_post_category', __( 'Enter category', 'cyberchimps' ), '', array('std' => __( 'featured', 'cyberchimps' )))*/

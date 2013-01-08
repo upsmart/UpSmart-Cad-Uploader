@@ -19,7 +19,7 @@ global $wpseo_admin_pages;
  */
 function replace_meta( $old_metakey, $new_metakey, $replace = false ) {
 	global $wpdb;
-	$oldies = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->postmeta WHERE meta_key = '$old_metakey'" ) );
+	$oldies = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->postmeta WHERE meta_key = %s", $old_metakey ) );
 	foreach ( $oldies as $old ) {
 		// Prevent inserting new meta values for posts that already have a value for that new meta key
 		$check = get_post_meta( $old->post_id, $new_metakey, true );
@@ -37,7 +37,6 @@ if ( isset( $_POST['import'] ) ) {
 	check_admin_referer( 'wpseo-import' );
 
 	global $wpdb;
-	$msg      = '';
 	$replace  = false;
 	$deletekw = false;
 
@@ -199,7 +198,7 @@ if ( isset( $_POST['import'] ) ) {
 		replace_meta( '_aioseop_description', '_yoast_wpseo_metadesc', $replace );
 		replace_meta( '_aioseop_keywords', '_yoast_wpseo_metakeywords', $replace );
 		replace_meta( '_aioseop_title', '_yoast_wpseo_title', $replace );
-		$msg .= '<p>' . __( 'All in One SEO data successfully imported.', 'wordpress-seo' ) . '</p>';
+		$msg .= __( 'All in One SEO data successfully imported.', 'wordpress-seo' );
 	}
 	if ( isset( $_POST['wpseo']['importaioseoold'] ) ) {
 		replace_meta( 'description', '_yoast_wpseo_metadesc', $replace );
@@ -275,21 +274,22 @@ $content .= $wpseo_admin_pages->checkbox( 'importrobotsmeta', __( 'Import from R
 $content .= $wpseo_admin_pages->checkbox( 'importrssfooter', __( 'Import from RSS Footer (by Yoast)?', 'wordpress-seo' ) );
 $content .= $wpseo_admin_pages->checkbox( 'importbreadcrumbs', __( 'Import from Yoast Breadcrumbs?', 'wordpress-seo' ) );
 $content .= '<input type="submit" class="button-primary" name="import" value="' . __( 'Import', 'wordpress-seo' ) . '" />';
-$content .= '</form>';
+$content .= '</form><br/>';
 
 $wpseo_admin_pages->postbox( 'import', __( 'Import', 'wordpress-seo' ), $content );
 
 do_action( 'wpseo_import', $this );
 
-$content .= '<strong>' . __( 'Export', 'wordpress-seo' ) . '</strong><br/>';
+$content = '<h4>' . __( 'Export', 'wordpress-seo' ) . '</h4>';
 $content .= '<form method="post">';
 $content .= wp_nonce_field( 'wpseo-export', '_wpnonce', true, false );
 $content .= '<p>' . __( 'Export your WordPress SEO settings here, to import them again later or to import them on another site.', 'wordpress-seo' ) . '</p>';
 if ( phpversion() > 5.2 )
 	$content .= $wpseo_admin_pages->checkbox( 'include_taxonomy_meta', __( 'Include Taxonomy Metadata', 'wordpress-seo' ) );
-$content .= '<input type="submit" class="button" name="wpseo_export" value="' . __( 'Export settings', 'wordpress-seo' ) . '"/>';
+$content .= '<br/><input type="submit" class="button" name="wpseo_export" value="' . __( 'Export settings', 'wordpress-seo' ) . '"/>';
 $content .= '</form>';
-if ( check_admin_referer( 'wpseo-export' ) && isset( $_POST['wpseo_export'] ) ) {
+if ( isset( $_POST['wpseo_export'] ) ) {
+	check_admin_referer( 'wpseo-export' );
 	$include_taxonomy = false;
 	if ( isset( $_POST['wpseo']['include_taxonomy_meta'] ) )
 		$include_taxonomy = true;
@@ -303,7 +303,7 @@ if ( check_admin_referer( 'wpseo-export' ) && isset( $_POST['wpseo_export'] ) ) 
 	}
 }
 
-$content .= '<br class="clear"/><br/><strong>' . __( 'Import', 'wordpress-seo' ) . '</strong><br/>';
+$content .= '<h4>' . __( 'Import', 'wordpress-seo' ) . '</h4>';
 if ( !isset( $_FILES['settings_import_file'] ) || empty( $_FILES['settings_import_file'] ) ) {
 	$content .= '<p>' . __( 'Import settings by locating <em>settings.zip</em> and clicking', 'wordpress-seo' ) . ' "' . __( 'Import settings', 'wordpress-seo' ) . '":</p>';
 	$content .= '<form method="post" enctype="multipart/form-data">';
@@ -311,8 +311,9 @@ if ( !isset( $_FILES['settings_import_file'] ) || empty( $_FILES['settings_impor
 	$content .= '<input type="file" name="settings_import_file"/>';
 	$content .= '<input type="hidden" name="action" value="wp_handle_upload"/>';
 	$content .= '<input type="submit" class="button" value="' . __( 'Import settings', 'wordpress-seo' ) . '"/>';
-	$content .= '</form>';
-} else if ( check_admin_referer( 'wpseo-import-file' ) ) {
+	$content .= '</form><br/>';
+} else if ( isset( $_FILES['settings_import_file'] ) ) {
+	check_admin_referer( 'wpseo-import-file' );
 	$file = wp_handle_upload( $_FILES['settings_import_file'] );
 
 	if ( isset( $file['file'] ) && !is_wp_error( $file ) ) {

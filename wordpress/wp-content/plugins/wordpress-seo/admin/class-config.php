@@ -41,6 +41,8 @@ class WPSEO_Admin_Pages {
 			wp_redirect( admin_url( 'admin.php?page=wpseo_dashboard' ) );
 		}
 
+		$this->adminpages = apply_filters( 'wpseo_admin_pages', $this->adminpages );
+
 		global $wpseo_admin;
 
 		if ( $wpseo_admin->grant_access() ) {
@@ -156,7 +158,7 @@ class WPSEO_Admin_Pages {
 	 */
 	function delete_meta( $metakey ) {
 		global $wpdb;
-		$wpdb->query( "DELETE FROM $wpdb->postmeta WHERE meta_key = '$metakey'" );
+		$wpdb->query( $wpdb->prepare( "DELETE FROM $wpdb->postmeta WHERE meta_key = %s", $metakey ) );
 	}
 
 	/**
@@ -271,6 +273,9 @@ class WPSEO_Admin_Pages {
 
 		if ( !isset( $options[$var] ) )
 			$options[$var] = false;
+
+		if ( $options[$var] === true )
+			$options[$var] = 'on';
 
 		if ( $label_left !== false ) {
 			if ( !empty( $label_left ) )

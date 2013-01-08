@@ -3,9 +3,8 @@ Contributors: zaantar
 Tags: user, users, registration, manager, multisite, moderation, moderating
 Donate link: http://zaantar.eu/index.php?page=Donate
 Requires at least: 3.4
-Tested up to: 3.4.2
-Stable tag: 3.0.4
-Network: true
+Tested up to: 3.5
+Stable tag: 3.1
 
 Provides a system for registration requests and their processing in multisite. Two-level moderation. 
 
@@ -61,6 +60,15 @@ If you experience any problems:
 4. Send me the logs (from WLS or from log.txt file, which is created within plugin directory) with description of the problem.
 
 == Changelog ==
+
+= 3.1 =
+* compatibility with WordPress 3.5
+* a bit more information on extended log
+* (hopefully) fixed: not sending e-mail notification to blog admins
+* rename Murm::load_textdomain() to load_plugin_textdomain() to hopefully solve an issue with Codestyling Localization plugin (http://wordpress.org/support/topic/language-problem-11)
+* correct usage of $wpdb->prepare()
+* Added a note about solving Akismet issues.
+* Update Wishlist.
 
 = 3.0.4 =
 * wishlist created (see Other notes)
@@ -170,3 +178,5 @@ Below are listed requests I know about and I'm going to process... eventually. P
 * save all settings as a single wp option
 * combine with pure-murm?
 * "I would like to add more fields like "country" in the Registration Page."
+* custom new user default role
+* recaptcha on registration
