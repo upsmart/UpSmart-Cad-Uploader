@@ -45,7 +45,7 @@ function media_cad_upload_menu_process() {
 	include_once( 'CadUpload.php');
 	
     echo '
-	<section id="loading-process-area" class="load-off">
+	<section class="cad-plugin load-off">
 		<h1>Embeddable CAD Media 1.0</h1>
 		<h2>By Upsmart LLC</h2>
 	';
@@ -115,7 +115,12 @@ function my_attachment_fields_to_edit( $form_fields, $post ) {
 
 function my_media_insert( $html, $id, $attachment ) {
     if ( isset( $attachment['use_sc'] ) && $attachment['use_sc'] == "on" ) {
-        $output = '[upsmart_load_cad_file url="'.$attachment['url'].'"]';
+        //$localUrl = str_replace("","http://$attachment['url']
+        $pathParts = parse_url($attachment['url']);
+	
+	$localUrl = rtrim(ABSPATH, '/') . $pathParts['path'];
+
+	$output = '[upsmart_load_cad_file url="'.$localUrl.'"]';
         return $output;
     } else {
         return $html;
@@ -165,8 +170,9 @@ function upsmart_cad_upload_createXdom($attr = array()) {
 		wp_die( __( 'CAD upload file url is invalid: ' . $fileUrl ) );
 	}
 
-	
-	$xDom = file_get_contents($fileUrl, FILE_USE_INCLUDE_PATH);
+	echo $fileUrl;
+	$xDom = file_get_contents($fileUrl);
+
 	return $xDom;
 }
 add_shortcode( 'upsmart_load_cad_file', 'upsmart_cad_upload_createXdom' );

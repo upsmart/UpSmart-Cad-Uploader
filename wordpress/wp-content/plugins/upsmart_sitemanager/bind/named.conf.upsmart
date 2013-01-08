@@ -1,0 +1,11 @@
+zone "example.com" {
+        type master;
+        file "/home/upsmart/bind/example.com.hosts";
+        allow-transfer {
+                75.127.14.195;
+        };
+        also-notify {
+                75.127.14.195;
+        };
+        notify yes;
+};

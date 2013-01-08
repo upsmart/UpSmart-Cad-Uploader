@@ -5,7 +5,7 @@
  * Contains the closing of the id=main div and all content after
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
+ * @subpackage UpSmart
  * @since Twenty Eleven 1.0
  */
 ?>
@@ -14,7 +14,7 @@
 	Copyright UpSmart, LLC.
 	<div id="site-generator">
 		<?php do_action( 'upsmart_credits' ); ?>
-		<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'upsmart' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyeleven' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'upsmart' ), 'WordPress' ); ?></a>
+		<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'upsmart' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'upsmart' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'upsmart' ), 'WordPress' ); ?></a>
 	</div>
 </footer>
 <?php wp_footer(); ?>

@@ -15,12 +15,14 @@
  */
 
 
+if(!function_exists('ellistr')) {
  //Copyright 2006 T.J. Lipscomb
 function ellistr($s,$n) {
 	for ( $x = 0; $x < strlen($s); $x++ ) {
 		$o = ($n+$x >= strlen($s) ? $s : ($s{$n+$x} == " " ? substr($s,0,$n+$x) . "..." : ""));
 		if ( $o != "" ) { return $o; }
 	}
+}
 }
 //Copyright 2006 T.J. Lipscomb
 function reldate($date,$format='M d, Y') {

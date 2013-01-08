@@ -10,12 +10,12 @@
  * We are creating two queries to fetch the proper posts and a custom widget for the sidebar.
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
+ * @subpackage UpSmart
  * @since Twenty Eleven 1.0
  */
 
 // Enqueue showcase script for the slider
-wp_enqueue_script( 'twentyeleven-showcase', get_template_directory_uri() . '/js/showcase.js', array( 'jquery' ), '2011-04-28' );
+wp_enqueue_script( 'upsmart-showcase', get_template_directory_uri() . '/js/showcase.js', array( 'jquery' ), '2011-04-28' );
 
 get_header(); ?>
 
@@ -74,7 +74,7 @@ get_header(); ?>
 				?>
 
 				<div class="featured-posts">
-					<h1 class="showcase-heading"><?php _e( 'Featured Post', 'twentyeleven' ); ?></h1>
+					<h1 class="showcase-heading"><?php _e( 'Featured Post', 'upsmart' ); ?></h1>
 
 				<?php
 					// Let's roll.
@@ -117,7 +117,7 @@ get_header(); ?>
 								else
 									$thumbnail_size = 'small-feature';
 								?>
-								<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_post_thumbnail( $thumbnail_size ); ?></a>
+								<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'upsmart' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_post_thumbnail( $thumbnail_size ); ?></a>
 								<?php
 							}
 						?>
@@ -147,7 +147,7 @@ get_header(); ?>
 							else
 								$class = '';
 				    	?>
-						<li><a href="#featured-post-<?php echo $counter_slider; ?>" title="<?php printf( esc_attr__( 'Featuring: %s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?>" <?php echo $class; ?>></a></li>
+						<li><a href="#featured-post-<?php echo $counter_slider; ?>" title="<?php printf( esc_attr__( 'Featuring: %s', 'upsmart' ), the_title_attribute( 'echo=0' ) ); ?>" <?php echo $class; ?>></a></li>
 					<?php endwhile;	?>
 					</ul>
 				</nav>
@@ -157,7 +157,7 @@ get_header(); ?>
 				<?php endif; // End check for sticky posts. ?>
 
 				<section class="recent-posts">
-					<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'twentyeleven' ); ?></h1>
+					<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'upsmart' ); ?></h1>
 
 					<?php
 
@@ -196,9 +196,9 @@ get_header(); ?>
 					while ( $recent->have_posts() ) : $recent->the_post(); ?>
 
 						<li class="entry-title">
-							<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+							<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'upsmart' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 							<span class="comments-link">
-								<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'twentyeleven' ) . '</span>', __( '<b>1</b> Reply', 'twentyeleven' ), __( '<b>%</b> Replies', 'twentyeleven' ) ); ?>
+								<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'upsmart' ) . '</span>', __( '<b>1</b> Reply', 'twentyeleven' ), __( '<b>%</b> Replies', 'twentyeleven' ) ); ?>
 							</span>
 						</li>
 
@@ -215,7 +215,7 @@ get_header(); ?>
 					<?php if ( ! dynamic_sidebar( 'sidebar-2' ) ) : ?>
 
 						<?php
-						the_widget( 'Twenty_Eleven_Ephemera_Widget', '', array( 'before_title' => '<h3 class="widget-title">', 'after_title' => '</h3>' ) );
+						the_widget( 'UpSmart_Ephemera_Widget', '', array( 'before_title' => '<h3 class="widget-title">', 'after_title' => '</h3>' ) );
 						?>
 
 					<?php endif; // end sidebar widget area ?>

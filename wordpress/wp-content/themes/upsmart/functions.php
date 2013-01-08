@@ -6,7 +6,7 @@
  * are used in the theme as custom template tags. Others are attached to action and
  * filter hooks in WordPress to change core functionality.
  *
- * The first function, twentyeleven_setup(), sets up the theme by registering support
+ * The first function, upsmart_setup(), sets up the theme by registering support
  * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
  *
  * When using a child theme (see http://codex.wordpress.org/Theme_Development and
@@ -26,7 +26,7 @@
  * add_action( 'after_setup_theme', 'my_child_theme_setup' );
  * function my_child_theme_setup() {
  *     // We are providing our own filter for excerpt_length (or using the unfiltered value)
- *     remove_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
+ *     remove_filter( 'excerpt_length', 'upsmart_excerpt_length' );
  *     ...
  * }
  * </code>
@@ -34,7 +34,7 @@
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
+ * @subpackage UpSmart
  * @since Twenty Eleven 1.0
  */
 
@@ -50,11 +50,11 @@ if ( ! isset( $content_width ) )
 show_admin_bar(false);
 	
 /**
- * Tell WordPress to run twentyeleven_setup() when the 'after_setup_theme' hook is run.
+ * Tell WordPress to run upsmart_setup() when the 'after_setup_theme' hook is run.
  */
-add_action( 'after_setup_theme', 'twentyeleven_setup' );
+add_action( 'after_setup_theme', 'upsmart_setup' );
 
-if ( ! function_exists( 'twentyeleven_setup' ) ):
+if ( ! function_exists( 'upsmart_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -62,7 +62,7 @@ if ( ! function_exists( 'twentyeleven_setup' ) ):
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * To override twentyeleven_setup() in a child theme, add your own twentyeleven_setup to your child theme's
+ * To override upsmart_setup() in a child theme, add your own twentyeleven_setup to your child theme's
  * functions.php file.
  *
  * @uses load_theme_textdomain() For translation/localization support.
@@ -75,7 +75,7 @@ if ( ! function_exists( 'twentyeleven_setup' ) ):
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_setup() {
+function upsmart_setup() {
 
 	/* Make Twenty Eleven available for translation.
 	 * Translations can be added to the /languages/ directory.
@@ -102,7 +102,7 @@ function twentyeleven_setup() {
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
 
-	$theme_options = twentyeleven_get_theme_options();
+	$theme_options = upsmart_get_theme_options();
 	if ( 'dark' == $theme_options['color_scheme'] )
 		$default_background_color = '1d1d1d';
 	else
@@ -123,18 +123,18 @@ function twentyeleven_setup() {
 		// The default header text color.
 		'default-text-color' => '000',
 		// The height and width of our custom header.
-		'width' => apply_filters( 'twentyeleven_header_image_width', 1000 ),
-		'height' => apply_filters( 'twentyeleven_header_image_height', 288 ),
+		'width' => apply_filters( 'upsmart_header_image_width', 1000 ),
+		'height' => apply_filters( 'upsmart_header_image_height', 288 ),
 		// Support flexible heights.
 		'flex-height' => true,
 		// Random image rotation by default.
 		'random-default' => true,
 		// Callback for styling the header.
-		'wp-head-callback' => 'twentyeleven_header_style',
+		'wp-head-callback' => 'upsmart_header_style',
 		// Callback for styling the header preview in the admin.
-		'admin-head-callback' => 'twentyeleven_admin_header_style',
+		'admin-head-callback' => 'upsmart_admin_header_style',
 		// Callback used to display the header preview in the admin.
-		'admin-preview-callback' => 'twentyeleven_admin_header_image',
+		'admin-preview-callback' => 'upsmart_admin_header_image',
 	);
 	
 	add_theme_support( 'custom-header', $custom_header_support );
@@ -212,15 +212,15 @@ function twentyeleven_setup() {
 		)
 	) );
 }
-endif; // twentyeleven_setup
+endif; // upsmart_setup
 
-if ( ! function_exists( 'twentyeleven_header_style' ) ) :
+if ( ! function_exists( 'upsmart_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_header_style() {
+function upsmart_header_style() {
 	$text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail.
@@ -252,17 +252,17 @@ function twentyeleven_header_style() {
 	</style>
 	<?php
 }
-endif; // twentyeleven_header_style
+endif; // upsmart_header_style
 
-if ( ! function_exists( 'twentyeleven_admin_header_style' ) ) :
+if ( ! function_exists( 'upsmart_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * Referenced via add_theme_support('custom-header') in twentyeleven_setup().
+ * Referenced via add_theme_support('custom-header') in upsmart_setup().
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_admin_header_style() {
+function upsmart_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -302,17 +302,17 @@ function twentyeleven_admin_header_style() {
 	</style>
 <?php
 }
-endif; // twentyeleven_admin_header_style
+endif; // upsmart_admin_header_style
 
-if ( ! function_exists( 'twentyeleven_admin_header_image' ) ) :
+if ( ! function_exists( 'upsmart_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * Referenced via add_theme_support('custom-header') in twentyeleven_setup().
+ * Referenced via add_theme_support('custom-header') in upsmart_setup().
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_admin_header_image() { ?>
+function upsmart_admin_header_image() { ?>
 	<div id="headimg">
 		<?php
 		$color = get_header_textcolor();
@@ -329,7 +329,7 @@ function twentyeleven_admin_header_image() { ?>
 		<?php endif; ?>
 	</div>
 <?php }
-endif; // twentyeleven_admin_header_image
+endif; // upsmart_admin_header_image
 
 /**
  * Sets the post excerpt length to 40 words.
@@ -337,28 +337,28 @@ endif; // twentyeleven_admin_header_image
  * To override this length in a child theme, remove the filter and add your own
  * function tied to the excerpt_length filter hook.
  */
-function twentyeleven_excerpt_length( $length ) {
+function upsmart_excerpt_length( $length ) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
+add_filter( 'excerpt_length', 'upsmart_excerpt_length' );
 
 /**
  * Returns a "Continue Reading" link for excerpts
  */
-function twentyeleven_continue_reading_link() {
+function upsmart_continue_reading_link() {
 	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'upsmart' ) . '</a>';
 }
 
 /**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and twentyeleven_continue_reading_link().
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and upsmart_continue_reading_link().
  *
  * To override this in a child theme, remove the filter and add your own
  * function tied to the excerpt_more filter hook.
  */
-function twentyeleven_auto_excerpt_more( $more ) {
-	return ' &hellip;' . twentyeleven_continue_reading_link();
+function upsmart_auto_excerpt_more( $more ) {
+	return ' &hellip;' . upsmart_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'twentyeleven_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'upsmart_auto_excerpt_more' );
 
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.
@@ -366,31 +366,31 @@ add_filter( 'excerpt_more', 'twentyeleven_auto_excerpt_more' );
  * To override this link in a child theme, remove the filter and add your own
  * function tied to the get_the_excerpt filter hook.
  */
-function twentyeleven_custom_excerpt_more( $output ) {
+function upsmart_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= twentyeleven_continue_reading_link();
+		$output .= upsmart_continue_reading_link();
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'twentyeleven_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'upsmart_custom_excerpt_more' );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
-function twentyeleven_page_menu_args( $args ) {
+function upsmart_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'twentyeleven_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'upsmart_page_menu_args' );
 
 /**
  * Register our sidebars and widgetized areas. Also register the default Epherma widget.
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_widgets_init() {
+function upsmart_widgets_init() {
 
-	register_widget( 'Twenty_Eleven_Ephemera_Widget' );
+	register_widget( 'UpSmart_Ephemera_Widget' );
 
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'upsmart' ),
@@ -451,13 +451,13 @@ function twentyeleven_widgets_init() {
 		'after_title' => '-->',
 	) );
 }
-add_action( 'widgets_init', 'twentyeleven_widgets_init' );
+add_action( 'widgets_init', 'upsmart_widgets_init' );
 
-if ( ! function_exists( 'twentyeleven_content_nav' ) ) :
+if ( ! function_exists( 'upsmart_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
  */
-function twentyeleven_content_nav( $nav_id ) {
+function upsmart_content_nav( $nav_id ) {
 	global $wp_query;
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
@@ -468,7 +468,7 @@ function twentyeleven_content_nav( $nav_id ) {
 		</nav><!-- #nav-above -->
 	<?php endif;
 }
-endif; // twentyeleven_content_nav
+endif; // upsmart_content_nav
 
 /**
  * Return the URL for the first link found in the post content.
@@ -476,7 +476,7 @@ endif; // twentyeleven_content_nav
  * @since Twenty Eleven 1.0
  * @return string|bool URL or false when no link is present.
  */
-function twentyeleven_url_grabber() {
+function upsmart_url_grabber() {
 	if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
 		return false;
 
@@ -486,7 +486,7 @@ function twentyeleven_url_grabber() {
 /**
  * Count the number of footer sidebars to enable dynamic classes for the footer
  */
-function twentyeleven_footer_sidebar_class() {
+function upsmart_footer_sidebar_class() {
 	$count = 0;
 
 	if ( is_active_sidebar( 'sidebar-3' ) )
@@ -516,18 +516,18 @@ function twentyeleven_footer_sidebar_class() {
 		echo 'class="' . $class . '"';
 }
 
-if ( ! function_exists( 'twentyeleven_comment' ) ) :
+if ( ! function_exists( 'upsmart_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * To override this walker in a child theme without modifying the comments template
- * simply create your own twentyeleven_comment(), and that function will be used instead.
+ * simply create your own upsmart_comment(), and that function will be used instead.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_comment( $comment, $args, $depth ) {
+function upsmart_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -583,16 +583,16 @@ function twentyeleven_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-endif; // ends check for twentyeleven_comment()
+endif; // ends check for upsmart_comment()
 
-if ( ! function_exists( 'twentyeleven_posted_on' ) ) :
+if ( ! function_exists( 'upsmart_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
- * Create your own twentyeleven_posted_on to override in a child theme
+ * Create your own upsmart_posted_on to override in a child theme
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_posted_on() {
+function upsmart_posted_on() {
 	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'upsmart' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -612,7 +612,7 @@ endif;
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_body_classes( $classes ) {
+function upsmart_body_classes( $classes ) {
 
 	if ( function_exists( 'is_multi_author' ) && ! is_multi_author() )
 		$classes[] = 'single-author';
@@ -622,5 +622,5 @@ function twentyeleven_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'twentyeleven_body_classes' );
+add_filter( 'body_class', 'upsmart_body_classes' );
 

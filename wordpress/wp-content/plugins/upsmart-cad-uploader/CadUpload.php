@@ -59,21 +59,19 @@ Class CadUpload{
 		
 		echo $row;
 		
-		if(!$success){
+		if(!$success)
 			$this->endResponseTable(false);
-		}
        
 	}
 	
 	private function endResponseTable($done=true){
 	
-		if(!$done)
+		if( ! $done)
 			$this->addResponseRow("Error Occured!", "Please Try Again", true);
-			
 		echo '</tbody></table>';	
 	}
 
-	private function handleUpload( $file=array(), $uploads = array() ){
+	private function handle_upload( $file = array(), $uploads = array() ){
 
 		// Move the file to the uploads dir
 		$filename = $file['name'];
@@ -95,11 +93,9 @@ Class CadUpload{
 			delete_transient( 'dirsize_cache' );
 
 		return apply_filters( 'wp_handle_upload', array( 'file' => $new_file, 'url' => $url, 'type' => $type ), 'upload' );
-			
-	
 	}
 	
-	public function buildGuid( $file=null ){
+	public function build_guid( $file = null ){
 		$wp_upload_dir = wp_upload_dir();
 		return $wp_upload_dir['baseurl'] . '/' . _wp_relative_upload_path( $file );
 	}
@@ -111,6 +107,8 @@ Class CadUpload{
 	public function saveUpload($field_name = null, $user_id=null){	
 		
 		$this->startResponseTable();
+
+		// Clean directory in case it was corrupted or previous upload process exited prematurely
 		$this->cleanCAD_ScratchSpace_Directory();
 			
 		if(is_null($field_name))
@@ -133,9 +131,9 @@ Class CadUpload{
 		
 		
 		// A proper stl file is submitted by validating mime type extension
-		if(!preg_match("/^.*\.(stl)$/i", $fullFileName)){	
+		if(!preg_match("/^.*\.(stl)$/i", $fullFileName))	
 			return $this->addResponseRow(__('File Validation'), __('file uploaded is not a valid stl file'));
-		}	
+			
 		$this->addResponseRow(__('File Validation'), __('Is uploaded file a valid stl file'), true);
 
 		
@@ -150,17 +148,16 @@ Class CadUpload{
 	    
         $new_file = $this->STL_Uploads_Dir. strstr($filename, '.', true) . '.stl';
 
-		if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) ){
+		if ( false === @move_uploaded_file( $file['tmp_name'], $new_file ) )
 			return $this->addResponseRow(__('File Transfer'), sprintf( __('The uploaded file could not be moved to %s' ), $this->STL_Uploads_Dir));
-		}
 
 		$this->addResponseRow(__('File Transfer'), __('Stl file is being moved to temp directory'), true);
 
- 
+ 	
         // Create x3d file from stl file
         $nameOfFile = strstr($filename, '.', true);
         
-		$output = shell_exec('blender -b -P ' . $this->Conversion_Script . 'cad.import.py -- ' . $nameOfFile . ' ' . $this->STL_Uploads_Dir);
+		$output = shell_exec('/opt/blender-2.65a-linux-glibc27-i686/blender -b -P ' . $this->Conversion_Script . 'cad.import.py -- ' . $nameOfFile . ' ' . $this->STL_Uploads_Dir);
 		
 		
 		if(stripos($output, "finished X3D export") === false){
@@ -195,12 +192,11 @@ Class CadUpload{
 		$perms = $stat['mode'] & 0000666;
 		@chmod( $htmlFilePath, $perms );
 		
-		if($file['size']  == 0){
+		if($file['size']  == 0)
 			return $this->addResponseRow(__('File Stats'), __('File exists to attain file information'));
-		}
 		
 		//Move the file to the uploads directory, returns an array
-		$uploaded_file = $this->handleUpload($file, $uploads);
+		$uploaded_file = $this->handle_upload( $file, $uploads );
 			
 		$this->addResponseRow(__('File Transfer'), __('WebGL moved to wordpress uploads directory'), true);
 	    		
@@ -220,7 +216,7 @@ Class CadUpload{
 		}
 		
 		//build global unique identifier 
-		$guid = $this->buildGuid( $uploaded_file['file'] );
+		$guid = $this->build_guid( $uploaded_file['file'] );
 		
 		//Build our array of data to be inserted as a post
 		$attachment = array(

@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
+ * @subpackage UpSmart
  * @since Twenty Eleven 1.0
  */
 ?><!DOCTYPE html>

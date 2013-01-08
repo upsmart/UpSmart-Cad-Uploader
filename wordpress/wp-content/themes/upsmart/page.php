@@ -8,7 +8,7 @@
  * different template.
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
+ * @subpackage UpSmart
  * @since Twenty Eleven 1.0
  */
 

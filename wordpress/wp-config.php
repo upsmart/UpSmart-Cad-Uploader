@@ -16,13 +16,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'development');
+define('DB_NAME', 'upsmart');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'upsmart');
 
 /** MySQL database password */
-define('DB_PASSWORD', '319154');
+define('DB_PASSWORD', 'y42SP69v4y');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -33,6 +33,9 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+define('WP_MEMORY_LIMIT', '240M');
+
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -42,14 +45,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '7|+rUfgtCu4+-gMeJKwva&_t)jv}=ZEkH]_-Xw#&|tdcH`*x)mBy?KQ-R#KFKknx');
-define('SECURE_AUTH_KEY',  'akM-?|+hXRV0*;F^_.SBJ)mgB)*LlQ[jTa1` I9SzC*z`P@Qr @E],w)_~+,#1Xj');
-define('LOGGED_IN_KEY',    '0/52XghI)[j!&<Oz}_B4[Z(4|8_C+B+LtYc-sX|z$_}5>YCewDo5}90e,VOV= l:');
-define('NONCE_KEY',        'rw-{8a>=fjm3<bqc4rnaa |tbt@u9O/>?V=|;QcEKwO2p&78(qr@z~d/RW57+eNg');
-define('AUTH_SALT',        '%]1n`<bF2u7B$5wQ-*fY;Orq)nIW}BLO&nkQ<vm*CDcQBA2aIaMDpa]JPxH6M86:');
-define('SECURE_AUTH_SALT', ' LR*]*zjqhock-w;EAJ+) ji(/XWOQ cp-p^[ ps)Aa]V@: #pUe|szNRz2o.$&3');
-define('LOGGED_IN_SALT',   '07*Z+ _BXa)kljWIO&D|{qt2kpO5U0]frP[GpG$4dBxFhuK5;.h%94&K)lE,Tqfg');
-define('NONCE_SALT',       'd*ZU+ILZ#VXP|jq7DSf{r]F-6biJr_8/-iK?1Y4#1=zVpO!$:#?E>{vhYC))AL=!');
+define('AUTH_KEY',         '0r933knpixffdbkr3uoknt1svf0k4jkvfj34lznfvz4irnimhy3dzd21wtqqoxgf');
+define('SECURE_AUTH_KEY',  'vytzxwzrbff26sae67uo3xejmpnajiyum9cvtp9ukyrit5a6ivopew8pwoe74p1b');
+define('LOGGED_IN_KEY',    'acr2jyic2mc71o1tmlu6yoenlggg5kjf4os8eo3ww0s12uc1f7rrxiroevoetwm0');
+define('NONCE_KEY',        'mb10hneisymhcpytcq99z5r1tcmb7dm7ipdx7ohcqaefiyyjktdfwdgbakbuqy40');
+define('AUTH_SALT',        'wxvxegnaqgrs4jgc6iuyfueubu8tyr97kiicizsfatwovnf1kq1p2h0yc9gjmujz');
+define('SECURE_AUTH_SALT', 'oq631mbdvxumhxuqipkljrosdrvdzmaeotxmwse7rbqj6z2cx9ysq3yl3fpaahqb');
+define('LOGGED_IN_SALT',   'c55ztynccrcpz4zjdf16ezwgptfsdnxfzhdq4gouws9wvewkushsqxpoi54dcpud');
+define('NONCE_SALT',       'qb58bxnb39zpcr1nogxxe70bg4ibdkmtyqdczimgsm7zluqyl6jaxjpnz5fodvxp');
 
 /**#@-*/
 
@@ -59,17 +62,17 @@ define('NONCE_SALT',       'd*ZU+ILZ#VXP|jq7DSf{r]F-6biJr_8/-iK?1Y4#1=zVpO!$:#?E
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_';
+$table_prefix  = 'vcm_';
 
 /**
  * WordPress Localized Language, defaults to English.
  *
- * Change this to localize WordPress. A corresponding MO file for the chosen
+ * Change this to localize WordPress.  A corresponding MO file for the chosen
  * language must be installed to wp-content/languages. For example, install
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-define('WPLANG', '');
+define ('WPLANG', '');
 
 /**
  * For developers: WordPress debugging mode.
@@ -80,11 +83,26 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+define('WP_ALLOW_MULTISITE', true);
+
+define('MULTISITE', true);
+//Needed to allow domains for subsites to work.
+define('SUBDOMAIN_INSTALL', true);
+/*$base = '/';
+define('DOMAIN_CURRENT_SITE', 'www.go-upsmart.com');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);*/
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
+/** Allows domain mapping for wordpres multisite. */
+define( 'SUNRISE', 'on' );
+
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
