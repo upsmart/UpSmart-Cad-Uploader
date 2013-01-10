@@ -1,0 +1,11 @@
+a, a:link, a:visited, #sidebar a:link, #sidebar a:visited, .wp-pagenavi .current, #nav a, .widget-tabnavi li a.current_tab,
+.post-title, .post-title a:link, .post-title a:visited, .page-title, #sidebar .widgettitle, #frontpage_widgets .widgettitle 
+{
+	color: #555555;
+}
+.comment-author .fn, .comment-reply-link, #slide_keys a:link, #slide_keys a:visited {
+	color: #555555 !important;
+}
+#frontpage_pager a.activeSlide {
+	background: #555555;
+}

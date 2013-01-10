@@ -1,0 +1,7 @@
+== Changelog ==
+
+= Theme Name: poloray Theme Pro=
+
+= Version: 1.0 =
+
+* * poloray Theme is created on 20/11/2012.

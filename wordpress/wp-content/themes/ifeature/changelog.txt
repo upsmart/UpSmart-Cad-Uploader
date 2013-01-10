@@ -1,0 +1,30 @@
+iFeature 5 Changelog
+
+****************************
+
+Version 5.0.7 (1-6-13)
+-3rd tier menu.
+-Framework improvements.
+
+Version 5.0.6 (12-29-12)
+-Code cleanup.
+
+Version 5.0.5 (12-22-12)
+-CSS bug fixes.
+-Core framework updates.
+
+Version 5.0.4 (12-13-12)
+-Comments fix.
+-Menu options.
+
+Version 5.0.3 (12-12-12)
+-3.5 fixes, and bugs.
+
+Version 5.0.2 (12-7-12)
+-Background color/image fix.
+
+Version 5.0.1 (12-6-12)
+-3.5 fixes.
+
+Version 5.0 (12-4-12)
+-Initial Release

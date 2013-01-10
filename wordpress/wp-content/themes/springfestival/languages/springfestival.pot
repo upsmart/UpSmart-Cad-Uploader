@@ -1,0 +1,215 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wpart theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-09 17:11-0600\n"
+"PO-Revision-Date: 2012-12-11 17:17+0800\n"
+"Last-Translator: Wenling Gao <gaowernling@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+#: archive.php:24
+msgid "Daily Archives: <span>%s</span>"
+msgstr ""
+
+#: archive.php:26
+msgid "Monthly Archives:<span>%s</span>"
+msgstr ""
+
+#: archive.php:28
+msgid "Yearly Archives: <span>%s</span>"
+msgstr ""
+
+#: archive.php:30
+msgid "'Author Archive"
+msgstr ""
+
+#: archive.php:32
+msgid "Category Archive:<span>%s</span>"
+msgstr ""
+
+#: archive.php:34
+msgid "Tag Archive: <span>%s</span>"
+msgstr ""
+
+#: archive.php:34
+msgid "Blog Archives"
+msgstr ""
+
+#: archive.php:44 index.php:23 search.php:34
+msgid "<span class="small">&lt;&lt;</span> Older Entries"
+msgstr ""
+
+#: archive.php:47 index.php:26 search.php:37
+msgid "Newer Entries  <span class="small">&gt;&gt;</span>"
+msgstr ""
+
+#: archive.php:52 index.php:31 search.php:47
+msgid "Not Found"
+msgstr ""
+
+#: archive.php:54 index.php:33 search.php:49
+msgid "Sorry, but you are looking for something that is not here."
+msgstr ""
+
+#: comments.php:21
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:39
+msgid "no responses"
+msgstr ""
+
+#: comments.php:39
+msgid "one responses"
+msgstr ""
+
+#: comments.php:39
+msgid "% responses"
+msgstr ""
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr ""
+
+#: content-image.php:22 content-page.php:22 content-single.php:21 content.php:24 
+msgid "0"
+msgstr ""
+
+#: content-image.php:22 content-page.php:22 content-single.php:21 content.php:24 
+msgid "1"
+msgstr ""
+
+#: content-image.php:22 content-page.php:22 content-single.php:21 content.php:24 
+msgid "%"
+msgstr ""
+
+#: content-image.php:22 content-single.php:21 content.php:24 
+msgid "Closed"
+msgstr ""
+
+#: content-image.php:30 content-single.php:29 content.php:32 
+msgid "Tags:"
+msgstr ""
+
+#: content-image.php:32 content-single.php:31 content.php:35 
+msgid "categories:"
+msgstr ""
+
+#: content-image.php:34 content-page.php:30 content-single.php:33 content.php:37 
+msgid "Edit"
+msgstr ""
+
+#: content-image.php:40
+msgid "<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>
+"
+msgstr ""
+
+#: content-page.php:35 content-single.php:38 content.php:53
+msgid "Pages:"
+msgstr ""
+
+#: content.php:47
+msgid "View Galleries"
+msgstr ""
+
+#: content.php:48
+msgid "More Galleries"
+msgstr ""
+
+#: footer.php:24
+msgid "Theme by"
+msgstr ""
+
+#: footer.php:24
+msgid "http://www.wpart.org"
+msgstr ""
+
+#: footer.php:24
+msgid "wpart"
+msgstr ""
+
+#: footer.php:25
+msgid "Powered by"
+msgstr ""
+
+#: footer.php:25
+msgid "http://wordpress.org"
+msgstr ""
+
+#: footer.php:25
+msgid "WordPress"
+msgstr ""
+
+#: image.php:24
+msgid "&lt;&lt; Previous"
+msgstr ""
+
+#: image.php:27
+msgid "Next &gt;&gt;"
+msgstr ""
+
+#: search.php:22 search.php:43
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:20
+msgid "Search"
+msgstr ""
+
+#: searchform.php:21
+msgid "Search Here"
+msgstr ""
+
+#: searchform.php:22
+msgid "GO"
+msgstr ""
+
+#: sidebar.php:26
+msgid "pages"
+msgstr ""
+
+#: sidebar.php:34
+msgid "categories"
+msgstr ""
+
+#: sidebar.php:42
+msgid "archives"
+msgstr ""
+
+#: sidebar.php:50
+msgid "links"
+msgstr ""
+
+#: sidebar.php:58
+msgid "meta"
+msgstr ""
+
+#: theme-options.php:25
+msgid "Default Layout"
+msgstr ""
+
+#: theme-options.php:34 theme-options.php:35
+msgid "Theme Options"
+msgstr ""
+
+#: theme-options.php:50
+msgid "Content on left"
+msgstr ""
+
+#: theme-options.php:55
+msgid "Content on right"
+msgstr ""
+
+#: theme-options.php:94
+msgid "%s Theme Options"
+msgstr ""
+
+#: theme-options.php:146
+msgid "Layout"
+msgstr ""
+
+

@@ -1,0 +1,928 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GamePress 0.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-02 13:04+0100\n"
+"PO-Revision-Date: 2012-10-02 13:05+0100\n"
+"Last-Translator: Aleksandra Łączek <a.laczek@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+msgid "404 Error!"
+msgstr ""
+
+#: 404.php:10
+msgid "The page You requested was not found. Perhaps searching can help."
+msgstr ""
+
+#: 404.php:15
+msgid "Home Page"
+msgstr ""
+
+#: archive-gamepress_reviews.php:13
+#: functions.php:224
+msgid "Game Reviews"
+msgstr ""
+
+#: archive-gamepress_reviews.php:15
+#: archive-gamepress_video.php:15
+#: archive.php:24
+#: functions.php:157
+msgid "Archives"
+msgstr ""
+
+#: archive-gamepress_reviews.php:36
+#: archive-gamepress_video.php:38
+#: archive.php:57
+msgid "Nothing Found"
+msgstr ""
+
+#: archive-gamepress_reviews.php:40
+#: archive-gamepress_video.php:42
+#: archive.php:61
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: archive-gamepress_reviews.php:54
+#: archive-gamepress_video.php:56
+#: archive.php:75
+msgid "Older posts"
+msgstr ""
+
+#: archive-gamepress_reviews.php:55
+#: archive-gamepress_video.php:57
+#: archive.php:76
+msgid "Newer posts"
+msgstr ""
+
+#: archive-gamepress_video.php:13
+#: functions.php:257
+msgid "Videos"
+msgstr ""
+
+#: archive.php:14
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:16
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:18
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:20
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: archive.php:22
+#, php-format
+msgid "Tagged: %s"
+msgstr ""
+
+#: comments.php:4
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:20
+#: content-single.php:7
+#: image.php:15
+msgid "No comments"
+msgstr ""
+
+#: comments.php:20
+#: content-single.php:7
+#: image.php:15
+msgid "1 comment"
+msgstr ""
+
+#: comments.php:20
+#: content-bigthumb.php:28
+#: content-smallthumb.php:32
+#: content.php:22
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:28
+#: comments.php:40
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:29
+#: comments.php:41
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:30
+#: comments.php:42
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:53
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:58
+#: content-bigthumb.php:28
+#: content-smallthumb.php:32
+#: content.php:22
+msgid "Leave a comment"
+msgstr ""
+
+#: comments.php:59
+#, php-format
+msgid "Leave a reply to %s"
+msgstr ""
+
+#: comments.php:60
+msgid "Cancel reply"
+msgstr ""
+
+#: content-bigthumb.php:21
+#: content-bigthumb.php:23
+#: content-smallthumb.php:27
+#: content.php:15
+#: content.php:17
+msgid "Posted in "
+msgstr ""
+
+#: content-bigthumb.php:25
+#: content-single.php:6
+#: content-smallthumb.php:29
+#: content.php:19
+#: image.php:14
+msgid ", "
+msgstr ""
+
+#: content-bigthumb.php:28
+#: content-smallthumb.php:32
+#: content.php:22
+msgid "1 Comment"
+msgstr ""
+
+#: content-bigthumb.php:30
+#: content-smallthumb.php:34
+#: content.php:24
+msgid "Permalink"
+msgstr ""
+
+#: content-page.php:14
+#: content-single.php:13
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:16
+#: functions.php:261
+msgid "Edit"
+msgstr ""
+
+#: content-single.php:7
+#: image.php:15
+msgid "Comments: %"
+msgstr ""
+
+#: content-single.php:19
+msgid "Tagged: "
+msgstr ""
+
+#: content-single.php:20
+msgid "Edit this entry"
+msgstr ""
+
+#: content-smallthumb.php:32
+msgid "Comments are closed"
+msgstr ""
+
+#: footer.php:14
+msgid "Proudly powered by"
+msgstr ""
+
+#: footer.php:14
+msgid "WordPress"
+msgstr ""
+
+#: footer.php:14
+msgid "GamePress"
+msgstr ""
+
+#: footer.php:18
+msgid "BACK TO TOP"
+msgstr ""
+
+#: functions.php:45
+msgid "GamePress Main Menu"
+msgstr ""
+
+#: functions.php:154
+msgid "Category"
+msgstr ""
+
+#: functions.php:155
+msgid "Tag"
+msgstr ""
+
+#: functions.php:156
+msgid "Author"
+msgstr ""
+
+#: functions.php:163
+#: functions.php:167
+msgid "Page "
+msgstr ""
+
+#: functions.php:191
+#: functions.php:196
+msgid "Read more"
+msgstr ""
+
+#: functions.php:225
+msgid "Game Review"
+msgstr ""
+
+#: functions.php:226
+msgid "Add new review"
+msgstr ""
+
+#: functions.php:227
+msgid "Edit review"
+msgstr ""
+
+#: functions.php:228
+msgid "New review"
+msgstr ""
+
+#: functions.php:229
+msgid "View review"
+msgstr ""
+
+#: functions.php:230
+msgid "Search reviews"
+msgstr ""
+
+#: functions.php:231
+msgid "No reviews found"
+msgstr ""
+
+#: functions.php:232
+msgid "No reviews found in Trash"
+msgstr ""
+
+#: functions.php:258
+msgid "Video"
+msgstr ""
+
+#: functions.php:259
+msgid "Add New"
+msgstr ""
+
+#: functions.php:260
+msgid "Add New Video"
+msgstr ""
+
+#: functions.php:262
+msgid "Edit Video"
+msgstr ""
+
+#: functions.php:263
+msgid "New Video"
+msgstr ""
+
+#: functions.php:264
+#: functions.php:265
+msgid "View Video"
+msgstr ""
+
+#: functions.php:266
+msgid "Search Videos"
+msgstr ""
+
+#: functions.php:267
+msgid "No videos found"
+msgstr ""
+
+#: functions.php:268
+msgid "No videos found in Trash"
+msgstr ""
+
+#: functions.php:269
+msgid "Parent Video"
+msgstr ""
+
+#: functions.php:297
+msgid "Search Review Categories"
+msgstr ""
+
+#: functions.php:298
+msgid "All Review Categories"
+msgstr ""
+
+#: functions.php:299
+msgid "Parent Review Category"
+msgstr ""
+
+#: functions.php:300
+msgid "Parent Review Category:"
+msgstr ""
+
+#: functions.php:301
+msgid "Edit Review Category"
+msgstr ""
+
+#: functions.php:302
+msgid "Update Review Category"
+msgstr ""
+
+#: functions.php:303
+msgid "Add New Review Category"
+msgstr ""
+
+#: functions.php:304
+msgid "New Review Category Name"
+msgstr ""
+
+#: functions.php:305
+#: functions.php:336
+msgid "Categories"
+msgstr ""
+
+#: functions.php:328
+msgid "Search Video Categories"
+msgstr ""
+
+#: functions.php:329
+msgid "All Video Categories"
+msgstr ""
+
+#: functions.php:330
+msgid "Parent Video Category"
+msgstr ""
+
+#: functions.php:331
+msgid "Parent Video Category:"
+msgstr ""
+
+#: functions.php:332
+msgid "Edit Video Category"
+msgstr ""
+
+#: functions.php:333
+msgid "Update Video Category"
+msgstr ""
+
+#: functions.php:334
+msgid "Add New Video Category"
+msgstr ""
+
+#: functions.php:335
+msgid "New Video Category Name"
+msgstr ""
+
+#: functions.php:371
+msgid "Perfect"
+msgstr ""
+
+#: functions.php:373
+msgid "Amazing"
+msgstr ""
+
+#: functions.php:375
+msgid "Great"
+msgstr ""
+
+#: functions.php:377
+msgid "Good"
+msgstr ""
+
+#: functions.php:379
+msgid "Fair"
+msgstr ""
+
+#: functions.php:381
+msgid "Mediocre"
+msgstr ""
+
+#: functions.php:383
+msgid "Poor"
+msgstr ""
+
+#: functions.php:385
+msgid "Bad"
+msgstr ""
+
+#: functions.php:387
+msgid "Terrible"
+msgstr ""
+
+#: functions.php:389
+msgid "Abysmal"
+msgstr ""
+
+#: functions.php:403
+msgid "The Verdict"
+msgstr ""
+
+#: functions.php:410
+msgid "The Good: "
+msgstr ""
+
+#: functions.php:413
+msgid "The Bad: "
+msgstr ""
+
+#: functions.php:536
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: image.php:21
+msgid "Next image &raquo;"
+msgstr ""
+
+#: image.php:21
+msgid "&laquo; Previous image"
+msgstr ""
+
+#: index.php:47
+msgid "Latest news"
+msgstr ""
+
+#: options.php:31
+msgid "Red"
+msgstr ""
+
+#: options.php:31
+msgid "Green"
+msgstr ""
+
+#: options.php:31
+msgid "Blue"
+msgstr ""
+
+#: options.php:31
+msgid "Orange"
+msgstr ""
+
+#: options.php:33
+msgid "Display full content for each post"
+msgstr ""
+
+#: options.php:33
+msgid "Display excerpt and big thumbnail"
+msgstr ""
+
+#: options.php:33
+msgid "Display excerpt and small thumbnail"
+msgstr ""
+
+#: options.php:39
+msgid "No"
+msgstr ""
+
+#: options.php:39
+msgid "Yes"
+msgstr ""
+
+#: options.php:40
+msgid "Default Nivo Slider"
+msgstr ""
+
+#: options.php:40
+msgid "Nivo Slider with thumbs navigation"
+msgstr ""
+
+#: options.php:61
+msgid "Basic settings"
+msgstr ""
+
+#: options.php:64
+msgid "Color scheme"
+msgstr ""
+
+#: options.php:65
+msgid "Select color scheme."
+msgstr ""
+
+#: options.php:72
+msgid "Custom logo image"
+msgstr ""
+
+#: options.php:73
+msgid "You can upload custom image for your website logo (optional)."
+msgstr ""
+
+#: options.php:77
+msgid "Do You want to use custom favicon?"
+msgstr ""
+
+#: options.php:83
+msgid "Favicon URL"
+msgstr ""
+
+#: options.php:84
+msgid "If You choose to use custom favicon, input here FULL URL to the favicon.ico image."
+msgstr ""
+
+#: options.php:88
+msgid "Home Page settings"
+msgstr ""
+
+#: options.php:91
+msgid "Home Page layout"
+msgstr ""
+
+#: options.php:97
+msgid "Select custom post types, that You want to include on the home page"
+msgstr ""
+
+#: options.php:98
+msgid "These custom post types will be also included in archives pages"
+msgstr ""
+
+#: options.php:104
+msgid "Do You want to display image slider on the Home Page?"
+msgstr ""
+
+#: options.php:110
+msgid "Select Category for Featured Posts slider"
+msgstr ""
+
+#: options.php:111
+msgid "Posts from this category will be rotating in image slider on the Home Page. IMPORTANT: Make sure all posts in this category have Featured Image set."
+msgstr ""
+
+#: options.php:116
+msgid "Slider type"
+msgstr ""
+
+#: search.php:11
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:2
+msgid "search here..."
+msgstr ""
+
+#: sidebar.php:15
+msgid "Meta"
+msgstr ""
+
+#: taxonomy.php:12
+msgid "Reviews:"
+msgstr ""
+
+#: taxonomy.php:14
+msgid "Videos:"
+msgstr ""
+
+#: admin/options-framework/options-framework.php:170
+#: admin/options-framework/options-framework.php:364
+msgid "Theme Options"
+msgstr ""
+
+#: admin/options-framework/options-framework.php:238
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: admin/options-framework/options-framework.php:270
+msgid "Default options restored."
+msgstr ""
+
+#: admin/options-framework/options-framework.php:313
+msgid "Options saved."
+msgstr ""
+
+#: admin/options-framework/options-medialibrary-uploader.php:26
+msgid "Theme Options Media"
+msgstr ""
+
+#: admin/options-framework/options-medialibrary-uploader.php:129
+msgid "Upload"
+msgstr ""
+
+#: admin/options-framework/options-medialibrary-uploader.php:152
+msgid "View File"
+msgstr ""
+
+#: admin/options-framework/options-medialibrary-uploader.php:289
+msgid "Gallery"
+msgstr ""
+
+#: admin/options-framework/options-medialibrary-uploader.php:289
+msgid "Previously Uploaded"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:232
+msgid "No Repeat"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:235
+msgid "Repeat All"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:248
+msgid "Top Left"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:249
+msgid "Top Center"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:250
+msgid "Top Right"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:251
+msgid "Middle Left"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:252
+msgid "Middle Center"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:253
+msgid "Middle Right"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:344
+msgid "Normal"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:345
+msgid "Italic"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:346
+msgid "Bold"
+msgstr ""
+
+#: admin/options-framework/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr ""
+
+#: admin/widgets/recent-posts-widget.php:19
+msgid "Displays a list of recent posts, reviews and videos in a tabbed widget"
+msgstr ""
+
+#: admin/widgets/recent-posts-widget.php:25
+msgid "GamePress: Recent news, reviews & videos"
+msgstr ""
+
+#: admin/widgets/recent-posts-widget.php:42
+msgid "Reviews"
+msgstr ""
+
+#: admin/widgets/recent-posts-widget.php:43
+msgid "News"
+msgstr ""
+
+#: admin/widgets/recent-posts-widget.php:89
+msgid "No game reviews yet."
+msgstr ""
+
+#: admin/widgets/recent-posts-widget.php:160
+msgid "No videos yet."
+msgstr ""
+
+#: admin/widgets/recent-posts-widget.php:192
+msgid "Number of posts to show"
+msgstr ""
+
+#: admin/widgets/social-widget.php:19
+msgid "Displays icons with linked to RSS / Facebook/ Twitter / Flickr / YouTube"
+msgstr ""
+
+#: admin/widgets/social-widget.php:25
+msgid "GamePress: Social icons"
+msgstr ""
+
+#: admin/widgets/social-widget.php:51
+msgid "Subscribe to RSS feed"
+msgstr ""
+
+#: admin/widgets/social-widget.php:52
+msgid "Follow me on Facebook"
+msgstr ""
+
+#: admin/widgets/social-widget.php:53
+msgid "Follow me on Twitter"
+msgstr ""
+
+#: admin/widgets/social-widget.php:54
+msgid "Follow me on YouTube"
+msgstr ""
+
+#: admin/widgets/social-widget.php:55
+msgid "Follow me on Flickr"
+msgstr ""
+
+#: admin/widgets/social-widget.php:84
+msgid "Follow me"
+msgstr ""
+
+#: admin/widgets/social-widget.php:89
+msgid "Title"
+msgstr ""
+
+#: admin/widgets/social-widget.php:95
+msgid "URL address of your RSS feed"
+msgstr ""
+
+#: admin/widgets/social-widget.php:97
+msgid "Enter full feed URL. If you don't want to display this, leave empty."
+msgstr ""
+
+#: admin/widgets/social-widget.php:102
+msgid "URL address of your Facebook profile or page"
+msgstr ""
+
+#: admin/widgets/social-widget.php:104
+msgid "Enter full URL of your Facebook profile or page. If you don't want to display this, leave empty."
+msgstr ""
+
+#: admin/widgets/social-widget.php:108
+msgid "URL address of your Twitter profile page"
+msgstr ""
+
+#: admin/widgets/social-widget.php:110
+msgid "Enter full URL of your Twitter profile page. If you don't want to display this, leave empty."
+msgstr ""
+
+#: admin/widgets/social-widget.php:114
+msgid "URL address of your YouTube profile page"
+msgstr ""
+
+#: admin/widgets/social-widget.php:116
+msgid "Enter full URL of your YouTube profile page. If you don't want to display this, leave empty."
+msgstr ""
+
+#: admin/widgets/social-widget.php:121
+msgid "Enter full URL to your Flickr profile. If you don't want to display this, leave empty."
+msgstr ""
+
+#: admin/widgets/twitter-widget.php:19
+msgid "A widget that displays your latest tweets"
+msgstr ""
+
+#: admin/widgets/twitter-widget.php:25
+msgid "GamePress: Twitter Stream"
+msgstr ""
+
+#: admin/widgets/twitter-widget.php:84
+msgid "From Twitter"
+msgstr ""
+
+#: admin/widgets/twitter-widget.php:84
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: admin/widgets/twitter-widget.php:89
+msgid "Title:"
+msgstr ""
+
+#: admin/widgets/twitter-widget.php:95
+msgid "Twitter username:"
+msgstr ""
+
+#: admin/widgets/twitter-widget.php:101
+msgid "Number of tweets to show:"
+msgstr ""
+
+#: admin/widgets/twitter-widget.php:107
+msgid "Follow Text:"
+msgstr ""
+
+#: meta-box/meta-box-3.2.2.class.php:108
+#: meta-box/meta-box-3.2.2.class.php:349
+msgid "Delete this image"
+msgstr ""
+
+#: meta-box/meta-box-3.2.2.class.php:108
+#: meta-box/meta-box-3.2.2.class.php:306
+#: meta-box/meta-box-3.2.2.class.php:349
+msgid "Delete"
+msgstr ""
+
+#: meta-box/meta-box-3.2.2.class.php:302
+msgid "Uploaded files"
+msgstr ""
+
+#: meta-box/meta-box-3.2.2.class.php:312
+msgid "Upload new files"
+msgstr ""
+
+#: meta-box/meta-box-3.2.2.class.php:315
+msgid "Add more file"
+msgstr ""
+
+#: meta-box/meta-box-3.2.2.class.php:356
+msgid "Add more images"
+msgstr ""
+
+#: meta-box/meta-box-3.2.2.class.php:363
+msgid "Select a color"
+msgstr ""
+
+#: meta-box/meta-box.php:79
+msgid "RW_Meta_Box Debug:"
+msgstr ""
+
+#: meta-box/metabox-def.php:34
+msgid "Game review"
+msgstr ""
+
+#: meta-box/metabox-def.php:49
+msgid "Intro text"
+msgstr ""
+
+#: meta-box/metabox-def.php:50
+msgid "One sentence intro text, displayed below the post title"
+msgstr ""
+
+#: meta-box/metabox-def.php:58
+msgid "Overall score"
+msgstr ""
+
+#: meta-box/metabox-def.php:59
+msgid "Number between 1 - 10 (eg. 5.6)"
+msgstr ""
+
+#: meta-box/metabox-def.php:66
+msgid "The Good"
+msgstr ""
+
+#: meta-box/metabox-def.php:67
+msgid "List the things that You liked about the game in short sentences. Separate each entry, for example with |."
+msgstr ""
+
+#: meta-box/metabox-def.php:75
+msgid "The Bad"
+msgstr ""
+
+#: meta-box/metabox-def.php:76
+msgid "List the things that You didn't like about the game in short sentences. Separate each entry, for example with |."
+msgstr ""
+
+#: meta-box/metabox-def.php:84
+msgid "Game cover image"
+msgstr ""
+
+#: meta-box/metabox-def.php:85
+msgid "Game cover displayed next to the title with Game Review posts"
+msgstr ""
+
+#: meta-box/inc/classes/meta-box.php:326
+msgid "+"
+msgstr ""
+
+#: meta-box/inc/classes/meta-box.php:350
+msgid "&#8211;"
+msgstr ""
+
+#: meta-box/inc/fields/file.php:69
+msgid "Error: Cannot delete file"
+msgstr ""
+
+#: meta-box/inc/fields/image.php:75
+msgid "Order saved"
+msgstr ""
+

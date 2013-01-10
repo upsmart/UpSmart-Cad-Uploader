@@ -33,7 +33,7 @@
 
 			<?php do_action( 'bp_before_topics' ); ?>
 
-			<form action="" method="post" id="forums-directory-form" class="dir-form">
+			<div class="dir-form">
 
 				<div class="item-list-tabs" role="navigation">
 					<ul>
@@ -52,7 +52,7 @@
 
 <div id="sidebar-squeeze">			
 	<div id="main-column">
-	
+		<form action="" method="post" id="forums-directory-form" class="dir-form">
 				<div class="item-list-tabs" id="subnav" role="navigation">
 					<ul>
 
@@ -97,7 +97,7 @@
 
 						<form action="" method="post" id="forum-topic-form" class="standard-form">
 
-							<?php do_action( 'groups_forum_new_topic_before' ) ?>
+							<?php do_action( 'groups_forum_new_topic_before' ); ?>
 
 							<a name="post-new"></a>
 							<h5><?php _e( 'Create New Topic:', 'buddypress' ); ?></h5>
@@ -120,7 +120,7 @@
 
 								<?php while ( bp_groups() ) : bp_the_group(); ?>
 
-									<?php if ( bp_group_is_forum_enabled() && ( is_super_admin() || 'public' == bp_get_group_status() || bp_group_is_member() ) ) : ?>
+									<?php if ( bp_group_is_forum_enabled() && ( bp_current_user_can( 'bp_moderate' ) || 'public' == bp_get_group_status() || bp_group_is_member() ) ) : ?>
 
 										<option value="<?php bp_group_id(); ?>"><?php bp_group_name(); ?></option>
 
@@ -145,7 +145,7 @@
 
 						<div id="message" class="info">
 
-							<p><?php printf( __( "You are not a member of any groups so you don't have any group forums you can post in. To start posting, first find a group that matches the topic subject you'd like to start. If this group does not exist, why not <a href='%s'>create a new group</a>? Once you have joined or created the group you can post your topic in that group's forum.", 'buddypress' ), site_url( bp_get_groups_root_slug() . '/create/' ) ) ?></p>
+							<p><?php printf( __( "You are not a member of any groups so you don't have any group forums you can post in. To start posting, first find a group that matches the topic subject you'd like to start. If this group does not exist, why not <a href='%s'>create a new group</a>? Once you have joined or created the group you can post your topic in that group's forum.", 'buddypress' ), site_url( bp_get_groups_root_slug() . '/create/' ) ); ?></p>
 
 						</div>
 
@@ -161,7 +161,7 @@
 	</div><!-- #main-column -->
 		<?php get_sidebar( 'buddypress' ); ?>
 </div><!-- #sidebar-squeeze -->
-
+</div><!-- .dir-form -->
 		</div><!-- .padder -->
 	</div><!-- #content -->
 

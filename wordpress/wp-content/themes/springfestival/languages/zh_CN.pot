@@ -1,0 +1,242 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wpart theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-09 17:11-0600\n"
+"PO-Revision-Date: 2012-12-12 09:31+0800\n"
+"Last-Translator: Wenling Gao <gaowernling@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: archive.php:24
+msgid "Daily Archives: <span>%s</span>"
+msgstr "日期归档"
+
+#: archive.php:26
+msgid "Monthly Archives:<span>%s</span>"
+msgstr "月归档"
+
+#: archive.php:28
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "年归档"
+
+#: archive.php:30
+msgid "'Author Archive"
+msgstr "作者归档"
+
+#: archive.php:32
+msgid "Category Archive:<span>%s</span>"
+msgstr "分类归档"
+
+#: archive.php:34
+msgid "Tag Archive: <span>%s</span>"
+msgstr "标签归档"
+
+#: archive.php:34
+msgid "Blog Archives"
+msgstr "博客归档"
+
+#: archive.php:44
+#: index.php:23
+#: search.php:34
+msgid "<span class=\"small\">&lt;&lt;</span> Older Entries"
+msgstr "<span class=\"small\">&lt;&lt;</span> 旧文章"
+
+#: archive.php:47
+#: index.php:26
+#: search.php:37
+msgid "Newer Entries  <span class=\"small\">&gt;&gt;</span>"
+msgstr "新文章 <span class=\"small\">&gt;&gt;</span>"
+
+#: archive.php:52
+#: index.php:31
+#: search.php:47
+msgid "Not Found"
+msgstr "未找到"
+
+#: archive.php:54
+#: index.php:33
+#: search.php:49
+msgid "Sorry, but you are looking for something that is not here."
+msgstr "对不起，您搜索的结果暂时无法显示"
+
+#: comments.php:21
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "这篇文章受密码保护。查看评论请输入密码。"
+
+#: comments.php:39
+msgid "no responses"
+msgstr "暂无评论"
+
+#: comments.php:39
+msgid "one responses"
+msgstr "1条留言"
+
+#: comments.php:39
+msgid "% responses"
+msgstr "% 条留言"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "留言已关闭"
+
+#: content-image.php:22
+#: content-page.php:22
+#: content-single.php:21
+#: content.php:24
+msgid "0"
+msgstr "0"
+
+#: content-image.php:22
+#: content-page.php:22
+#: content-single.php:21
+#: content.php:24
+msgid "1"
+msgstr "1"
+
+#: content-image.php:22
+#: content-page.php:22
+#: content-single.php:21
+#: content.php:24
+msgid "%"
+msgstr "%"
+
+#: content-image.php:22
+#: content-single.php:21
+#: content.php:24
+msgid "Closed"
+msgstr "关闭"
+
+#: content-image.php:30
+#: content-single.php:29
+#: content.php:32
+msgid "Tags:"
+msgstr "标签："
+
+#: content-image.php:32
+#: content-single.php:31
+#: content.php:35
+msgid "categories:"
+msgstr "分类"
+
+#: content-image.php:34
+#: content-page.php:30
+#: content-single.php:33
+#: content.php:37
+msgid "Edit"
+msgstr "编辑"
+
+#: content-image.php:40
+msgid "<span class=\"meta-prep meta-prep-entry-date\">Published</span> <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span><a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$</a>  <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr "<span class=\"meta-prep meta-prep-entry-date\">发布</span> <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span><a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a>  <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+
+#: content-page.php:35
+#: content-single.php:38
+#: content.php:53
+msgid "Pages:"
+msgstr "页面："
+
+#: content.php:47
+msgid "View Galleries"
+msgstr "查看相册"
+
+#: content.php:48
+msgid "More Galleries"
+msgstr "更多相册图片"
+
+#: footer.php:24
+msgid "Theme by"
+msgstr "主题"
+
+#: footer.php:24
+msgid "http://www.wpart.org"
+msgstr "http://www.wpart.org"
+
+#: footer.php:24
+msgid "wpart"
+msgstr "wpart"
+
+#: footer.php:25
+msgid "Powered by"
+msgstr "版权"
+
+#: footer.php:25
+msgid "http://wordpress.org"
+msgstr "http://wordpress.org"
+
+#: footer.php:25
+msgid "WordPress"
+msgstr "WordPress"
+
+#: image.php:24
+msgid "&lt;&lt; Previous"
+msgstr "&lt;&lt; 上一张"
+
+#: image.php:27
+msgid "Next &gt;&gt;"
+msgstr "下一张 &gt;&gt;"
+
+#: search.php:22
+#: search.php:43
+msgid "Search Results for: %s"
+msgstr "搜索: %s"
+
+#: searchform.php:20
+msgid "Search"
+msgstr "搜索"
+
+#: searchform.php:21
+msgid "Search Here"
+msgstr "搜索这里"
+
+#: searchform.php:22
+msgid "GO"
+msgstr "GO"
+
+#: sidebar.php:26
+msgid "pages"
+msgstr "页面"
+
+#: sidebar.php:34
+msgid "categories"
+msgstr "分类"
+
+#: sidebar.php:42
+msgid "archives"
+msgstr "归档"
+
+#: sidebar.php:50
+msgid "links"
+msgstr "链接"
+
+#: sidebar.php:58
+msgid "meta"
+msgstr "功能"
+
+#: theme-options.php:25
+msgid "Default Layout"
+msgstr "默认布局"
+
+#: theme-options.php:34
+#: theme-options.php:35
+msgid "Theme Options"
+msgstr "主题选项"
+
+#: theme-options.php:50
+msgid "Content on left"
+msgstr "内容在左边"
+
+#: theme-options.php:55
+msgid "Content on right"
+msgstr "内容在右边"
+
+#: theme-options.php:94
+msgid "%s Theme Options"
+msgstr "%s 主题选项"
+
+#: theme-options.php:146
+msgid "Layout"
+msgstr "布局"
+

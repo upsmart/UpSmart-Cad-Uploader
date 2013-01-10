@@ -586,6 +586,7 @@ function upsmart_comment( $comment, $args, $depth ) {
 endif; // ends check for upsmart_comment()
 
 if ( ! function_exists( 'upsmart_posted_on' ) ) :
+
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  * Create your own upsmart_posted_on to override in a child theme
@@ -623,4 +624,7 @@ function upsmart_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'upsmart_body_classes' );
+
+//Adds ability for text widget to accept shortcodes
+//<?php add_filter( 'widget_text', 'do_shortcode'); ?>
 
