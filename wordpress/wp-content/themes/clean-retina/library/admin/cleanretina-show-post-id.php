@@ -30,6 +30,12 @@ function cleanretina_show_post_respective_id() {
 	 */
 	add_filter( 'manage_posts_columns', 'cleanretina_column' );
 	add_action( 'manage_posts_custom_column', 'cleanretina_value', 10, 2 );
+
+	/**
+	 * For the All Pages table
+	 */
+	add_filter('manage_pages_columns', 'cleanretina_column');
+	add_action('manage_pages_custom_column', 'cleanretina_value', 10, 2);
 }
 
 /**

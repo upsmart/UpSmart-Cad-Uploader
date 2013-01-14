@@ -4,10 +4,10 @@ Theme URI: http://carolinethemes.com/2012/11/04/spun/
 Author: Caroline Moore
 Author URI: http://carolinemoore.net/
 Description: It's all about your content -- pure and simple.
-Version: 1.01
+Version: 1.02
 License: GNU General Public License
 License URI: license.txt
-Tags: light, one-column, fixed-width, white, gray, custom-menu, custom-background, custom-header, flexible-header
+Tags: light, one-column, fixed-width, white, gray, custom-menu, custom-background, custom-header, flexible-header, rtl-language-support, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -133,6 +133,7 @@ h4 {
 }
 h5 {
 	font-family: Quicksand, Arial, Helvetica, sans-serif;
+	-webkit-text-stroke: .35px; /* Hack to fix thin text in Windows */
 	font-size: 16px;
 	font-size: 1.6rem;
 	font-style: normal;
@@ -140,6 +141,7 @@ h5 {
 }
 h6 {
 	font-family: Quicksand, Arial, Helvetica, sans-serif;
+	-webkit-text-stroke: .35px; /* Hack to fix thin text in Windows */
 	font-size: 12px;
 	font-size: 1.2rem;
 	font-style: normal;
@@ -426,21 +428,21 @@ a:active {
 .alignleft {
 	display: inline;
 	float: left;
-	margin-top: .75em;
+	margin-top: 1.5em;
 	margin-right: 1.5em;
-	margin-bottom: .75em;
+	margin-bottom: 1.5em;
 }
 .alignright {
 	display: inline;
 	float: right;
-	margin-top: .75em;
+	margin-top: 1.5em;
 	margin-left: 1.5em;
-	margin-bottom: .75em;
+	margin-bottom: 1.5em;
 }
 .aligncenter {
 	clear: both;
 	display: block;
-	margin: .75em auto;
+	margin: 1.5em auto;
 }
 
 /* Text meant only for screen readers */
@@ -459,6 +461,7 @@ a:active {
 	display: block;
 	float: right;
 	font-family: Quicksand, Helvetica, Arial, sans-serif;
+	-webkit-text-stroke: .35px; /* Hack to fix thin text in Windows */
 	font-size: 14px;
 	font-size: 1.4rem;
 	margin: 5px 0 0;
@@ -560,6 +563,7 @@ a:active {
 	display: block;
 	float: right;
 	font-family: Quicksand, Helvetica, Arial, sans-serif;
+	-webkit-text-stroke: .35px; /* Hack to fix thin text in Windows */
 	font-size: 14px;
 	font-size: 1.4rem;
 	font-style: normal;
@@ -577,6 +581,7 @@ a:active {
 	clear: both;
 	display: none;
 	font-family: Quicksand, Helvetica, Arial, sans-serif;
+	-webkit-text-stroke: .35px; /* Hack to fix thin text in Windows */
 	margin: 0;
 	padding: 2em 0 0;
 	width: 100%;
@@ -615,6 +620,7 @@ a:active {
 	color: #eee;
 	clear: both;
 	font-family: Quicksand, Helvetica, Arial, sans-serif;
+	-webkit-text-stroke: .35px; /* Hack to fix thin text in Windows */
 	font-size: 12px;
 	font-size: 1.2rem;
 	padding: 100px 0 50px;
@@ -756,10 +762,14 @@ a:active {
 .archive .hentry a .attachment-post-thumbnail,
 .search .hentry a .attachment-post-thumbnail {
 	border-radius: 180px;
-	filter:grayscale(100%);
-	-webkit-filter:grayscale(100%);
-	-moz-filter:grayscale(100%);
-	-o-filter:grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	-webkit-filter: grayscale(1); /* Older versions of webkit */
+	-moz-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	-ms-filter: grayscale(100%); /* IE 10 */
+	filter: gray; /* IE 9 */
+	filter: url('inc/desaturate.svg#greyscale'); /* Firefox */
 	opacity: .8;
 	-webkit-opacity: .8;
 	-moz-opacity: .8;
@@ -767,6 +777,7 @@ a:active {
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
 	width: 100%;
 	height: 100%;
 	z-index: 1;
@@ -775,10 +786,11 @@ a:active {
 .archive .hentry a:hover img,
 .search .hentry a:hover img {
 	border-radius: 180px;
-	filter:none;
-	-webkit-filter:none;
-	-moz-filter:none;
-	-o-filter:none;
+	filter: none;
+	-webkit-filter: none;
+	-moz-filter: none;
+	-o-filter: none;
+	-ms-filter: none;
 	opacity: 1;
 	-webkit-opacity: 1;
 	-moz-opacity: 1;
@@ -786,6 +798,7 @@ a:active {
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
 	width: 100%;
 	height: 100%;
 }
@@ -817,6 +830,7 @@ a:active {
 	-webkit-transition: background .4s ease-in-out;
 	-moz-transition: background .4s ease-in-out;
 	-o-transition: background .4s ease-in-out;
+	-ms-transition: background .4s ease-in-out;
 	vertical-align: middle;
 	word-wrap: break-word;
 	width: 180px;
@@ -829,6 +843,7 @@ a:active {
 	-webkit-transition: background .4s ease-in-out;
 	-moz-transition: background .4s ease-in-out;
 	-o-transition: background .4s ease-in-out;
+	-ms-transition: background .4s ease-in-out;
 }
 
 
@@ -851,6 +866,7 @@ a:active {
 	clear: both;
 	color: #999;
 	font-family: Quicksand, Helvetica, Arial, sans-serif;
+	-webkit-text-stroke: .35px; /* Hack to fix thin text in Windows */
 	font-size: 12px;
 	font-size: 1.2rem;
 	margin: 50px 0 0;
@@ -860,6 +876,7 @@ a:active {
 	-webkit-transition: all .4s ease-in-out;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
 }
 .entry-meta a {
 	color: #999;
@@ -870,6 +887,7 @@ a:active {
 	-webkit-transition: all .4s ease-in-out;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
 }
 .post-date,
 .cat-links,
@@ -901,7 +919,6 @@ a:active {
 	font-size: 1.8rem;
 	font-weight: 300;
 	margin: 1.5em 0 0;
-	overflow: hidden;
 }
 .page-links {
 	clear: both;
@@ -923,6 +940,7 @@ a:active {
 	-webkit-transition: all .4s ease-in-out;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
 	width: 17px;
 	height: 17px;
 }
@@ -934,6 +952,7 @@ a:active {
 	-webkit-transition: all .4s ease-in-out;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
 }
 .edit-link {
 	clear: both;
@@ -1047,8 +1066,8 @@ img.size-full {
 .wp-caption.aligncenter,
 .wp-caption.alignleft,
 .wp-caption.alignright {
-	margin-top: .75em;
-	margin-bottom: .75em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 }
 .wp-caption img {
 	display: block;
@@ -1084,6 +1103,9 @@ img.size-full {
 }
 .site-content .gallery .gallery-item {
 	margin: 0 0 1.5em;
+}
+.site-content .format-gallery .gallery .gallery-item {
+	margin: 0;
 }
 
 /* Make sure embeds and iframes fit their containers */
@@ -1252,6 +1274,7 @@ li.comment,
 .comment-meta {
 	color: #eee;
 	font-family: Quicksand, Helvetica, Arial, sans-serif;
+	-webkit-text-stroke: .35px; /* Hack to fix thin text in Windows */
 	font-size: 12px;
 	font-size: 1.2rem;
 	text-transform: uppercase;
@@ -1265,6 +1288,7 @@ li.comment,
 	-webkit-transition: all .4s ease-in-out;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
 }
 .comment-meta:hover a {
 	color: #444;
@@ -1276,6 +1300,7 @@ a.comment-reply-link {
 	display: inline-block;
 	float: right;
 	font-family: Quicksand, Helvetica, Arial, sans-serif;
+	-webkit-text-stroke: .35px; /* Hack to fix thin text in Windows */
 	font-size: 12px;
 	font-size: 1.2rem;
 	margin: 0;
@@ -1293,6 +1318,7 @@ a#cancel-comment-reply-link {
 	display: block;
 	float: right;
 	font-family: Quicksand, Helvetica, Arial, sans-serif;
+	-webkit-text-stroke: .35px; /* Hack to fix thin text in Windows */
 	font-size: 12px;
 	font-size: 1.2rem;
 	font-style: normal;
@@ -1312,9 +1338,9 @@ a#cancel-comment-reply-link:hover {
 	display: none;
 }
 .comments-link a {
-	background: #bbb;
+	background: #eee;
 	border-radius: 30px;
-	color: #fff;
+	color: #999;
 	display: block;
 	float: right;
 	line-height: 1;
@@ -1323,7 +1349,7 @@ a#cancel-comment-reply-link:hover {
 	height: 30px;
 }
 .comments-link .tail {
-	border-top: 10px solid #bbb;
+	border-top: 10px solid #eee;
 	border-right: 8px solid transparent;
 	border-bottom: 0;
 	border-left: 0;
@@ -1337,6 +1363,7 @@ a#cancel-comment-reply-link:hover {
 	-webkit-transition: all .4s ease-in-out;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
 	width: 0;
 	height: 0;
 	z-index: -1;
@@ -1351,6 +1378,7 @@ a#cancel-comment-reply-link:hover {
 	-webkit-transition: all .4s ease-in-out;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
 }
 .comment-form-author,
 .comment-form-email,
@@ -1409,6 +1437,7 @@ a#cancel-comment-reply-link:hover {
 	-webkit-transition: all .4s ease-in-out;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
 	width: 40px;
 	height: 40px;
 }
@@ -1419,9 +1448,7 @@ a#cancel-comment-reply-link:hover {
 	-webkit-transition: all .4s ease-in-out;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
-}
-.sidebar-link.toggled-on {
-	line-height: 35px;
+	-ms-transition: all .4s ease-in-out;
 }
 .widget {
 	font-family: Baskerville, "Playfair Display", "Times New Roman", serif;

@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Clean Retina\n"
-"POT-Creation-Date: 2012-12-28 18:30+0545\n"
-"PO-Revision-Date: 2012-12-28 18:30+0545\n"
+"POT-Creation-Date: 2013-01-06 12:15+0545\n"
+"PO-Revision-Date: 2013-01-06 12:16+0545\n"
 "Last-Translator: \n"
 "Language-Team: Team Horse <support@themehorse.com>\n"
 "Language: English\n"
@@ -176,7 +176,7 @@ msgid "Advance Options"
 msgstr ""
 
 #: library/admin/theme-options.php:118
-msgid "Featured Post Slider"
+msgid "Featured Post/Page Slider"
 msgstr ""
 
 #: library/admin/theme-options.php:119
@@ -213,9 +213,9 @@ msgstr ""
 #: library/admin/theme-options.php:309 library/admin/theme-options.php:356
 #: library/admin/theme-options.php:408 library/admin/theme-options.php:454
 #: library/admin/theme-options.php:472 library/admin/theme-options.php:505
-#: library/admin/theme-options.php:571 library/admin/theme-options.php:596
-#: library/admin/theme-options.php:634 library/admin/theme-options.php:665
-#: library/admin/theme-options.php:695
+#: library/admin/theme-options.php:571 library/admin/theme-options.php:597
+#: library/admin/theme-options.php:635 library/admin/theme-options.php:666
+#: library/admin/theme-options.php:696
 msgid "Save All Changes"
 msgstr ""
 
@@ -485,7 +485,7 @@ msgstr ""
 msgid "Transition Effect:"
 msgstr ""
 
-#: library/admin/theme-options.php:549 library/admin/theme-options.php:625
+#: library/admin/theme-options.php:549 library/admin/theme-options.php:626
 #, php-format
 msgid "%s"
 msgstr ""
@@ -503,7 +503,7 @@ msgid "Transition Length"
 msgstr ""
 
 #: library/admin/theme-options.php:576
-msgid "Featured Post Slider Options"
+msgid "Featured Post/Page Slider Options"
 msgstr ""
 
 #: library/admin/theme-options.php:580
@@ -515,7 +515,7 @@ msgid "Check to exclude"
 msgstr ""
 
 #: library/admin/theme-options.php:587
-msgid "Featured Slider Post #"
+msgid "Featured Slider Post/Page #"
 msgstr ""
 
 #: library/admin/theme-options.php:589
@@ -532,51 +532,57 @@ msgid ""
 "respected added post's IDs."
 msgstr ""
 
-#: library/admin/theme-options.php:642
+#: library/admin/theme-options.php:596
+msgid ""
+"<strong>Note:</strong> You can now add Pages ID too. (You can now see the "
+"Pages' respective ID in the All Pages' table in last column.) ."
+msgstr ""
+
+#: library/admin/theme-options.php:643
 msgid "Site Verification"
 msgstr ""
 
-#: library/admin/theme-options.php:647
+#: library/admin/theme-options.php:648
 msgid "Google Site Verification ID"
 msgstr ""
 
-#: library/admin/theme-options.php:648
+#: library/admin/theme-options.php:649
 msgid "Enter your Google ID number only"
 msgstr ""
 
-#: library/admin/theme-options.php:653
+#: library/admin/theme-options.php:654
 msgid "Yahoo Site Verification ID"
 msgstr ""
 
-#: library/admin/theme-options.php:654
+#: library/admin/theme-options.php:655
 msgid "Enter your Yahoo ID number only"
 msgstr ""
 
-#: library/admin/theme-options.php:659
+#: library/admin/theme-options.php:660
 msgid "Bing Site Verification ID"
 msgstr ""
 
-#: library/admin/theme-options.php:660
+#: library/admin/theme-options.php:661
 msgid "Enter your Bing ID number only"
 msgstr ""
 
-#: library/admin/theme-options.php:670
+#: library/admin/theme-options.php:671
 msgid "Analytics"
 msgstr ""
 
-#: library/admin/theme-options.php:675
+#: library/admin/theme-options.php:676
 msgid "Code to display on Header"
 msgstr ""
 
-#: library/admin/theme-options.php:681
+#: library/admin/theme-options.php:682
 msgid "Note: Enter your custom header script."
 msgstr ""
 
-#: library/admin/theme-options.php:684
+#: library/admin/theme-options.php:685
 msgid "Code to display on Footer"
 msgstr ""
 
-#: library/admin/theme-options.php:691
+#: library/admin/theme-options.php:692
 msgid "Note: Enter your custom footer script."
 msgstr ""
 
@@ -644,58 +650,58 @@ msgstr ""
 msgid "&rarr;"
 msgstr ""
 
-#: library/functions/functions.php:676
+#: library/functions/functions.php:677
 msgid "Pingback:"
 msgstr ""
 
-#: library/functions/functions.php:676
+#: library/functions/functions.php:677
 msgid "(Edit)"
 msgstr ""
 
-#: library/functions/functions.php:691
+#: library/functions/functions.php:692
 msgid "Post author"
 msgstr ""
 
-#: library/functions/functions.php:697
+#: library/functions/functions.php:698
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: library/functions/functions.php:703
+#: library/functions/functions.php:704
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: library/functions/functions.php:708
+#: library/functions/functions.php:709
 msgid "Edit"
 msgstr ""
 
-#: library/functions/functions.php:712
+#: library/functions/functions.php:713
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: library/functions/functions.php:731
+#: library/functions/functions.php:732
 msgid "Error 404-Page NOT Found"
 msgstr ""
 
-#: library/functions/functions.php:734
+#: library/functions/functions.php:735
 msgid "It seems we can't find what you're looking for."
 msgstr ""
 
-#: library/functions/functions.php:735
+#: library/functions/functions.php:736
 msgid "This might be because:"
 msgstr ""
 
-#: library/functions/functions.php:736
+#: library/functions/functions.php:737
 msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
 
-#: library/functions/functions.php:737
+#: library/functions/functions.php:738
 msgid "Please try the following instead:"
 msgstr ""
 
-#: library/functions/functions.php:738
+#: library/functions/functions.php:739
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
 "browser."
@@ -739,7 +745,7 @@ msgstr ""
 msgid "%1$s on %2$s"
 msgstr ""
 
-#: library/structure/header-extensions.php:397
+#: library/structure/header-extensions.php:398
 msgid "... Continue Reading"
 msgstr ""
 

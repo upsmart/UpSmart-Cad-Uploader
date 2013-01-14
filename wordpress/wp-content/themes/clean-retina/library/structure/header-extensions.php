@@ -375,6 +375,7 @@ function cleanretina_featured_post_slider() {
 		<section class="featured-slider"><div class="slider-wrap"><div class="slider-cycle">';
 			$get_featured_posts = new WP_Query( array(
 				'posts_per_page' 			=> $options[ 'slider_quantity' ],
+				'post_type'					=> array( 'post', 'page' ),
 				'post__in'		 			=> $options[ 'featured_post_slider' ],
 				'orderby' 		 			=> 'post__in',
 				'ignore_sticky_posts' 	=> 1 						// ignore sticky posts

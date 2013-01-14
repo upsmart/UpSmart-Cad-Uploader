@@ -115,7 +115,7 @@ function cleanretina_theme_options_do_page() {
 				<ul id="main-navigation" class="tab-navigation">
 					<li><a href="#designoptions"><?php _e( 'Design Options', 'cleanretina' );?></a></li>
 					<li><a href="#advancedoptions"><?php _e( 'Advance Options', 'cleanretina' );?></a></li>
-					<li><a href="#featuredpostslider"><?php _e( 'Featured Post Slider', 'cleanretina' );?></a></li>
+					<li><a href="#featuredpostslider"><?php _e( 'Featured Post/Page Slider', 'cleanretina' );?></a></li>
 					<li><a href="#sociallinks"><?php _e( 'Social Links', 'cleanretina' );?></a></li>
 					<li><a href="#webmastertools"><?php _e( 'Webmaster Tools', 'cleanretina' );?></a></li>
 				</ul><!-- .tab-navigation #main-navigation -->
@@ -573,7 +573,7 @@ function cleanretina_theme_options_do_page() {
 					</div><!-- .option-container -->
 
 					<div class="option-container">
-						<h3 class="option-toggle"><a href="#"><?php _e( 'Featured Post Slider Options', 'cleanretina' ); ?></a></h3>
+						<h3 class="option-toggle"><a href="#"><?php _e( 'Featured Post/Page Slider Options', 'cleanretina' ); ?></a></h3>
 						<div class="option-content inside">
 							<table class="form-table">
 								<tr>                            
@@ -584,7 +584,7 @@ function cleanretina_theme_options_do_page() {
 								<tbody class="sortable">
 									<?php for ( $i = 1; $i <= $options[ 'slider_quantity' ]; $i++ ): ?>
 									<tr>
-										<th scope="row"><label class="handle"><?php _e( 'Featured Slider Post #', 'cleanretina' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
+										<th scope="row"><label class="handle"><?php _e( 'Featured Slider Post/Page #', 'cleanretina' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
 										<td><input type="text" name="cleanretina_theme_options[featured_post_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_post_slider', $options ) && array_key_exists( $i, $options[ 'featured_post_slider' ] ) ) echo absint( $options[ 'featured_post_slider' ][ $i ] ); ?>" />
 										<a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_post_slider', $options ) && array_key_exists ( $i, $options[ 'featured_post_slider' ] ) ) echo absint( $options[ 'featured_post_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'cleanretina' ); ?></a>
 										</td>
@@ -593,6 +593,7 @@ function cleanretina_theme_options_do_page() {
 								</tbody>
 							</table>
 							<p><?php _e( '<strong>Following are the steps on how to use the featured slider.</strong><br />* Create Post, Add featured image to the Post.<br />* Add all the Post ID that you want to use in the featured slider. <br /> &nbsp;(You can now see the Posts\' respective ID in the All Posts\' table in last column.)<br />* Featured Slider will show featured images, Title and excerpt of the respected added post\'s IDs.', 'cleanretina' ); ?> </p>
+							<p><?php _e( '<strong>Note:</strong> You can now add Pages ID too. (You can now see the Pages\' respective ID in the All Pages\' table in last column.) .', 'cleanretina' ); ?> </p>
 							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'cleanretina' ); ?>" /></p> 
 						</div><!-- .option-content -->
 					</div><!-- .option-container -->

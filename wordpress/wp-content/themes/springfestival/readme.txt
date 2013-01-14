@@ -78,4 +78,15 @@ Modify some APIs to adapt to the version 3.4
 Adjust the "customize" mistake which was not found in the version 1.4(SpringFestival_color_schemes())
 
 
-* Initial release of theme.
+
+
+*****2013.01.09*****
+
+= 1.51 =
+
+"No post title: This Post has no Post Title, but must still display a link to the single-page Post view. "
+Add a "backtop" button.
+Add special style for layout tests and asides.
+
+
+* Initia  release of theme.

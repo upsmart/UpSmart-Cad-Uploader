@@ -221,7 +221,7 @@
 	}
 	#bottom>div.selected {
 		position: absolute;
-		z-index: 10001;
+		z-index: 9999;
 		left: 0;
 		width: 100%;
 		margin: 0;

@@ -120,7 +120,7 @@
                     <!-- Menu Section starts here -->
                     
             			<div id="menu">
-							<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'dropdown dropdown-horizontal','fallback_cb'     => 'false', 'menu_id'=>'Main_nav', 'container'=>'') ); ?>			
+							<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'dropdown dropdown-horizontal','fallback_cb'     => 'Destro_backupmenu', 'menu_id'=>'Main_nav', 'container'=>'') ); ?>			
                         </div>
  
 

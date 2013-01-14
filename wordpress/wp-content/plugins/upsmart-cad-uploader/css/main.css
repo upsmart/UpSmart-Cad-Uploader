@@ -1,39 +1,36 @@
 
 
-.cad-plugin h1, .cad-plugin h2, .cad-plugin ul{
-text-align: center;
+.cad-plugin h1, .cad-plugin h2{
+text-align: left;
+padding: 0 16px;
 }
 .cad-plugin h2{
 margin-bottom: 50px;
 }
 .cad-plugin ul{
 list-style-type: circle;
-position: relative;
-left: 10%;
-right: 10%;
+margin-left: 16px;
+padding-left: 16px;
 }
 
 .cad-plugin ul li{
-text-align: left;
 }
 
 .cad-plugin p{
-position: relative;
-margin-left: 50px;
-margin-right: 50px;
+margin-left: 16px;
 }
 
 .cad-plugin p, .cad-plugin ul, .cad-plugin .cad-button-link{
 font-weight: bold;
 }
 
-.cad-plugin #loadCad{
+.cad-plugin form{
 position:relative;
 width: 560px;
-margin: 0px auto;
+margin-left: 16px;
 }
 
-.cad-plugin #loadCad .cad-button-link {
+.cad-plugin form .cad-button-link {
 margin-top: 20px;
 padding: 10px 15px;
 background: #4479BA;
@@ -54,13 +51,13 @@ transition-duration: 0.2s;
 -ms-user-select:none;
 user-select:none;
 }
-.cad-plugin #loadCad .cad-button-link:hover {
+.cad-plugin form .cad-button-link:hover {
 background: #356094;
 border: solid 1px #2A4E77;
 text-decoration: none;
 cursor: pointer;
 }
-.cad-plugin #loadCad .cad-button-link:active {
+.cad-plugin form .cad-button-link:active {
 -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
 -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
 box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
@@ -79,31 +76,33 @@ border: solid 1px #203E5F;
     /* end of transparency styles */
 
     z-index:2; /* bring the real upload interactivity up front */
-    width:218px;
-    
-    cursor: pointer;
+    width: 74px;
 }
-.cad-plugin #loadCad .fakeupload {
-    background:url(../img/browse.gif) no-repeat 100% 50%;
+.cad-plugin form .fakeupload {
+    background: url(../img/browse.gif) no-repeat 100% 50%;
 }
-.cad-plugin #loadCad .fakeupload input {
+
+.cad-plugin form .fakeupload input {
     width:447px;
 }
 
 .cad-plugin{
 width: 100%;
-height: 500px;
--moz-background-size:100% 100%; /* Old Firefox */
-background-size:100% 100%;
+height: 90%;
+-moz-background-size: contain; /* Old Firefox */
+background-size: cover;
 background-repeat:no-repeat;
+border-bottom: 1px solid #DFDFDF;
+box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1);
+overflow: hidden;
 }
 
 .cad-plugin.load-off{
-background:url(../img/background.png);
+background-image: url(../img/background.png);
 }
 
 .cad-plugin.load-on{
-background:url(../img/processing.gif);
+background-image: url(../img/processing.gif);
 }
 
 

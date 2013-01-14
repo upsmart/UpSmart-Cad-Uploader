@@ -4,7 +4,7 @@ Theme URI: http://themehorse.com/themes/clean-retina
 Author: Team Horse
 Author URI: http://themehorse.com
 Description: Clean Retina is a Simple, Clean and Responsive WordPress Theme with Retina Ready which adapts automatically to your tablets and mobile devices. Along with the elegant design the theme is easily customizable with numerous theme options. Some of the highlighted options are 9 home page layouts, featured slider to highlight your post, Custom post type to show gallery, 11 social icons, webmaster tools, Custom background, Custom Header, Custom menu, custom favicon, Custom CSS and many more.  Also supports some of the popular plugins like Breadcrumb NavXT, WP-PageNavi and WP-Page Numbers.
-Version: 1.2.1
+Version: 1.2.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, white, light, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-width, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -58,6 +58,13 @@ To use the slider.
 * Featured Slider will show featured images, Title and excerpt of the respected added post's IDs.
 
 == Changelog ==
+= 1.2.1.1 =
+* Changed theme description in style.css file.
+* Clean Retina now available in Polish Language. Thanks to Mr. Adam Klimowski <adamklimowski@gmail.com> for providing us with the translation.
+* Fetured Slider now not only supports Post IDs but also Page IDs.
+* Changed the recommended height, width to 250px and 978px respectively for custom-header.
+* POT file updated.
+
 = 1.2.1 =
 * Site title and description now appears above the site logo. Before it appeared below.
 * Making functions (that are not hooked to any action hook or action filter) pluggable for child theme support.

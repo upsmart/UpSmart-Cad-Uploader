@@ -144,7 +144,7 @@ EOHTML;
 		if(!empty($_POST)) {
 			$result = $wpdb->query($wpdb->prepare("REPLACE INTO upsmart_business
 							(wordpress_id,name,slogan,incorporated,url)
-							VALUES(%d,%s,%d,%s)",
+							VALUES(%d,%s,%s,%d,%s)",
 							array(
 								get_current_user_id(),
 								$_POST['project_name'],

@@ -10,7 +10,7 @@ Theme URI:http://www.wpart.org/wordpress-themes-SpringFestival/
 
 Description: Retro style to the performance  the Chinese history；colorful frame shape,patterns made of Kaleidoscope with the proportion ,mimic the vivid and full of beauty. a wordpress theme for wpart.org .
 
-Version: 1.5
+Version: 1.51
 
 Author: xwenz
 
@@ -93,7 +93,7 @@ body {
 	background-position:center;
 	height: 56px;
 	position: fixed;
-	top: 0px;
+	left:0;
 	width: 100%;
 	clear:both;
 	z-index:10000;
@@ -931,3 +931,21 @@ blockquote {
 	top: 0;
 	left: 7.6%;
 }
+.sticky .entry{
+	background: -moz-linear-gradient(#ECE9D6, #F3F1E5);
+	background: -o-linear-gradient(#ECE9D6, #F3F1E5);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ECE9D6), to(#F3F1E5)); /* older webkit syntax */
+	background: -webkit-linear-gradient(#ECE9D6, #F3F1E5);
+	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+	padding:5px;
+	margin-bottom:10px;
+}
+.format-aside .entry{ background-color:#F1EFE2;padding:0 3px;	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+}
+
+a#backtop{ display:block; width:24px; height:44px; position:fixed; bottom:100px; left:50%; margin-left:480px;background:url(images/up1.jpg) no-repeat; }
+a#backtop:hover{ background:url(images/up2.jpg) no-repeat;}

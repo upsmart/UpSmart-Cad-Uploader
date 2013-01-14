@@ -292,7 +292,6 @@ function spun_count_sidebars() {
  * Add color change theme options in the Customizer
  * @todo find a way to reset to default values
 
-
 function spun_customize( $wp_customize ) {
 
 	$wp_customize->add_setting( 'spun_color', array(

@@ -558,6 +558,7 @@ add_action('wp_footer', 'cleanretina_footercode');
  */
 function cleanretina_footercode() { 
     
+   $cleanretina_footercode = '';
 	if ( ( !$cleanretina_footercode = get_transient( 'cleanretina_footercode' ) )  ) {
 
 		global $cleanretina_theme_options_settings;
@@ -565,7 +566,7 @@ function cleanretina_footercode() {
 
 		// site stats, analytics footer code
 		if ( !empty( $options['analytic_footer'] ) ) {  
-		$cleanretina_footercode =  $options[ 'analytic_footer' ] ;
+		$cleanretina_footercode .=  $options[ 'analytic_footer' ] ;
 		}
 
 		set_transient( 'cleanretina_footercode', $cleanretina_footercode, 86940 );
@@ -585,9 +586,9 @@ function cleanretina_display_home_corporate_content() {
 ?>
 	<div id="content">
 		<?php
-    
-		if ( ( !$cleanretina_display_home_corporate_content = get_transient( 'cleanretina_display_home_corporate_content' ) )  ) {
-			$cleanretina_display_home_corporate_content = '';
+    	
+    	$cleanretina_display_home_corporate_content = '';
+		if ( ( !$cleanretina_display_home_corporate_content = get_transient( 'cleanretina_display_home_corporate_content' ) )  ) {			
 			if( !empty( $options[ 'corporate_content_title' ] ) ) {
 				$cleanretina_display_home_corporate_content .= '<h1 class="entry-title">' . $options[ 'corporate_content_title' ] . '</h1>';
 			}

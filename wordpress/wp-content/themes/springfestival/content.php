@@ -25,7 +25,7 @@
     </div>
     <div class="fr">
       <h2 class="title2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-        <?php the_title(); ?>
+        <?php if(the_title( '', '', false ) !='') the_title(); else echo 'Untitled';?>
         </a> </h2>
       <?php the_time('F jS, Y') ?>
       /

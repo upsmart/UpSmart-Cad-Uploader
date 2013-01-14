@@ -18,14 +18,11 @@ jQuery( document ).ready( function( $ ) {
 	var $sidebar = $( '#main' );
 
 	// Toggle sidebar on
-	$( '.sidebar-link' ).unbind( 'click' ).toggle( function() {
+	$( '.sidebar-link' ).unbind( 'click' ).click( function() {
 		$( 'html,body' ).animate( { scrollTop: $( "#secondary" ).offset().top },'slow' );
 		$sidebar.find( '#secondary' ).slideToggle( 'ease' );
-		$( this ).text( ' - ' );
-	},
-	function() {
-		$sidebar.find( '#secondary' ).slideToggle( 'ease' );
-		$( this ).text( ' + ' );
+		$( this ).toggleClass( 'toggled-on' );
+
 	} );
 
 	//Toggle the the main navigation menu for small screens.

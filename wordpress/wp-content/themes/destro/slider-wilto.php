@@ -18,11 +18,20 @@
                                     <?php while ($the_query->have_posts() ) : $the_query->the_post(); ?>
                                     
                                         <li class="slide">	
-                                            <?php if ( has_post_thumbnail()) { 
-                                                                    $wiltoimage = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'Destrothumb', false, '' );
-																	$wiltoimagealt = Destro_get_limited_string(get_the_title(), 40, '...');
-                                                                    echo '<div class="wrimg"><img alt="'.$wiltoimagealt.'" src="'.$wiltoimage[0].'" /></div>';
-                                                                    }
+                                            <?php 
+											
+											if ( has_post_thumbnail()) { 
+                                                                    
+													$wiltoimage = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'Destrothumb', false, '' );
+													$wiltoimagealt = Destro_get_limited_string(get_the_title(), 40, '...');											
+													echo '<div class="wrimg"><img alt="'.$wiltoimagealt.'" src="'.$wiltoimage[0].'" /></div>';													
+                                            }else {
+													$wiltoimage = get_template_directory_uri().'/images/featuredimagebackup.png';
+													$wiltoimagealt = Destro_get_limited_string(get_the_title(), 40, '...');											
+													echo '<div class="wrimg"><img alt="'.$wiltoimagealt.'" src="'.$wiltoimage.'" /></div>';													
+											}
+
+
                                             ?>                                        	
                                             <div class="wrtext">
                                             	<div class="wrsubtexth2">

@@ -2,8 +2,8 @@
 Contributors: brianfreytag
 Tags: social media, twitter, facebook, google+, googleplus, myspace, digg, email, rss, reddit, linkedin, orkut, youtube, buzz, social, icons, links, subscribe, follow, follow me, friendfeed, flickr, stumbleupon, vimeo, delicious, meetup, lastfm, foursquare, skype, blogger, wordpress, yelp, soundcloud, digital tunes, tumblr, hyves, etsy, tungle, plancast, slideshare, deviantart, better business bureau, merchant circle, asmallworld, live365, ping, itunes, picasa, steam, google talk, pandora, hulu, ebay, flixster, imdb, bandcamp, ustream, pinterest
 Requires at least: 2.9.2
-Tested up to: 3.4.2
-Stable tag: 2.9.5
+Tested up to: 3.5
+Stable tag: 2.9.6
 
 Adds links to all of your social media and sharing site profiles. Tons of icons come in 3 sizes, 4 icon styles, and 4 animations.
 
@@ -169,6 +169,14 @@ First - calm down. I'm happy to help you, and, if you ask those I've helped alre
 Please e-mail me at info at precisionwebdev dot com for help. My web server died in my move and I have no intention of putting it back up, so I will be 100% e-mail based from now on.
 
 == Changelog ==
+
+= 2.9.6 = 
+
+* Resolved image size issues
+* Removed donation button from widget and donation links from readme.txt
+* Updated Twitter icon to official design specs (default pack only). If you're not a fan of the new official icon, please contact Twitter
+* Updated the Google+ icon to the official red one (default pack only). As with Twitter, please contact Google. I've been contacted by reps from both companies instructing me to correct the icons.
+
 
 = 2.9.5 =
 

@@ -339,7 +339,23 @@ function Destro_quickYouTubeId($youtubeurl) {
 		return (strlen($id[0])==11) ? $id[0] : false;
 }
 
-
+function Destro_backupmenu() {
+	 	if ( current_user_can('edit_theme_options') ) {
+				echo '	<ul id="Main_nav" class="dropdown dropdown-horizontal">
+							<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+								<a href="'.get_admin_url().'nav-menus.php">Select a Menu to appear here in Dashboard->Appearance->Menus</a>
+							</li>
+		
+						</ul>	';
+		} else {
+				echo '	<ul id="Main_nav" class="dropdown dropdown-horizontal">
+							<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+								<a href="'.get_home_url().'">Home</a>
+							</li>
+		
+						</ul>	';			
+		}
+}
 
 /**
  * Register widgetized areas

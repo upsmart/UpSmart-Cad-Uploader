@@ -25,4 +25,5 @@
    <?php _e('Powered by','SpringFestival');?> <a href="<?php echo esc_url(__('http://wordpress.org','SpringFestival')); ?>" title="<?php esc_attr_e('WordPress', 'SpringFestival'); ?>" class="red" ><?php printf('WordPress'); ?></a> 
   </div>
 <?php wp_footer(); ?>
+<a id="backtop" href="#" title="backtop"></a>
 </body></html>
