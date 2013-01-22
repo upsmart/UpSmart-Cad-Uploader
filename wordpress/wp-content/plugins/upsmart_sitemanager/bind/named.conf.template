@@ -1,6 +1,6 @@
 zone "$$DOMAIN$$" {
 	type master;
-	file "/home/upsmart/bind/$$DOMAIN$$.hosts";
+	file "/home/upsmart/github/Project-UpSmart/wordpress/wp-content/plugins/upsmart_sitemanager/bind/$$DOMAIN$$.hosts";
 	allow-transfer {
 		75.127.14.195;
 	};

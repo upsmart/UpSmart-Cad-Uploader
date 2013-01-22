@@ -3,11 +3,11 @@
 			<ul>
 				<li class="radius linktitle linkGradient">
 					<span class="icon bubble left"></span>
-					<a href=<?PHP echo '"http://www.go-upsmart.com/homepage/homepage/groups/' . $companyLink .'"'; ?> class="right"> Join Group </a>
+					<a href=<?PHP echo '"http://www.upsmart.com/homepage/homepage/groups/' . $companyLink .'"'; ?> class="right"> Join Group </a>
 				</li>
 				<li class="radius linktitle linkGradient">
 					<span class="icon bulb left"></span>
-					<a href=<?PHP echo '"http://www.go-upsmart.com/homepage/homepage/groups/' . $companyLink . '/' . $companyLink .'EA"'; ?> class="right">Early Adopters </a>
+					<a href=<?PHP echo '"http://www.upsmart.com/homepage/homepage/groups/' . $companyLink . '/' . $companyLink .'EA"'; ?> class="right">Early Adopters </a>
 				</li>
 				<li class="radius linktitle linkGradient">
 					<span class="icon beaker left"></span>

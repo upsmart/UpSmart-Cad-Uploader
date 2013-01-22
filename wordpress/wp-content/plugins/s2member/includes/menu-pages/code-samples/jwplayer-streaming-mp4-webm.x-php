@@ -23,7 +23,7 @@ if (($mp4 = s2member_file_download_url ($mp4_cfg, "get-streamer-array"))
 					[{
 						sources: /* List all available sources. */
 							[
-								{type: 'rtmp', file: '<?php echo $mp4["streamer"]; ?>/<?php echo $mp4["file"]; ?>'},
+								{type: 'rtmp', file: '<?php echo $mp4["streamer"]; ?>/mp4:<?php echo $mp4["file"]; ?>'},
 								{type: 'mp4', file: '<?php echo $mp4["url"]; ?>'},
 								{type: 'webm', file: '<?php echo $webm["url"]; ?>'}
 							]

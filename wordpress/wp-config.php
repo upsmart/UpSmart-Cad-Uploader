@@ -88,8 +88,9 @@ define('WP_ALLOW_MULTISITE', true);
 define('MULTISITE', true);
 //Needed to allow domains for subsites to work.
 define('SUBDOMAIN_INSTALL', true);
+
 /*$base = '/';
-define('DOMAIN_CURRENT_SITE', 'www.go-upsmart.com');
+define('DOMAIN_CURRENT_SITE', 'www.upsmart.com');
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);*/

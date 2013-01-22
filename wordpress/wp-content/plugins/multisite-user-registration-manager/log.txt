@@ -1,12 +1,12 @@
 
-***  2013-01-10 20:51:40, sam @ 1 (http://www.go-upsmart.com):: murm_options_page_update begin
+***  2013-01-10 20:51:40, sam @ 1 (http://www.upsmart.com):: murm_options_page_update begin
 
-***  2013-01-10 20:51:40, sam @ 1 (http://www.go-upsmart.com):: installing MURM on this blog
+***  2013-01-10 20:51:40, sam @ 1 (http://www.upsmart.com):: installing MURM on this blog
 
-***  2013-01-10 20:51:40, sam @ 1 (http://www.go-upsmart.com):: installed successfully
+***  2013-01-10 20:51:40, sam @ 1 (http://www.upsmart.com):: installed successfully
 
-***  2013-01-10 20:51:40, sam @ 1 (http://www.go-upsmart.com):: murm_options_page_update end
+***  2013-01-10 20:51:40, sam @ 1 (http://www.upsmart.com):: murm_options_page_update end
 
-***  2013-01-10 20:51:56, sam @ 1 (http://www.go-upsmart.com):: murm_options_page_update begin
+***  2013-01-10 20:51:56, sam @ 1 (http://www.upsmart.com):: murm_options_page_update begin
 
-***  2013-01-10 20:51:56, sam @ 1 (http://www.go-upsmart.com):: murm_options_page_update end
+***  2013-01-10 20:51:56, sam @ 1 (http://www.upsmart.com):: murm_options_page_update end

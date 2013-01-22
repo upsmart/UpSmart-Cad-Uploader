@@ -1,12 +1,12 @@
 		<div id="linkSidebar" class="left whiteShell shadowFull">
 			<a href=<?PHP echo '"companyHome.php?name=' . $company .'"'; ?>><img id="guestLogo" src = <?php echo "'". $compLogo ."'" ?> height=<?php echo "'". $new_height ."'" ?> width=<?php echo "'". $new_width ."'" ?> /></a>
 			<div class="button-wrapper">
-				<a href=<?PHP echo '"http://www.go-upsmart.com/groups/' . $companyLink .'"'; ?> class="a-btn radius">
+				<a href=<?PHP echo '"http://www.upsmart.com/groups/' . $companyLink .'"'; ?> class="a-btn radius">
 					<span class="a-btn-text">Fan Group</span> 
 					<span class="a-btn-slide-text">Support!</span>
 					<span class="a-btn-icon-right"><span id="bubble"></span></span>
 				</a>
-				<a href=<?PHP echo '"http://www.go-upsmart.com/groups/' . $companyLink . '/' . $companyLink .'EA"'; ?> class="a-btn radius">
+				<a href=<?PHP echo '"http://www.upsmart.com/groups/' . $companyLink . '/' . $companyLink .'EA"'; ?> class="a-btn radius">
 					<span class="a-btn-text">Early Adopters</span>
 					<span class="a-btn-slide-text">Try it!</span>
 					<span class="a-btn-icon-right"><span id="bulb"></span></span>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Blog Page w/ Slider
+ * Template Name: Blog Page with Slider
  * Description: A Page Template for displaying a recent post with slider.
  *
  * @package 	Tiga

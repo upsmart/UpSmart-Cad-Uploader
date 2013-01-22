@@ -19,121 +19,147 @@
  */
 add_action( 'after_setup_theme', 'tiga_setup' );
 
-if ( ! function_exists( 'tiga_setup' ) ):
+function tiga_setup() {
 
-	function tiga_setup() {
+	global $content_width;
 
-		/* Loads the Options Panel. */
-		if ( !function_exists( 'optionsframework_init' ) ) {
+	/* Sets the theme version number. */
+	define( 'TIGA_VERSION', 1.1 );
 
-			define( 'OPTIONS_FRAMEWORK_DIRECTORY', trailingslashit( get_template_directory_uri() ) . '/admin/' );
-			require_once dirname( __FILE__ ) . '/admin/options-framework.php';
+	/* Sets the path to the theme directory. */
+	define( 'THEME_DIR', get_template_directory() );
 
-			/* Options panel extras. */
-			require( trailingslashit( get_template_directory() ) . '/includes/options-functions.php' );
-			require( trailingslashit( get_template_directory() ) . '/includes/options-sidebar.php' );
+	/* Sets the path to the theme directory URI. */
+	define( 'THEME_URI', get_template_directory_uri() );
 
-		}
+	/* Sets the path to the admin directory. */
+	define( 'TIGA_ADMIN', trailingslashit( THEME_DIR ) . 'admin' );
 
-		require( trailingslashit( get_template_directory() ) . '/includes/templates.php' );
-		require( trailingslashit( get_template_directory() ) . '/includes/hooks.php' );
-		require( trailingslashit( get_template_directory() ) . '/includes/metabox.php' );
+	/* Sets the path to the includes directory. */
+	define( 'TIGA_INCLUDES', trailingslashit( THEME_DIR ) . 'includes' );
 
-		/* Set the content width based on the theme's design and stylesheet. */
-		global $content_width;
-		if ( ! isset( $content_width ) ) $content_width = 620;
+	/* Sets the path to the js directory. */
+	define( 'TIGA_IMAGE', trailingslashit( THEME_URI ) . 'img' );
 
-		/* Embed width defaults. */
-		add_filter( 'embed_defaults', 'tiga_embed_defaults' );
-		
-		/* Make tiga available for translation. */
-		load_theme_textdomain( 'tiga', get_template_directory() . '/languages' );
+	/* Sets the path to the js directory. */
+	define( 'TIGA_CSS', trailingslashit( THEME_URI ) . 'css' );
 
-		/* WordPress theme support */
-		add_editor_style();
-		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 
-			'custom-background',
-			array(
-				'default-image' => trailingslashit( get_template_directory_uri() ) . 'img/pattern.png',
-			)
-		);
-		register_nav_menus( 
-			array(
-				'primary' => __( 'Primary Navigation', 'tiga' ),
-				'secondary' => __( 'Secondary Navigation', 'tiga' )
-			) 
-		);
-		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'tiga-140px' , 140, 140, true );
-		add_image_size( 'tiga-300px' , 300, 130, true );
-		add_image_size( 'tiga-700px' , 700, 300, true );
-		add_image_size( 'tiga-620px' , 620, 350, true );
-		add_image_size( 'tiga-460px' , 460, 300, true );
+	/* Sets the path to the js directory. */
+	define( 'TIGA_JS', trailingslashit( THEME_URI ) . 'js' );
 
-		/* Enqueue styles. */
-		add_action( 'wp_enqueue_scripts', 'tiga_enqueue_styles' );
+	/* Loads the Options Panel. */
+	if ( !function_exists( 'optionsframework_init' ) ) {
 
-		/* Deregister wp-pagenavi plugin style. */
-		add_action( 'wp_print_styles', 'tiga_deregister_styles', 100 );
+		define( 'OPTIONS_FRAMEWORK_DIRECTORY', trailingslashit( get_template_directory_uri() ) . 'admin/' );
+		require_once dirname( __FILE__ ) . '/admin/options-framework.php';
 
-		/* Enqueue scripts. */
-		add_action( 'wp_enqueue_scripts', 'tiga_enqueue_scripts' );
-		
-		/* Fallback script for IE. */
-		add_action( 'wp_footer', 'tiga_js_ie' );
-
-		/* Comment reply js */
-		add_action( 'comment_form_before', 'tiga_enqueue_comment_reply_script' );
-
-		/* Remove gallery inline style */
-		add_filter( 'use_default_gallery_style', '__return_false' );
-
-		/* wp_title filter. */
-		add_filter( 'wp_title', 'tiga_title' );
-
-		/* Replace [...] */
-		add_filter( 'excerpt_more', 'tiga_auto_excerpt_more' );
-
-		/* Add 'Continue Reading' */
-		add_filter( 'get_the_excerpt', 'tiga_custom_excerpt_more' );
-
-		/* Stop more link from jumping to middle of page. */
-		add_filter( 'the_content_more_link', 'tiga_remove_more_jump_link' );
-
-		/* Add custom class to the body. */
-		add_filter( 'body_class', 'tiga_body_classes' );
-
-		/* Filter in a link to a content ID attribute for the next/previous image links on image attachment pages. */
-		add_filter( 'attachment_link', 'tiga_enhanced_image_navigation', 10, 2 );
-
-		/* Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link. */
-		add_filter( 'wp_page_menu_args', 'tiga_page_menu_args' );
-
-		/* Remove div from wp_page_menu() and replace with ul. */
-		add_filter( 'wp_page_menu', 'tiga_wp_page_menu' );
-
-		/* Customize tag cloud widget. */
-		add_filter( 'widget_tag_cloud_args', 'tiga_new_tag_cloud' );
-
-		/* HTML5 tag for image and caption. */
-		add_filter( 'img_caption_shortcode', 'tiga_html5_caption', 10, 3 );
-
-		/* Allow shortcode in widget. */
-		add_filter( 'widget_text', 'do_shortcode' );
-
-		/* Register additional widgets. */
-		add_action( 'widgets_init', 'tiga_register_widgets' );
-
-		/* Register custom sidebar. */
-		add_action( 'widgets_init', 'tiga_register_custom_sidebars' );
-
-		/* Removes default styles set by WordPress recent comments widget. */
-		add_action( 'widgets_init', 'tiga_remove_recent_comments_style' );
+		/* Options panel extras. */
+		require( trailingslashit( TIGA_INCLUDES ) . 'options-functions.php' );
+		require( trailingslashit( TIGA_INCLUDES ) . 'options-sidebar.php' );
 
 	}
 
-endif; // end tiga_setup
+	/* Loads the template tags. */
+	require( trailingslashit( TIGA_INCLUDES ) . 'templates.php' );
+
+	/* Loads the theme hooks. */
+	require( trailingslashit( TIGA_INCLUDES ) . 'hooks.php' );
+
+	/* Loads the theme metabox. */
+	require( trailingslashit( TIGA_INCLUDES ) . 'metabox.php' );
+
+	/* Set the content width based on the theme's design and stylesheet. */
+	if ( ! isset( $content_width ) ) $content_width = 620;
+
+	/* Embed width defaults. */
+	add_filter( 'embed_defaults', 'tiga_embed_defaults' );
+	
+	/* Make tiga available for translation. */
+	load_theme_textdomain( 'tiga', trailingslashit( THEME_DIR ) . 'languages' );
+
+	/* WordPress theme support */
+	add_editor_style();
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 
+		'custom-background',
+		array(
+			'default-image' => trailingslashit( TIGA_IMAGE ) . 'pattern.png',
+		)
+	);
+	register_nav_menus( 
+		array(
+			'primary' => __( 'Primary Navigation', 'tiga' ),
+			'secondary' => __( 'Secondary Navigation', 'tiga' )
+		) 
+	);
+	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'tiga-140px' , 140, 140, true );
+	add_image_size( 'tiga-300px' , 300, 130, true );
+	add_image_size( 'tiga-700px' , 700, 300, true );
+	add_image_size( 'tiga-620px' , 620, 350, true );
+	add_image_size( 'tiga-460px' , 460, 300, true );
+
+	/* Enqueue styles. */
+	add_action( 'wp_enqueue_scripts', 'tiga_enqueue_styles' );
+
+	/* Deregister wp-pagenavi plugin style. */
+	add_action( 'wp_print_styles', 'tiga_deregister_styles', 100 );
+
+	/* Enqueue scripts. */
+	add_action( 'wp_enqueue_scripts', 'tiga_enqueue_scripts' );
+	
+	/* Fallback script for IE. */
+	add_action( 'wp_footer', 'tiga_js_ie' );
+
+	/* Comment reply js */
+	add_action( 'comment_form_before', 'tiga_enqueue_comment_reply_script' );
+
+	/* Remove gallery inline style */
+	add_filter( 'use_default_gallery_style', '__return_false' );
+
+	/* wp_title filter. */
+	add_filter( 'wp_title', 'tiga_title' );
+
+	/* Replace [...] */
+	add_filter( 'excerpt_more', 'tiga_auto_excerpt_more' );
+
+	/* Add 'Continue Reading' */
+	add_filter( 'get_the_excerpt', 'tiga_custom_excerpt_more' );
+
+	/* Stop more link from jumping to middle of page. */
+	add_filter( 'the_content_more_link', 'tiga_remove_more_jump_link' );
+
+	/* Add custom class to the body. */
+	add_filter( 'body_class', 'tiga_body_classes' );
+
+	/* Filter in a link to a content ID attribute for the next/previous image links on image attachment pages. */
+	add_filter( 'attachment_link', 'tiga_enhanced_image_navigation', 10, 2 );
+
+	/* Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link. */
+	add_filter( 'wp_page_menu_args', 'tiga_page_menu_args' );
+
+	/* Remove div from wp_page_menu() and replace with ul. */
+	add_filter( 'wp_page_menu', 'tiga_wp_page_menu' );
+
+	/* Customize tag cloud widget. */
+	add_filter( 'widget_tag_cloud_args', 'tiga_new_tag_cloud' );
+
+	/* HTML5 tag for image and caption. */
+	add_filter( 'img_caption_shortcode', 'tiga_html5_caption', 10, 3 );
+
+	/* Allow shortcode in widget. */
+	add_filter( 'widget_text', 'do_shortcode' );
+
+	/* Register additional widgets. */
+	add_action( 'widgets_init', 'tiga_register_widgets' );
+
+	/* Register custom sidebar. */
+	add_action( 'widgets_init', 'tiga_register_custom_sidebars' );
+
+	/* Removes default styles set by WordPress recent comments widget. */
+	add_action( 'widgets_init', 'tiga_remove_recent_comments_style' );
+
+} // end tiga_setup
 
 /**
  * Overwrites the default widths for embeds.  This is especially useful for making sure videos properly
@@ -161,9 +187,9 @@ function tiga_embed_defaults( $args ) {
  */
 function tiga_enqueue_styles() {
 
-	wp_enqueue_style( 'tiga-font', 'http://fonts.googleapis.com/css?family=Francois+One|Open+Sans:400italic,400,700', '', '1.0', 'all' );
+	wp_enqueue_style( 'tiga-font', 'http://fonts.googleapis.com/css?family=Francois+One|Open+Sans:400italic,400,700', '', TIGA_VERSION, 'all' );
 
-	wp_enqueue_style( 'tiga-style', get_stylesheet_uri(), '', '1.0', 'all' );
+	wp_enqueue_style( 'tiga-style', get_stylesheet_uri(), '', TIGA_VERSION, 'all' );
 
 }
 
@@ -173,9 +199,7 @@ function tiga_enqueue_styles() {
  * @since 0.0.1
  */
 function tiga_deregister_styles() {
-
 	wp_deregister_style( 'wp-pagenavi' );
-
 }
 
 /**
@@ -188,19 +212,19 @@ function tiga_enqueue_scripts() {
 
 	wp_enqueue_script( 'jquery' );
 	
-	wp_enqueue_script( 'tiga-modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js', array('jquery'), '2.6.1' );
+	wp_enqueue_script( 'tiga-modernizr', trailingslashit( TIGA_JS ) . 'vendor/modernizr-2.6.2.min.js', array('jquery'), '2.6.1' );
 
 	if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
-		wp_enqueue_script( 'tiga-keyboard-image-navigation', get_template_directory_uri() . '/js/vendor/keyboard-image-navigation.js', array( 'jquery' ), '20120410', true );
+		wp_enqueue_script( 'tiga-keyboard-image-navigation', trailingslashit( TIGA_JS ) . 'vendor/keyboard-image-navigation.js', array( 'jquery' ), TIGA_VERSION, true );
 	}
 	
 	if ( is_singular() && of_get_option('tiga_social_share') ) {
-		wp_enqueue_script( 'tiga-social-share', get_template_directory_uri() . '/js/vendor/social-share.js', array( 'jquery' ), '20120410', true );
+		wp_enqueue_script( 'tiga-social-share', trailingslashit( TIGA_JS ) . 'vendor/social-share.js', array( 'jquery' ), TIGA_VERSION, true );
 	}
 	
-	wp_enqueue_script( 'tiga-plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '20120410', true );
+	wp_enqueue_script( 'tiga-plugins', trailingslashit( TIGA_JS ) . 'plugins.js', array('jquery'), TIGA_VERSION, true );
 	
-	wp_enqueue_script( 'tiga-methods', get_template_directory_uri() . '/js/methods.js', array('jquery'), '20120410', true );
+	wp_enqueue_script( 'tiga-methods', trailingslashit( TIGA_JS ) . 'methods.js', array('jquery'), TIGA_VERSION, true );
 
 }
 
@@ -212,7 +236,7 @@ function tiga_enqueue_scripts() {
 function tiga_js_ie() { ?>
 
 	<!--[if (gte IE 6)&(lte IE 8)]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/selectivizr-min.js"></script>
+		<script src="<?php echo trailingslashit( TIGA_JS ) . 'vendor/selectivizr-min.js'; ?>"></script>
 	<![endif]-->
 	
 <?php 
@@ -379,20 +403,17 @@ function tiga_seo() {
  * @since 0.0.1
  */
 function tiga_continue_reading_link() {
-
 	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'tiga' ) . '</a>';
-
 }
 
 /**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and tiga_continue_reading_link().
+ * Replaces "[...]" (appended to automatically generated excerpts) with 
+ * an ellipsis and tiga_continue_reading_link().
  *
  * @since 0.0.1
  */
 function tiga_auto_excerpt_more( $more ) {
-
 	return ' &hellip;' . tiga_continue_reading_link();
-
 }
 
 /**
@@ -553,16 +574,16 @@ function tiga_html5_caption( $output, $attr, $content ) {
  */
 function tiga_register_widgets() {
 
-	require_once( trailingslashit ( get_template_directory() ) . 'includes/widget-social.php' );
+	require_once( trailingslashit( TIGA_INCLUDES ) . 'widget-social.php' );
 	register_widget( 'tiga_social' );
 
-	require_once( trailingslashit ( get_template_directory() ) . 'includes/widget-subscribe.php' );
+	require_once( trailingslashit( TIGA_INCLUDES ) . 'widget-subscribe.php' );
 	register_widget( 'tiga_subscribe' );
 
-	require_once( trailingslashit ( get_template_directory() ) . 'includes/widget-twitter.php' );
+	require_once( trailingslashit( TIGA_INCLUDES ) . 'widget-twitter.php' );
 	register_widget( 'tiga_twitter' );
 
-	require_once( trailingslashit ( get_template_directory() ) . 'includes/widget-fbfans.php' );
+	require_once( trailingslashit( TIGA_INCLUDES ) . 'widget-fbfans.php' );
 	register_widget( 'tiga_fb_box' );
 
 }

@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Social Media Widget
  * Description: Adds links to all of your social media and sharing site profiles. Tons of icons come in 3 sizes, 4 icon styles, and 4 animations.
- * Version: 2.9.6
- * Author: Brian Freytag
+ * Version: 2.9.7
+ * Author: bmwebproperties
  **/
 
 

@@ -1,9 +1,9 @@
 === Social Media Widget ===
-Contributors: brianfreytag
+Contributors: bmwebproperties
 Tags: social media, twitter, facebook, google+, googleplus, myspace, digg, email, rss, reddit, linkedin, orkut, youtube, buzz, social, icons, links, subscribe, follow, follow me, friendfeed, flickr, stumbleupon, vimeo, delicious, meetup, lastfm, foursquare, skype, blogger, wordpress, yelp, soundcloud, digital tunes, tumblr, hyves, etsy, tungle, plancast, slideshare, deviantart, better business bureau, merchant circle, asmallworld, live365, ping, itunes, picasa, steam, google talk, pandora, hulu, ebay, flixster, imdb, bandcamp, ustream, pinterest
 Requires at least: 2.9.2
 Tested up to: 3.5
-Stable tag: 2.9.6
+Stable tag: 2.9.7
 
 Adds links to all of your social media and sharing site profiles. Tons of icons come in 3 sizes, 4 icon styles, and 4 animations.
 
@@ -96,7 +96,6 @@ The Social Media Widget is a simple sidebar widget that allows users to input th
 
 If you like this plugin, please rate it and click "Works" for your Wordpress version!
 
-Please donate if you like this plugin.
 
 == Installation ==
 
@@ -145,7 +144,7 @@ You can also upload the icons individually through Wordpress. These will be uplo
 If you don't understand what it means to create a folder and upload to that folder on the filesystem, or if you don't know what a path to a folder is, I would suggest sticking with one of the four default icon packs.
 
 = Can you add [insert social media service] support =
-Yes I can. Please leave a comment in the Wordpress.org forums tagging my plugin or e-mailing me at info at precisionwebdev dot com.
+Yes I can. Please leave a comment in the Wordpress.org forums tagging my plugin.
 
 = Why aren't the animations working in Internet Explorer 6+ = 
 The only animation supported by Internet Explorer is Scale, and that only works reliably with Internet Explorer 8. Scale is also included in Combo. No other animations will work. This is because I do not want to use Javascript to animate my icons. All of these animations are using CSS3 styles. The animations work the best with Webkit based browsers such as Chrome and Safari, or Firefox 4. Firefox 3.x is fully supported, without CSS3 transition animations.
@@ -162,13 +161,19 @@ Getting your iTunes Ping account information is slightly more difficult. You nee
 There is probably a compatibility issue with another plugin. These things happen. Because there are thousands of plugins from thousands of developers, all who develop in completely different ways, there are going to be issues that arise from time-to-time. These are more prevalent, however, from plugins that make system-wide changes (such as SEO Packs). Try disabling, one at a time, the other plugins until you find that one that is breaking my widget. Then e-mail me and tell me which plugin it was. I will then try to fix it. Unless I know what plugin is breaking it, I won't be able to fix it, ya see? There have also been issues with moved wp-content folders or custom WP_CONTENT_URL's that caused the images to break. This issue has been resolved since 2.3.
 
 = Something else isn't right! =
-First - calm down. I'm happy to help you, and, if you ask those I've helped already, I don't mind providing individual service to people to get my widget working and looking right with your theme. If your theme is especially jacked up, I do do freelance work and would be happy to fix your entire theme for a fee. But back to the point, if something isn't working quite right on your site, INCLUDE A LINK. I can't help you with your site unless there is a link so I can see what's going on. Make sure my widget is enabled to. It gets old getting asked, "Why doesn't it look right on my site" and then finding that the comment-leaver left no link and if they did, my widget isn't even enabled on their site anymore.
+First - calm down. I'm happy to help you, and, if you ask those I've helped already, I don't mind providing individual service to people to get my widget working and looking right with your theme. If your theme is especially jacked up, I do do freelance work and would be happy to fix your entire theme for a fee. But back to the point, if something isn't working quite right on your site, INCLUDE A LINK. I can't help you with your site unless there is a link so I can see what's going on. Make sure my widget is enabled too. It gets old getting asked, "Why doesn't it look right on my site" and then finding that the comment-leaver left no link and if they did, my widget isn't even enabled on their site anymore.
 
 == Help ==
 
-Please e-mail me at info at precisionwebdev dot com for help. My web server died in my move and I have no intention of putting it back up, so I will be 100% e-mail based from now on.
+Please add a post on the Wordpress.org support forums with the plugin tagged.
 
 == Changelog ==
+
+= 2.9.7 =
+
+* Updated readme.txt 
+* Updated author and contributors
+* Thank you all for all of the memories and support over the years - Brian
 
 = 2.9.6 = 
 

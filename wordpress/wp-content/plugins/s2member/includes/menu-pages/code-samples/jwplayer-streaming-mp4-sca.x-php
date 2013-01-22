@@ -23,7 +23,7 @@ $s2_jw_config["mp4_video_file_name"] = "video.mp4"; // Name of your MP4 test fil
 						[{
 							sources: /* List all available sources. */
 								[
-									{type: 'rtmp', file: mp4['streamer'] + '/' + mp4['file']},
+									{type: 'rtmp', file: mp4['streamer'] + '/mp4:' + mp4['file']},
 									{type: 'mp4', file: mp4['url']}
 								]
 						}],

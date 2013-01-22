@@ -160,7 +160,7 @@ if (($original_width > $max_width) OR ($original_height > $max_height))
 					<div class="slink rss">
                                         <?php
                                         $companyId = get_category_id($compName);
-                                        $rssurl = "http://www.go-upsmart.com/?cat=' . $companyId . '&feed=rss2";
+                                        $rssurl = "http://www.upsmart.com/?cat=' . $companyId . '&feed=rss2";
                                         ?>
                                         <a href="<?php bloginfo(' . $rssurl . '); ?>" title="Subscribe to my feed"><img src="/cp-profiles/images/icon-rss.png" style="border:0"/></a>
                                         </div>

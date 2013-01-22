@@ -1,16 +1,28 @@
-zone "example.com" {
-        type master;
-        file "/home/upsmart/bind/example.com.hosts";
-        allow-transfer {
-                75.127.14.195;
-        };
-        also-notify {
-                75.127.14.195;
-        };
-        notify yes;
-};zone "vulcantechs.com" {
+zone "vulcantechs.com" {
 	type master;
 	file "/home/upsmart/bind/vulcantechs.com.hosts";
+	allow-transfer {
+		75.127.14.195;
+	};
+	also-notify {
+		75.127.14.195;
+	};
+	notify yes;
+};
+zone "projectupsmart.com" {
+	type master;
+	file "/home/upsmart/github/Project-UpSmart/wordpress/wp-content/plugins/upsmart_sitemanager/bind/projectupsmart.com.hosts";
+	allow-transfer {
+		75.127.14.195;
+	};
+	also-notify {
+		75.127.14.195;
+	};
+	notify yes;
+};
+zone "heidishungryupsmart.com" {
+	type master;
+	file "/home/upsmart/github/Project-UpSmart/wordpress/wp-content/plugins/upsmart_sitemanager/bind/heidishungryupsmart.com.hosts";
 	allow-transfer {
 		75.127.14.195;
 	};

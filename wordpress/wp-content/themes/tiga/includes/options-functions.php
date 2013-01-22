@@ -180,7 +180,7 @@ function tiga_onecol_style() {
 	$layouts = of_get_option( 'tiga_layouts' );
 
 	if ( 'onecolumn' == $layouts ) :
-		wp_enqueue_style( 'tiga-onecolumn', get_template_directory_uri() . '/css/one-column.css', '', '0.1', 'all' );
+		wp_enqueue_style( 'tiga-onecolumn', trailingslashit( TIGA_CSS ) . 'one-column.css', '', TIGA_VERSION, 'all' );
 	endif;
 
 }
@@ -245,6 +245,7 @@ function tiga_change_santiziation() {
 function tiga_sanitize_textarea($input) {
 
     global $allowedposttags;
+
     $custom_allowedtags["embed"] = array(
 		"src" => array(),
 		"type" => array(),
@@ -252,15 +253,24 @@ function tiga_sanitize_textarea($input) {
 		"allowscriptaccess" => array(),
 		"height" => array(),
 		"width" => array()
-		);
+	);
+
 	$custom_allowedtags["script"] = array(
 		"src" => array(), 
 		"type" => array()
-		);
+	);
+
 	$custom_allowedtags["meta"] = array(
 		"name" => array(), 
 		"content" => array()
-		);
+	);
+
+	$custom_allowedtags["link"] = array(
+		"href" => array(), 
+		"rel" => array(),
+		"type" => array()
+	);
+
 	$custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
 	$output = wp_kses( $input, $custom_allowedtags);
     return $output;

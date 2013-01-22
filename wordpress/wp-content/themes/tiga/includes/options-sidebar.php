@@ -9,39 +9,28 @@
  *
  */
 
-add_action( 'optionsframework_after','tiga_options_sidebar' );
+add_action( 'optionsframework_after', 'tiga_options_sidebar' );
 function tiga_options_sidebar() { ?>
 
 	<div id="optionsframework-sidebar">
 		<div class="metabox-holder">
 			
 			<div class="tiga-support">
-				<a href="http://wordpress.org/support/theme/tiga/" title="Support" target="_blank">Support</a> <a href="http://wordpress.org/support/view/theme-reviews/tiga/" title="Feedback" target="_blank">Feedback</a> <a href="http://dl.dropbox.com/u/4357218/Theme/Docs/Tiga/docs.html" title="Documentation" target="_blank" style="color: #f00;">Documentation</a>
+				<a class="button button-primary button-hero" href="<?php echo esc_url( 'http://satrya.me/tiga/' ); ?>" target="_blank"><?php _e( 'Support', 'tiga' ); ?></a>
+				<a class="button button-primary button-hero" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/tiga' ); ?>" target="_blank"><?php _e( 'Feedback', 'tiga' ); ?></a>
 			</div>
 
 			<div id="tiga-buddypress" class="postbox">
-				<h3 class="hndle">Components</span></h3>
+				<h3 class="hndle"><?php _e( 'Components', 'tiga' ); ?></span></h3>
 				<div class="inside">
 					<ol>
-						<li><a href="https://github.com/satrya/tiga/downloads" title="BuddyPress for tiga" target="_blank">Buddypress</a> <br />
-							A child theme for buddypress compatibility.</li>
-						<li><a href="https://github.com/satrya/tiga/downloads" title="Sample child theme" target="_blank">Sample child theme</a> <br />
-							Sample child theme for Tiga.</li>
-						<li><a href="https://github.com/satrya/tiga/downloads" title="Sass files" target="_blank">Sass files</a> <br />
-							I'm building Tiga with SASS & Compass, download it if you need.</li>
+						<li><a href="<?php echo esc_url( 'http://satrya.me/forums/topic/tiga-components/' ) ?>" target="_blank"><?php _e( 'Buddypress', 'tiga' ); ?></a> <br />
+							<?php _e( 'A child theme for buddypress compatibility.', 'tiga' ); ?></li>
+						<li><a href="<?php echo esc_url( 'http://satrya.me/forums/topic/tiga-components/' ) ?>" target="_blank"><?php _e( 'Sample child theme', 'tiga' ); ?></a> <br />
+							<?php _e( 'Sample child theme for Tiga.', 'tiga' ) ?></li>
+						<li><a href="<?php echo esc_url( 'http://satrya.me/forums/topic/tiga-components/' ) ?>" target="_blank"><?php _e( 'Sass files', 'tiga' ); ?></a> <br />
+							<?php _e( 'I\'m building Tiga with SASS & Compass, download it if you need.', 'tiga' ); ?></li>
 					</ol>
-				</div>
-			</div>
-
-			<div id="tiga-project" class="postbox">
-				<h3 class="hndle">Project</span></h3>
-				<div class="inside">Need a custom WordPress theme? <a href="http://www.emailmeform.com/builder/form/HX03Jzb3Ac3UfK6SVqIPa" target="_blank">Contact me!</a></div>
-			</div>
-			
-			<div id="tiga-themes" class="postbox">
-				<h3 class="hndle"><span>Recommended</span></h3>
-				<div class="inside">
-					<a href="http://tokokoo.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/tokokoo.png" width="250"></a>
 				</div>
 			</div>
 			
@@ -58,10 +47,10 @@ function tiga_options_sidebar() { ?>
  */
  if ( is_admin() ) {
     $of_page= 'appearance_page_options-framework';
-    add_action( "admin_print_styles-$of_page", 'tiga_optionsframework_custom_css', 100);
+    add_action( "admin_print_styles-$of_page", 'tiga_optionsframework_custom_css', 100 );
 }
  
 function tiga_optionsframework_custom_css () {
-	wp_register_style( 'tiga_optionsframework_custom_css', get_template_directory_uri() .'/css/options-custom.css' );
+	wp_register_style( 'tiga_optionsframework_custom_css', trailingslashit( TIGA_CSS ) .'options-custom.css' );
 	wp_enqueue_style( 'tiga_optionsframework_custom_css' );
 }

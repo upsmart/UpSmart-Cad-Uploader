@@ -141,7 +141,7 @@ if (($original_width > $max_width) OR ($original_height > $max_height))
 					<div class="slink"> <g:plusone annotation="none"></g:plusone> </div>
 					<div class="slink rss">
                                         <?php $companyId = get_category_id($compName);
-                                        echo "<a href= \"http://www.go-upsmart.com/?cat=".$companyId."&feed=rss2\" title=\"Subscribe to my feed\"><img src=\"/cp-profiles/images/icon-rss.png\"/></a>";
+                                        echo "<a href= \"http://www.upsmart.com/?cat=".$companyId."&feed=rss2\" title=\"Subscribe to my feed\"><img src=\"/cp-profiles/images/icon-rss.png\"/></a>";
                                         ?>
                                         </div>
 				</div>	

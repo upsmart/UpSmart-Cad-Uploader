@@ -1,20 +1,20 @@
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 48.95 MB :: Real Memory 49.25 MB :: Peak Memory 49.14 MB :: Real Peak Memory 49.25 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:13.0) Gecko/20100101 Firefox/13.0.1 FirePHP/0.7.1
 -------- Input vars: ( Wed Jun 27, 2012 11:06:52 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOlBUUFhGd3hLazU2MUZPZHJWMGJMYVVucGY5eXo1eUhFOmU1MzQyMzU4NmRkNjI4Y2M2YjY1NTM2MTM0ZjVjZjY5fIEZcpG3hh4Lcp4NwsRKKBg9ZHbO71uF8GMcLCy0C2sePLhY0pqvH29E4xAFy1qCZa_ksJD_lU3fRFessmtS4Yytfl-cDAOsUI5F4dPP2Z4EzwPzP-OrlVrM6ViVyEDBMHDD6z34aKUgAyN0PhFHH6ZXml75Ug5WtJH2QZAO32CZJS4XK4OYsfGgIrbp8Qzg8JWIASj4VemU60GJMXXQlYYB-RiVaTVq4NcpsTq0LSUqU_063VEJAprzakbhqGsfbKXRZgaNIIyphaIkjhOUsK5i_EFa-MpnnUD1D7K17hl0xjrAjf02uk8rTD0VPW2g6m_O9HXZRlk1uBAsH-Jbp6hPZbrDvJ9jhp-zxNztniZJDn_ZvGoqocMCWJwG_1kXlA',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOlBUUFhGd3hLazU2MUZPZHJWMGJMYVVucGY5eXo1eUhFOmU1MzQyMzU4NmRkNjI4Y2M2YjY1NTM2MTM0ZjVjZjY5fIEZcpG3hh4Lcp4NwsRKKBg9ZHbO71uF8GMcLCy0C2sePLhY0pqvH29E4xAFy1qCZa_ksJD_lU3fRFessmtS4Yytfl-cDAOsUI5F4dPP2Z4EzwPzP-OrlVrM6ViVyEDBMHDD6z34aKUgAyN0PhFHH6ZXml75Ug5WtJH2QZAO32CZJS4XK4OYsfGgIrbp8Qzg8JWIASj4VemU60GJMXXQlYYB-RiVaTVq4NcpsTq0LSUqU_063VEJAprzakbhqGsfbKXRZgaNIIyphaIkjhOUsK5i_EFa-MpnnUD1D7K17hl0xjrAjf02uk8rTD0VPW2g6m_O9HXZRlk1uBAsH-Jbp6hPZbrDvJ9jhp-zxNztniZJDn_ZvGoqocMCWJwG_1kXlA',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -32,7 +32,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -56,21 +56,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 48.95 MB :: Real Memory 49.25 MB :: Peak Memory 49.14 MB :: Real Peak Memory 49.25 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:13.0) Gecko/20100101 Firefox/13.0.1 FirePHP/0.7.1
 -------- Input vars: ( Wed Jun 27, 2012 11:08:53 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOjJCanBSeVlTTUV2TEVOTXp2VnY2WlB4QWZ2RGVKNWw1OjdmYjFhMDU0MGUzMDFiMmEwZWI1ODRmMDM5NTlhNmI2fMsYNjNKv_O6lDJqqjhUpaZFNE3d3vBk_Tbpc0K6KwRVWhho2g6J92pqDLjb3vlpvExZBO2p7xlt6Nt3jpqHBnFVRCn4N8jVaRc2qf39gHZPgxP7Fles2kxfYriKerHa1sob2zlFbaEC1Duv7bDDeru2PyzuRNeLmNzgDvGf5Ru5krK1iZcxzlZfikBhP0iVwaqja8yHkNsT2Ug2EzOeb2yL1EuxsrTWBd5dVBROdhQyLB-ENJtCz8CyRJElXaPlZvsOhQnkhjvTlUJvP-zEawjPdYHpzaljQXewJCYTUBrytylVgusZHmfF-wPiP1x3KpQRmGNnbcdpNduGuK_g0wN1igxxKU5WBqQKAkwdMVI1gjfdRCOnzcXVWBEzCA7eBA',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOjJCanBSeVlTTUV2TEVOTXp2VnY2WlB4QWZ2RGVKNWw1OjdmYjFhMDU0MGUzMDFiMmEwZWI1ODRmMDM5NTlhNmI2fMsYNjNKv_O6lDJqqjhUpaZFNE3d3vBk_Tbpc0K6KwRVWhho2g6J92pqDLjb3vlpvExZBO2p7xlt6Nt3jpqHBnFVRCn4N8jVaRc2qf39gHZPgxP7Fles2kxfYriKerHa1sob2zlFbaEC1Duv7bDDeru2PyzuRNeLmNzgDvGf5Ru5krK1iZcxzlZfikBhP0iVwaqja8yHkNsT2Ug2EzOeb2yL1EuxsrTWBd5dVBROdhQyLB-ENJtCz8CyRJElXaPlZvsOhQnkhjvTlUJvP-zEawjPdYHpzaljQXewJCYTUBrytylVgusZHmfF-wPiP1x3KpQRmGNnbcdpNduGuK_g0wN1igxxKU5WBqQKAkwdMVI1gjfdRCOnzcXVWBEzCA7eBA',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -88,7 +88,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -112,21 +112,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 48.94 MB :: Real Memory 49.25 MB :: Peak Memory 49.12 MB :: Real Peak Memory 49.25 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:13.0) Gecko/20100101 Firefox/13.0.1 FirePHP/0.7.1
 -------- Input vars: ( Wed Jun 27, 2012 11:22:26 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOkhsdXdlSGhKZmVJY1RLQnRXQVRwUGFXZVZ2S0puV3J6OmM3OGNhNGNlYWE5YTZiMGRjM2E5ZTk5OTJkNTQ1ZDIxfL4L4aT5CCIbsga7X7KOjNM4IW8KCQEsUPKBnHPDWyxWfuzvPuId49VhY39klACpXLV5eefHy6qxeRjRb6NQBjeQ_-xABsvXDy5TvLq3YtwpTiYdiPanRMOD_Yf3TUY6-Trkf93M5GkRmkBfRdNGmhWj-hcPw4NOIz7qGDfKnQZET3ldA9JSSVZdwjyG-X8nzo8RevD4XDkySTb35xq6sjdfQSW6tEBR0RjWDvMHNdsZQnE1nE0pq4RF2ScRCI1fizDKpa0fPJIJIYHv4pNb7lMK4vGKwnpS1Kxz9nW08Xvu5DKksUJg_hbjkHc4Di1IBnCGm-2uM4MtFnmIswtlpHVx31GU1B6znPyRH44niyMN3LAlhABXsjvS4pPXk35L0w',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOkhsdXdlSGhKZmVJY1RLQnRXQVRwUGFXZVZ2S0puV3J6OmM3OGNhNGNlYWE5YTZiMGRjM2E5ZTk5OTJkNTQ1ZDIxfL4L4aT5CCIbsga7X7KOjNM4IW8KCQEsUPKBnHPDWyxWfuzvPuId49VhY39klACpXLV5eefHy6qxeRjRb6NQBjeQ_-xABsvXDy5TvLq3YtwpTiYdiPanRMOD_Yf3TUY6-Trkf93M5GkRmkBfRdNGmhWj-hcPw4NOIz7qGDfKnQZET3ldA9JSSVZdwjyG-X8nzo8RevD4XDkySTb35xq6sjdfQSW6tEBR0RjWDvMHNdsZQnE1nE0pq4RF2ScRCI1fizDKpa0fPJIJIYHv4pNb7lMK4vGKwnpS1Kxz9nW08Xvu5DKksUJg_hbjkHc4Di1IBnCGm-2uM4MtFnmIswtlpHVx31GU1B6znPyRH44niyMN3LAlhABXsjvS4pPXk35L0w',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -144,7 +144,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -168,21 +168,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 48.74 MB :: Real Memory 49.00 MB :: Peak Memory 48.91 MB :: Real Peak Memory 49.00 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.151 Chrome/18.0.1025.151 Safari/535.19
 -------- Input vars: ( Wed Jun 27, 2012 11:22:46 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOmc4MEkxZVBPM1pyZU9oVUVhV2xuS3JxbmNWMWIwcHRkOjY0MDUyMTQyNTBmODA1MDlmNWVhNDgxZDE5NTFlNjVkfCF86EGdgDEh8QAcyE7sz1olfIETxb5i40GNR94qesaecAYcOv2TLszQGBCE1euyjVMsFAaJFfdm43btcjX0XKZXh_R8JHOP1TzKqCw-JGvH_Y69vHcUP01H-g7OA5yI5_tq97cI9V24oXZcUIhsqxIW_4fIxHwC91NX2LV4jYj4aCW68DzdGoXptAEvoiLuWNWUCi_0cEbd2skJsxUAYT28TxWLPgyBPwMjEY3Y3KP0Vi5WKu7mUIgE_OimcjHbbD5DhHYq5pRZ88t6XUoTOVb9GEijkSn1-lR0F79Yc9yzXG4I59FwLR54zW3ZgcHOnd0zjLPfmEFaU_EcCK308Z71gXl2Ie9CTV0zLPQde-PjUGbTD9gVHPQf2EqTZOUhrQ',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOmc4MEkxZVBPM1pyZU9oVUVhV2xuS3JxbmNWMWIwcHRkOjY0MDUyMTQyNTBmODA1MDlmNWVhNDgxZDE5NTFlNjVkfCF86EGdgDEh8QAcyE7sz1olfIETxb5i40GNR94qesaecAYcOv2TLszQGBCE1euyjVMsFAaJFfdm43btcjX0XKZXh_R8JHOP1TzKqCw-JGvH_Y69vHcUP01H-g7OA5yI5_tq97cI9V24oXZcUIhsqxIW_4fIxHwC91NX2LV4jYj4aCW68DzdGoXptAEvoiLuWNWUCi_0cEbd2skJsxUAYT28TxWLPgyBPwMjEY3Y3KP0Vi5WKu7mUIgE_OimcjHbbD5DhHYq5pRZ88t6XUoTOVb9GEijkSn1-lR0F79Yc9yzXG4I59FwLR54zW3ZgcHOnd0zjLPfmEFaU_EcCK308Z71gXl2Ie9CTV0zLPQde-PjUGbTD9gVHPQf2EqTZOUhrQ',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -190,7 +190,7 @@ array (
   'L_BUTTONVAR12' => 'item_number=1',
   'L_BUTTONVAR13' => 'invoice=4feb95c633445~24.92.57.192',
   'L_BUTTONVAR14' => 'on0=Originating Domain',
-  'L_BUTTONVAR15' => 'os0=www.go-upsmart.com',
+  'L_BUTTONVAR15' => 'os0=www.upsmart.com',
   'L_BUTTONVAR16' => 'on1=Customer IP Address',
   'L_BUTTONVAR17' => 'os1=24.92.57.192',
   'L_BUTTONVAR18' => 'modify=0',
@@ -200,7 +200,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -224,21 +224,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 48.75 MB :: Real Memory 49.00 MB :: Peak Memory 48.93 MB :: Real Peak Memory 49.00 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.151 Chrome/18.0.1025.151 Safari/535.19
 -------- Input vars: ( Wed Jun 27, 2012 11:24:57 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOk10TVJ6cDVOeFAyVUdkWE1JeEdhWnRwcFBZMWlmZk1EOjlmNGU2MGRjMjkwZTRjYjkxNzdkZTkyMmEwOWUyNGU3fMkDZVNkcwQCj1uetw9vZDbMHYjICKZzLnQ0EDb-vuZbehqpgJ9HHY39iydfBLUgq_JeWJ_CrG6yLWQBEWKhMRiXa8eySk8If3zTyK7VdP2k0iqV5_DrSGNIHjPbkfoUCLyRcie5Bp6Ri195zVBCsjMVd5jnY7cyMIP-ykUCuQkQOufNppYQBXwa0arV1POkxxQeFLH8ozNI4MPaDqh5PqrtYjnUDAqRIB54oU7_wQwIe6m43I_dQMGXYzCDNfs55OrjgIAzclwHIwOD_Yaum1CYBGbJr2xcaGMF81bVzpk0rNseYvckV8JUzEr4Mny43QeO-psS2uAb76txGLbY5_jkukoZhbGOTsziMOGkWEOXa943GPBtDS_D6EGw04B4Ng',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOk10TVJ6cDVOeFAyVUdkWE1JeEdhWnRwcFBZMWlmZk1EOjlmNGU2MGRjMjkwZTRjYjkxNzdkZTkyMmEwOWUyNGU3fMkDZVNkcwQCj1uetw9vZDbMHYjICKZzLnQ0EDb-vuZbehqpgJ9HHY39iydfBLUgq_JeWJ_CrG6yLWQBEWKhMRiXa8eySk8If3zTyK7VdP2k0iqV5_DrSGNIHjPbkfoUCLyRcie5Bp6Ri195zVBCsjMVd5jnY7cyMIP-ykUCuQkQOufNppYQBXwa0arV1POkxxQeFLH8ozNI4MPaDqh5PqrtYjnUDAqRIB54oU7_wQwIe6m43I_dQMGXYzCDNfs55OrjgIAzclwHIwOD_Yaum1CYBGbJr2xcaGMF81bVzpk0rNseYvckV8JUzEr4Mny43QeO-psS2uAb76txGLbY5_jkukoZhbGOTsziMOGkWEOXa943GPBtDS_D6EGw04B4Ng',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -246,7 +246,7 @@ array (
   'L_BUTTONVAR12' => 'item_number=1',
   'L_BUTTONVAR13' => 'invoice=4feb964995adb~24.92.57.192',
   'L_BUTTONVAR14' => 'on0=Originating Domain',
-  'L_BUTTONVAR15' => 'os0=www.go-upsmart.com',
+  'L_BUTTONVAR15' => 'os0=www.upsmart.com',
   'L_BUTTONVAR16' => 'on1=Customer IP Address',
   'L_BUTTONVAR17' => 'os1=24.92.57.192',
   'L_BUTTONVAR18' => 'modify=0',
@@ -256,7 +256,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -280,21 +280,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 48.89 MB :: Real Memory 49.25 MB :: Peak Memory 49.06 MB :: Real Peak Memory 49.25 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:13.0) Gecko/20100101 Firefox/13.0.1 FirePHP/0.7.1
 -------- Input vars: ( Wed Jun 27, 2012 11:34:01 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOkV0SEZ4V1RYZFhyR1hTQ2xBblViWklMdm5WOEF4Q0RBOjMwOWRjMDEzZGZiZGU3ODVhODAzYmFjNjYzMDVkNTNhfNHEylcfm6TOQ_CsmFYBZmd-TpMXvv9Ipc_VPwS12-hUmk9vtlzzT_LeKSgyLNI4AVdlOYAQDhWJ65lDQv8jSRlFxPJMHl71Fi6fOcy2j8RPmMmT7RM6YOS2vsLRWh6_3tO_D3m3qB7buCgi_EOva1e0VD34zYYA6gBmfO7HQ09OrA1xC7qNGc71vLHIDKXdhnrzLugGfrEqkSl-qv-LGVe0QM2KrDROgui0GxByxtGYworzyrqzkSkRGJ8EKGV4IIaWuFRrGqyc3jH2NUXCa6mdKuGbV6ownlhf9PsNptIog895VXle_zwZnmaEX5BY4RBQ4GbsL-QmnJyc85wVozaIoBb8b5-St2kE3NTLin6GS2HwCaQJEF-HYIdDN3rYfw',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOkV0SEZ4V1RYZFhyR1hTQ2xBblViWklMdm5WOEF4Q0RBOjMwOWRjMDEzZGZiZGU3ODVhODAzYmFjNjYzMDVkNTNhfNHEylcfm6TOQ_CsmFYBZmd-TpMXvv9Ipc_VPwS12-hUmk9vtlzzT_LeKSgyLNI4AVdlOYAQDhWJ65lDQv8jSRlFxPJMHl71Fi6fOcy2j8RPmMmT7RM6YOS2vsLRWh6_3tO_D3m3qB7buCgi_EOva1e0VD34zYYA6gBmfO7HQ09OrA1xC7qNGc71vLHIDKXdhnrzLugGfrEqkSl-qv-LGVe0QM2KrDROgui0GxByxtGYworzyrqzkSkRGJ8EKGV4IIaWuFRrGqyc3jH2NUXCa6mdKuGbV6ownlhf9PsNptIog895VXle_zwZnmaEX5BY4RBQ4GbsL-QmnJyc85wVozaIoBb8b5-St2kE3NTLin6GS2HwCaQJEF-HYIdDN3rYfw',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -312,7 +312,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -336,17 +336,17 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 49.27 MB :: Real Memory 49.50 MB :: Peak Memory 49.43 MB :: Real Peak Memory 49.50 MB
-www.go-upsmart.com/development/invest.php?name=Continuous%20Compost
+www.upsmart.com/development/invest.php?name=Continuous%20Compost
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.56 Safari/536.5
 -------- Input vars: ( Thu Jun 28, 2012 1:58:45 am UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOk5ZZjZuelY2TG4yN0tiMmxjQ1g4U0RFUEJCdm8wRTBGOjRiMmEzMDVlNGRjNzU1OTc4MDA2NThiY2ZkZjU5ZDY2fPUFXVef7D5aMDCdfeMHJokdxx9B6lU1HKvcmgfhnGVqaqxA3DPZ6f5aLSCIUrYkoF3HXh-hAZz-pd4YjEQCIdRoG7gEXDjbMUThLamTXnnplmZp-ylqg7ciHqO7czwc_cX65VrGs1VmirbNrC_1_PqrthIOte5-3GgxcgkmJgYSPx8XWifur83eRaI1jv0q7wCYynzQG9y_LNuuT2lO9FOttUJJWZ76N1dqBwvqe0i0jAu4isQYnt4DmVaBsWv9f8N4pwAjcVw4QK6mQNK0s14UndFf1hUJmls8RuDLUtmiel3jbn76ZKqqmsSfeGM7POEYWyah6WgT4VQTeSFopTSncHK5UDZyXcxy-95XYn8m9_qqSpNONQJn33PbrBMYWQ',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOk5ZZjZuelY2TG4yN0tiMmxjQ1g4U0RFUEJCdm8wRTBGOjRiMmEzMDVlNGRjNzU1OTc4MDA2NThiY2ZkZjU5ZDY2fPUFXVef7D5aMDCdfeMHJokdxx9B6lU1HKvcmgfhnGVqaqxA3DPZ6f5aLSCIUrYkoF3HXh-hAZz-pd4YjEQCIdRoG7gEXDjbMUThLamTXnnplmZp-ylqg7ciHqO7czwc_cX65VrGs1VmirbNrC_1_PqrthIOte5-3GgxcgkmJgYSPx8XWifur83eRaI1jv0q7wCYynzQG9y_LNuuT2lO9FOttUJJWZ76N1dqBwvqe0i0jAu4isQYnt4DmVaBsWv9f8N4pwAjcVw4QK6mQNK0s14UndFf1hUJmls8RuDLUtmiel3jbn76ZKqqmsSfeGM7POEYWyah6WgT4VQTeSFopTSncHK5UDZyXcxy-95XYn8m9_qqSpNONQJn33PbrBMYWQ',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
@@ -358,7 +358,7 @@ array (
   'L_BUTTONVAR12' => 'item_number=1',
   'L_BUTTONVAR13' => 'invoice=4febba5562e84~18.212.1.156',
   'L_BUTTONVAR14' => 'on0=Originating Domain',
-  'L_BUTTONVAR15' => 'os0=www.go-upsmart.com',
+  'L_BUTTONVAR15' => 'os0=www.upsmart.com',
   'L_BUTTONVAR16' => 'on1=Customer IP Address',
   'L_BUTTONVAR17' => 'os1=18.212.1.156',
   'L_BUTTONVAR18' => 'modify=0',
@@ -371,7 +371,7 @@ array (
   'L_BUTTONVAR25' => 'p3=1',
   'L_BUTTONVAR26' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -395,17 +395,17 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 49.28 MB :: Real Memory 49.50 MB :: Peak Memory 49.42 MB :: Real Peak Memory 49.50 MB
-www.go-upsmart.com/development/invest.php?name=Continuous%20Compost
+www.upsmart.com/development/invest.php?name=Continuous%20Compost
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:13.0) Gecko/20100101 Firefox/13.0.1
 -------- Input vars: ( Thu Jun 28, 2012 1:59:04 am UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOnRERWFJcmZnZHp6bno2S0ZJZTFSR3RYZU10R21tVmM1OjU0ZTBlZDY0NmQ0OGE1NGFkMjFkZmY2NThjY2Y5MGEwfPRvxKCTeVXcuDIpqGdLy2jekKubYsOmv7D5lRPOxMVPDI-6JPdM6OfT30AJoB8NVeFrt9fM9FebRbfWStdw-PJ_USHEpUwM50omA1QfFnwmSkgv9Im9uK_Lh2gm_bSmcpTFR9GOPOdqFKO6tjIjEKEyRx-t8yZvumiETDx6eZBvQVpjSIoUezEO5kNOC7S1ORoAUqm_6XHEkBGNHnkNX8UzFfqupXZAk_Udcayy6daDeqjZfOxHZDq8P597XHcUqiwUZ_Kat1ZFfi1msieODfMkLN1NrprGqGD8-yICplc5RBGJmQxCCwWR7NwO20cTm7JrUg_2qh1md1YIAsI7WFpEz1SYaRs-jn6H-LqdkRRAouCJWOWxCSGG7AuSB3_H7Q',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOnRERWFJcmZnZHp6bno2S0ZJZTFSR3RYZU10R21tVmM1OjU0ZTBlZDY0NmQ0OGE1NGFkMjFkZmY2NThjY2Y5MGEwfPRvxKCTeVXcuDIpqGdLy2jekKubYsOmv7D5lRPOxMVPDI-6JPdM6OfT30AJoB8NVeFrt9fM9FebRbfWStdw-PJ_USHEpUwM50omA1QfFnwmSkgv9Im9uK_Lh2gm_bSmcpTFR9GOPOdqFKO6tjIjEKEyRx-t8yZvumiETDx6eZBvQVpjSIoUezEO5kNOC7S1ORoAUqm_6XHEkBGNHnkNX8UzFfqupXZAk_Udcayy6daDeqjZfOxHZDq8P597XHcUqiwUZ_Kat1ZFfi1msieODfMkLN1NrprGqGD8-yICplc5RBGJmQxCCwWR7NwO20cTm7JrUg_2qh1md1YIAsI7WFpEz1SYaRs-jn6H-LqdkRRAouCJWOWxCSGG7AuSB3_H7Q',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
@@ -417,7 +417,7 @@ array (
   'L_BUTTONVAR12' => 'item_number=1',
   'L_BUTTONVAR13' => 'invoice=4febba682fd98~24.92.57.192',
   'L_BUTTONVAR14' => 'on0=Originating Domain',
-  'L_BUTTONVAR15' => 'os0=www.go-upsmart.com',
+  'L_BUTTONVAR15' => 'os0=www.upsmart.com',
   'L_BUTTONVAR16' => 'on1=Customer IP Address',
   'L_BUTTONVAR17' => 'os1=24.92.57.192',
   'L_BUTTONVAR18' => 'modify=0',
@@ -430,7 +430,7 @@ array (
   'L_BUTTONVAR25' => 'p3=1',
   'L_BUTTONVAR26' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -454,17 +454,17 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 49.30 MB :: Real Memory 49.50 MB :: Peak Memory 49.45 MB :: Real Peak Memory 49.50 MB
-www.go-upsmart.com/development/invest.php?name=Continuous%20Compost
+www.upsmart.com/development/invest.php?name=Continuous%20Compost
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:13.0) Gecko/20100101 Firefox/13.0.1
 -------- Input vars: ( Thu Jun 28, 2012 1:59:56 am UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOjlybjJIZHpxbnpwbUZYcWJrdlQwVk9hbDExd0c0SWhaOjE4MjhjMGY4N2M2YTEwZGIzZmFiNmIyYTM0Y2IzMTc2fEV2PztMSGBKqGNl1T2r8mSlQ-M8nGGD53rSmDZ7DKMXNBiL-dQdtvsxF9W5AKcp4k2AWnpynum5qxYMYmuWr2EdwZW-2iqs96V7Fwu0c313aldonWCcIiMCjP1_f7IU0P6xRH_SzpxCbSBNBSLqCr8059VfHPgNtlxxpRaboEuxKJ3rd4v-PVnSK6_CSmbhJ9qkbAQh2RsxL80tP25mjPYvyhqYcu9yyk5WVIJ8t6g8hZ4ZXHEQK3R_twv5zfLewFb2y8ATBqCXCr9f6qNELpsbLLCazGI7A6E8D4NBg3vj_vwvFJcTVDLsblvp0tiq0613TVR49ECb3M3JvhG-D4O9RP3V44-X1Eo70cRQRaAn6VrB1R5rxmpqsG4JZnld3A',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOjlybjJIZHpxbnpwbUZYcWJrdlQwVk9hbDExd0c0SWhaOjE4MjhjMGY4N2M2YTEwZGIzZmFiNmIyYTM0Y2IzMTc2fEV2PztMSGBKqGNl1T2r8mSlQ-M8nGGD53rSmDZ7DKMXNBiL-dQdtvsxF9W5AKcp4k2AWnpynum5qxYMYmuWr2EdwZW-2iqs96V7Fwu0c313aldonWCcIiMCjP1_f7IU0P6xRH_SzpxCbSBNBSLqCr8059VfHPgNtlxxpRaboEuxKJ3rd4v-PVnSK6_CSmbhJ9qkbAQh2RsxL80tP25mjPYvyhqYcu9yyk5WVIJ8t6g8hZ4ZXHEQK3R_twv5zfLewFb2y8ATBqCXCr9f6qNELpsbLLCazGI7A6E8D4NBg3vj_vwvFJcTVDLsblvp0tiq0613TVR49ECb3M3JvhG-D4O9RP3V44-X1Eo70cRQRaAn6VrB1R5rxmpqsG4JZnld3A',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
@@ -476,7 +476,7 @@ array (
   'L_BUTTONVAR12' => 'item_number=1',
   'L_BUTTONVAR13' => 'invoice=4febba9c78dc8~24.92.57.192',
   'L_BUTTONVAR14' => 'on0=Originating Domain',
-  'L_BUTTONVAR15' => 'os0=www.go-upsmart.com',
+  'L_BUTTONVAR15' => 'os0=www.upsmart.com',
   'L_BUTTONVAR16' => 'on1=Customer IP Address',
   'L_BUTTONVAR17' => 'os1=24.92.57.192',
   'L_BUTTONVAR18' => 'modify=0',
@@ -489,7 +489,7 @@ array (
   'L_BUTTONVAR25' => 'p3=1',
   'L_BUTTONVAR26' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -513,21 +513,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 48.88 MB :: Real Memory 49.25 MB :: Peak Memory 49.06 MB :: Real Peak Memory 49.25 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.151 Chrome/18.0.1025.151 Safari/535.19
 -------- Input vars: ( Thu Jun 28, 2012 3:59:26 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOlVaZWY3U2lOWVFsQ1FvWm5xVWlCbHBFaGpVcnkxbGpxOjExMmZkMTAwZDA4ZjQxMjFmNTMzYTZjYmJjM2VmYWIzfBwcud27Sm4bZaLl3BB7zHNxj6BaP-PIMp5qCF_Xca0tUr676ZWiCKED4qZ02v0fziSZBPkwpf8QghlTuuPt6YXeCvgxXvpUj0sd531vUXoKjwCSdvIF-dqvkCwnHDrjeUkDTv6La0eO3ws4bhe0n3wVtZUl8Nbzpj1yRU9NfxplR1SKdtNtFLiSzOAh1ee4Tx5UkcleavxmtP7fWQ6Udw512uWPxUiB9tv7vxf6JOgFoTkw6n1LI2HV1jDTlWmvjYWfs-0COosyecTj7k-eMzvojw-8Jeh74jjwFXac9lrWSZmkknpls81-LIcr2VMJCHcv68cvTXw57mSMMrRXe9Rp-rEU6EWa-TmGhy20dI1lEHywMhurFb9ZLWrkps3LmA',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOlVaZWY3U2lOWVFsQ1FvWm5xVWlCbHBFaGpVcnkxbGpxOjExMmZkMTAwZDA4ZjQxMjFmNTMzYTZjYmJjM2VmYWIzfBwcud27Sm4bZaLl3BB7zHNxj6BaP-PIMp5qCF_Xca0tUr676ZWiCKED4qZ02v0fziSZBPkwpf8QghlTuuPt6YXeCvgxXvpUj0sd531vUXoKjwCSdvIF-dqvkCwnHDrjeUkDTv6La0eO3ws4bhe0n3wVtZUl8Nbzpj1yRU9NfxplR1SKdtNtFLiSzOAh1ee4Tx5UkcleavxmtP7fWQ6Udw512uWPxUiB9tv7vxf6JOgFoTkw6n1LI2HV1jDTlWmvjYWfs-0COosyecTj7k-eMzvojw-8Jeh74jjwFXac9lrWSZmkknpls81-LIcr2VMJCHcv68cvTXw57mSMMrRXe9Rp-rEU6EWa-TmGhy20dI1lEHywMhurFb9ZLWrkps3LmA',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -545,7 +545,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -569,21 +569,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4 :: s2Member® v120622
 Memory 48.70 MB :: Real Memory 49.00 MB :: Peak Memory 48.89 MB :: Real Peak Memory 49.00 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.151 Chrome/18.0.1025.151 Safari/535.19
 -------- Input vars: ( Thu Jun 28, 2012 4:12:35 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=webmaster@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOmFOVFdMOXNRV2V5M1E3djdOSHlNVGlNZVpta1hhWW5POmQ0M2NhMTdlNmFhMmU2MDQzYTg0MmNkMGRhOTFiOTE1fOAKr0AIM-YW7oXApICGUhJcgjW2WZYZsDJpIUDZc5CGGWWt3GQdbSKpLyiLcjlNz2Z7QOxZ9RvJJZ20rSA6Xyl27kpJItXbYQLp2TLajSGioQxxyIbS6GZrBH8VXLSMgKnqU39oegVIh1XXWGboMP9JePz80WLUgwKFhX5Hluqh1EjV4Cdxf8J-YHjRUGgo7YG01S8HGSsC41TUkFhObrJc1l1PFAIvDG-ROw7jd22qgYM_dpbObuTgbR82lHPDqjXCNsybY-FKqikLXTW4fl8rIodpPgyhunJ9sevnQXwHHBcWZfe9G_C5LgRitu6aB952lBWn1HygQTegCe-RYjh_KQZZyBKXcxZMz7igHoeKc6JuMgXMyZC6B39f3ZAbyg',
+  'L_BUTTONVAR0' => 'business=webmaster@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOmFOVFdMOXNRV2V5M1E3djdOSHlNVGlNZVpta1hhWW5POmQ0M2NhMTdlNmFhMmU2MDQzYTg0MmNkMGRhOTFiOTE1fOAKr0AIM-YW7oXApICGUhJcgjW2WZYZsDJpIUDZc5CGGWWt3GQdbSKpLyiLcjlNz2Z7QOxZ9RvJJZ20rSA6Xyl27kpJItXbYQLp2TLajSGioQxxyIbS6GZrBH8VXLSMgKnqU39oegVIh1XXWGboMP9JePz80WLUgwKFhX5Hluqh1EjV4Cdxf8J-YHjRUGgo7YG01S8HGSsC41TUkFhObrJc1l1PFAIvDG-ROw7jd22qgYM_dpbObuTgbR82lHPDqjXCNsybY-FKqikLXTW4fl8rIodpPgyhunJ9sevnQXwHHBcWZfe9G_C5LgRitu6aB952lBWn1HygQTegCe-RYjh_KQZZyBKXcxZMz7igHoeKc6JuMgXMyZC6B39f3ZAbyg',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -601,7 +601,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'webmaster_api1.go-upsmart.com',
+  'USER' => 'webmaster_api1.upsmart.com',
   'PWD' => 'WCDXVXP6JARVH5GN',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AWojilDZ9CWXdnZFgvPG4aOh0Hob',
 )
@@ -625,21 +625,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4.1 :: s2Member® v120622
 Memory 48.66 MB :: Real Memory 49.00 MB :: Peak Memory 48.84 MB :: Real Peak Memory 49.00 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.151 Chrome/18.0.1025.151 Safari/535.19
 -------- Input vars: ( Thu Jun 28, 2012 4:31:11 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOlR5TWVMTmhuTUhLR0J2ZTVWNDl4THlaNTFXcVJaQVBGOjc1NjRkNWM0YmQzZjc2NWM5YTVhODAzMzA1MGQyNDk0fJeD-a3JayyvsD6Udcx0A2JpNZuplGqYmPCd8cfdVrX0Llhahja3aKxBzd3YmKFpONxkFjo6tG2ij37Op8iizBJO3lEe_4JpXXp1u1dkwAjVRGMevIhjjfA0qZpHOZM-6tdJ-WBsBXuuChdFvBKxpV1YVzFdyEK3xeb0DlUFGx-R8CzdURSRVzg8ydHSiK_KFzluw6SGwximasgyWIIuCWcL7wR7as3UY_4Gz7vvuU1EvvvHFpiTlH92Awt35dgobd2aIAxmYxqrb3dY-5B6iswPqk6Jn6ZjvBeucwoUOCjWgEQLbdVQKvMc39alxUznQcpTe8ZA1eKfaUEzpcERl70mUleDzjWUpvsAWOyeN3pQxTbF2gj5QFxKZwPu-r3ylg',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOlR5TWVMTmhuTUhLR0J2ZTVWNDl4THlaNTFXcVJaQVBGOjc1NjRkNWM0YmQzZjc2NWM5YTVhODAzMzA1MGQyNDk0fJeD-a3JayyvsD6Udcx0A2JpNZuplGqYmPCd8cfdVrX0Llhahja3aKxBzd3YmKFpONxkFjo6tG2ij37Op8iizBJO3lEe_4JpXXp1u1dkwAjVRGMevIhjjfA0qZpHOZM-6tdJ-WBsBXuuChdFvBKxpV1YVzFdyEK3xeb0DlUFGx-R8CzdURSRVzg8ydHSiK_KFzluw6SGwximasgyWIIuCWcL7wR7as3UY_4Gz7vvuU1EvvvHFpiTlH92Awt35dgobd2aIAxmYxqrb3dY-5B6iswPqk6Jn6ZjvBeucwoUOCjWgEQLbdVQKvMc39alxUznQcpTe8ZA1eKfaUEzpcERl70mUleDzjWUpvsAWOyeN3pQxTbF2gj5QFxKZwPu-r3ylg',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -657,7 +657,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -681,21 +681,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4.1 :: s2Member® v120622
 Memory 48.45 MB :: Real Memory 48.75 MB :: Peak Memory 48.63 MB :: Real Peak Memory 48.75 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/4.8 [en] (Windows NT 6.0; U)
 -------- Input vars: ( Thu Jun 28, 2012 4:38:27 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOmw1eW44Zmtja29MSVFSdExnYWpBSVpuMkt0S2llTkJpOjVmMmVlNTk2YjVhOTc4M2YxYTdiZGI2NmZhY2JkN2MzfEDyI_BvnkJVFa3ntmtzXZdBeFbP8dNQrfgzroMjGiDMTe2Fv4hLhPWsGczC04na0RZ2MYKOyKOLvodheUgwcN0H30Hh317aIRmTRViAjdbqGOdp2UHEhSQzN1unWBQ1wiI83jGzNNBbASkVizKrghgBOwE1VEHcl9SAb9l_Ptg9z45zDqGgqb0PjTclvQWWJCd97LeEMaBnELPyWHbDb9SbZr27DGzjZfeku-_zeeQpm7sXtStEsS01mRZoYnCQw3nS5BwHqb5bHLyDVuZ8F3GMhIOTJ1PqY6N6tBKzdPqXV0-XLkOgqlCadR2TjldQMHwW0xWt81h8vcQ2HigddOsIRty_pHzRZiip2k02-qLEMqLIc78HNH0FlYD2JzQkxQ',
+  'L_BUTTONVAR0' => 'business=shagen_1340836730_biz@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOmw1eW44Zmtja29MSVFSdExnYWpBSVpuMkt0S2llTkJpOjVmMmVlNTk2YjVhOTc4M2YxYTdiZGI2NmZhY2JkN2MzfEDyI_BvnkJVFa3ntmtzXZdBeFbP8dNQrfgzroMjGiDMTe2Fv4hLhPWsGczC04na0RZ2MYKOyKOLvodheUgwcN0H30Hh317aIRmTRViAjdbqGOdp2UHEhSQzN1unWBQ1wiI83jGzNNBbASkVizKrghgBOwE1VEHcl9SAb9l_Ptg9z45zDqGgqb0PjTclvQWWJCd97LeEMaBnELPyWHbDb9SbZr27DGzjZfeku-_zeeQpm7sXtStEsS01mRZoYnCQw3nS5BwHqb5bHLyDVuZ8F3GMhIOTJ1PqY6N6tBKzdPqXV0-XLkOgqlCadR2TjldQMHwW0xWt81h8vcQ2HigddOsIRty_pHzRZiip2k02-qLEMqLIc78HNH0FlYD2JzQkxQ',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -703,7 +703,7 @@ array (
   'L_BUTTONVAR12' => 'item_number=1',
   'L_BUTTONVAR13' => 'invoice=4fec88833c266~66.77.136.153',
   'L_BUTTONVAR14' => 'on0=Originating Domain',
-  'L_BUTTONVAR15' => 'os0=www.go-upsmart.com',
+  'L_BUTTONVAR15' => 'os0=www.upsmart.com',
   'L_BUTTONVAR16' => 'on1=Customer IP Address',
   'L_BUTTONVAR17' => 'os1=66.77.136.153',
   'L_BUTTONVAR18' => 'modify=0',
@@ -713,7 +713,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -737,21 +737,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4.1 :: s2Member® v120622
 Memory 48.66 MB :: Real Memory 49.00 MB :: Peak Memory 48.85 MB :: Real Peak Memory 49.00 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.151 Chrome/18.0.1025.151 Safari/535.19
 -------- Input vars: ( Thu Jun 28, 2012 4:39:07 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOk4yQVNJMFl3N0tIWTNOY0tuZ3ZSbjBjS3pPcEdCOUpQOjM2MGQ1OGMzOTNhYTFmYjM5NjgwZWI1M2Y0YmI1MzA1fL60y7FJ-9odmXX3G-NJ3OE7sHF4QIvKQYg5o-lHfzfYJSPLxml82gmweIcca5jvMsw2dbQUkwWCOrtgTKMJXhcx0dfvX-HZpZ6Q_E-2bfIStmMQON0QYPFp1OJQNCSwxyFRl16LL64GAu_gI1yOhkYCCorPlm-pkS-1wkIY1jCWpuXoWvS7NPVtN1I_1P42vdl_JfiQrT6D54TKfSyYPD7pePIPSw0bijXDf513MBIwmS75QYFvmwSA3sATFUo26i2luNwtfM4wHaZfWIne2AHbXTyd9xBzLajiwUagCCaxxXstYBLajvQhixD3b8TQYuAXsb3-xvm7ykKf24Mo3isaEq4yFNmk4RjBUVJ3b-WacmaRU9WH8XEPc7H31OnCFg',
+  'L_BUTTONVAR0' => 'business=shagen@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOk4yQVNJMFl3N0tIWTNOY0tuZ3ZSbjBjS3pPcEdCOUpQOjM2MGQ1OGMzOTNhYTFmYjM5NjgwZWI1M2Y0YmI1MzA1fL60y7FJ-9odmXX3G-NJ3OE7sHF4QIvKQYg5o-lHfzfYJSPLxml82gmweIcca5jvMsw2dbQUkwWCOrtgTKMJXhcx0dfvX-HZpZ6Q_E-2bfIStmMQON0QYPFp1OJQNCSwxyFRl16LL64GAu_gI1yOhkYCCorPlm-pkS-1wkIY1jCWpuXoWvS7NPVtN1I_1P42vdl_JfiQrT6D54TKfSyYPD7pePIPSw0bijXDf513MBIwmS75QYFvmwSA3sATFUo26i2luNwtfM4wHaZfWIne2AHbXTyd9xBzLajiwUagCCaxxXstYBLajvQhixD3b8TQYuAXsb3-xvm7ykKf24Mo3isaEq4yFNmk4RjBUVJ3b-WacmaRU9WH8XEPc7H31OnCFg',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -769,7 +769,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -790,21 +790,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4.1 :: s2Member® v120622
 Memory 48.66 MB :: Real Memory 49.00 MB :: Peak Memory 48.85 MB :: Real Peak Memory 49.00 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.151 Chrome/18.0.1025.151 Safari/535.19
 -------- Input vars: ( Thu Jun 28, 2012 4:40:36 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOlRtWXAyUFJjelZ0cndCZEplUjRIMnJIOUh5WUVuZ0dLOjM2NjJmMzkzMjY1ODJlMTQzNTA1NjdiNGUyZjU1Zjc0fEo80_7Zmr-MEnpbcgkEk4s_8zjtKO0QP6g6daz9lHhLHjaJHTX-eOLo_o6xJ8Y609LJXmDF9oWZ6Eo7laOZF63xTveaQwS54FcPQYmTpjEImv_yajp2F74aXaaCOImVE-NVl48DXBmBf6ay5fziNgCuyx2kFEZ57lxEILE43w8CKM1Ty0yr7MbGUE1Fl12TSM0kFb5cv8CX0WmqS4mSCbAgPm94awfPBRnuq0AXxpE4zzq8-C6pcHnldOWS7u8KHIGbNRoBqCffeOIXFBVqlXEU_99TIzrshUS0UKuebNeUFUoMuw81mr_OPsxjPfFAiYe_HGmhnEkMGhDDkdzdKEkkoZNqdKKRkGnBhzc7_3bduVRHmkTLqACLgcRKMUYXFg',
+  'L_BUTTONVAR0' => 'business=shagen@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOlRtWXAyUFJjelZ0cndCZEplUjRIMnJIOUh5WUVuZ0dLOjM2NjJmMzkzMjY1ODJlMTQzNTA1NjdiNGUyZjU1Zjc0fEo80_7Zmr-MEnpbcgkEk4s_8zjtKO0QP6g6daz9lHhLHjaJHTX-eOLo_o6xJ8Y609LJXmDF9oWZ6Eo7laOZF63xTveaQwS54FcPQYmTpjEImv_yajp2F74aXaaCOImVE-NVl48DXBmBf6ay5fziNgCuyx2kFEZ57lxEILE43w8CKM1Ty0yr7MbGUE1Fl12TSM0kFb5cv8CX0WmqS4mSCbAgPm94awfPBRnuq0AXxpE4zzq8-C6pcHnldOWS7u8KHIGbNRoBqCffeOIXFBVqlXEU_99TIzrshUS0UKuebNeUFUoMuw81mr_OPsxjPfFAiYe_HGmhnEkMGhDDkdzdKEkkoZNqdKKRkGnBhzc7_3bduVRHmkTLqACLgcRKMUYXFg',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -822,7 +822,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -843,21 +843,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4.1 :: s2Member® v120622
 Memory 48.44 MB :: Real Memory 48.75 MB :: Peak Memory 48.63 MB :: Real Peak Memory 48.75 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:13.0) Gecko/20100101 Firefox/13.0.1
 -------- Input vars: ( Thu Jun 28, 2012 4:41:21 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOlp5Mkp3NGs3WmFFMDdLZFlzWDNmeFh1cHF0ZkVpN2V6OjMxYmRkMzNjNjc4MmMzNmY4NjE1M2JkMTRiODNlOTcyfDQg_5ZayKL8hLYXRGpQWGOleviWPrqblu48nXxWb--b5Uyi11ni_I96uD9tP6ZfraX_LZiCCt_B--_z9acxBEQAI1tCv4k4aMjMJIfIxAVK7GlafnnApFDhwwByw4HZ4DXvmvBNVXo7NvCpJfiIKMp_JRcFeTeRjks5dc97qzLcoPsO7z1vZ_YTyiUOAqqZpZTjLA97WyD4ZpXkvFpplKkJEgS9qVw2Lnmh1DlHGzpSaPAcTK0IjY_znVynusph7YEurzx7YRYyxbTytO9HvWYptjKwF2OM1SEck_4KLENyZhwa2NegvPhfzhQVdO9nWkWx-jn8TiQFMcRpB7r21l6idyh4YL0tKzMJ9JHgaJvoSy7_gWIN1TaBksqPirsQMQ',
+  'L_BUTTONVAR0' => 'business=shagen@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOlp5Mkp3NGs3WmFFMDdLZFlzWDNmeFh1cHF0ZkVpN2V6OjMxYmRkMzNjNjc4MmMzNmY4NjE1M2JkMTRiODNlOTcyfDQg_5ZayKL8hLYXRGpQWGOleviWPrqblu48nXxWb--b5Uyi11ni_I96uD9tP6ZfraX_LZiCCt_B--_z9acxBEQAI1tCv4k4aMjMJIfIxAVK7GlafnnApFDhwwByw4HZ4DXvmvBNVXo7NvCpJfiIKMp_JRcFeTeRjks5dc97qzLcoPsO7z1vZ_YTyiUOAqqZpZTjLA97WyD4ZpXkvFpplKkJEgS9qVw2Lnmh1DlHGzpSaPAcTK0IjY_znVynusph7YEurzx7YRYyxbTytO9HvWYptjKwF2OM1SEck_4KLENyZhwa2NegvPhfzhQVdO9nWkWx-jn8TiQFMcRpB7r21l6idyh4YL0tKzMJ9JHgaJvoSy7_gWIN1TaBksqPirsQMQ',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -865,7 +865,7 @@ array (
   'L_BUTTONVAR12' => 'item_number=1',
   'L_BUTTONVAR13' => 'invoice=4fec89312113e~24.92.57.192',
   'L_BUTTONVAR14' => 'on0=Originating Domain',
-  'L_BUTTONVAR15' => 'os0=www.go-upsmart.com',
+  'L_BUTTONVAR15' => 'os0=www.upsmart.com',
   'L_BUTTONVAR16' => 'on1=Customer IP Address',
   'L_BUTTONVAR17' => 'os1=24.92.57.192',
   'L_BUTTONVAR18' => 'modify=0',
@@ -875,7 +875,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -896,21 +896,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4.1 :: s2Member® v120622
 Memory 48.45 MB :: Real Memory 48.75 MB :: Peak Memory 48.64 MB :: Real Peak Memory 48.75 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:13.0) Gecko/20100101 Firefox/13.0.1
 -------- Input vars: ( Thu Jun 28, 2012 4:43:38 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOnBZR1Nqa3BtcFdWcHJsTndoZHJKdmh5Q1FqbWczMEZ4OjI1M2M3NjRhNzhiZmUzZDg4M2I1ODNhMjI1ZjQ1MzBlfFul4kvp0Bo1HSOom-IagOQCmu3xdEwCVQHPCZYSK3GQ-bohyXAeariY7aO-JODu1qEsckOVd9w21g1mkya7PlSXueZBRr7d999tDY3W-Mql4QeJpI1s7i_aFtBkvHvv24yYwi5SG4-2wTFohT_UScbwGZX7LZmVYvjM7VDskOhXqAKwG4v8BcxMFFJb-c2gpFiSx0r8KNju-I55WddHu5JB_Wee6pqRVZFMvMrfsK9ZsaieDe_WhfaCaObetOu2lTyt34bfM0ElQ_t1AL-tEc9NEvXuZ7u-SpmG7fREz9hYM2mZFRf5lLo_ASyo5NVMZ2yuhfqRMwbGiaFsadEzJG_vBeLOx7lmGyNuauxSHlVuDni3QqNBHZJ2uJwo-buq8g',
+  'L_BUTTONVAR0' => 'business=shagen@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOnBZR1Nqa3BtcFdWcHJsTndoZHJKdmh5Q1FqbWczMEZ4OjI1M2M3NjRhNzhiZmUzZDg4M2I1ODNhMjI1ZjQ1MzBlfFul4kvp0Bo1HSOom-IagOQCmu3xdEwCVQHPCZYSK3GQ-bohyXAeariY7aO-JODu1qEsckOVd9w21g1mkya7PlSXueZBRr7d999tDY3W-Mql4QeJpI1s7i_aFtBkvHvv24yYwi5SG4-2wTFohT_UScbwGZX7LZmVYvjM7VDskOhXqAKwG4v8BcxMFFJb-c2gpFiSx0r8KNju-I55WddHu5JB_Wee6pqRVZFMvMrfsK9ZsaieDe_WhfaCaObetOu2lTyt34bfM0ElQ_t1AL-tEc9NEvXuZ7u-SpmG7fREz9hYM2mZFRf5lLo_ASyo5NVMZ2yuhfqRMwbGiaFsadEzJG_vBeLOx7lmGyNuauxSHlVuDni3QqNBHZJ2uJwo-buq8g',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -918,7 +918,7 @@ array (
   'L_BUTTONVAR12' => 'item_number=1',
   'L_BUTTONVAR13' => 'invoice=4fec89ba1519a~24.92.57.192',
   'L_BUTTONVAR14' => 'on0=Originating Domain',
-  'L_BUTTONVAR15' => 'os0=www.go-upsmart.com',
+  'L_BUTTONVAR15' => 'os0=www.upsmart.com',
   'L_BUTTONVAR16' => 'on1=Customer IP Address',
   'L_BUTTONVAR17' => 'os1=24.92.57.192',
   'L_BUTTONVAR18' => 'modify=0',
@@ -928,7 +928,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -949,21 +949,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4.1 :: s2Member® v120622
 Memory 48.66 MB :: Real Memory 49.00 MB :: Peak Memory 48.85 MB :: Real Peak Memory 49.00 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.151 Chrome/18.0.1025.151 Safari/535.19
 -------- Input vars: ( Thu Jun 28, 2012 7:04:42 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOk9Bamg1VmVaS2lpY1RsV09BOEh3WTFWbVR1ZFFEckV3OmYxMjQzODdiNTQ1YTVjYmJiYzljZjEyZjM3YzM0MTgxfCOP3GFZqE206Q3yDS-v23U2LRCDExaax1tj6n9NUg-tEwLTCoYSFnzzP4B3britm-m6ieDR88NjqYEKKY2KbVF5iQA8RWcbDNsVu1uPgHpy9PXDbhL69woXyIuvE6ed5NeVtbFAB5kuNkXlBfvGahx4SQJGwGyo3aFdFJ4XdMcHg5n7rop_ZBxnr4oXUlE6H9j73wNmhk5JJqufRvtGU9pbXA1T0GjUxV895Y3EZ6qUIoSIAdfVG0VXkUOguCaFiiovrJqnVd0DsSqCy8RMA_e2bidqC_U92JtmYkj2cGvMaiqvSbN8rcfw5KqRb2kViUG-rfAFkhK2Tphe89ifRia_07vLW3Hp6GubMD-5_e_v5jTKGshvgl4TzuuFlf-72Q',
+  'L_BUTTONVAR0' => 'business=shagen@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOk9Bamg1VmVaS2lpY1RsV09BOEh3WTFWbVR1ZFFEckV3OmYxMjQzODdiNTQ1YTVjYmJiYzljZjEyZjM3YzM0MTgxfCOP3GFZqE206Q3yDS-v23U2LRCDExaax1tj6n9NUg-tEwLTCoYSFnzzP4B3britm-m6ieDR88NjqYEKKY2KbVF5iQA8RWcbDNsVu1uPgHpy9PXDbhL69woXyIuvE6ed5NeVtbFAB5kuNkXlBfvGahx4SQJGwGyo3aFdFJ4XdMcHg5n7rop_ZBxnr4oXUlE6H9j73wNmhk5JJqufRvtGU9pbXA1T0GjUxV895Y3EZ6qUIoSIAdfVG0VXkUOguCaFiiovrJqnVd0DsSqCy8RMA_e2bidqC_U92JtmYkj2cGvMaiqvSbN8rcfw5KqRb2kViUG-rfAFkhK2Tphe89ifRia_07vLW3Hp6GubMD-5_e_v5jTKGshvgl4TzuuFlf-72Q',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -981,7 +981,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )
@@ -1002,21 +1002,21 @@ array (
 
 PHP v5.2.17 :: WordPress® v3.4.1 :: s2Member® v120622
 Memory 48.66 MB :: Real Memory 49.00 MB :: Peak Memory 48.86 MB :: Real Peak Memory 49.00 MB
-www.go-upsmart.com/payment-test/
+www.upsmart.com/payment-test/
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.151 Chrome/18.0.1025.151 Safari/535.19
 -------- Input vars: ( Thu Jun 28, 2012 7:39:10 pm UTC ) --------
 array (
   'METHOD' => 'BMCreateButton',
   'BUTTONCODE' => 'ENCRYPTED',
   'BUTTONTYPE' => 'SUBSCRIBE',
-  'L_BUTTONVAR0' => 'business=shagen@go-upsmart.com',
-  'L_BUTTONVAR1' => 'notify_url=http://www.go-upsmart.com/?s2member_paypal_notify=1',
-  'L_BUTTONVAR2' => 'cancel_return=http://www.go-upsmart.com/',
-  'L_BUTTONVAR3' => 'return=http://www.go-upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOnphOE5HaW1NYlNLNmNKOUVRZDZUeFZIU3pxZDcwM3JYOmE4MmNhM2YyY2NlM2ViYmM4Yzg5ZjQyODE2Y2U1MDA2fIoR3DFBk5_xpAh4XQtetYS4Yovn2wI3niigdHXQzqgIhvymbkYLeQOryMkgPkuaLyCpeSaDFRM1KXKxEVf6NUv7i9QlxLxZtogzPQDE7XnNSEHU2WbZ25CAjbP4YNeGMBTFNpYGMoI6wVoz5nvzIWge8EHZ_V3yud70nDgs5TCR18pItxvBPGl2A0i9_OVZfI8cA42qR1miZbL3g6FFpa1Ux3woQ0t15Is2AuuTcen4SMNWIaFJMjwo5F8WbvslrLRRZyF63kDlvd3DArnyU-AEz5qZF_LQ7r9hgqWyXb0rDoUxWX8oQh2yHGPhMIdor6w3dlZGaMRsjyuUJfEiwYni9yLDtAQ8Nx965qSwvCRBge1ShVQmn1PqRxx0gTiCEg',
+  'L_BUTTONVAR0' => 'business=shagen@upsmart.com',
+  'L_BUTTONVAR1' => 'notify_url=http://www.upsmart.com/?s2member_paypal_notify=1',
+  'L_BUTTONVAR2' => 'cancel_return=http://www.upsmart.com/',
+  'L_BUTTONVAR3' => 'return=http://www.upsmart.com/?s2member_paypal_return=1&s2member_paypal_return_tra=fnIyOnphOE5HaW1NYlNLNmNKOUVRZDZUeFZIU3pxZDcwM3JYOmE4MmNhM2YyY2NlM2ViYmM4Yzg5ZjQyODE2Y2U1MDA2fIoR3DFBk5_xpAh4XQtetYS4Yovn2wI3niigdHXQzqgIhvymbkYLeQOryMkgPkuaLyCpeSaDFRM1KXKxEVf6NUv7i9QlxLxZtogzPQDE7XnNSEHU2WbZ25CAjbP4YNeGMBTFNpYGMoI6wVoz5nvzIWge8EHZ_V3yud70nDgs5TCR18pItxvBPGl2A0i9_OVZfI8cA42qR1miZbL3g6FFpa1Ux3woQ0t15Is2AuuTcen4SMNWIaFJMjwo5F8WbvslrLRRZyF63kDlvd3DArnyU-AEz5qZF_LQ7r9hgqWyXb0rDoUxWX8oQh2yHGPhMIdor6w3dlZGaMRsjyuUJfEiwYni9yLDtAQ8Nx965qSwvCRBge1ShVQmn1PqRxx0gTiCEg',
   'L_BUTTONVAR4' => 'rm=2',
   'L_BUTTONVAR5' => 'no_shipping=1',
   'L_BUTTONVAR6' => 'no_note=1',
-  'L_BUTTONVAR7' => 'custom=www.go-upsmart.com',
+  'L_BUTTONVAR7' => 'custom=www.upsmart.com',
   'L_BUTTONVAR8' => 'currency_code=USD',
   'L_BUTTONVAR9' => 'page_style=paypal',
   'L_BUTTONVAR10' => 'charset=utf-8',
@@ -1034,7 +1034,7 @@ array (
   'L_BUTTONVAR22' => 'p3=1',
   'L_BUTTONVAR23' => 't3=M',
   'VERSION' => '71.0',
-  'USER' => 'shagen_1340836730_biz_api1.go-upsmart.com',
+  'USER' => 'shagen_1340836730_biz_api1.upsmart.com',
   'PWD' => '1340836753',
   'SIGNATURE' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AEBLxkLFlujpKzTclUTZO2mFAKyQ',
 )

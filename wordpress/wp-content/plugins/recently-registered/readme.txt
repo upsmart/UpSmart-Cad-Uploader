@@ -2,9 +2,9 @@
 Tags: users, recent, new, buddypress
 Contributors: Ipstenu
 Requires at least: 3.1
-Tested up to: 3.4
-Stable Tag: 2.3
-Donate link: https://www.wepay.com/donations/halfelf-wp
+Tested up to: 3.5
+Stable Tag: 3.1
+Donate link: https://www.wepay.com/donations/halfelf-wp/
 
 Add a sortable column to the users list on Single Site WordPress to show registration date.
 
@@ -17,9 +17,18 @@ This plugin adds a new, sortable, column to the users lists, which shows the dat
 
 == Changelog ==
 
+= 3.1 =
+* 17 Jan, 2013 by Ipstenu
+* Added in time to display (per request of <a href="http://wordpress.org/support/topic/show-timestamp?replies=1#post-3740366">razorfrog</a>)
+
+= 3.0 =
+* 16 Jan, 2013 by Ipstenu
+* Moving everything to it's own class.
+* Changing priorities to stop other plugins from stomping on me.
+
 = 2.3 =
 * 17 June, 2012 by Ipstenu
-* Per suggestion by Emanuel GómezMiranda, plugin uses your localized date!
+* Per suggestion by Emanuel GÃ³mezMiranda, plugin uses your localized date!
 
 = 2.2 =
 * 17 April, 2012 by Ipstenu
@@ -72,20 +81,29 @@ No special instructions.
 
 == Frequently Asked Questions ==
 
+= Why is the field blank? =
+
+Because some other plugins are _doing_it_wrong(). When they created their column, they forgot to have the filter return the previous content, if it's not their column, so it's removing it. Since my plugin's doing it right, I gave it a higher priority to stop that from happening in most cases.
+
+= How do I change the format of the dates/time? =
+
+Those are pulled from how you set the Date and Time formats in General settings.
+
 = Will this work on older versions of WordPress? =
 
 Not anymore.  This ONLY works on WordPress 3.1 and up.
 
 = Does this work on MultiSite? =
 
-Yes, but do *not* use this plugin.  This code just activates something that's already there on WordPress MultiSite.  You don't need it!
+No, and you don't need it! This is built in to Multisite.
 
 = Does this work on BuddyPress? =
+
 Yes!
 
 = Why doesn't this check for Stop Forum Spam anymore? =
 
-Overlap.  After a lot of testing, I determiend that [Ban Hammer](http://wordpress.org/extend/plugins/ban-hammer/) does this better and cleaner.  So if you need that sort of thing, use the right tool.
+Scope. A plugin should do what it does, and not everything.
 
 = Why did you remove the separate page? =
 

@@ -62,44 +62,11 @@ function optionsframework_options() {
 		'tiga_none' => __( 'None', 'tiga' )
 	);
 	
-	$imagepath =  get_template_directory_uri() . '/admin/images/layouts/';
+	$imagepath =  get_template_directory_uri() . '/img/layouts/';
 	$patternpath =  get_template_directory_uri() . '/img/bg/';
 		
 	$options = array();
-
-	$options[] = array( 
-		'name' => __( 'Announcement', 'tiga' ),
-		'type' => 'heading'
-	);
-
-	$options[] = array(
-		"desc" => "<p>What's new:</p>
-			<ul class='ul-disc'>
-				<li>Facebook like box widget.</li>
-				<li>Social network button settings in theme options moved to the widget itself.</li>
-				<li>Page template to display Blog page with slider.</li>
-				<li>Sidebar on single page(above and below content).</li>
-				<li>Remove all @font-face, now using google webfonts. Change bitter with open sans.</li>
-				<li>Dynamic width footer widget.</li>
-				<li>Twentytwelve like custom home page template.</li>
-				<li>Update twitter widget.</li>
-			</ul>
-			",
-		"type" => "info"
-	);
-
-	$options[] = array(
-		"desc" => "<p>Future Plans:</p>
-			<ul class='ul-disc'>
-				<li>Support bbPress.</li>
-				<li>Custom home page with big slider.</li>
-			</ul>
-			",
-		"type" => "info"
-	);
-
-	/* ============================== End Announcement ================================= */
-
+	
 	$options[] = array( 
 		'name' => __( 'General', 'tiga' ),
 		'type' => 'heading'

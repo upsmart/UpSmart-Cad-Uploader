@@ -65,7 +65,7 @@ class tiga_social extends WP_Widget {
 			<?php } if ( $fb_id ) { ?>
 				<li><a href="http://www.facebook.com/<?php echo esc_attr( $fb_id ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri() . '/img/icons/facebook.png'; ?>"></a></li>
 			<?php } if ( $gplus_id ) { ?>
-				<li><a href="https://plus.google.com/u/<?php echo esc_attr( $gplus_id ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri() . '/img/icons/google+.png'; ?>"></a></li>
+				<li><a href="https://plus.google.com/<?php echo esc_attr( $gplus_id ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri() . '/img/icons/google+.png'; ?>"></a></li>
 			<?php } if ( $ytube_id ) { ?>
 				<li><a href="http://www.youtube.com/user/<?php echo esc_attr( $ytube_id ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri() . '/img/icons/youtube.png'; ?>"></a></li>
 			<?php } if ( $flickr_id ) { ?>
