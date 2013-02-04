@@ -1,2 +1,0 @@
-[21-Sep-2012 14:32:22 UTC] PHP Fatal error:  Call to undefined function do_action() in /home/goupsmar/public_html/cp-profiles/Backups/sidebar.php on line 21
-[29-Sep-2012 23:33:21 UTC] PHP Fatal error:  Call to undefined function do_action() in /home/goupsmar/public_html/cp-profiles/Backups/sidebar.php on line 21
