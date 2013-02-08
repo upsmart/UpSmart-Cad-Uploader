@@ -92,18 +92,84 @@ Class CadUpload{
 		if ( is_multisite() )
 			delete_transient( 'dirsize_cache' );
 
+		$this->addResponseRow(__('File Transfer'), __($filename .' moved to wordpress uploads directory'), true);
+
 		return apply_filters( 'wp_handle_upload', array( 'file' => $new_file, 'url' => $url, 'type' => $type ), 'upload' );
+	}
+
+	private function register_to_media_library($uploaded_file, $file, $user_id){
+		    		
+		if(!isset($uploaded_file['error']) && isset($uploaded_file['file'])) {
+		    $filetype   = wp_check_filetype(basename($uploaded_file['file']), null);
+		    $title      = $file['name'];
+		    $ext        = strrchr($title, '.');
+		    $title      = ($ext !== false) ? substr($title, 0, -strlen($ext)) : $title;
+		}
+		else
+			return false;
+		
+		//If we were to have a unique user account for uploading
+		if(is_null($user_id) ){
+			$current_user = wp_get_current_user();
+			$user_id = $current_user->ID;
+		}
+	
+		//build global unique identifier 
+		$guid = $this->build_guid( $uploaded_file['file'] );
+	
+		//Build our array of data to be inserted as a post
+		$attachment = array(
+			'post_mime_type' => $file['type'],
+			'guid' => $guid,
+			'post_title' => addslashes($title),
+			'post_content' => '',
+			'post_author' => $user_id,
+			'post_Status' => 'inherit',
+			'post_date' => date( 'Y-m-d H:i:s' ),
+			'post_date_gmt' => date( 'Y-m-d H:i:s' )
+		);
+	
+	
+		//Add the file to the media library
+		$attach_id = wp_insert_attachment( $attachment, $uploaded_file['file'] );
+	
+		$meta = wp_generate_attachment_metadata($attach_id, $uploaded_file['file']  );
+		$upload_feedback = false;
+		
+		$this->addResponseRow(__('Media Library'), __($title . ' is registered with wordpress media library'), true);
+
+		return $attach_id;
+	}
+	
+	private function cleanCAD_ScratchSpace_Directory(){		
+		$output = shell_exec("rm -rf " . $this->STL_Uploads_Dir . "*");
+	}
+
+	private function build_file($file, $name, $path, $mime){
+		
+		// Replace stl file with html file
+		$file['name'] =  $name;
+		$file['tmp_name'] = $path;
+		$file['type'] = $mime;
+		$file['error'] = 0;
+		$file['size'] = @filesize($path);
+
+		if($file['size']  == 0)
+			return $this->addResponseRow(__('File Stats'), __('File does not exist to attain file information'));
+		
+		// Set correct file permissions
+		$stat = stat( dirname( $path ));
+		$perms = $stat['mode'] & 0000666;
+		@chmod( $path, $perms );
+		
+		return $file;
 	}
 	
 	public function build_guid( $file = null ){
 		$wp_upload_dir = wp_upload_dir();
 		return $wp_upload_dir['baseurl'] . '/' . _wp_relative_upload_path( $file );
 	}
-	
-	function cleanCAD_ScratchSpace_Directory(){		
-		$output = shell_exec("rm -rf " . $this->STL_Uploads_Dir . "*");
-	}
-	
+
 	public function saveUpload($field_name = null, $user_id=null){	
 		
 		$this->startResponseTable();
@@ -122,7 +188,7 @@ Class CadUpload{
 
 		// A non-empty file will pass this test.
 		if (!(filesize($file['tmp_name']) > 0 ) )
-			return $this->addResponseRow(__('File Empty'), 'Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini.');
+			return $this->addResponseRow(__('File Empty'), 'File is empty - try again! Could also be caused by uploads being disabled in your php.ini.');
 		// A properly uploaded file will pass this test. There should be no reason to override this one.
 		if (! @ is_file( $file['tmp_name'] ) )
 			return $this->addResponseRow(__('File Validation'), __('specified file does not exist'));
@@ -156,93 +222,60 @@ Class CadUpload{
  	
         // Create x3d file from stl file
         $nameOfFile = strstr($filename, '.', true);
-        
-		$output = shell_exec('/opt/blender-2.65a-linux-glibc27-i686/blender -b -P ' . $this->Conversion_Script . 'cad.import.py -- ' . $nameOfFile . ' ' . $this->STL_Uploads_Dir);
-		
-		
-		if(stripos($output, "finished X3D export") === false){
-			return $this->addResponseRow(__('STL Conversion'), sprintf( __('%s.' ), $output));
-		}
-		$this->addResponseRow(__('STL Conversion'), __('Stl file conversion to xdom format'), true);
 
-               
+	$output = shell_exec('/opt/blender-2.65a-linux-glibc27-i686/blender -b -P ' . 
+				$this->Conversion_Script . 'cad.import.py -- ' . 
+				$nameOfFile . ' ' . 
+				$this->STL_Uploads_Dir
+			    );				
+	
+	if(stripos($output, "finished X3D export") === false){
+		return $this->addResponseRow(__('STL Conversion'), sprintf( __('%s.' ), $output));
+	}
+	$this->addResponseRow(__('STL Conversion'), __('Stl file conversion to xdom format, with image backup'), true);
+
+	//echo $output;
+
         $x3dFile = $nameOfFile . ".x3d";
         $htmlFile = $nameOfFile . ".html";
-		
-		// Create x3d file from stl file
-		$output = shell_exec('aopt -i ' . $this->STL_Uploads_Dir . $x3dFile  . ' -N ' . $this->STL_Uploads_Dir . $htmlFile);
+	$imgFile = $nameOfFile . ".png";
 
-		if(!file_exists($this->STL_Uploads_Dir . $htmlFile)){
-			return $this->addResponseRow(__('X3D Conversion'), __('X3Dom file is being converted to embeddable WebGL'));	
-		}
-		
-		$this->addResponseRow(__('X3D Conversion'), __('X3Dom file is being converted to embeddable WebGL'), true);
-
-		$htmlFilePath = $this->STL_Uploads_Dir . $htmlFile;
+        // Create backup image from stl file
+	//$imgFilePath = $this->STL_Uploads_Dir . $imgFile;
+	//$backupImgfile = $this->build_file($file, $imgFile, $imgFilePath, 'image/png');
 	
-		// Replace stl file with html file
-		$file['name'] =  $htmlFile;
-		$file['tmp_name'] = $htmlFilePath;
-		$file['type'] = 'text/html';
-		$file['error'] = 0;
-		$file['size'] = @filesize($htmlFilePath);
+	//Move html file to the uploads directory, returns an array
+	//$uploaded_file = $this->handle_upload( $backupImgfile, $uploads );
 		
-		// Set correct file permissions
-		$stat = stat( dirname( $htmlFilePath ));
-		$perms = $stat['mode'] & 0000666;
-		@chmod( $htmlFilePath, $perms );
-		
-		if($file['size']  == 0)
-			return $this->addResponseRow(__('File Stats'), __('File exists to attain file information'));
-		
-		//Move the file to the uploads directory, returns an array
-		$uploaded_file = $this->handle_upload( $file, $uploads );
-			
-		$this->addResponseRow(__('File Transfer'), __('WebGL moved to wordpress uploads directory'), true);
+	//Register html file with media library
+	//$this->register_to_media_library($uploaded_file, $file, $user_id);
+	
+	
+	// Create x3dom file from x3d file
+	$output = shell_exec('aopt -i ' . $this->STL_Uploads_Dir . $x3dFile  . ' -N ' . $this->STL_Uploads_Dir . $htmlFile);
+
+	if(!file_exists($this->STL_Uploads_Dir . $htmlFile)){
+		return $this->addResponseRow(__('X3D Conversion'), __('X3Dom file is being converted to embeddable WebGL'));	
+	}
+	
+	$this->addResponseRow(__('X3D Conversion'), __('X3Dom file is being converted to embeddable WebGL'), true);
+
+	// Build html file
+	$htmlFilePath = $this->STL_Uploads_Dir . $htmlFile;
+	$webGLfile = $this->build_file($file, $htmlFile, $htmlFilePath, 'text/html');
+	
+	//Move html file to the uploads directory, returns an array
+	$uploaded_file = $this->handle_upload( $webGLfile, $uploads );
+
+	//Register html file with media library
+	$attach_id = $this->register_to_media_library($uploaded_file, $webGLfile, $user_id);
 	    		
-		if(!isset($uploaded_file['error']) && isset($uploaded_file['file'])) {
-            $filetype   = wp_check_filetype(basename($uploaded_file['file']), null);
-            $title      = $file['name'];
-            $ext        = strrchr($title, '.');
-            $title      = ($ext !== false) ? substr($title, 0, -strlen($ext)) : $title;
-		}
-		else
-			return false;
-		
-		//If we were to have a unique user account for uploading
-		if(is_null($user_id) ){
-			$current_user = wp_get_current_user();
-			$user_id = $current_user->ID;
-		}
-		
-		//build global unique identifier 
-		$guid = $this->build_guid( $uploaded_file['file'] );
-		
-		//Build our array of data to be inserted as a post
-		$attachment = array(
-			'post_mime_type' => $file['type'],
-			'guid' => $guid,
-			'post_title' => addslashes($title),
-			'post_content' => '',
-			'post_author' => $user_id,
-			'post_Status' => 'inherit',
-			'post_date' => date( 'Y-m-d H:i:s' ),
-			'post_date_gmt' => date( 'Y-m-d H:i:s' )
-		);
-		
-		
-		//Add the file to the media library
-		$attach_id = wp_insert_attachment( $attachment, $uploaded_file['file'] );
-		
-		$meta = wp_generate_attachment_metadata($attach_id, $uploaded_file['file']  );
-        $upload_feedback = false;
-        
-        $this->addResponseRow(__('Media Library'), __('WebGL file is registered with wordpress media library'), true);
+
         $this->addResponseRow(__('Transaction Complete'), __('CAD file is now embeddable through media library'), true);
         $this->endResponseTable();
         
-        $this->cleanCAD_ScratchSpace_Directory();
-        
+        //$this->cleanCAD_ScratchSpace_Directory();
+
         return $attach_id;
 		
 	}

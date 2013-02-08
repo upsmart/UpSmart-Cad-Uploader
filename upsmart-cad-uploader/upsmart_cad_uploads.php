@@ -92,6 +92,23 @@ function cad_upload_media_menu_handle() {
 add_action('media_upload_cadfile', 'cad_upload_media_menu_handle');
 
 
+/*
+if (!window.WebGLRenderingContext) { 
+    // the browser doesn't even know what WebGL is
+    window.location = "http://get.webgl.org";
+  } else {
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("webgl");
+    if (!context) {
+      // browser supports WebGL but initialization failed.
+      window.location = "http://get.webgl.org/troubleshooting";
+    }
+  }
+
+TO DO: Add new form field ... create new index and add array for png image of back up. Output javascript to hide html shortcode field
+if webgl is not supported and output message.
+*/
+	
 
 function my_attachment_fields_to_edit( $form_fields, $post ) {
     $supported_exts = get_allowed_mime_types(); // array of mime types to show checkbox for
@@ -101,12 +118,16 @@ function my_attachment_fields_to_edit( $form_fields, $post ) {
         $use_sc = true; // check box by default (false not to, or use other criteria)
 
         $checked = ( $use_sc ) ? 'checked' : '';
+$content = "<input type='checkbox' {$checked} name='attachments[{$post->ID}][use_sc]' id='attachments[{$post->ID}][use_sc]' /> " 
+		. __("Insert shortcode instead of link", "txtdomain")
+		."<canvas id='canvas-support' style='display:none'></canvas><script>var canvas = document.getElementById('canvas-support'); var gl = canvas.getContext('webgl'); if (!window.WebGLRenderingContext || !gl){  document.getElementById('attachments[{$post->ID}][use_sc]').parentNode.innerHTML = " .
+		. "<p>Your browser does not support WebGL. Please insert the image/png of your cad file instead.</p>'; alert('not detected');} console.log('detected'); </script>";
 
         $form_fields['use_sc'] = array(
             'label' =>  'Use Shortcode',
             'input' =>  'html',
-            'html'  =>  "<input type='checkbox' {$checked} name='attachments[{$post->ID}][use_sc]' id='attachments[{$post->ID}][use_sc]' /> " . __("Insert shortcode instead of link", "txtdomain"),
-            'value' =>  $use_sc
+            'html'  =>  $content,
+	    'value' =>  $use_sc
         );
     }
 
