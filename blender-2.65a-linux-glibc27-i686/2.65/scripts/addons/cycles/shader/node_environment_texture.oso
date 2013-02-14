@@ -1,0 +1,270 @@
+OpenShadingLanguage 1.00
+# Compiled by oslc 1.3.0
+shader node_environment_texture
+param	int	use_mapping	0 		 %read{2,2} %write{2147483647,-1}
+param	matrix	mapping	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0		 %read{3,3} %write{2147483647,-1} %derivs
+param	vector	Vector	0 0 0 		 %read{1,1} %write{0,0} %derivs
+param	string	filename	"" 		 %read{49,49} %write{2147483647,-1}
+param	string	projection	"Equirectangular" 		 %read{5,5} %write{2147483647,-1}
+param	string	color_space	"sRGB" 		 %read{50,50} %write{2147483647,-1}
+oparam	color	Color	0 0 0 		 %read{53,83} %write{49,98}
+oparam	float	Alpha	1 		 %read{2147483647,-1} %write{49,49}
+global	point	P	 %read{0,0} %write{2147483647,-1} %derivs
+local	float	___604_u	 %read{26,26} %write{14,14} %derivs
+local	float	___604_v	 %read{26,26} %write{25,25} %derivs
+local	float	___605_div	 %read{36,38} %write{35,35} %derivs
+local	float	___605_u	 %read{45,45} %write{41,41} %derivs
+local	float	___605_v	 %read{45,45} %write{44,44} %derivs
+local	vector	p	 %read{3,47} %write{1,45} %derivs
+const	string	$const1	"Equirectangular"		 %read{5,5} %write{2147483647,-1}
+temp	int	$tmp1	 %read{6,6} %write{5,5}
+const	string	$const2	"environment_texture_direction_to_equirectangular"		 %read{7,7} %write{2147483647,-1}
+temp	float	$tmp2	 %read{11,11} %write{10,10} %derivs
+const	int	$const3	1		 %read{8,68} %write{2147483647,-1}
+temp	float	$tmp3	 %read{10,10} %write{8,8} %derivs
+const	int	$const4	0		 %read{9,53} %write{2147483647,-1}
+temp	float	$tmp4	 %read{10,10} %write{9,9} %derivs
+temp	float	$tmp5	 %read{13,13} %write{11,11} %derivs
+const	float	$const5	2		 %read{12,35} %write{2147483647,-1}
+const	float	$const6	3.1415927		 %read{12,24} %write{2147483647,-1}
+temp	float	$tmp6	 %read{13,13} %write{12,12} %derivs
+temp	float	$tmp7	 %read{14,14} %write{13,13} %derivs
+const	float	$const7	0.5		 %read{14,44} %write{2147483647,-1}
+temp	float	$tmp8	 %read{24,24} %write{23,23} %derivs
+const	int	$const8	2		 %read{15,83} %write{2147483647,-1}
+temp	float	$tmp9	 %read{23,23} %write{15,15} %derivs
+temp	float	$tmp10	 %read{23,23} %write{22,22} %derivs
+temp	float	$tmp11	 %read{19,19} %write{16,16} %derivs
+temp	float	$tmp12	 %read{20,20} %write{17,17} %derivs
+const	string	$const9	"hypot"		 %read{18,18} %write{2147483647,-1}
+temp	float	$tmp13	 %read{21,21} %write{19,19} %derivs
+temp	float	$tmp14	 %read{21,21} %write{20,20} %derivs
+temp	float	$tmp15	 %read{22,22} %write{21,21} %derivs
+temp	float	$tmp16	 %read{25,25} %write{24,24} %derivs
+const	float	$const10	0		 %read{26,89} %write{2147483647,-1}
+const	string	$const11	"environment_texture_direction_to_mirrorball"		 %read{27,27} %write{2147483647,-1}
+temp	float	$tmp17	 %read{29,29} %write{28,28} %derivs
+const	float	$const12	1		 %read{29,94} %write{2147483647,-1}
+temp	float	$tmp18	 %read{30,30} %write{29,29} %derivs
+temp	float	$tmp19	 %read{35,35} %write{34,34} %derivs
+temp	float	$tmp20	 %read{34,34} %write{33,33} %derivs
+const	float	$const13	-0.5		 %read{32,32} %write{2147483647,-1}
+temp	float	$tmp21	 %read{32,32} %write{31,31} %derivs
+temp	float	$tmp22	 %read{33,33} %write{32,32} %derivs
+temp	int	$tmp23	 %read{37,37} %write{36,36}
+temp	float	$tmp24	 %read{40,40} %write{39,39} %derivs
+temp	float	$tmp25	 %read{41,41} %write{40,40} %derivs
+temp	float	$tmp26	 %read{43,43} %write{42,42} %derivs
+temp	float	$tmp27	 %read{44,44} %write{43,43} %derivs
+temp	float	$tmp28	 %read{49,49} %write{46,46} %derivs
+temp	float	$tmp29	 %read{48,48} %write{47,47} %derivs
+temp	float	$tmp30	 %read{49,49} %write{48,48} %derivs
+const	string	$const14	"wrap"		 %read{49,49} %write{2147483647,-1}
+const	string	$const15	"periodic"		 %read{49,49} %write{2147483647,-1}
+const	string	$const16	"alpha"		 %read{49,49} %write{2147483647,-1}
+const	string	$const17	"sRGB"		 %read{50,50} %write{2147483647,-1}
+temp	int	$tmp31	 %read{51,51} %write{50,50}
+const	string	$const18	"color_srgb_to_scene_linear"		 %read{52,84} %write{2147483647,-1}
+temp	float	$tmp32	 %read{98,98} %write{59,66}
+temp	float	$tmp33	 %read{55,63} %write{53,53}
+const	float	$const19	0.040449999		 %read{55,85} %write{2147483647,-1}
+temp	int	$tmp34	 %read{56,56} %write{55,55}
+temp	int	$tmp35	 %read{58,58} %write{57,57}
+const	float	$const20	12.92		 %read{60,90} %write{2147483647,-1}
+temp	float	$tmp36	 %read{61,61} %write{60,60}
+const	float	$const21	0.055		 %read{63,93} %write{2147483647,-1}
+temp	float	$tmp37	 %read{65,65} %write{63,63}
+const	float	$const22	1.0549999		 %read{64,94} %write{2147483647,-1}
+temp	float	$tmp38	 %read{65,65} %write{64,64}
+temp	float	$tmp39	 %read{66,66} %write{65,65}
+const	float	$const23	2.4000001		 %read{66,96} %write{2147483647,-1}
+temp	float	$tmp40	 %read{98,98} %write{74,81}
+temp	float	$tmp41	 %read{70,78} %write{68,68}
+temp	int	$tmp42	 %read{71,71} %write{70,70}
+temp	int	$tmp43	 %read{73,73} %write{72,72}
+temp	float	$tmp44	 %read{76,76} %write{75,75}
+temp	float	$tmp45	 %read{80,80} %write{78,78}
+temp	float	$tmp46	 %read{80,80} %write{79,79}
+temp	float	$tmp47	 %read{81,81} %write{80,80}
+temp	float	$tmp48	 %read{98,98} %write{89,96}
+temp	float	$tmp49	 %read{85,93} %write{83,83}
+temp	int	$tmp50	 %read{86,86} %write{85,85}
+temp	int	$tmp51	 %read{88,88} %write{87,87}
+temp	float	$tmp52	 %read{91,91} %write{90,90}
+temp	float	$tmp53	 %read{95,95} %write{93,93}
+temp	float	$tmp54	 %read{95,95} %write{94,94}
+temp	float	$tmp55	 %read{96,96} %write{95,95}
+code Vector
+# intern/cycles/kernel/shaders/node_environment_texture.osl:47
+# 	vector Vector = P,
+	assign		Vector P 	%filename{"intern/cycles/kernel/shaders/node_environment_texture.osl"} %line{47} %argrw{"wr"}
+code ___main___
+# intern/cycles/kernel/shaders/node_environment_texture.osl:54
+# 	vector p = Vector;
+	assign		p Vector 	%filename{"intern/cycles/kernel/shaders/node_environment_texture.osl"} %line{54} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:56
+# 	if (use_mapping)
+	if		use_mapping 4 4 	%line{56} %argrw{"r"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:57
+# 		p = transform(mapping, p);
+	transformv	p mapping p 	%line{57} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:59
+# 	p = normalize(p);
+	normalize	p p 	%line{59} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:61
+# 	if (projection == "Equirectangular")
+	eq		$tmp1 projection $const1 	%line{61} %argrw{"wrr"}
+	if		$tmp1 27 46 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:62
+# 		p = environment_texture_direction_to_equirectangular(p);
+	functioncall	$const2 27 	%line{62} %argrw{"r"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:24
+# 	float u = -atan2(dir[1], dir[0]) / (2.0 * M_PI) + 0.5;
+	compref		$tmp3 p $const3 	%line{24} %argrw{"wrr"}
+	compref		$tmp4 p $const4 	%argrw{"wrr"}
+	atan2		$tmp2 $tmp3 $tmp4 	%argrw{"wrr"}
+	neg		$tmp5 $tmp2 	%argrw{"wr"}
+	mul		$tmp6 $const5 $const6 	%argrw{"wrr"}
+	div		$tmp7 $tmp5 $tmp6 	%argrw{"wrr"}
+	add		___604_u $tmp7 $const7 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:25
+# 	float v = atan2(dir[2], hypot(dir[0], dir[1])) / M_PI + 0.5;
+	compref		$tmp9 p $const8 	%line{25} %argrw{"wrr"}
+	compref		$tmp11 p $const4 	%argrw{"wrr"}
+	compref		$tmp12 p $const3 	%argrw{"wrr"}
+	functioncall	$const9 23 	%argrw{"r"}
+# intern/cycles/kernel/shaders/stdosl.h:113
+# float  radians (float x)  { return x*(M_PI/180.0); }
+	mul		$tmp13 $tmp11 $tmp11 	%filename{"intern/cycles/kernel/shaders/stdosl.h"} %line{113} %argrw{"wrr"}
+	mul		$tmp14 $tmp12 $tmp12 	%argrw{"wrr"}
+	add		$tmp15 $tmp13 $tmp14 	%argrw{"wrr"}
+	sqrt		$tmp10 $tmp15 	%argrw{"wr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:25
+# 	float v = atan2(dir[2], hypot(dir[0], dir[1])) / M_PI + 0.5;
+	atan2		$tmp8 $tmp9 $tmp10 	%filename{"intern/cycles/kernel/shaders/node_environment_texture.osl"} %line{25} %argrw{"wrr"}
+	div		$tmp16 $tmp8 $const6 	%argrw{"wrr"}
+	add		___604_v $tmp16 $const7 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:27
+# 	return vector(u, v, 0.0);
+	vector		p ___604_u ___604_v $const10 	%line{27} %argrw{"wrrr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:64
+# 		p = environment_texture_direction_to_mirrorball(p);
+	functioncall	$const11 46 	%line{64} %argrw{"r"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:32
+# 	dir[1] -= 1.0;
+	compref		$tmp17 p $const3 	%line{32} %argrw{"wrr"}
+	sub		$tmp18 $tmp17 $const12 	%argrw{"wrr"}
+	compassign	p $const3 $tmp18 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:34
+# 	float div = 2.0 * sqrt(max(-0.5 * dir[1], 0.0));
+	compref		$tmp21 p $const3 	%line{34} %argrw{"wrr"}
+	mul		$tmp22 $const13 $tmp21 	%argrw{"wrr"}
+	max		$tmp20 $tmp22 $const10 	%argrw{"wrr"}
+	sqrt		$tmp19 $tmp20 	%argrw{"wr"}
+	mul		___605_div $const5 $tmp19 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:35
+# 	if (div > 0.0)
+	gt		$tmp23 ___605_div $const10 	%line{35} %argrw{"wrr"}
+	if		$tmp23 39 39 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:36
+# 		dir /= div;
+	div		p p ___605_div 	%line{36} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:38
+# 	float u = 0.5 * (dir[0] + 1.0);
+	compref		$tmp24 p $const4 	%line{38} %argrw{"wrr"}
+	add		$tmp25 $tmp24 $const12 	%argrw{"wrr"}
+	mul		___605_u $const7 $tmp25 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:39
+# 	float v = 0.5 * (dir[2] + 1.0);
+	compref		$tmp26 p $const8 	%line{39} %argrw{"wrr"}
+	add		$tmp27 $tmp26 $const12 	%argrw{"wrr"}
+	mul		___605_v $const7 $tmp27 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:41
+# 	return vector(u, v, 0.0);
+	vector		p ___605_u ___605_v $const10 	%line{41} %argrw{"wrrr"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:67
+# 	Color = (color)texture(filename, p[0], 1.0 - p[1], "wrap", "periodic", "alpha", Alpha);
+	compref		$tmp28 p $const4 	%line{67} %argrw{"wrr"}
+	compref		$tmp29 p $const3 	%argrw{"wrr"}
+	sub		$tmp30 $const12 $tmp29 	%argrw{"wrr"}
+	texture		Color filename $tmp28 $tmp30 $const14 $const15 $const16 Alpha 	%argrw{"wrrrrrrw"} %argderivs{2,3}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:69
+# 	if (color_space == "sRGB")
+	eq		$tmp31 color_space $const17 	%line{69} %argrw{"wrr"}
+	if		$tmp31 99 99 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_environment_texture.osl:70
+# 		Color = color_srgb_to_scene_linear(Color);
+	functioncall	$const18 99 	%line{70} %argrw{"r"}
+# intern/cycles/kernel/shaders/node_color.h:38
+# 		color_srgb_to_scene_linear(c[0]),
+	compref		$tmp33 Color $const4 	%filename{"intern/cycles/kernel/shaders/node_color.h"} %line{38} %argrw{"wrr"}
+	functioncall	$const18 68 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_color.h:21
+# 	if (c < 0.04045)
+	lt		$tmp34 $tmp33 $const19 	%line{21} %argrw{"wrr"}
+	if		$tmp34 63 68 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_color.h:22
+# 		return (c < 0.0) ? 0.0 : c * (1.0 / 12.92);
+	lt		$tmp35 $tmp33 $const10 	%line{22} %argrw{"wrr"}
+	if		$tmp35 60 62 	%argrw{"r"}
+	assign		$tmp32 $const10 	%argrw{"wr"}
+	div		$tmp36 $const12 $const20 	%argrw{"wrr"}
+	mul		$tmp32 $tmp33 $tmp36 	%argrw{"wrr"}
+	return
+# intern/cycles/kernel/shaders/node_color.h:24
+# 		return pow((c + 0.055) * (1.0 / 1.055), 2.4);
+	add		$tmp37 $tmp33 $const21 	%line{24} %argrw{"wrr"}
+	div		$tmp38 $const12 $const22 	%argrw{"wrr"}
+	mul		$tmp39 $tmp37 $tmp38 	%argrw{"wrr"}
+	pow		$tmp32 $tmp39 $const23 	%argrw{"wrr"}
+	return
+# intern/cycles/kernel/shaders/node_color.h:39
+# 		color_srgb_to_scene_linear(c[1]),
+	compref		$tmp41 Color $const3 	%line{39} %argrw{"wrr"}
+	functioncall	$const18 83 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_color.h:21
+# 	if (c < 0.04045)
+	lt		$tmp42 $tmp41 $const19 	%line{21} %argrw{"wrr"}
+	if		$tmp42 78 83 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_color.h:22
+# 		return (c < 0.0) ? 0.0 : c * (1.0 / 12.92);
+	lt		$tmp43 $tmp41 $const10 	%line{22} %argrw{"wrr"}
+	if		$tmp43 75 77 	%argrw{"r"}
+	assign		$tmp40 $const10 	%argrw{"wr"}
+	div		$tmp44 $const12 $const20 	%argrw{"wrr"}
+	mul		$tmp40 $tmp41 $tmp44 	%argrw{"wrr"}
+	return
+# intern/cycles/kernel/shaders/node_color.h:24
+# 		return pow((c + 0.055) * (1.0 / 1.055), 2.4);
+	add		$tmp45 $tmp41 $const21 	%line{24} %argrw{"wrr"}
+	div		$tmp46 $const12 $const22 	%argrw{"wrr"}
+	mul		$tmp47 $tmp45 $tmp46 	%argrw{"wrr"}
+	pow		$tmp40 $tmp47 $const23 	%argrw{"wrr"}
+	return
+# intern/cycles/kernel/shaders/node_color.h:40
+# 		color_srgb_to_scene_linear(c[2]));
+	compref		$tmp49 Color $const8 	%line{40} %argrw{"wrr"}
+	functioncall	$const18 98 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_color.h:21
+# 	if (c < 0.04045)
+	lt		$tmp50 $tmp49 $const19 	%line{21} %argrw{"wrr"}
+	if		$tmp50 93 98 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_color.h:22
+# 		return (c < 0.0) ? 0.0 : c * (1.0 / 12.92);
+	lt		$tmp51 $tmp49 $const10 	%line{22} %argrw{"wrr"}
+	if		$tmp51 90 92 	%argrw{"r"}
+	assign		$tmp48 $const10 	%argrw{"wr"}
+	div		$tmp52 $const12 $const20 	%argrw{"wrr"}
+	mul		$tmp48 $tmp49 $tmp52 	%argrw{"wrr"}
+	return
+# intern/cycles/kernel/shaders/node_color.h:24
+# 		return pow((c + 0.055) * (1.0 / 1.055), 2.4);
+	add		$tmp53 $tmp49 $const21 	%line{24} %argrw{"wrr"}
+	div		$tmp54 $const12 $const22 	%argrw{"wrr"}
+	mul		$tmp55 $tmp53 $tmp54 	%argrw{"wrr"}
+	pow		$tmp48 $tmp55 $const23 	%argrw{"wrr"}
+	return
+# intern/cycles/kernel/shaders/node_color.h:40
+# 		color_srgb_to_scene_linear(c[2]));
+	color		Color $tmp32 $tmp40 $tmp48 	%line{40} %argrw{"wrrr"}
+	end

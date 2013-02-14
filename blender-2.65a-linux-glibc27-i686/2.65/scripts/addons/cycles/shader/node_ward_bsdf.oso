@@ -1,0 +1,227 @@
+OpenShadingLanguage 1.00
+# Compiled by oslc 1.3.0
+shader node_ward_bsdf
+param	color	Color	0.80000001 0.80000001 0.80000001 		 %read{73,73} %write{2147483647,-1}
+param	float	Roughness	0 		 %read{65,71} %write{2147483647,-1}
+param	float	Anisotropy	0 		 %read{60,60} %write{2147483647,-1}
+param	float	Rotation	0 		 %read{4,6} %write{2147483647,-1}
+param	normal	Normal	0 0 0 		 %read{2,72} %write{0,0}
+param	normal	Tangent	0 0 0 		 %read{3,3} %write{1,1}
+oparam	closure color	BSDF			 %read{2147483647,-1} %write{2,73}
+global	normal	N	 %read{0,0} %write{2147483647,-1}
+global	vector	dPdu	 %read{1,1} %write{2147483647,-1}
+local	vector	___534_axis	 %read{13,15} %write{10,10}
+local	float	___534_cosang	 %read{12,53} %write{11,11}
+local	float	___534_sinang	 %read{23,48} %write{11,11}
+local	float	___534_cosang1	 %read{22,47} %write{12,12}
+local	float	___534_x	 %read{16,48} %write{13,13}
+local	float	___534_y	 %read{21,46} %write{14,14}
+local	float	___534_z	 %read{23,51} %write{15,15}
+local	matrix	___534_M	 %read{57,57} %write{55,55}
+local	vector	T	 %read{56,72} %write{3,58}
+local	float	RoughnessU	 %read{72,72} %write{65,69}
+local	float	RoughnessV	 %read{72,72} %write{67,71}
+local	float	aniso	 %read{62,70} %write{61,61}
+const	string	$const1	"diffuse"		 %read{2,2} %write{2147483647,-1}
+const	float	$const2	0		 %read{4,62} %write{2147483647,-1}
+temp	int	$tmp1	 %read{5,5} %write{4,4}
+const	float	$const3	2		 %read{6,6} %write{2147483647,-1}
+temp	float	$tmp2	 %read{7,7} %write{6,6}
+const	float	$const4	3.1415927		 %read{7,7} %write{2147483647,-1}
+temp	float	$tmp3	 %read{11,11} %write{7,7}
+const	point	$const5	0 0 0		 %read{9,58} %write{2147483647,-1}
+const	string	$const6	"rotate"		 %read{8,8} %write{2147483647,-1}
+temp	vector	$tmp5	 %read{10,10} %write{9,9}
+const	float	$const7	1		 %read{12,70} %write{2147483647,-1}
+const	int	$const8	0		 %read{13,13} %write{2147483647,-1}
+const	int	$const9	1		 %read{14,14} %write{2147483647,-1}
+const	int	$const10	2		 %read{15,15} %write{2147483647,-1}
+temp	float	$tmp6	 %read{20,20} %write{16,16}
+temp	float	$tmp7	 %read{18,18} %write{17,17}
+temp	float	$tmp8	 %read{19,19} %write{18,18}
+temp	float	$tmp9	 %read{20,20} %write{19,19}
+temp	float	$tmp10	 %read{55,55} %write{20,20}
+temp	float	$tmp11	 %read{22,22} %write{21,21}
+temp	float	$tmp12	 %read{24,24} %write{22,22}
+temp	float	$tmp13	 %read{24,24} %write{23,23}
+temp	float	$tmp14	 %read{55,55} %write{24,24}
+temp	float	$tmp15	 %read{26,26} %write{25,25}
+temp	float	$tmp16	 %read{28,28} %write{26,26}
+temp	float	$tmp17	 %read{28,28} %write{27,27}
+temp	float	$tmp18	 %read{55,55} %write{28,28}
+temp	float	$tmp19	 %read{30,30} %write{29,29}
+temp	float	$tmp20	 %read{32,32} %write{30,30}
+temp	float	$tmp21	 %read{32,32} %write{31,31}
+temp	float	$tmp22	 %read{55,55} %write{32,32}
+temp	float	$tmp23	 %read{37,37} %write{33,33}
+temp	float	$tmp24	 %read{35,35} %write{34,34}
+temp	float	$tmp25	 %read{36,36} %write{35,35}
+temp	float	$tmp26	 %read{37,37} %write{36,36}
+temp	float	$tmp27	 %read{55,55} %write{37,37}
+temp	float	$tmp28	 %read{39,39} %write{38,38}
+temp	float	$tmp29	 %read{41,41} %write{39,39}
+temp	float	$tmp30	 %read{41,41} %write{40,40}
+temp	float	$tmp31	 %read{55,55} %write{41,41}
+temp	float	$tmp32	 %read{43,43} %write{42,42}
+temp	float	$tmp33	 %read{45,45} %write{43,43}
+temp	float	$tmp34	 %read{45,45} %write{44,44}
+temp	float	$tmp35	 %read{55,55} %write{45,45}
+temp	float	$tmp36	 %read{47,47} %write{46,46}
+temp	float	$tmp37	 %read{49,49} %write{47,47}
+temp	float	$tmp38	 %read{49,49} %write{48,48}
+temp	float	$tmp39	 %read{55,55} %write{49,49}
+temp	float	$tmp40	 %read{54,54} %write{50,50}
+temp	float	$tmp41	 %read{52,52} %write{51,51}
+temp	float	$tmp42	 %read{53,53} %write{52,52}
+temp	float	$tmp43	 %read{54,54} %write{53,53}
+temp	float	$tmp44	 %read{55,55} %write{54,54}
+temp	vector	$tmp45	 %read{58,58} %write{57,57}
+temp	vector	$tmp46	 %read{57,57} %write{56,56}
+const	float	$const11	-0.99000001		 %read{61,61} %write{2147483647,-1}
+const	float	$const12	0.99000001		 %read{60,60} %write{2147483647,-1}
+const	string	$const13	"clamp"		 %read{59,59} %write{2147483647,-1}
+temp	float	$tmp47	 %read{61,61} %write{60,60}
+temp	int	$tmp48	 %read{63,63} %write{62,62}
+temp	float	$tmp49	 %read{65,65} %write{64,64}
+temp	float	$tmp50	 %read{67,67} %write{66,66}
+temp	float	$tmp51	 %read{69,69} %write{68,68}
+temp	float	$tmp52	 %read{71,71} %write{70,70}
+temp	closure color	$tmp53	 %read{73,73} %write{72,72}
+const	string	$const14	"ward"		 %read{72,72} %write{2147483647,-1}
+code Normal
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:26
+# 	normal Normal = N,
+	assign		Normal N 	%filename{"intern/cycles/kernel/shaders/node_ward_bsdf.osl"} %line{26} %argrw{"wr"}
+code Tangent
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:27
+# 	normal Tangent = normalize(dPdu),
+	normalize	Tangent dPdu 	%filename{"intern/cycles/kernel/shaders/node_ward_bsdf.osl"} %line{27} %argrw{"wr"}
+code BSDF
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:28
+# 	output closure color BSDF = diffuse(Normal))
+	closure		BSDF $const1 Normal 	%filename{"intern/cycles/kernel/shaders/node_ward_bsdf.osl"} %line{28} %argrw{"wrr"}
+code ___main___
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:31
+# 	vector T = Tangent;
+	assign		T Tangent 	%filename{"intern/cycles/kernel/shaders/node_ward_bsdf.osl"} %line{31} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:33
+# 	if (Rotation != 0.0)
+	neq		$tmp1 Rotation $const2 	%line{33} %argrw{"wrr"}
+	if		$tmp1 59 59 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:34
+# 		T = rotate(T, Rotation*2.0*M_PI, point(0.0, 0.0, 0.0), Normal);
+	mul		$tmp2 Rotation $const3 	%line{34} %argrw{"wrr"}
+	mul		$tmp3 $tmp2 $const4 	%argrw{"wrr"}
+	functioncall	$const6 59 	%argrw{"r"}
+# intern/cycles/kernel/shaders/stdosl.h:227
+#         // OPT: the following recomputes some of the above values, but it 
+	sub		$tmp5 Normal $const5 	%filename{"intern/cycles/kernel/shaders/stdosl.h"} %line{227} %argrw{"wrr"}
+	normalize	___534_axis $tmp5 	%argrw{"wr"}
+# intern/cycles/kernel/shaders/stdosl.h:229
+#         T = refract(I, N, eta);
+	sincos		$tmp3 ___534_sinang ___534_cosang 	%line{229} %argrw{"rww"}
+# intern/cycles/kernel/shaders/stdosl.h:230
+#     } else {
+	sub		___534_cosang1 $const7 ___534_cosang 	%line{230} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:231
+#         // total internal reflection
+	compref		___534_x ___534_axis $const8 	%line{231} %argrw{"wrr"}
+	compref		___534_y ___534_axis $const9 	%argrw{"wrr"}
+	compref		___534_z ___534_axis $const10 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:232
+#         Kr = 1.0;
+	mul		$tmp6 ___534_x ___534_x 	%line{232} %argrw{"wrr"}
+	mul		$tmp7 ___534_x ___534_x 	%argrw{"wrr"}
+	sub		$tmp8 $const7 $tmp7 	%argrw{"wrr"}
+	mul		$tmp9 $tmp8 ___534_cosang 	%argrw{"wrr"}
+	add		$tmp10 $tmp6 $tmp9 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:233
+#         Kt = 0.0;
+	mul		$tmp11 ___534_x ___534_y 	%line{233} %argrw{"wrr"}
+	mul		$tmp12 $tmp11 ___534_cosang1 	%argrw{"wrr"}
+	mul		$tmp13 ___534_z ___534_sinang 	%argrw{"wrr"}
+	add		$tmp14 $tmp12 $tmp13 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:234
+#         T = vector (0,0,0);
+	mul		$tmp15 ___534_x ___534_z 	%line{234} %argrw{"wrr"}
+	mul		$tmp16 $tmp15 ___534_cosang1 	%argrw{"wrr"}
+	mul		$tmp17 ___534_y ___534_sinang 	%argrw{"wrr"}
+	sub		$tmp18 $tmp16 $tmp17 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:236
+# }
+	mul		$tmp19 ___534_x ___534_y 	%line{236} %argrw{"wrr"}
+	mul		$tmp20 $tmp19 ___534_cosang1 	%argrw{"wrr"}
+	mul		$tmp21 ___534_z ___534_sinang 	%argrw{"wrr"}
+	sub		$tmp22 $tmp20 $tmp21 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:237
+# 
+	mul		$tmp23 ___534_y ___534_y 	%line{237} %argrw{"wrr"}
+	mul		$tmp24 ___534_y ___534_y 	%argrw{"wrr"}
+	sub		$tmp25 $const7 $tmp24 	%argrw{"wrr"}
+	mul		$tmp26 $tmp25 ___534_cosang 	%argrw{"wrr"}
+	add		$tmp27 $tmp23 $tmp26 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:238
+# void fresnel (vector I, normal N, float eta,
+	mul		$tmp28 ___534_y ___534_z 	%line{238} %argrw{"wrr"}
+	mul		$tmp29 $tmp28 ___534_cosang1 	%argrw{"wrr"}
+	mul		$tmp30 ___534_x ___534_sinang 	%argrw{"wrr"}
+	add		$tmp31 $tmp29 $tmp30 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:240
+# {
+	mul		$tmp32 ___534_x ___534_z 	%line{240} %argrw{"wrr"}
+	mul		$tmp33 $tmp32 ___534_cosang1 	%argrw{"wrr"}
+	mul		$tmp34 ___534_y ___534_sinang 	%argrw{"wrr"}
+	add		$tmp35 $tmp33 $tmp34 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:241
+#     vector R, T;
+	mul		$tmp36 ___534_y ___534_z 	%line{241} %argrw{"wrr"}
+	mul		$tmp37 $tmp36 ___534_cosang1 	%argrw{"wrr"}
+	mul		$tmp38 ___534_x ___534_sinang 	%argrw{"wrr"}
+	sub		$tmp39 $tmp37 $tmp38 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:242
+#     fresnel(I, N, eta, Kr, Kt, R, T);
+	mul		$tmp40 ___534_z ___534_z 	%line{242} %argrw{"wrr"}
+	mul		$tmp41 ___534_z ___534_z 	%argrw{"wrr"}
+	sub		$tmp42 $const7 $tmp41 	%argrw{"wrr"}
+	mul		$tmp43 $tmp42 ___534_cosang 	%argrw{"wrr"}
+	add		$tmp44 $tmp40 $tmp43 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/stdosl.h:244
+# 
+	matrix		___534_M $tmp10 $tmp14 $tmp18 $const2 $tmp22 $tmp27 $tmp31 $const2 $tmp35 $tmp39 $tmp44 $const2 $const2 $const2 $const2 $const7 	%line{244} %argrw{"wrrrrrrrrrrrrrrrr"}
+# intern/cycles/kernel/shaders/stdosl.h:245
+# 
+	sub		$tmp46 T $const5 	%line{245} %argrw{"wrr"}
+	transformv	$tmp45 ___534_M $tmp46 	%argrw{"wrr"}
+	add		T $tmp45 $const5 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:38
+# 	float aniso = clamp(Anisotropy, -0.99, 0.99);
+	functioncall	$const13 62 	%filename{"intern/cycles/kernel/shaders/node_ward_bsdf.osl"} %line{38} %argrw{"r"}
+# intern/cycles/kernel/shaders/stdosl.h:142
+# point  log (point a,  float b) { return log(a)/log(b); }
+	min		$tmp47 Anisotropy $const12 	%filename{"intern/cycles/kernel/shaders/stdosl.h"} %line{142} %argrw{"wrr"}
+	max		aniso $tmp47 $const11 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:40
+# 	if (aniso < 0.0) {
+	lt		$tmp48 aniso $const2 	%filename{"intern/cycles/kernel/shaders/node_ward_bsdf.osl"} %line{40} %argrw{"wrr"}
+	if		$tmp48 68 72 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:41
+# 		RoughnessU = Roughness / (1.0 + aniso);
+	add		$tmp49 $const7 aniso 	%line{41} %argrw{"wrr"}
+	div		RoughnessU Roughness $tmp49 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:42
+# 		RoughnessV = Roughness * (1.0 + aniso);
+	add		$tmp50 $const7 aniso 	%line{42} %argrw{"wrr"}
+	mul		RoughnessV Roughness $tmp50 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:45
+# 		RoughnessU = Roughness * (1.0 - aniso);
+	sub		$tmp51 $const7 aniso 	%line{45} %argrw{"wrr"}
+	mul		RoughnessU Roughness $tmp51 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:46
+# 		RoughnessV = Roughness / (1.0 - aniso);
+	sub		$tmp52 $const7 aniso 	%line{46} %argrw{"wrr"}
+	div		RoughnessV Roughness $tmp52 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_ward_bsdf.osl:49
+# 	BSDF = Color * ward(Normal, T, RoughnessU, RoughnessV);
+	closure		$tmp53 $const14 Normal T RoughnessU RoughnessV 	%line{49} %argrw{"wrrrrr"}
+	mul		BSDF $tmp53 Color 	%argrw{"wrr"}
+	end

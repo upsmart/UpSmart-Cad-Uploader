@@ -1,0 +1,170 @@
+OpenShadingLanguage 1.00
+# Compiled by oslc 1.3.0
+shader node_gradient_texture
+param	int	use_mapping	0 		 %read{2,2} %write{2147483647,-1}
+param	matrix	mapping	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0		 %read{3,3} %write{2147483647,-1}
+param	string	Type	"Linear" 		 %read{9,46} %write{2147483647,-1}
+param	point	Vector	0 0 0 		 %read{1,1} %write{0,0}
+oparam	float	Fac	0 		 %read{50,50} %write{49,49}
+oparam	color	Color	0 0 0 		 %read{2147483647,-1} %write{50,50}
+global	point	P	 %read{0,0} %write{2147483647,-1}
+local	float	___631_x	 %read{11,35} %write{5,5}
+local	float	___631_y	 %read{27,36} %write{6,6}
+local	float	___631_z	 %read{38,38} %write{7,7}
+local	float	___631_result	 %read{49,49} %write{8,48}
+local	float	___633_r	 %read{15,15} %write{14,14}
+local	float	___634_r	 %read{20,23} %write{19,19}
+local	float	___634_t	 %read{21,22} %write{20,20}
+local	float	___637_r	 %read{45,48} %write{42,42}
+local	point	p	 %read{3,7} %write{1,3}
+const	string	$const1	"gradient"		 %read{4,4} %write{2147483647,-1}
+const	int	$const2	0		 %read{5,5} %write{2147483647,-1}
+const	int	$const3	1		 %read{6,6} %write{2147483647,-1}
+const	int	$const4	2		 %read{7,7} %write{2147483647,-1}
+const	float	$const5	0		 %read{8,42} %write{2147483647,-1}
+const	string	$const6	"Linear"		 %read{9,9} %write{2147483647,-1}
+temp	int	$tmp1	 %read{10,10} %write{9,9}
+const	string	$const7	"Quadratic"		 %read{12,12} %write{2147483647,-1}
+temp	int	$tmp2	 %read{13,13} %write{12,12}
+const	string	$const8	"Easing"		 %read{16,16} %write{2147483647,-1}
+temp	int	$tmp3	 %read{17,17} %write{16,16}
+temp	float	$tmp4	 %read{19,19} %write{18,18}
+const	float	$const9	1		 %read{19,41} %write{2147483647,-1}
+const	float	$const10	3		 %read{21,21} %write{2147483647,-1}
+temp	float	$tmp5	 %read{24,24} %write{21,21}
+const	float	$const11	2		 %read{22,32} %write{2147483647,-1}
+temp	float	$tmp6	 %read{23,23} %write{22,22}
+temp	float	$tmp7	 %read{24,24} %write{23,23}
+const	string	$const12	"Diagonal"		 %read{25,25} %write{2147483647,-1}
+temp	int	$tmp8	 %read{26,26} %write{25,25}
+temp	float	$tmp9	 %read{28,28} %write{27,27}
+const	string	$const13	"Radial"		 %read{29,29} %write{2147483647,-1}
+temp	int	$tmp10	 %read{30,30} %write{29,29}
+temp	float	$tmp11	 %read{33,33} %write{31,31}
+const	float	$const14	3.1415927		 %read{32,32} %write{2147483647,-1}
+temp	float	$tmp12	 %read{33,33} %write{32,32}
+temp	float	$tmp13	 %read{34,34} %write{33,33}
+const	float	$const15	0.5		 %read{34,34} %write{2147483647,-1}
+temp	float	$tmp14	 %read{41,41} %write{40,40}
+temp	float	$tmp15	 %read{37,37} %write{35,35}
+temp	float	$tmp16	 %read{37,37} %write{36,36}
+temp	float	$tmp17	 %read{39,39} %write{37,37}
+temp	float	$tmp18	 %read{39,39} %write{38,38}
+temp	float	$tmp19	 %read{40,40} %write{39,39}
+temp	float	$tmp20	 %read{42,42} %write{41,41}
+const	string	$const16	"Quadratic Sphere"		 %read{43,43} %write{2147483647,-1}
+temp	int	$tmp21	 %read{44,44} %write{43,43}
+const	string	$const17	"Spherical"		 %read{46,46} %write{2147483647,-1}
+temp	int	$tmp22	 %read{47,47} %write{46,46}
+code Vector
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:69
+# 	point Vector = P,
+	assign		Vector P 	%filename{"intern/cycles/kernel/shaders/node_gradient_texture.osl"} %line{69} %argrw{"wr"}
+code ___main___
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:73
+# 	point p = Vector;
+	assign		p Vector 	%filename{"intern/cycles/kernel/shaders/node_gradient_texture.osl"} %line{73} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:75
+# 	if (use_mapping)
+	if		use_mapping 4 4 	%line{75} %argrw{"r"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:76
+# 		p = transform(mapping, p);
+	transform	p mapping p 	%line{76} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:78
+# 	Fac = gradient(p, Type);
+	functioncall	$const1 50 	%line{78} %argrw{"r"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:28
+# 	x = p[0];
+	compref		___631_x p $const2 	%line{28} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:29
+# 	y = p[1];
+	compref		___631_y p $const3 	%line{29} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:30
+# 	z = p[2];
+	compref		___631_z p $const4 	%line{30} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:32
+# 	float result = 0.0;
+	assign		___631_result $const5 	%line{32} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:34
+# 	if (type == "Linear") {
+	eq		$tmp1 Type $const6 	%line{34} %argrw{"wrr"}
+	if		$tmp1 12 49 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:35
+# 		result = x;
+	assign		___631_result ___631_x 	%line{35} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:37
+# 	else if (type == "Quadratic") {
+	eq		$tmp2 Type $const7 	%line{37} %argrw{"wrr"}
+	if		$tmp2 16 49 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:38
+# 		float r = max(x, 0.0);
+	max		___633_r ___631_x $const5 	%line{38} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:39
+# 		result = r * r;
+	mul		___631_result ___633_r ___633_r 	%line{39} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:41
+# 	else if (type == "Easing") {
+	eq		$tmp3 Type $const8 	%line{41} %argrw{"wrr"}
+	if		$tmp3 25 49 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:42
+# 		float r = min(max(x, 0.0), 1.0);
+	max		$tmp4 ___631_x $const5 	%line{42} %argrw{"wrr"}
+	min		___634_r $tmp4 $const9 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:43
+# 		float t = r * r;
+	mul		___634_t ___634_r ___634_r 	%line{43} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:45
+# 		result = (3.0 * t - 2.0 * t * r);
+	mul		$tmp5 $const10 ___634_t 	%line{45} %argrw{"wrr"}
+	mul		$tmp6 $const11 ___634_t 	%argrw{"wrr"}
+	mul		$tmp7 $tmp6 ___634_r 	%argrw{"wrr"}
+	sub		___631_result $tmp5 $tmp7 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:47
+# 	else if (type == "Diagonal") {
+	eq		$tmp8 Type $const12 	%line{47} %argrw{"wrr"}
+	if		$tmp8 29 49 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:48
+# 		result = (x + y) / 2.0;
+	add		$tmp9 ___631_x ___631_y 	%line{48} %argrw{"wrr"}
+	div		___631_result $tmp9 $const11 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:50
+# 	else if (type == "Radial") {
+	eq		$tmp10 Type $const13 	%line{50} %argrw{"wrr"}
+	if		$tmp10 35 49 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:51
+# 		result = atan2(y, x) / (2.0 * M_PI) + 0.5;
+	atan2		$tmp11 ___631_y ___631_x 	%line{51} %argrw{"wrr"}
+	mul		$tmp12 $const11 $const14 	%argrw{"wrr"}
+	div		$tmp13 $tmp11 $tmp12 	%argrw{"wrr"}
+	add		___631_result $tmp13 $const15 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:54
+# 		float r = max(1.0 - sqrt(x * x + y * y + z * z), 0.0);
+	mul		$tmp15 ___631_x ___631_x 	%line{54} %argrw{"wrr"}
+	mul		$tmp16 ___631_y ___631_y 	%argrw{"wrr"}
+	add		$tmp17 $tmp15 $tmp16 	%argrw{"wrr"}
+	mul		$tmp18 ___631_z ___631_z 	%argrw{"wrr"}
+	add		$tmp19 $tmp17 $tmp18 	%argrw{"wrr"}
+	sqrt		$tmp14 $tmp19 	%argrw{"wr"}
+	sub		$tmp20 $const9 $tmp14 	%argrw{"wrr"}
+	max		___637_r $tmp20 $const5 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:56
+# 		if (type == "Quadratic Sphere")
+	eq		$tmp21 Type $const16 	%line{56} %argrw{"wrr"}
+	if		$tmp21 46 49 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:57
+# 			result = r * r;
+	mul		___631_result ___637_r ___637_r 	%line{57} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:58
+# 		else if (type == "Spherical")
+	eq		$tmp22 Type $const17 	%line{58} %argrw{"wrr"}
+	if		$tmp22 49 49 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:59
+# 			result = r;
+	assign		___631_result ___637_r 	%line{59} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:62
+# 	return result;
+	assign		Fac ___631_result 	%line{62} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_gradient_texture.osl:79
+# 	Color = color(Fac, Fac, Fac);
+	color		Color Fac Fac Fac 	%line{79} %argrw{"wrrr"}
+	end

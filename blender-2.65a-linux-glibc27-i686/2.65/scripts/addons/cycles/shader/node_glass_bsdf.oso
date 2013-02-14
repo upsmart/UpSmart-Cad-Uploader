@@ -1,0 +1,184 @@
+OpenShadingLanguage 1.00
+# Compiled by oslc 1.3.0
+shader node_glass_bsdf
+param	color	Color	0.80000001 0.80000001 0.80000001 		 %read{43,61} %write{2147483647,-1}
+param	string	distribution	"Sharp" 		 %read{35,53} %write{2147483647,-1}
+param	float	Roughness	0.2 		 %read{46,57} %write{2147483647,-1}
+param	float	IOR	1.45 		 %read{3,3} %write{2147483647,-1}
+param	normal	Normal	0 0 0 		 %read{1,57} %write{0,0}
+oparam	closure color	BSDF			 %read{2147483647,-1} %write{1,61}
+global	vector	I	 %read{9,9} %write{2147483647,-1}
+global	normal	N	 %read{0,0} %write{2147483647,-1}
+local	float	___592_c	 %read{13,25} %write{10,10}
+local	float	___592_g	 %read{15,24} %write{14,17}
+local	float	___592_result	 %read{34,34} %write{32,33}
+local	float	___593_A	 %read{28,29} %write{20,20}
+local	float	___593_B	 %read{30,30} %write{27,27}
+local	float	f	 %read{6,7} %write{3,3}
+local	float	eta	 %read{11,57} %write{6,7}
+local	float	Fr	 %read{38,58} %write{34,34}
+const	string	$const1	"diffuse"		 %read{1,1} %write{2147483647,-1}
+const	float	$const2	1		 %read{2,58} %write{2147483647,-1}
+const	float	$const3	9.9999997e-06		 %read{2,2} %write{2147483647,-1}
+temp	float	$tmp1	 %read{3,3} %write{2,2}
+temp	int	$tmp2	 %read{5,5} %write{4,4}
+const	string	$const4	"fresnel_dielectric"		 %read{8,8} %write{2147483647,-1}
+temp	float	$tmp3	 %read{10,10} %write{9,9}
+temp	float	$tmp4	 %read{12,12} %write{11,11}
+temp	float	$tmp5	 %read{14,14} %write{12,12}
+temp	float	$tmp6	 %read{14,14} %write{13,13}
+const	int	$const6	0		 %read{15,15} %write{2147483647,-1}
+temp	int	$tmp7	 %read{16,16} %write{15,15}
+temp	float	$tmp8	 %read{20,20} %write{18,18}
+temp	float	$tmp9	 %read{20,20} %write{19,19}
+temp	float	$tmp10	 %read{22,22} %write{21,21}
+temp	float	$tmp11	 %read{23,23} %write{22,22}
+temp	float	$tmp12	 %read{27,27} %write{23,23}
+temp	float	$tmp13	 %read{25,25} %write{24,24}
+temp	float	$tmp14	 %read{26,26} %write{25,25}
+temp	float	$tmp15	 %read{27,27} %write{26,26}
+const	float	$const7	0.5		 %read{28,28} %write{2147483647,-1}
+temp	float	$tmp16	 %read{29,29} %write{28,28}
+temp	float	$tmp17	 %read{32,32} %write{29,29}
+temp	float	$tmp18	 %read{31,31} %write{30,30}
+temp	float	$tmp19	 %read{32,32} %write{31,31}
+const	string	$const8	"Sharp"		 %read{35,35} %write{2147483647,-1}
+temp	int	$tmp20	 %read{36,36} %write{35,35}
+temp	closure color	$tmp21	 %read{38,38} %write{37,37}
+const	string	$const9	"reflection"		 %read{37,37} %write{2147483647,-1}
+temp	closure color	$tmp22	 %read{42,42} %write{38,38}
+temp	closure color	$tmp23	 %read{41,41} %write{39,39}
+const	string	$const10	"refraction"		 %read{39,39} %write{2147483647,-1}
+temp	float	$tmp24	 %read{41,41} %write{40,40}
+temp	closure color	$tmp25	 %read{42,42} %write{41,41}
+temp	closure color	$tmp26	 %read{43,43} %write{42,42}
+const	string	$const11	"Beckmann"		 %read{44,44} %write{2147483647,-1}
+temp	int	$tmp27	 %read{45,45} %write{44,44}
+temp	closure color	$tmp28	 %read{47,47} %write{46,46}
+const	string	$const12	"microfacet_beckmann"		 %read{46,46} %write{2147483647,-1}
+temp	closure color	$tmp29	 %read{51,51} %write{47,47}
+temp	closure color	$tmp30	 %read{50,50} %write{48,48}
+const	string	$const13	"microfacet_beckmann_refraction"		 %read{48,48} %write{2147483647,-1}
+temp	float	$tmp31	 %read{50,50} %write{49,49}
+temp	closure color	$tmp32	 %read{51,51} %write{50,50}
+temp	closure color	$tmp33	 %read{52,52} %write{51,51}
+const	string	$const14	"GGX"		 %read{53,53} %write{2147483647,-1}
+temp	int	$tmp34	 %read{54,54} %write{53,53}
+temp	closure color	$tmp35	 %read{56,56} %write{55,55}
+const	string	$const15	"microfacet_ggx"		 %read{55,55} %write{2147483647,-1}
+temp	closure color	$tmp36	 %read{60,60} %write{56,56}
+temp	closure color	$tmp37	 %read{59,59} %write{57,57}
+const	string	$const16	"microfacet_ggx_refraction"		 %read{57,57} %write{2147483647,-1}
+temp	float	$tmp38	 %read{59,59} %write{58,58}
+temp	closure color	$tmp39	 %read{60,60} %write{59,59}
+temp	closure color	$tmp40	 %read{61,61} %write{60,60}
+code Normal
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:27
+# 	normal Normal = N,
+	assign		Normal N 	%filename{"intern/cycles/kernel/shaders/node_glass_bsdf.osl"} %line{27} %argrw{"wr"}
+code BSDF
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:28
+# 	output closure color BSDF = diffuse(Normal))
+	closure		BSDF $const1 Normal 	%filename{"intern/cycles/kernel/shaders/node_glass_bsdf.osl"} %line{28} %argrw{"wrr"}
+code ___main___
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:30
+# 	float f = max(IOR, 1.0 + 1e-5);
+	add		$tmp1 $const2 $const3 	%filename{"intern/cycles/kernel/shaders/node_glass_bsdf.osl"} %line{30} %argrw{"wrr"}
+	max		f IOR $tmp1 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:31
+# 	float eta = backfacing() ? 1.0 / f: f;
+	backfacing	$tmp2 	%line{31} %argrw{"w"}
+	if		$tmp2 7 8 	%argrw{"r"}
+	div		eta $const2 f 	%argrw{"wrr"}
+	assign		eta f 	%argrw{"wr"}
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:32
+# 	float Fr = fresnel_dielectric(I, Normal, eta);
+	functioncall	$const4 35 	%line{32} %argrw{"r"}
+# intern/cycles/kernel/shaders/node_fresnel.h:21
+# 	float c = fabs(dot(Incoming, Normal));
+	dot		$tmp3 I Normal 	%filename{"intern/cycles/kernel/shaders/node_fresnel.h"} %line{21} %argrw{"wrr"}
+	fabs		___592_c $tmp3 	%argrw{"wr"}
+# intern/cycles/kernel/shaders/node_fresnel.h:22
+# 	float g = eta * eta - 1 + c * c;
+	mul		$tmp4 eta eta 	%line{22} %argrw{"wrr"}
+	sub		$tmp5 $tmp4 $const2 	%argrw{"wrr"}
+	mul		$tmp6 ___592_c ___592_c 	%argrw{"wrr"}
+	add		___592_g $tmp5 $tmp6 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_fresnel.h:25
+# 	if (g > 0) {
+	gt		$tmp7 ___592_g $const6 	%line{25} %argrw{"wrr"}
+	if		$tmp7 33 34 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_fresnel.h:26
+# 		g = sqrt(g);
+	sqrt		___592_g ___592_g 	%line{26} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_fresnel.h:27
+# 		float A = (g - c) / (g + c);
+	sub		$tmp8 ___592_g ___592_c 	%line{27} %argrw{"wrr"}
+	add		$tmp9 ___592_g ___592_c 	%argrw{"wrr"}
+	div		___593_A $tmp8 $tmp9 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_fresnel.h:28
+# 		float B = (c * (g + c) - 1) / (c * (g - c) + 1);
+	add		$tmp10 ___592_g ___592_c 	%line{28} %argrw{"wrr"}
+	mul		$tmp11 ___592_c $tmp10 	%argrw{"wrr"}
+	sub		$tmp12 $tmp11 $const2 	%argrw{"wrr"}
+	sub		$tmp13 ___592_g ___592_c 	%argrw{"wrr"}
+	mul		$tmp14 ___592_c $tmp13 	%argrw{"wrr"}
+	add		$tmp15 $tmp14 $const2 	%argrw{"wrr"}
+	div		___593_B $tmp12 $tmp15 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_fresnel.h:29
+# 		result = 0.5 * A * A * (1 + B * B);
+	mul		$tmp16 $const7 ___593_A 	%line{29} %argrw{"wrr"}
+	mul		$tmp17 $tmp16 ___593_A 	%argrw{"wrr"}
+	mul		$tmp18 ___593_B ___593_B 	%argrw{"wrr"}
+	add		$tmp19 $const2 $tmp18 	%argrw{"wrr"}
+	mul		___592_result $tmp17 $tmp19 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_fresnel.h:32
+# 		result = 1.0;  /* TIR (no refracted component) */
+	assign		___592_result $const2 	%line{32} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_fresnel.h:34
+# 	return result;
+	assign		Fr ___592_result 	%line{34} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:34
+# 	return result;
+	eq		$tmp20 distribution $const8 	%filename{"intern/cycles/kernel/shaders/node_glass_bsdf.osl"} %argrw{"wrr"}
+	if		$tmp20 44 62 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:35
+# /*
+	closure		$tmp21 $const9 Normal 	%line{35} %argrw{"wrr"}
+	mul		$tmp22 $tmp21 Fr 	%argrw{"wrr"}
+	closure		$tmp23 $const10 Normal eta 	%argrw{"wrrr"}
+	sub		$tmp24 $const2 Fr 	%argrw{"wrr"}
+	mul		$tmp25 $tmp23 $tmp24 	%argrw{"wrr"}
+	add		$tmp26 $tmp22 $tmp25 	%argrw{"wrr"}
+	mul		BSDF $tmp26 Color 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:36
+#  * Copyright 2011, Blender Foundation.
+	eq		$tmp27 distribution $const11 	%line{36} %argrw{"wrr"}
+	if		$tmp27 53 62 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:37
+#  *
+	closure		$tmp28 $const12 Normal Roughness 	%line{37} %argrw{"wrrr"}
+	mul		$tmp29 $tmp28 Fr 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:38
+#  * This program is free software; you can redistribute it and/or
+	closure		$tmp30 $const13 Normal Roughness eta 	%line{38} %argrw{"wrrrr"}
+	sub		$tmp31 $const2 Fr 	%argrw{"wrr"}
+	mul		$tmp32 $tmp30 $tmp31 	%argrw{"wrr"}
+	add		$tmp33 $tmp29 $tmp32 	%argrw{"wrr"}
+	mul		BSDF $tmp33 Color 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:39
+#  * modify it under the terms of the GNU General Public License
+	eq		$tmp34 distribution $const14 	%line{39} %argrw{"wrr"}
+	if		$tmp34 62 62 	%argrw{"r"}
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:40
+#  * as published by the Free Software Foundation; either version 2
+	closure		$tmp35 $const15 Normal Roughness 	%line{40} %argrw{"wrrr"}
+	mul		$tmp36 $tmp35 Fr 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_glass_bsdf.osl:41
+#  * of the License, or (at your option) any later version.
+	closure		$tmp37 $const16 Normal Roughness eta 	%line{41} %argrw{"wrrrr"}
+	sub		$tmp38 $const2 Fr 	%argrw{"wrr"}
+	mul		$tmp39 $tmp37 $tmp38 	%argrw{"wrr"}
+	add		$tmp40 $tmp36 $tmp39 	%argrw{"wrr"}
+	mul		BSDF $tmp40 Color 	%argrw{"wrr"}
+	end

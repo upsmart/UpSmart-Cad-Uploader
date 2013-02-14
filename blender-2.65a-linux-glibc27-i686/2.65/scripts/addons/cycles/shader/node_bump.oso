@@ -1,0 +1,71 @@
+OpenShadingLanguage 1.00
+# Compiled by oslc 1.3.0
+surface node_bump
+param	normal	NormalIn	0 0 0 		 %read{4,14} %write{0,0}
+param	float	Strength	0 		 %read{12,12} %write{2147483647,-1}
+param	float	SampleCenter	0 		 %read{7,9} %write{2147483647,-1}
+param	float	SampleX	0 		 %read{7,7} %write{2147483647,-1}
+param	float	SampleY	0 		 %read{9,9} %write{2147483647,-1}
+oparam	normal	Normal	0 0 0 		 %read{2147483647,-1} %write{1,18}
+global	point	P	 %read{2,3} %write{2147483647,-1} %derivs
+global	normal	N	 %read{0,1} %write{2147483647,-1}
+local	vector	dPdx	 %read{5,6} %write{2,2}
+local	vector	dPdy	 %read{4,4} %write{3,3}
+local	vector	Rx	 %read{6,8} %write{4,4}
+local	vector	Ry	 %read{10,10} %write{5,5}
+local	float	det	 %read{13,15} %write{6,6}
+local	vector	surfgrad	 %read{12,16} %write{11,12}
+local	float	absdet	 %read{14,14} %write{13,13}
+temp	float	$tmp1	 %read{8,8} %write{7,7}
+temp	vector	$tmp2	 %read{11,11} %write{8,8}
+temp	float	$tmp3	 %read{10,10} %write{9,9}
+temp	vector	$tmp4	 %read{11,11} %write{10,10}
+temp	normal	$tmp5	 %read{17,17} %write{14,14}
+temp	float	$tmp6	 %read{16,16} %write{15,15}
+temp	vector	$tmp7	 %read{17,17} %write{16,16}
+temp	normal	$tmp8	 %read{18,18} %write{17,17}
+code NormalIn
+# intern/cycles/kernel/shaders/node_bump.osl:25
+# 	normal NormalIn = N,
+	assign		NormalIn N 	%filename{"intern/cycles/kernel/shaders/node_bump.osl"} %line{25} %argrw{"wr"}
+code Normal
+# intern/cycles/kernel/shaders/node_bump.osl:30
+# 	output normal Normal = N)
+	assign		Normal N 	%filename{"intern/cycles/kernel/shaders/node_bump.osl"} %line{30} %argrw{"wr"}
+code ___main___
+# intern/cycles/kernel/shaders/node_bump.osl:33
+# 	vector dPdx = Dx(P);
+	Dx		dPdx P 	%filename{"intern/cycles/kernel/shaders/node_bump.osl"} %line{33} %argrw{"wr"} %argderivs{1}
+# intern/cycles/kernel/shaders/node_bump.osl:34
+# 	vector dPdy = Dy(P);
+	Dy		dPdy P 	%line{34} %argrw{"wr"} %argderivs{1}
+# intern/cycles/kernel/shaders/node_bump.osl:36
+# 	vector Rx = cross(dPdy, NormalIn);
+	cross		Rx dPdy NormalIn 	%line{36} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_bump.osl:37
+# 	vector Ry = cross(NormalIn, dPdx);
+	cross		Ry NormalIn dPdx 	%line{37} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_bump.osl:40
+# 	float det = dot(dPdx, Rx);
+	dot		det dPdx Rx 	%line{40} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_bump.osl:41
+# 	vector surfgrad = (SampleX - SampleCenter) * Rx + (SampleY - SampleCenter) * Ry;
+	sub		$tmp1 SampleX SampleCenter 	%line{41} %argrw{"wrr"}
+	mul		$tmp2 $tmp1 Rx 	%argrw{"wrr"}
+	sub		$tmp3 SampleY SampleCenter 	%argrw{"wrr"}
+	mul		$tmp4 $tmp3 Ry 	%argrw{"wrr"}
+	add		surfgrad $tmp2 $tmp4 	%argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_bump.osl:43
+# 	surfgrad *= Strength;
+	mul		surfgrad surfgrad Strength 	%line{43} %argrw{"wrr"}
+# intern/cycles/kernel/shaders/node_bump.osl:44
+# 	float absdet = fabs(det);
+	fabs		absdet det 	%line{44} %argrw{"wr"}
+# intern/cycles/kernel/shaders/node_bump.osl:47
+# 	Normal = normalize(absdet * NormalIn - sign(det) * surfgrad);
+	mul		$tmp5 absdet NormalIn 	%line{47} %argrw{"wrr"}
+	sign		$tmp6 det 	%argrw{"wr"}
+	mul		$tmp7 $tmp6 surfgrad 	%argrw{"wrr"}
+	sub		$tmp8 $tmp5 $tmp7 	%argrw{"wrr"}
+	normalize	Normal $tmp8 	%argrw{"wr"}
+	end
